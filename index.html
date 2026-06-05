@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +50,42 @@
       line-height: 1.6;
     }
 
+    /* ── LANG SWITCHER ── */
+    .lang-bar {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 1000;
+      display: flex;
+      gap: 6px;
+      background: white;
+      border-radius: 8px;
+      padding: 6px 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .lang-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    .lang-btn:hover { border-color: var(--accent); color: var(--navy); }
+
+    .lang-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: white;
+    }
+
     /* ── LAYOUT WRAPPER ── */
     .page {
       max-width: 900px;
@@ -69,6 +105,7 @@
 
     @media (max-width: 720px) {
       .layout { grid-template-columns: 1fr; }
+      .lang-bar { top: 8px; right: 8px; }
     }
 
     /* ══════════════════════════
@@ -227,7 +264,6 @@
       background: var(--border);
     }
 
-    /* PERFIL */
     .profile-text {
       font-size: 0.95rem;
       color: #4a5568;
@@ -241,7 +277,6 @@
       padding: 0 3px;
     }
 
-    /* DESTAQUES NUMÉRICOS */
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -270,7 +305,6 @@
       line-height: 1.3;
     }
 
-    /* EXPERIÊNCIA */
     .exp-list { display: flex; flex-direction: column; gap: 28px; }
 
     .exp-item { position: relative; padding-left: 20px; }
@@ -342,7 +376,6 @@
       font-weight: 500;
     }
 
-    /* COMPETÊNCIAS */
     .comp-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -368,7 +401,6 @@
       line-height: 1.5;
     }
 
-    /* OBJETIVO */
     .objetivo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -388,7 +420,6 @@
 
     .objetivo-item p { font-size: 0.82rem; color: #4a5568; }
 
-    /* CTA FOOTER */
     .cv-footer {
       background: var(--navy);
       color: white;
@@ -396,7 +427,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: gap;
+      flex-wrap: wrap;
       gap: 16px;
     }
 
@@ -427,9 +458,23 @@
     .btn-gold:hover { background: #ddb954; }
     .btn-ghost { border: 1px solid rgba(255,255,255,0.35); color: white; }
     .btn-ghost:hover { border-color: white; }
+
+    @media print {
+      .cv-footer, a[href^="https://wa.me"], .print-btn, .lang-bar { display: none !important; }
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; }
+    }
   </style>
 </head>
 <body>
+
+<!-- ── LANGUAGE SWITCHER ── -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('pt')" id="btn-pt">PT</button>
+  <button class="lang-btn" onclick="setLang('es')" id="btn-es">ES</button>
+  <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+</div>
+
 <div class="page">
   <div class="layout">
 
@@ -437,7 +482,6 @@
     <aside class="sidebar">
 
       <div>
-        <!-- FOTO: salve sua foto profissional como "fabiano-foto.jpg" nesta mesma pasta -->
         <div class="avatar">
           <img src="fabiano-foto.jpg" alt="Fabiano Cicala"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -445,64 +489,64 @@
         </div>
         <div style="height:16px;"></div>
         <div class="sidebar-name">Fabiano Cicala</div>
-        <div class="sidebar-title">Empresário · CEO · Valencia</div>
+        <div class="sidebar-title" data-i18n="sidebar_title">Empresário · CEO · Valencia</div>
         <div class="flags">🇧🇷 🇮🇹 🇪🇸</div>
       </div>
 
       <div class="sb-section">
-        <div class="sb-label">Contato</div>
+        <div class="sb-label" data-i18n="label_contact">Contato</div>
         <ul class="contact-list">
           <li><a href="https://wa.me/5511987781343" target="_blank"><span class="ico">💬</span>+55 11 98778-1343</a></li>
           <li><a href="mailto:fbcicala@gmail.com"><span class="ico">✉️</span>fbcicala@gmail.com</a></li>
           <li><a href="https://www.linkedin.com/in/fabiano-cicala-71ba82364" target="_blank"><span class="ico">💼</span>LinkedIn</a></li>
           <li><a href="https://www.cikala.com.br" target="_blank"><span class="ico">🌐</span>cikala.com.br</a></li>
-          <li><span><span class="ico">📍</span>Valencia, Espanha</span></li>
+          <li><span><span class="ico">📍</span><span data-i18n="location">Valencia, Espanha</span></span></li>
         </ul>
       </div>
 
       <div class="sb-section">
-        <div class="sb-label">Idiomas</div>
+        <div class="sb-label" data-i18n="label_languages">Idiomas</div>
         <ul class="idiomas-list">
           <li class="idioma-item">
-            <div class="idioma-name">Português <span>Nativo</span></div>
+            <div class="idioma-name">Português <span data-i18n="lang_native">Nativo</span></div>
             <div class="idioma-bar"><div class="idioma-bar-fill" style="width:100%"></div></div>
           </li>
           <li class="idioma-item">
-            <div class="idioma-name">Espanhol <span>Intermediário</span></div>
+            <div class="idioma-name">Español <span data-i18n="lang_intermediate">Intermediário</span></div>
             <div class="idioma-bar"><div class="idioma-bar-fill" style="width:60%"></div></div>
           </li>
           <li class="idioma-item">
-            <div class="idioma-name">Inglês <span>Básico</span></div>
+            <div class="idioma-name">English <span data-i18n="lang_basic">Básico</span></div>
             <div class="idioma-bar"><div class="idioma-bar-fill" style="width:35%"></div></div>
           </li>
           <li class="idioma-item">
-            <div class="idioma-name">Italiano <span>Nível leitura</span></div>
+            <div class="idioma-name">Italiano <span data-i18n="lang_reading">Nível leitura</span></div>
             <div class="idioma-bar"><div class="idioma-bar-fill" style="width:25%"></div></div>
           </li>
         </ul>
       </div>
 
       <div class="sb-section">
-        <div class="sb-label">Competências-chave</div>
+        <div class="sb-label" data-i18n="label_skills">Competências-chave</div>
         <div class="skill-tags">
           <span class="skill-tag">E-commerce</span>
-          <span class="skill-tag">Importação</span>
-          <span class="skill-tag">Comércio exterior</span>
+          <span class="skill-tag" data-i18n="skill_import">Importação</span>
+          <span class="skill-tag" data-i18n="skill_foreign_trade">Comércio exterior</span>
           <span class="skill-tag">B2B industrial</span>
-          <span class="skill-tag">Gestão de equipes</span>
-          <span class="skill-tag">Marketing digital</span>
-          <span class="skill-tag">IA & Automação</span>
-          <span class="skill-tag">Desenvolvimento de produto</span>
-          <span class="skill-tag">Licitações</span>
+          <span class="skill-tag" data-i18n="skill_team_mgmt">Gestão de equipes</span>
+          <span class="skill-tag" data-i18n="skill_mkt">Marketing digital</span>
+          <span class="skill-tag">IA & Automation</span>
+          <span class="skill-tag" data-i18n="skill_product_dev">Desenvolvimento de produto</span>
+          <span class="skill-tag" data-i18n="skill_tenders">Licitações</span>
           <span class="skill-tag">Supply chain</span>
         </div>
       </div>
 
       <div class="sb-section">
-        <div class="sb-label">Cidadania</div>
+        <div class="sb-label" data-i18n="label_citizenship">Cidadania</div>
         <ul class="contact-list">
-          <li><span><span class="ico">🇮🇹</span>Cidadão italiano (UE)</span></li>
-          <li><span><span class="ico">🇧🇷</span>Cidadão brasileiro</span></li>
+          <li><span><span class="ico">🇮🇹</span><span data-i18n="citizen_it">Cidadão italiano (UE)</span></span></li>
+          <li><span><span class="ico">🇧🇷</span><span data-i18n="citizen_br">Cidadão brasileiro</span></span></li>
         </ul>
       </div>
 
@@ -514,44 +558,38 @@
       <!-- PERFIL -->
       <section>
         <div class="section-header">
-          <h2>Perfil Profissional</h2>
+          <h2 data-i18n="section_profile">Perfil Profissional</h2>
           <div class="section-line"></div>
         </div>
-        <p class="profile-text">
-          Empresário com <span class="profile-highlight">25 anos de trajetória</span> construindo e operando uma das referências brasileiras em soluções técnicas de proteção industrial. Fundador e CEO da CIKALA — empresa que fatura ~R$ 42 milhões/ano com 57 colaboradores, atuando em e-commerce, B2B, fabricação sob medida, importação e licitações públicas.
-          <br><br>
-          Com <span class="profile-highlight">cidadania italiana ativa</span>, estabeleço presença na Comunitat Valenciana como base europeia de operações. Meu diferencial não é apenas o setor de atuação — é a combinação de competências construída ao longo de décadas: produto, tecnologia, pessoas, mercados internacionais e visão estratégica.
-          <br><br>
-          Busco oportunidades de <strong>posição executiva, consultoria estratégica ou parceria de negócios</strong> na Espanha e Europa.
-        </p>
+        <p class="profile-text" data-i18n-html="profile_text"></p>
       </section>
 
       <!-- KPIs -->
       <section>
         <div class="section-header">
-          <h2>Em Números</h2>
+          <h2 data-i18n="section_numbers">Em Números</h2>
           <div class="section-line"></div>
         </div>
         <div class="kpi-grid">
           <div class="kpi-card">
             <div class="kpi-value">25</div>
-            <div class="kpi-label">anos de empreendedorismo</div>
+            <div class="kpi-label" data-i18n="kpi_years">anos de empreendedorismo</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-value">R$42M</div>
-            <div class="kpi-label">faturamento anual</div>
+            <div class="kpi-label" data-i18n="kpi_revenue">faturamento anual</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-value">57</div>
-            <div class="kpi-label">colaboradores</div>
+            <div class="kpi-label" data-i18n="kpi_employees">colaboradores</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-value">+10k</div>
-            <div class="kpi-label">clientes atendidos</div>
+            <div class="kpi-label" data-i18n="kpi_clients">clientes atendidos</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-value">7</div>
-            <div class="kpi-label">canais de venda ativos</div>
+            <div class="kpi-label" data-i18n="kpi_channels">canais de venda ativos</div>
           </div>
         </div>
       </section>
@@ -559,61 +597,55 @@
       <!-- EXPERIÊNCIA -->
       <section>
         <div class="section-header">
-          <h2>Experiência</h2>
+          <h2 data-i18n="section_experience">Experiência</h2>
           <div class="section-line"></div>
         </div>
         <div class="exp-list">
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Fundador & CEO</div>
-              <div class="exp-period">2000 — atual</div>
+              <div class="exp-role" data-i18n="exp1_role">Fundador & CEO</div>
+              <div class="exp-period" data-i18n="exp1_period">2000 — atual</div>
             </div>
             <div class="exp-company">CIKALA Comércio e Serviços Ltda · São Paulo, Brasil</div>
-            <p class="exp-desc">
-              Fundei e opero empresa de soluções técnicas em lonas, telas e coberturas industriais. Estruturei operação completa: fabricação sob medida, importação regular da China (~1 contêiner/mês), e-commerce multicanal (Mercado Livre, Amazon, Shopee, Shopify), B2B para indústria e governo, e equipe de 57 pessoas. Implementei projetos de IA e automação na operação. Desenvolvemos produto patenteado (sistema de fixação por pinos).
-            </p>
+            <p class="exp-desc" data-i18n="exp1_desc"></p>
             <div class="exp-tags">
-              <span class="exp-tag">Gestão estratégica</span>
+              <span class="exp-tag" data-i18n="tag_strategy">Gestão estratégica</span>
               <span class="exp-tag">E-commerce</span>
-              <span class="exp-tag">Importação China</span>
-              <span class="exp-tag">Fabricação industrial</span>
-              <span class="exp-tag">Comércio exterior</span>
-              <span class="exp-tag">Marketing digital</span>
-              <span class="exp-tag">IA & Automação</span>
+              <span class="exp-tag" data-i18n="tag_china_import">Importação China</span>
+              <span class="exp-tag" data-i18n="tag_industrial_mfg">Fabricação industrial</span>
+              <span class="exp-tag" data-i18n="tag_foreign_trade">Comércio exterior</span>
+              <span class="exp-tag" data-i18n="tag_mkt">Marketing digital</span>
+              <span class="exp-tag">IA & Automation</span>
             </div>
           </div>
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Diretor Comercial & Expansão Internacional</div>
-              <div class="exp-period">2020 — atual</div>
+              <div class="exp-role" data-i18n="exp2_role">Diretor Comercial & Expansão Internacional</div>
+              <div class="exp-period" data-i18n="exp2_period">2020 — atual</div>
             </div>
-            <div class="exp-company">CIKALA · Projetos de Exportação e Expansão</div>
-            <p class="exp-desc">
-              Liderei iniciativas de expansão para EUA (EB-2 NIW), Paraguai e Europa. Estruturei plano de negócios para entrada no mercado espanhol com base em Valencia. Negociei e opero importação direta com fornecedores chineses. Desenvolvemos linha Amazon B2B para exportação.
-            </p>
+            <div class="exp-company" data-i18n="exp2_company">CIKALA · Projetos de Exportação e Expansão</div>
+            <p class="exp-desc" data-i18n="exp2_desc"></p>
             <div class="exp-tags">
-              <span class="exp-tag">Internacionalização</span>
-              <span class="exp-tag">Plano de negócios</span>
+              <span class="exp-tag" data-i18n="tag_intl">Internacionalização</span>
+              <span class="exp-tag" data-i18n="tag_bizplan">Plano de negócios</span>
               <span class="exp-tag">Amazon B2B</span>
-              <span class="exp-tag">Fornecedores China</span>
+              <span class="exp-tag" data-i18n="tag_china_suppliers">Fornecedores China</span>
             </div>
           </div>
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Consultor e Mentor Empresarial</div>
-              <div class="exp-period">2015 — atual</div>
+              <div class="exp-role" data-i18n="exp3_role">Consultor e Mentor Empresarial</div>
+              <div class="exp-period" data-i18n="exp3_period">2015 — atual</div>
             </div>
-            <div class="exp-company">Atividade paralela · Brasil</div>
-            <p class="exp-desc">
-              Consultoria para pequenas e médias empresas em estruturação comercial, e-commerce e gestão de equipes. Mentoria em desenvolvimento de líderes e processos de vendas.
-            </p>
+            <div class="exp-company" data-i18n="exp3_company">Atividade paralela · Brasil</div>
+            <p class="exp-desc" data-i18n="exp3_desc"></p>
             <div class="exp-tags">
-              <span class="exp-tag">Consultoria</span>
-              <span class="exp-tag">Mentoria</span>
-              <span class="exp-tag">Treinamento</span>
+              <span class="exp-tag" data-i18n="tag_consulting">Consultoria</span>
+              <span class="exp-tag" data-i18n="tag_mentoring">Mentoria</span>
+              <span class="exp-tag" data-i18n="tag_training">Treinamento</span>
             </div>
           </div>
 
@@ -623,33 +655,33 @@
       <!-- COMPETÊNCIAS -->
       <section>
         <div class="section-header">
-          <h2>Áreas de Expertise</h2>
+          <h2 data-i18n="section_expertise">Áreas de Expertise</h2>
           <div class="section-line"></div>
         </div>
         <div class="comp-grid">
           <div class="comp-card">
-            <h3>🛒 E-commerce Multicanal</h3>
-            <p>Mercado Livre, Amazon, Shopee, Magalu, Shopify próprio, call center e WhatsApp — operação simultânea em todos os canais.</p>
+            <h3 data-i18n="comp1_title">🛒 E-commerce Multicanal</h3>
+            <p data-i18n="comp1_desc"></p>
           </div>
           <div class="comp-card">
-            <h3>🚢 Comércio Exterior</h3>
-            <p>Importação regular da China: sourcing, frete, desembaraço aduaneiro, controle de qualidade e distribuição.</p>
+            <h3 data-i18n="comp2_title">🚢 Comércio Exterior</h3>
+            <p data-i18n="comp2_desc"></p>
           </div>
           <div class="comp-card">
-            <h3>🏭 Operações Industriais</h3>
-            <p>Fabricação sob medida em PVC, polímeros e tecidos técnicos. Gestão de produção, PCP e controle de qualidade.</p>
+            <h3 data-i18n="comp3_title">🏭 Operações Industriais</h3>
+            <p data-i18n="comp3_desc"></p>
           </div>
           <div class="comp-card">
-            <h3>🤝 Vendas B2B & Gov.</h3>
-            <p>Negociação com indústria, grandes contratos e licitações públicas. Relacionamento institucional e gestão de key accounts.</p>
+            <h3 data-i18n="comp4_title">🤝 Vendas B2B & Gov.</h3>
+            <p data-i18n="comp4_desc"></p>
           </div>
           <div class="comp-card">
-            <h3>👥 Gestão de Pessoas</h3>
-            <p>57 colaboradores. Recrutamento, formação de líderes, avaliação de desempenho e cultura organizacional.</p>
+            <h3 data-i18n="comp5_title">👥 Gestão de Pessoas</h3>
+            <p data-i18n="comp5_desc"></p>
           </div>
           <div class="comp-card">
-            <h3>🤖 IA & Tecnologia</h3>
-            <p>Implementação ativa de inteligência artificial na operação: marketing, análise de dados, automação de processos.</p>
+            <h3 data-i18n="comp6_title">🤖 IA & Tecnologia</h3>
+            <p data-i18n="comp6_desc"></p>
           </div>
         </div>
       </section>
@@ -657,25 +689,25 @@
       <!-- O QUE BUSCO -->
       <section>
         <div class="section-header">
-          <h2>O Que Busco em Valencia</h2>
+          <h2 data-i18n="section_seeking">O Que Busco em Valencia</h2>
           <div class="section-line"></div>
         </div>
         <div class="objetivo-grid">
           <div class="objetivo-item">
             <span class="ico">🎯</span>
-            <p>Posição executiva ou de diretoria em empresa espanhola ou europeia que valorize perfil internacional com visão operacional.</p>
+            <p data-i18n="obj1"></p>
           </div>
           <div class="objetivo-item">
             <span class="ico">🤝</span>
-            <p>Consultoria estratégica para empresas que queiram expandir para o Brasil, importar da China ou entrar no e-commerce.</p>
+            <p data-i18n="obj2"></p>
           </div>
           <div class="objetivo-item">
             <span class="ico">🌐</span>
-            <p>Parceria comercial com distribuidores e fabricantes industriais na Espanha e Europa.</p>
+            <p data-i18n="obj3"></p>
           </div>
           <div class="objetivo-item">
             <span class="ico">📦</span>
-            <p>Representação de marcas europeias no mercado brasileiro via estrutura CIKALA já estabelecida.</p>
+            <p data-i18n="obj4"></p>
           </div>
         </div>
       </section>
@@ -687,7 +719,7 @@
   <div class="cv-footer">
     <div>
       <strong>Fabiano Cicala</strong>
-      <p>Disponível para reuniões presenciais em Valencia e online.</p>
+      <p data-i18n="footer_available"></p>
     </div>
     <div class="cv-cta">
       <a class="btn btn-gold" href="https://wa.me/5511987781343" target="_blank">💬 WhatsApp</a>
@@ -706,20 +738,266 @@
 </a>
 
 <!-- Botão imprimir/PDF -->
-<button onclick="window.print()"
+<button class="print-btn" onclick="window.print()"
    style="position:fixed;bottom:28px;right:96px;z-index:999;background:var(--navy,#1b2a4a);color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);border:none;cursor:pointer;transition:transform 0.2s;"
    title="Imprimir / Salvar como PDF"
    onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
   🖨️
 </button>
 
-<style>
-@media print {
-  .cv-footer, a[href^="https://wa.me"], button { display: none !important; }
-  body { background: white; }
-  .page { box-shadow: none; margin: 0; }
+<script>
+const i18n = {
+  pt: {
+    sidebar_title: "Empresário · CEO · Valencia",
+    label_contact: "Contato",
+    location: "Valencia, Espanha",
+    label_languages: "Idiomas",
+    lang_native: "Nativo",
+    lang_intermediate: "Intermediário",
+    lang_basic: "Básico",
+    lang_reading: "Nível leitura",
+    label_skills: "Competências-chave",
+    skill_import: "Importação",
+    skill_foreign_trade: "Comércio exterior",
+    skill_team_mgmt: "Gestão de equipes",
+    skill_mkt: "Marketing digital",
+    skill_product_dev: "Desenvolvimento de produto",
+    skill_tenders: "Licitações",
+    label_citizenship: "Cidadania",
+    citizen_it: "Cidadão italiano (UE)",
+    citizen_br: "Cidadão brasileiro",
+    section_profile: "Perfil Profissional",
+    profile_text: `Empresário com <span class="profile-highlight">25 anos de trajetória</span> construindo e operando uma das referências brasileiras em soluções técnicas de proteção industrial. Fundador e CEO da CIKALA — empresa que fatura ~R$ 42 milhões/ano com 57 colaboradores, atuando em e-commerce, B2B, fabricação sob medida, importação e licitações públicas.<br><br>Com <span class="profile-highlight">cidadania italiana ativa</span>, estabeleço presença na Comunitat Valenciana como base europeia de operações. Meu diferencial não é apenas o setor de atuação — é a combinação de competências construída ao longo de décadas: produto, tecnologia, pessoas, mercados internacionais e visão estratégica.<br><br>Busco oportunidades de <strong>posição executiva, consultoria estratégica ou parceria de negócios</strong> na Espanha e Europa.`,
+    section_numbers: "Em Números",
+    kpi_years: "anos de empreendedorismo",
+    kpi_revenue: "faturamento anual",
+    kpi_employees: "colaboradores",
+    kpi_clients: "clientes atendidos",
+    kpi_channels: "canais de venda ativos",
+    section_experience: "Experiência",
+    exp1_role: "Fundador & CEO",
+    exp1_period: "2000 — atual",
+    exp1_desc: "Fundei e opero empresa de soluções técnicas em lonas, telas e coberturas industriais. Estruturei operação completa: fabricação sob medida, importação regular da China (~1 contêiner/mês), e-commerce multicanal (Mercado Livre, Amazon, Shopee, Shopify), B2B para indústria e governo, e equipe de 57 pessoas. Implementei projetos de IA e automação na operação. Desenvolvemos produto patenteado (sistema de fixação por pinos).",
+    exp2_role: "Diretor Comercial & Expansão Internacional",
+    exp2_period: "2020 — atual",
+    exp2_company: "CIKALA · Projetos de Exportação e Expansão",
+    exp2_desc: "Liderei iniciativas de expansão para EUA (EB-2 NIW), Paraguai e Europa. Estruturei plano de negócios para entrada no mercado espanhol com base em Valencia. Negociei e opero importação direta com fornecedores chineses. Desenvolvemos linha Amazon B2B para exportação.",
+    exp3_role: "Consultor e Mentor Empresarial",
+    exp3_period: "2015 — atual",
+    exp3_company: "Atividade paralela · Brasil",
+    exp3_desc: "Consultoria para pequenas e médias empresas em estruturação comercial, e-commerce e gestão de equipes. Mentoria em desenvolvimento de líderes e processos de vendas.",
+    tag_strategy: "Gestão estratégica",
+    tag_china_import: "Importação China",
+    tag_industrial_mfg: "Fabricação industrial",
+    tag_foreign_trade: "Comércio exterior",
+    tag_mkt: "Marketing digital",
+    tag_intl: "Internacionalização",
+    tag_bizplan: "Plano de negócios",
+    tag_china_suppliers: "Fornecedores China",
+    tag_consulting: "Consultoria",
+    tag_mentoring: "Mentoria",
+    tag_training: "Treinamento",
+    section_expertise: "Áreas de Expertise",
+    comp1_title: "🛒 E-commerce Multicanal",
+    comp1_desc: "Mercado Livre, Amazon, Shopee, Magalu, Shopify próprio, call center e WhatsApp — operação simultânea em todos os canais.",
+    comp2_title: "🚢 Comércio Exterior",
+    comp2_desc: "Importação regular da China: sourcing, frete, desembaraço aduaneiro, controle de qualidade e distribuição.",
+    comp3_title: "🏭 Operações Industriais",
+    comp3_desc: "Fabricação sob medida em PVC, polímeros e tecidos técnicos. Gestão de produção, PCP e controle de qualidade.",
+    comp4_title: "🤝 Vendas B2B & Gov.",
+    comp4_desc: "Negociação com indústria, grandes contratos e licitações públicas. Relacionamento institucional e gestão de key accounts.",
+    comp5_title: "👥 Gestão de Pessoas",
+    comp5_desc: "57 colaboradores. Recrutamento, formação de líderes, avaliação de desempenho e cultura organizacional.",
+    comp6_title: "🤖 IA & Tecnologia",
+    comp6_desc: "Implementação ativa de inteligência artificial na operação: marketing, análise de dados, automação de processos.",
+    section_seeking: "O Que Busco em Valencia",
+    obj1: "Posição executiva ou de diretoria em empresa espanhola ou europeia que valorize perfil internacional com visão operacional.",
+    obj2: "Consultoria estratégica para empresas que queiram expandir para o Brasil, importar da China ou entrar no e-commerce.",
+    obj3: "Parceria comercial com distribuidores e fabricantes industriais na Espanha e Europa.",
+    obj4: "Representação de marcas europeias no mercado brasileiro via estrutura CIKALA já estabelecida.",
+    footer_available: "Disponível para reuniões presenciais em Valencia e online."
+  },
+
+  es: {
+    sidebar_title: "Empresario · CEO · Valencia",
+    label_contact: "Contacto",
+    location: "Valencia, España",
+    label_languages: "Idiomas",
+    lang_native: "Nativo",
+    lang_intermediate: "Intermedio",
+    lang_basic: "Básico",
+    lang_reading: "Nivel lectura",
+    label_skills: "Competencias clave",
+    skill_import: "Importación",
+    skill_foreign_trade: "Comercio exterior",
+    skill_team_mgmt: "Gestión de equipos",
+    skill_mkt: "Marketing digital",
+    skill_product_dev: "Desarrollo de producto",
+    skill_tenders: "Licitaciones",
+    label_citizenship: "Ciudadanía",
+    citizen_it: "Ciudadano italiano (UE)",
+    citizen_br: "Ciudadano brasileño",
+    section_profile: "Perfil Profesional",
+    profile_text: `Empresario con <span class="profile-highlight">25 años de trayectoria</span> construyendo y operando una de las referencias brasileñas en soluciones técnicas de protección industrial. Fundador y CEO de CIKALA — empresa con facturación de ~R$ 42 millones/año, 57 empleados, activa en e-commerce, B2B, fabricación a medida, importación y licitaciones públicas.<br><br>Con <span class="profile-highlight">ciudadanía italiana activa</span>, establezco presencia en la Comunitat Valenciana como base europea de operaciones. Mi diferencial no es solo el sector — es la combinación de competencias construida durante décadas: producto, tecnología, personas, mercados internacionales y visión estratégica.<br><br>Busco oportunidades de <strong>posición ejecutiva, consultoría estratégica o asociación de negocios</strong> en España y Europa.`,
+    section_numbers: "En Números",
+    kpi_years: "años de emprendimiento",
+    kpi_revenue: "facturación anual",
+    kpi_employees: "empleados",
+    kpi_clients: "clientes atendidos",
+    kpi_channels: "canales de venta activos",
+    section_experience: "Experiencia",
+    exp1_role: "Fundador & CEO",
+    exp1_period: "2000 — presente",
+    exp1_desc: "Fundé y opero empresa de soluciones técnicas en lonas, mallas y coberturas industriales. Estructuré la operación completa: fabricación a medida, importación regular de China (~1 contenedor/mes), e-commerce multicanal (Mercado Libre, Amazon, Shopee, Shopify), B2B para industria y gobierno, y equipo de 57 personas. Implementé proyectos de IA y automatización. Desarrollamos producto patentado (sistema de fijación por pines).",
+    exp2_role: "Director Comercial & Expansión Internacional",
+    exp2_period: "2020 — presente",
+    exp2_company: "CIKALA · Proyectos de Exportación y Expansión",
+    exp2_desc: "Lideré iniciativas de expansión hacia EE.UU. (EB-2 NIW), Paraguay y Europa. Estructuré plan de negocio para entrada al mercado español con base en Valencia. Negocio e importo directamente con proveedores chinos. Desarrollamos línea Amazon B2B para exportación.",
+    exp3_role: "Consultor y Mentor Empresarial",
+    exp3_period: "2015 — presente",
+    exp3_company: "Actividad paralela · Brasil",
+    exp3_desc: "Consultoría para pequeñas y medianas empresas en estructuración comercial, e-commerce y gestión de equipos. Mentoría en desarrollo de líderes y procesos de ventas.",
+    tag_strategy: "Gestión estratégica",
+    tag_china_import: "Importación China",
+    tag_industrial_mfg: "Fabricación industrial",
+    tag_foreign_trade: "Comercio exterior",
+    tag_mkt: "Marketing digital",
+    tag_intl: "Internacionalización",
+    tag_bizplan: "Plan de negocio",
+    tag_china_suppliers: "Proveedores China",
+    tag_consulting: "Consultoría",
+    tag_mentoring: "Mentoría",
+    tag_training: "Capacitación",
+    section_expertise: "Áreas de Expertise",
+    comp1_title: "🛒 E-commerce Multicanal",
+    comp1_desc: "Mercado Libre, Amazon, Shopee, Magalu, Shopify propio, call center y WhatsApp — operación simultánea en todos los canales.",
+    comp2_title: "🚢 Comercio Exterior",
+    comp2_desc: "Importación regular de China: sourcing, flete, despacho aduanero, control de calidad y distribución.",
+    comp3_title: "🏭 Operaciones Industriales",
+    comp3_desc: "Fabricación a medida en PVC, polímeros y tejidos técnicos. Gestión de producción, planificación y control de calidad.",
+    comp4_title: "🤝 Ventas B2B & Gov.",
+    comp4_desc: "Negociación con industria, grandes contratos y licitaciones públicas. Relación institucional y gestión de cuentas clave.",
+    comp5_title: "👥 Gestión de Personas",
+    comp5_desc: "57 empleados. Reclutamiento, formación de líderes, evaluación de desempeño y cultura organizacional.",
+    comp6_title: "🤖 IA & Tecnología",
+    comp6_desc: "Implementación activa de inteligencia artificial en la operación: marketing, análisis de datos, automatización de procesos.",
+    section_seeking: "Lo Que Busco en Valencia",
+    obj1: "Posición ejecutiva o directiva en empresa española o europea que valore un perfil internacional con visión operacional.",
+    obj2: "Consultoría estratégica para empresas que quieran expandirse a Brasil, importar de China o entrar al e-commerce.",
+    obj3: "Alianza comercial con distribuidores y fabricantes industriales en España y Europa.",
+    obj4: "Representación de marcas europeas en el mercado brasileño a través de la estructura ya establecida de CIKALA.",
+    footer_available: "Disponible para reuniones presenciales en Valencia y online."
+  },
+
+  en: {
+    sidebar_title: "Entrepreneur · CEO · Valencia",
+    label_contact: "Contact",
+    location: "Valencia, Spain",
+    label_languages: "Languages",
+    lang_native: "Native",
+    lang_intermediate: "Intermediate",
+    lang_basic: "Basic",
+    lang_reading: "Reading level",
+    label_skills: "Key Skills",
+    skill_import: "Importing",
+    skill_foreign_trade: "Foreign trade",
+    skill_team_mgmt: "Team management",
+    skill_mkt: "Digital marketing",
+    skill_product_dev: "Product development",
+    skill_tenders: "Public tenders",
+    label_citizenship: "Citizenship",
+    citizen_it: "Italian citizen (EU)",
+    citizen_br: "Brazilian citizen",
+    section_profile: "Professional Profile",
+    profile_text: `Entrepreneur with <span class="profile-highlight">25 years of experience</span> building and operating one of Brazil's leading companies in technical industrial protection solutions. Founder and CEO of CIKALA — a company with ~BRL 42M/year in revenue, 57 employees, active in e-commerce, B2B, custom manufacturing, imports, and public tenders.<br><br>Holding <span class="profile-highlight">active Italian citizenship</span>, I have established a presence in the Comunitat Valenciana as a European base of operations. My edge goes beyond the industry — it is the combination of skills built over decades: product, technology, people, international markets, and strategic vision.<br><br>I am seeking opportunities for <strong>executive roles, strategic consulting, or business partnerships</strong> in Spain and Europe.`,
+    section_numbers: "By the Numbers",
+    kpi_years: "years of entrepreneurship",
+    kpi_revenue: "annual revenue",
+    kpi_employees: "employees",
+    kpi_clients: "clients served",
+    kpi_channels: "active sales channels",
+    section_experience: "Experience",
+    exp1_role: "Founder & CEO",
+    exp1_period: "2000 — present",
+    exp1_desc: "Founded and operate a technical solutions company specializing in tarps, meshes, and industrial covers. Built the full operation: custom manufacturing, regular imports from China (~1 container/month), multichannel e-commerce (Mercado Livre, Amazon, Shopee, Shopify), B2B for industry and government, and a 57-person team. Implemented AI and automation projects. Developed a patented product (pin-lock fastening system).",
+    exp2_role: "Commercial Director & International Expansion",
+    exp2_period: "2020 — present",
+    exp2_company: "CIKALA · Export & Expansion Projects",
+    exp2_desc: "Led expansion initiatives into the USA (EB-2 NIW), Paraguay, and Europe. Structured the business plan for entry into the Spanish market based in Valencia. Negotiate and manage direct imports from Chinese suppliers. Developed an Amazon B2B export line.",
+    exp3_role: "Business Consultant & Mentor",
+    exp3_period: "2015 — present",
+    exp3_company: "Independent activity · Brazil",
+    exp3_desc: "Consulting for small and mid-sized businesses in commercial structuring, e-commerce, and team management. Mentoring in leadership development and sales processes.",
+    tag_strategy: "Strategic management",
+    tag_china_import: "China imports",
+    tag_industrial_mfg: "Industrial manufacturing",
+    tag_foreign_trade: "Foreign trade",
+    tag_mkt: "Digital marketing",
+    tag_intl: "Internationalization",
+    tag_bizplan: "Business plan",
+    tag_china_suppliers: "China suppliers",
+    tag_consulting: "Consulting",
+    tag_mentoring: "Mentoring",
+    tag_training: "Training",
+    section_expertise: "Areas of Expertise",
+    comp1_title: "🛒 Multichannel E-commerce",
+    comp1_desc: "Mercado Livre, Amazon, Shopee, Magalu, own Shopify, call center and WhatsApp — simultaneous operation across all channels.",
+    comp2_title: "🚢 Foreign Trade",
+    comp2_desc: "Regular imports from China: sourcing, freight, customs clearance, quality control, and distribution.",
+    comp3_title: "🏭 Industrial Operations",
+    comp3_desc: "Custom manufacturing in PVC, polymers, and technical fabrics. Production management, planning, and quality control.",
+    comp4_title: "🤝 B2B & Gov. Sales",
+    comp4_desc: "Negotiation with industry, large contracts, and public tenders. Institutional relations and key account management.",
+    comp5_title: "👥 People Management",
+    comp5_desc: "57 employees. Recruiting, leadership development, performance evaluation, and organizational culture.",
+    comp6_title: "🤖 AI & Technology",
+    comp6_desc: "Active implementation of artificial intelligence in operations: marketing, data analysis, process automation.",
+    section_seeking: "What I'm Looking for in Valencia",
+    obj1: "Executive or director position at a Spanish or European company that values an international profile with operational expertise.",
+    obj2: "Strategic consulting for companies looking to expand into Brazil, import from China, or launch into e-commerce.",
+    obj3: "Commercial partnership with industrial distributors and manufacturers in Spain and Europe.",
+    obj4: "Representation of European brands in the Brazilian market through CIKALA's established infrastructure.",
+    footer_available: "Available for in-person meetings in Valencia and online."
+  }
+};
+
+let currentLang = 'pt';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = i18n[lang];
+
+  // Update html lang attribute
+  document.getElementById('html-root').lang = lang === 'pt' ? 'pt-BR' : lang === 'es' ? 'es' : 'en';
+
+  // Update active button
+  ['pt','es','en'].forEach(l => {
+    document.getElementById('btn-' + l).classList.toggle('active', l === lang);
+  });
+
+  // Update text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // Update HTML nodes (for rich text with tags)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Also update plain data-i18n elements that hold HTML (exp descs)
+  ['exp1_desc','exp2_desc','exp3_desc'].forEach(key => {
+    document.querySelectorAll('[data-i18n="' + key + '"]').forEach(el => {
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+  });
 }
-</style>
+
+// Init
+setLang('pt');
+</script>
 
 </body>
 </html>
