@@ -3,42 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabiano Cicala — Autor · Empresário · Valencia</title>
-  <meta name="description" content="Fabiano Cicala — autor de 6 livros, empresário com 25 anos de trajetória, CEO da CIKALA, cidadão italiano baseado em Valencia, Espanha.">
-  <meta property="og:title" content="Fabiano Cicala — Autor & Empresário">
-  <meta property="og:description" content="Liderança, Fé e Propósito. Conheça os livros de Fabiano Cicala.">
+  <title>Fabiano Cicala — Empresário · CEO · Valencia, Espanha</title>
+  <meta name="description" content="Fabiano Cicala: empresário brasileiro, cidadão italiano, 25 anos fundando e operando a CIKALA (R$42M/ano). Baseado em Valencia, Espanha. Busca parceiros, posições executivas e negócios na Europa.">
+  <meta name="keywords" content="Fabiano Cicala, CIKALA, empresário brasileiro Valencia, cidadão italiano UE, e-commerce industrial, importação China, CEO Brasil Espanha">
+  <meta property="og:title" content="Fabiano Cicala — Empresário · CEO · Valencia">
+  <meta property="og:description" content="25 anos construindo indústria técnica no Brasil. Cidadão italiano, baseado em Valencia, buscando parcerias e oportunidades na Europa.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://fabianocicala.com">
   <meta property="og:image" content="https://fabianocicala.com/fabiano-foto.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://fabianocicala.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fabiano Cicala",
+    "jobTitle": "Fundador e CEO",
+    "worksFor": { "@type": "Organization", "name": "CIKALA Comércio e Serviços Ltda", "url": "https://www.cikala.com.br" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Valencia", "addressCountry": "ES" },
+    "nationality": ["BR","IT"],
+    "url": "https://fabianocicala.com",
+    "email": "fbcicala@gmail.com",
+    "telephone": "+5511987781343",
+    "sameAs": ["https://www.linkedin.com/in/fabiano-cicala-71ba82364", "https://www.cikala.com.br"]
+  }
+  </script>
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy:    #0f1f3d;
-      --navy2:   #1b2a4a;
-      --blue:    #2c5282;
-      --gold:    #c9a84c;
-      --gold2:   #e8c76a;
-      --light:   #f7f8fa;
-      --text:    #2d3748;
-      --muted:   #718096;
-      --white:   #ffffff;
+      --navy:   #1b2a4a;
+      --blue:   #2c5282;
+      --accent: #c9a84c;
+      --light:  #f7f8fa;
+      --border: #e2e8f0;
+      --text:   #2d3748;
+      --muted:  #718096;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
-      background: var(--navy);
+      background: #f0f2f5;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    /* ── LANG BAR ── */
+    /* ── LANG SWITCHER ── */
     .lang-bar {
       position: fixed;
       top: 16px;
@@ -46,771 +58,906 @@
       z-index: 1000;
       display: flex;
       gap: 6px;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: white;
       border-radius: 8px;
       padding: 6px 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
 
     .lang-btn {
       background: none;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid var(--border);
       border-radius: 5px;
       padding: 4px 10px;
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 600;
       cursor: pointer;
-      color: rgba(255,255,255,0.6);
+      color: var(--muted);
       transition: all 0.2s;
       font-family: 'Inter', sans-serif;
-      letter-spacing: 1px;
-    }
-
-    .lang-btn:hover { color: var(--gold); border-color: var(--gold); }
-    .lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); }
-
-    /* ══════════════════════════
-       HERO
-    ══════════════════════════ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: linear-gradient(135deg, #0a1628 0%, #1b2a4a 50%, #0d2137 100%);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 40px;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 60px;
-      align-items: center;
-      width: 100%;
-    }
-
-    .hero-text {}
-
-    .hero-flags {
-      font-size: 1.4rem;
-      letter-spacing: 6px;
-      margin-bottom: 20px;
-    }
-
-    .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-size: 0.78rem;
-      color: var(--gold);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 28px;
-    }
-
-    .hero-tagline {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-      font-style: italic;
-      margin-bottom: 36px;
-      border-left: 3px solid var(--gold);
-      padding-left: 20px;
-    }
-
-    .hero-bio {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.8;
-      max-width: 520px;
-      margin-bottom: 40px;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 28px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      transition: all 0.25s;
-      cursor: pointer;
-      border: none;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .btn-gold { background: var(--gold); color: var(--navy); }
-    .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); }
-    .btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: white; background: transparent; }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
-    .hero-photo {
-      position: relative;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 12px;
-      display: block;
-      object-fit: cover;
-      object-position: center top;
-      filter: brightness(0.92);
-    }
-
-    .hero-photo::after {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--gold) 0%, transparent 60%);
-      z-index: -1;
-      opacity: 0.5;
-    }
-
-    /* ══════════════════════════
-       NÚMEROS
-    ══════════════════════════ */
-    .stats-bar {
-      background: var(--gold);
-      padding: 28px 40px;
-    }
-
-    .stats-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
-
-    .stat-value {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.72rem;
-      color: rgba(15,31,61,0.7);
-      margin-top: 4px;
-      font-weight: 500;
       letter-spacing: 0.5px;
     }
 
-    /* ══════════════════════════
-       LIVROS
-    ══════════════════════════ */
-    .section {
-      padding: 90px 40px;
+    .lang-btn:hover { border-color: var(--accent); color: var(--navy); }
+
+    .lang-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: white;
     }
 
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+    /* ── LAYOUT WRAPPER ── */
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
     }
 
-    .section-label {
-      font-size: 0.65rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+    @media (max-width: 940px) { .page { margin: 0; box-shadow: none; } }
 
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-
-    .section-sub {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 50px;
-      max-width: 560px;
-    }
-
-    .books-category {
-      margin-bottom: 60px;
-    }
-
-    .cat-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.72rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 28px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(201,168,76,0.25);
-      width: 100%;
-    }
-
-    .books-grid {
+    /* ── SIDEBAR + MAIN ── */
+    .layout {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 32px;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
     }
 
-    .book-card {
-      cursor: pointer;
+    @media (max-width: 720px) {
+      .layout { grid-template-columns: 1fr; }
+      .lang-bar { top: 8px; right: 8px; }
     }
 
-    .book-wrap {
-      position: relative;
-      perspective: 800px;
-      margin-bottom: 16px;
+    /* ══════════════════════════
+       SIDEBAR
+    ══════════════════════════ */
+    .sidebar {
+      background: var(--navy);
+      color: white;
+      padding: 48px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
     }
 
-    .book-cover {
-      width: 100%;
-      aspect-ratio: 2/3;
-      object-fit: cover;
-      border-radius: 4px 8px 8px 4px;
-      display: block;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
-      box-shadow: -4px 4px 20px rgba(0,0,0,0.5), 4px 0 8px rgba(0,0,0,0.3);
-      transform-origin: left center;
-    }
-
-    .book-wrap::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 2%;
-      width: 6px;
-      height: 96%;
-      background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
-      border-radius: 4px 0 0 4px;
-      z-index: 1;
-    }
-
-    .book-card:hover .book-cover {
-      transform: rotateY(-18deg) translateX(8px);
-      box-shadow: -8px 8px 40px rgba(0,0,0,0.6), 16px 0 30px rgba(0,0,0,0.25);
-    }
-
-    .book-title {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--white);
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
       margin-bottom: 4px;
-      line-height: 1.3;
+      background: #2a3a5a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .book-genre {
-      font-size: 0.72rem;
-      color: var(--gold);
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .avatar-placeholder {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .sidebar-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-title {
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
       font-weight: 500;
     }
 
-    /* ══════════════════════════
-       EM BREVE
-    ══════════════════════════ */
-    .coming-soon {
-      background: linear-gradient(135deg, #0a1628 0%, #0d1f3a 100%);
-      padding: 100px 40px;
+    .flags { font-size: 1.2rem; margin-top: 6px; letter-spacing: 4px; }
+
+    .sb-section { }
+
+    .sb-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .contact-list li a,
+    .contact-list li span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.83rem;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+
+    .contact-list li a:hover { color: var(--accent); }
+
+    .contact-list .ico {
+      font-size: 1rem;
+      flex-shrink: 0;
+      width: 18px;
       text-align: center;
-      position: relative;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    .skill-tag {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .idiomas-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .idioma-item { }
+
+    .idioma-name {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .idioma-name span { color: var(--accent); font-size: 0.75rem; }
+
+    .idioma-bar {
+      height: 3px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 2px;
       overflow: hidden;
     }
 
-    .coming-soon::before {
-      content: '2026';
-      position: absolute;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(8rem, 20vw, 18rem);
-      font-weight: 700;
-      color: rgba(201,168,76,0.04);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      white-space: nowrap;
-      pointer-events: none;
-      line-height: 1;
+    .idioma-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
     }
 
-    .coming-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-      margin: 0 auto;
-    }
+    /* ══════════════════════════
+       MAIN CONTENT
+    ══════════════════════════ */
+    .main { padding: 48px 44px; display: flex; flex-direction: column; gap: 40px; }
 
-    .coming-badge {
-      display: inline-block;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.4);
-      color: var(--gold);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 20px;
-      margin-bottom: 30px;
-    }
+    @media (max-width: 720px) { .main { padding: 32px 24px; } }
 
-    .coming-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--white);
-      line-height: 1.2;
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-bottom: 20px;
     }
 
-    .coming-title em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .coming-text {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.8;
-      margin-bottom: 40px;
-    }
-
-    .coming-notify {
-      display: flex;
-      gap: 0;
-      max-width: 420px;
-      margin: 0 auto;
-      border: 1px solid rgba(201,168,76,0.35);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .coming-notify input {
-      flex: 1;
-      background: rgba(255,255,255,0.05);
-      border: none;
-      padding: 14px 18px;
-      font-size: 0.88rem;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      outline: none;
-    }
-
-    .coming-notify input::placeholder { color: rgba(255,255,255,0.3); }
-
-    .coming-notify button {
-      background: var(--gold);
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
       color: var(--navy);
-      border: none;
-      padding: 14px 22px;
-      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .profile-text {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.75;
+    }
+
+    .profile-highlight {
+      display: inline;
+      background: linear-gradient(120deg, rgba(201,168,76,0.18) 0%, rgba(201,168,76,0.18) 100%);
+      border-radius: 3px;
+      padding: 0 3px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 12px;
+    }
+
+    .kpi-card {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 16px 12px;
+      text-align: center;
+      border-top: 3px solid var(--accent);
+    }
+
+    .kpi-value {
+      font-size: 1.6rem;
       font-weight: 700;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.2s;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .kpi-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    .exp-list { display: flex; flex-direction: column; gap: 28px; }
+
+    .exp-item { position: relative; padding-left: 20px; }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .exp-item::after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 16px;
+      bottom: -20px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .exp-item:last-child::after { display: none; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    .exp-period {
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--light);
+      padding: 2px 8px;
+      border-radius: 10px;
       white-space: nowrap;
     }
 
-    .coming-notify button:hover { background: var(--gold2); }
-
-    /* ══════════════════════════
-       FOOTER
-    ══════════════════════════ */
-    footer {
-      background: #080f1e;
-      padding: 48px 40px 32px;
+    .exp-company {
+      font-size: 0.83rem;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 8px;
     }
 
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+    .exp-desc { font-size: 0.85rem; color: #4a5568; line-height: 1.7; }
+
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+    .exp-tag {
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 3px;
+      background: rgba(44,82,130,0.08);
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .comp-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .comp-card h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .comp-card p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .objetivo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .objetivo-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: var(--light);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .objetivo-item .ico { font-size: 1.2rem; flex-shrink: 0; }
+
+    .objetivo-item p { font-size: 0.82rem; color: #4a5568; }
+
+    .cv-footer {
+      background: var(--navy);
+      color: white;
+      padding: 28px 44px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 24px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      margin-bottom: 24px;
-    }
-
-    .footer-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--white);
-    }
-
-    .footer-name span { color: var(--gold); }
-
-    .footer-links {
-      display: flex;
       gap: 16px;
+    }
+
+    .cv-footer p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .cv-footer strong { color: white; display: block; font-size: 1rem; }
+
+    .cv-cta {
+      display: flex;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
-    .footer-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255,255,255,0.6);
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 4px;
       text-decoration: none;
       font-size: 0.85rem;
-      transition: color 0.2s;
+      font-weight: 600;
+      transition: all 0.2s;
     }
 
-    .footer-links a:hover { color: var(--gold); }
-
-    .footer-copy {
-      max-width: 1100px;
-      margin: 0 auto;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.25);
-      text-align: center;
-    }
-
-    /* WhatsApp flutuante */
-    .wa-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 999;
-      background: #25D366;
-      color: white;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-
-    .wa-float:hover { transform: scale(1.1); }
-
-    /* ══════════════════════════
-       RESPONSIVE
-    ══════════════════════════ */
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 100px 24px 60px;
-        text-align: center;
-      }
-      .hero-photo { order: -1; max-width: 280px; margin: 0 auto; }
-      .hero-tagline { text-align: left; }
-      .hero-bio { margin: 0 auto 36px; }
-      .hero-cta { justify-content: center; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-      .section { padding: 60px 24px; }
-      .lang-bar { top: 8px; right: 8px; }
-      .coming-soon { padding: 70px 24px; }
-      footer { padding: 36px 24px 24px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (max-width: 500px) {
-      .books-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    }
+    .btn-gold { background: var(--accent); color: var(--navy); }
+    .btn-gold:hover { background: #ddb954; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.35); color: white; }
+    .btn-ghost:hover { border-color: white; }
 
     @media print {
-      .wa-float, .lang-bar { display: none !important; }
+      .cv-footer, a[href^="https://wa.me"], .print-btn, .lang-bar { display: none !important; }
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; }
     }
   </style>
 </head>
 <body>
 
-<!-- LANG -->
+<!-- ── LANGUAGE SWITCHER ── -->
 <div class="lang-bar">
   <button class="lang-btn active" onclick="setLang('pt')" id="btn-pt">PT</button>
   <button class="lang-btn" onclick="setLang('es')" id="btn-es">ES</button>
   <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
 </div>
 
-<!-- ══ HERO ══ -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-flags">🇧🇷 🇮🇹 🇪🇸</div>
-      <h1 class="hero-name">Fabiano Cicala</h1>
-      <div class="hero-title" data-i18n="hero_title">Autor · Empresário · Valencia, Espanha</div>
-      <blockquote class="hero-tagline" data-i18n="hero_tagline">
-        Quem enxerga o invisível, lidera o impossível.
-      </blockquote>
-      <p class="hero-bio" data-i18n="hero_bio">
-        Empresário há 25 anos, fundador da CIKALA, cidadão italiano radicado em Valencia. Escrevo sobre liderança, fé e propósito porque vivi cada palavra que coloco no papel.
-      </p>
-      <div class="hero-cta">
-        <a href="#livros" class="btn btn-gold" data-i18n="cta_books">📚 Ver meus livros</a>
-        <a href="mailto:fbcicala@gmail.com" class="btn btn-ghost" data-i18n="cta_contact">✉️ Fale comigo</a>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <img src="fabiano-foto.jpg" alt="Fabiano Cicala"
-           onerror="this.style.display='none'">
-    </div>
-  </div>
-</section>
+<div class="page">
+  <div class="layout">
 
-<!-- ══ STATS ══ -->
-<div class="stats-bar">
-  <div class="stats-inner">
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar">
+
+      <div>
+        <div class="avatar">
+          <img src="fabiano-foto.jpg" alt="Fabiano Cicala"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="avatar-placeholder" style="display:none">FC</span>
+        </div>
+        <div style="height:16px;"></div>
+        <div class="sidebar-name">Fabiano Cicala</div>
+        <div class="sidebar-title" data-i18n="sidebar_title">Empresário · CEO · Valencia</div>
+        <div class="flags">🇧🇷 🇮🇹 🇪🇸</div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label" data-i18n="label_contact">Contato</div>
+        <ul class="contact-list">
+          <li><a href="https://wa.me/5511987781343" target="_blank"><span class="ico">💬</span>+55 11 98778-1343</a></li>
+          <li><a href="mailto:fbcicala@gmail.com"><span class="ico">✉️</span>fbcicala@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/fabiano-cicala-71ba82364" target="_blank"><span class="ico">💼</span>LinkedIn</a></li>
+          <li><a href="https://www.cikala.com.br" target="_blank"><span class="ico">🌐</span>cikala.com.br</a></li>
+          <li><span><span class="ico">📍</span><span data-i18n="location">Valencia, Espanha</span></span></li>
+        </ul>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label" data-i18n="label_languages">Idiomas</div>
+        <ul class="idiomas-list">
+          <li class="idioma-item">
+            <div class="idioma-name">Português <span data-i18n="lang_native">Nativo</span></div>
+            <div class="idioma-bar"><div class="idioma-bar-fill" style="width:100%"></div></div>
+          </li>
+          <li class="idioma-item">
+            <div class="idioma-name">Español <span data-i18n="lang_intermediate">Intermediário</span></div>
+            <div class="idioma-bar"><div class="idioma-bar-fill" style="width:60%"></div></div>
+          </li>
+          <li class="idioma-item">
+            <div class="idioma-name">English <span data-i18n="lang_basic">Básico</span></div>
+            <div class="idioma-bar"><div class="idioma-bar-fill" style="width:35%"></div></div>
+          </li>
+          <li class="idioma-item">
+            <div class="idioma-name">Italiano <span data-i18n="lang_reading">Nível leitura</span></div>
+            <div class="idioma-bar"><div class="idioma-bar-fill" style="width:25%"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label" data-i18n="label_skills">Competências-chave</div>
+        <div class="skill-tags">
+          <span class="skill-tag">E-commerce</span>
+          <span class="skill-tag" data-i18n="skill_import">Importação</span>
+          <span class="skill-tag" data-i18n="skill_foreign_trade">Comércio exterior</span>
+          <span class="skill-tag">B2B industrial</span>
+          <span class="skill-tag" data-i18n="skill_team_mgmt">Gestão de equipes</span>
+          <span class="skill-tag" data-i18n="skill_mkt">Marketing digital</span>
+          <span class="skill-tag">IA & Automation</span>
+          <span class="skill-tag" data-i18n="skill_product_dev">Desenvolvimento de produto</span>
+          <span class="skill-tag" data-i18n="skill_tenders">Licitações</span>
+          <span class="skill-tag">Supply chain</span>
+        </div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label" data-i18n="label_citizenship">Cidadania</div>
+        <ul class="contact-list">
+          <li><span><span class="ico">🇮🇹</span><span data-i18n="citizen_it">Cidadão italiano (UE)</span></span></li>
+          <li><span><span class="ico">🇧🇷</span><span data-i18n="citizen_br">Cidadão brasileiro</span></span></li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- ═══ MAIN ═══ -->
+    <main class="main">
+
+      <!-- PERFIL -->
+      <section>
+        <div class="section-header">
+          <h2 data-i18n="section_profile">Perfil Profissional</h2>
+          <div class="section-line"></div>
+        </div>
+        <p class="profile-text" data-i18n-html="profile_text"></p>
+      </section>
+
+      <!-- KPIs -->
+      <section>
+        <div class="section-header">
+          <h2 data-i18n="section_numbers">Em Números</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-value">25</div>
+            <div class="kpi-label" data-i18n="kpi_years">anos de empreendedorismo</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">R$42M</div>
+            <div class="kpi-label" data-i18n="kpi_revenue">faturamento anual</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">57</div>
+            <div class="kpi-label" data-i18n="kpi_employees">colaboradores</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">+10k</div>
+            <div class="kpi-label" data-i18n="kpi_clients">clientes atendidos</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">7</div>
+            <div class="kpi-label" data-i18n="kpi_channels">canais de venda ativos</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIÊNCIA -->
+      <section>
+        <div class="section-header">
+          <h2 data-i18n="section_experience">Experiência</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="exp-list">
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-role" data-i18n="exp1_role">Fundador & CEO</div>
+              <div class="exp-period" data-i18n="exp1_period">2000 — atual</div>
+            </div>
+            <div class="exp-company">CIKALA Comércio e Serviços Ltda · São Paulo, Brasil</div>
+            <p class="exp-desc" data-i18n="exp1_desc"></p>
+            <div class="exp-tags">
+              <span class="exp-tag" data-i18n="tag_strategy">Gestão estratégica</span>
+              <span class="exp-tag">E-commerce</span>
+              <span class="exp-tag" data-i18n="tag_china_import">Importação China</span>
+              <span class="exp-tag" data-i18n="tag_industrial_mfg">Fabricação industrial</span>
+              <span class="exp-tag" data-i18n="tag_foreign_trade">Comércio exterior</span>
+              <span class="exp-tag" data-i18n="tag_mkt">Marketing digital</span>
+              <span class="exp-tag">IA & Automation</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-role" data-i18n="exp2_role">Diretor Comercial & Expansão Internacional</div>
+              <div class="exp-period" data-i18n="exp2_period">2020 — atual</div>
+            </div>
+            <div class="exp-company" data-i18n="exp2_company">CIKALA · Projetos de Exportação e Expansão</div>
+            <p class="exp-desc" data-i18n="exp2_desc"></p>
+            <div class="exp-tags">
+              <span class="exp-tag" data-i18n="tag_intl">Internacionalização</span>
+              <span class="exp-tag" data-i18n="tag_bizplan">Plano de negócios</span>
+              <span class="exp-tag">Amazon B2B</span>
+              <span class="exp-tag" data-i18n="tag_china_suppliers">Fornecedores China</span>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-role" data-i18n="exp3_role">Consultor e Mentor Empresarial</div>
+              <div class="exp-period" data-i18n="exp3_period">2015 — atual</div>
+            </div>
+            <div class="exp-company" data-i18n="exp3_company">Atividade paralela · Brasil</div>
+            <p class="exp-desc" data-i18n="exp3_desc"></p>
+            <div class="exp-tags">
+              <span class="exp-tag" data-i18n="tag_consulting">Consultoria</span>
+              <span class="exp-tag" data-i18n="tag_mentoring">Mentoria</span>
+              <span class="exp-tag" data-i18n="tag_training">Treinamento</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- COMPETÊNCIAS -->
+      <section>
+        <div class="section-header">
+          <h2 data-i18n="section_expertise">Áreas de Expertise</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="comp-grid">
+          <div class="comp-card">
+            <h3 data-i18n="comp1_title">🛒 E-commerce Multicanal</h3>
+            <p data-i18n="comp1_desc"></p>
+          </div>
+          <div class="comp-card">
+            <h3 data-i18n="comp2_title">🚢 Comércio Exterior</h3>
+            <p data-i18n="comp2_desc"></p>
+          </div>
+          <div class="comp-card">
+            <h3 data-i18n="comp3_title">🏭 Operações Industriais</h3>
+            <p data-i18n="comp3_desc"></p>
+          </div>
+          <div class="comp-card">
+            <h3 data-i18n="comp4_title">🤝 Vendas B2B & Gov.</h3>
+            <p data-i18n="comp4_desc"></p>
+          </div>
+          <div class="comp-card">
+            <h3 data-i18n="comp5_title">👥 Gestão de Pessoas</h3>
+            <p data-i18n="comp5_desc"></p>
+          </div>
+          <div class="comp-card">
+            <h3 data-i18n="comp6_title">🤖 IA & Tecnologia</h3>
+            <p data-i18n="comp6_desc"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- O QUE BUSCO -->
+      <section>
+        <div class="section-header">
+          <h2 data-i18n="section_seeking">O Que Busco em Valencia</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="objetivo-grid">
+          <div class="objetivo-item">
+            <span class="ico">🎯</span>
+            <p data-i18n="obj1"></p>
+          </div>
+          <div class="objetivo-item">
+            <span class="ico">🤝</span>
+            <p data-i18n="obj2"></p>
+          </div>
+          <div class="objetivo-item">
+            <span class="ico">🌐</span>
+            <p data-i18n="obj3"></p>
+          </div>
+          <div class="objetivo-item">
+            <span class="ico">📦</span>
+            <p data-i18n="obj4"></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="cv-footer">
     <div>
-      <div class="stat-value">6</div>
-      <div class="stat-label" data-i18n="stat_books">livros publicados</div>
+      <strong>Fabiano Cicala</strong>
+      <p data-i18n="footer_available"></p>
     </div>
-    <div>
-      <div class="stat-value">25</div>
-      <div class="stat-label" data-i18n="stat_years">anos empreendendo</div>
-    </div>
-    <div>
-      <div class="stat-value">57</div>
-      <div class="stat-label" data-i18n="stat_people">pessoas lideradas</div>
-    </div>
-    <div>
-      <div class="stat-value">3</div>
-      <div class="stat-label" data-i18n="stat_countries">países, 1 propósito</div>
+    <div class="cv-cta">
+      <a class="btn btn-gold" href="https://wa.me/5511987781343" target="_blank">💬 WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:fbcicala@gmail.com">✉️ E-mail</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/fabiano-cicala-71ba82364" target="_blank">💼 LinkedIn</a>
     </div>
   </div>
+
 </div>
 
-<!-- ══ LIVROS ══ -->
-<section class="section" id="livros">
-  <div class="section-inner">
-    <div class="section-label" data-i18n="books_label">Obras</div>
-    <h2 class="section-title" data-i18n="books_title">Meus Livros</h2>
-    <p class="section-sub" data-i18n="books_sub">Liderança, fé e propósito — escritos para quem não quer apenas sobreviver, mas construir algo que dure.</p>
-
-    <!-- LIDERANÇA & NEGÓCIOS -->
-    <div class="books-category">
-      <div class="cat-label" data-i18n="cat_business">📘 Liderança & Negócios</div>
-      <div class="books-grid">
-        <div class="book-card">
-          <div class="book-wrap">
-            <img class="book-cover" src="capa-estrategia-invisivel.png" alt="A Estratégia do Invisível">
-          </div>
-          <div class="book-title" data-i18n="book1_title">A Estratégia do Invisível</div>
-          <div class="book-genre" data-i18n="book1_genre">Liderança · Propósito</div>
-        </div>
-        <div class="book-card">
-          <div class="book-wrap">
-            <img class="book-cover" src="capa-6-sigma.png" alt="6 Sigma Mentalidade de Elite">
-          </div>
-          <div class="book-title" data-i18n="book2_title">6 Sigma — Mentalidade de Elite</div>
-          <div class="book-genre" data-i18n="book2_genre">Gestão · Excelência</div>
-        </div>
-        <div class="book-card">
-          <div class="book-wrap">
-            <img class="book-cover" src="capa-vencendo-pratica.jpg" alt="Vencendo na Prática">
-          </div>
-          <div class="book-title" data-i18n="book3_title">Vencendo na Prática</div>
-          <div class="book-genre" data-i18n="book3_genre">Negócios · E-commerce</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FÉ & PROPÓSITO -->
-    <div class="books-category">
-      <div class="cat-label" data-i18n="cat_faith">🙏 Fé & Propósito</div>
-      <div class="books-grid">
-        <div class="book-card">
-          <div class="book-wrap">
-            <img class="book-cover" src="capa-caminho-esperanca.png" alt="O Caminho da Esperança">
-          </div>
-          <div class="book-title" data-i18n="book4_title">O Caminho da Esperança</div>
-          <div class="book-genre" data-i18n="book4_genre">Espiritualidade · Renovação</div>
-        </div>
-        <div class="book-card">
-          <div class="book-wrap">
-            <img class="book-cover" src="capa-guia-oracao.png" alt="Posicionamento, Autoridade e Vida com Deus">
-          </div>
-          <div class="book-title" data-i18n="book5_title">Posicionamento, Autoridade e Vida com Deus</div>
-          <div class="book-genre" data-i18n="book5_genre">Fé · Guia de Oração</div>
-        </div>
-        <div class="book-card">
-          <div class="book-wrap">
-            <img class="book-cover" src="capa-receita-prosperidade.png" alt="Receita da Prosperidade">
-          </div>
-          <div class="book-title" data-i18n="book6_title">Receita da Prosperidade</div>
-          <div class="book-genre" data-i18n="book6_genre">Fé · Disciplina · Abundância</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ EM BREVE ══ -->
-<section class="coming-soon" id="expansao">
-  <div class="coming-inner">
-    <div class="coming-badge" data-i18n="coming_badge">Em Breve</div>
-    <h2 class="coming-title">
-      <span data-i18n="coming_title_1">2026 —</span>
-      <em data-i18n="coming_title_2"> O Ano da Expansão</em>
-    </h2>
-    <p class="coming-text" data-i18n="coming_text">
-      Novos sonhos, novas promessas, novos horizontes. Um novo projeto está sendo preparado — nascido da travessia entre continentes, culturas e propósitos. Em breve, mais.
-    </p>
-    <div class="coming-notify">
-      <input type="email" id="notify-email" data-i18n-placeholder="notify_placeholder" placeholder="Seu melhor e-mail">
-      <button onclick="notifyMe()" data-i18n="notify_btn">Avise-me</button>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-name">Fabiano <span>Cicala</span></div>
-    <div class="footer-links">
-      <a href="https://wa.me/5511987781343" target="_blank">💬 WhatsApp</a>
-      <a href="mailto:fbcicala@gmail.com">✉️ fbcicala@gmail.com</a>
-      <a href="https://www.cikala.com.br" target="_blank">🌐 cikala.com.br</a>
-    </div>
-  </div>
-  <p class="footer-copy">© 2026 Fabiano Cicala · Valencia, Espanha 🇪🇸 · 🇧🇷 🇮🇹</p>
-</footer>
-
 <!-- WhatsApp flutuante -->
-<a href="https://wa.me/5511987781343" target="_blank" class="wa-float">💬</a>
+<a href="https://wa.me/5511987781343" target="_blank"
+   style="position:fixed;bottom:28px;right:28px;z-index:999;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.2s;"
+   onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  💬
+</a>
+
+<!-- Botão imprimir/PDF -->
+<button class="print-btn" onclick="window.print()"
+   style="position:fixed;bottom:28px;right:96px;z-index:999;background:var(--navy,#1b2a4a);color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);border:none;cursor:pointer;transition:transform 0.2s;"
+   title="Imprimir / Salvar como PDF"
+   onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  🖨️
+</button>
 
 <script>
 const i18n = {
   pt: {
-    hero_title: "Autor · Empresário · Valencia, Espanha",
-    hero_tagline: "Quem enxerga o invisível, lidera o impossível.",
-    hero_bio: "Empresário há 25 anos, fundador da CIKALA, cidadão italiano radicado em Valencia. Escrevo sobre liderança, fé e propósito porque vivi cada palavra que coloco no papel.",
-    cta_books: "📚 Ver meus livros",
-    cta_contact: "✉️ Fale comigo",
-    stat_books: "livros publicados",
-    stat_years: "anos empreendendo",
-    stat_people: "pessoas lideradas",
-    stat_countries: "países, 1 propósito",
-    books_label: "Obras",
-    books_title: "Meus Livros",
-    books_sub: "Liderança, fé e propósito — escritos para quem não quer apenas sobreviver, mas construir algo que dure.",
-    cat_business: "📘 Liderança & Negócios",
-    cat_faith: "🙏 Fé & Propósito",
-    book1_title: "A Estratégia do Invisível",
-    book1_genre: "Liderança · Propósito",
-    book2_title: "6 Sigma — Mentalidade de Elite",
-    book2_genre: "Gestão · Excelência",
-    book3_title: "Vencendo na Prática",
-    book3_genre: "Negócios · E-commerce",
-    book4_title: "O Caminho da Esperança",
-    book4_genre: "Espiritualidade · Renovação",
-    book5_title: "Posicionamento, Autoridade e Vida com Deus",
-    book5_genre: "Fé · Guia de Oração",
-    book6_title: "Receita da Prosperidade",
-    book6_genre: "Fé · Disciplina · Abundância",
-    coming_badge: "Em Breve",
-    coming_title_1: "2026 —",
-    coming_title_2: " O Ano da Expansão",
-    coming_text: "Novos sonhos, novas promessas, novos horizontes. Um novo projeto está sendo preparado — nascido da travessia entre continentes, culturas e propósitos. Em breve, mais.",
-    notify_placeholder: "Seu melhor e-mail",
-    notify_btn: "Avise-me",
+    sidebar_title: "Empresário · CEO · Valencia",
+    label_contact: "Contato",
+    location: "Valencia, Espanha",
+    label_languages: "Idiomas",
+    lang_native: "Nativo",
+    lang_intermediate: "Intermediário",
+    lang_basic: "Básico",
+    lang_reading: "Nível leitura",
+    label_skills: "Competências-chave",
+    skill_import: "Importação",
+    skill_foreign_trade: "Comércio exterior",
+    skill_team_mgmt: "Gestão de equipes",
+    skill_mkt: "Marketing digital",
+    skill_product_dev: "Desenvolvimento de produto",
+    skill_tenders: "Licitações",
+    label_citizenship: "Cidadania",
+    citizen_it: "Cidadão italiano (UE)",
+    citizen_br: "Cidadão brasileiro",
+    section_profile: "Perfil Profissional",
+    profile_text: `Empresário com <span class="profile-highlight">25 anos de trajetória</span> construindo e operando uma das referências brasileiras em soluções técnicas de proteção industrial. Fundador e CEO da CIKALA — empresa que fatura ~R$ 42 milhões/ano com 57 colaboradores, atuando em e-commerce, B2B, fabricação sob medida, importação e licitações públicas.<br><br>Com <span class="profile-highlight">cidadania italiana ativa</span>, estabeleço presença na Comunitat Valenciana como base europeia de operações. Meu diferencial não é apenas o setor de atuação — é a combinação de competências construída ao longo de décadas: produto, tecnologia, pessoas, mercados internacionais e visão estratégica.<br><br>Busco oportunidades de <strong>posição executiva, consultoria estratégica ou parceria de negócios</strong> na Espanha e Europa.`,
+    section_numbers: "Em Números",
+    kpi_years: "anos de empreendedorismo",
+    kpi_revenue: "faturamento anual",
+    kpi_employees: "colaboradores",
+    kpi_clients: "clientes atendidos",
+    kpi_channels: "canais de venda ativos",
+    section_experience: "Experiência",
+    exp1_role: "Fundador & CEO",
+    exp1_period: "2000 — atual",
+    exp1_desc: "Fundei e opero empresa de soluções técnicas em lonas, telas e coberturas industriais. Estruturei operação completa: fabricação sob medida, importação regular da China (~1 contêiner/mês), e-commerce multicanal (Mercado Livre, Amazon, Shopee, Shopify), B2B para indústria e governo, e equipe de 57 pessoas. Implementei projetos de IA e automação na operação. Desenvolvemos produto patenteado (sistema de fixação por pinos).",
+    exp2_role: "Diretor Comercial & Expansão Internacional",
+    exp2_period: "2020 — atual",
+    exp2_company: "CIKALA · Projetos de Exportação e Expansão",
+    exp2_desc: "Liderei iniciativas de expansão para EUA (EB-2 NIW), Paraguai e Europa. Estruturei plano de negócios para entrada no mercado espanhol com base em Valencia. Negociei e opero importação direta com fornecedores chineses. Desenvolvemos linha Amazon B2B para exportação.",
+    exp3_role: "Consultor e Mentor Empresarial",
+    exp3_period: "2015 — atual",
+    exp3_company: "Atividade paralela · Brasil",
+    exp3_desc: "Consultoria para pequenas e médias empresas em estruturação comercial, e-commerce e gestão de equipes. Mentoria em desenvolvimento de líderes e processos de vendas.",
+    tag_strategy: "Gestão estratégica",
+    tag_china_import: "Importação China",
+    tag_industrial_mfg: "Fabricação industrial",
+    tag_foreign_trade: "Comércio exterior",
+    tag_mkt: "Marketing digital",
+    tag_intl: "Internacionalização",
+    tag_bizplan: "Plano de negócios",
+    tag_china_suppliers: "Fornecedores China",
+    tag_consulting: "Consultoria",
+    tag_mentoring: "Mentoria",
+    tag_training: "Treinamento",
+    section_expertise: "Áreas de Expertise",
+    comp1_title: "🛒 E-commerce Multicanal",
+    comp1_desc: "Mercado Livre, Amazon, Shopee, Magalu, Shopify próprio, call center e WhatsApp — operação simultânea em todos os canais.",
+    comp2_title: "🚢 Comércio Exterior",
+    comp2_desc: "Importação regular da China: sourcing, frete, desembaraço aduaneiro, controle de qualidade e distribuição.",
+    comp3_title: "🏭 Operações Industriais",
+    comp3_desc: "Fabricação sob medida em PVC, polímeros e tecidos técnicos. Gestão de produção, PCP e controle de qualidade.",
+    comp4_title: "🤝 Vendas B2B & Gov.",
+    comp4_desc: "Negociação com indústria, grandes contratos e licitações públicas. Relacionamento institucional e gestão de key accounts.",
+    comp5_title: "👥 Gestão de Pessoas",
+    comp5_desc: "57 colaboradores. Recrutamento, formação de líderes, avaliação de desempenho e cultura organizacional.",
+    comp6_title: "🤖 IA & Tecnologia",
+    comp6_desc: "Implementação ativa de inteligência artificial na operação: marketing, análise de dados, automação de processos.",
+    section_seeking: "O Que Busco em Valencia",
+    obj1: "Posição executiva ou de diretoria em empresa espanhola ou europeia que valorize perfil internacional com visão operacional.",
+    obj2: "Consultoria estratégica para empresas que queiram expandir para o Brasil, importar da China ou entrar no e-commerce.",
+    obj3: "Parceria comercial com distribuidores e fabricantes industriais na Espanha e Europa.",
+    obj4: "Representação de marcas europeias no mercado brasileiro via estrutura CIKALA já estabelecida.",
+    footer_available: "Disponível para reuniões presenciais em Valencia e online."
   },
+
   es: {
-    hero_title: "Autor · Empresario · Valencia, España",
-    hero_tagline: "Quien ve lo invisible, lidera lo imposible.",
-    hero_bio: "Empresario desde hace 25 años, fundador de CIKALA, ciudadano italiano radicado en Valencia. Escribo sobre liderazgo, fe y propósito porque viví cada palabra que pongo en el papel.",
-    cta_books: "📚 Ver mis libros",
-    cta_contact: "✉️ Contáctame",
-    stat_books: "libros publicados",
-    stat_years: "años emprendiendo",
-    stat_people: "personas lideradas",
-    stat_countries: "países, 1 propósito",
-    books_label: "Obras",
-    books_title: "Mis Libros",
-    books_sub: "Liderazgo, fe y propósito — escritos para quienes no solo quieren sobrevivir, sino construir algo que perdure.",
-    cat_business: "📘 Liderazgo & Negocios",
-    cat_faith: "🙏 Fe & Propósito",
-    book1_title: "La Estrategia de lo Invisible",
-    book1_genre: "Liderazgo · Propósito",
-    book2_title: "6 Sigma — Mentalidad de Elite",
-    book2_genre: "Gestión · Excelencia",
-    book3_title: "Venciendo en la Práctica",
-    book3_genre: "Negocios · E-commerce",
-    book4_title: "El Camino de la Esperanza",
-    book4_genre: "Espiritualidad · Renovación",
-    book5_title: "Posicionamiento, Autoridad y Vida con Dios",
-    book5_genre: "Fe · Guía de Oración",
-    book6_title: "Receta de la Prosperidad",
-    book6_genre: "Fe · Disciplina · Abundancia",
-    coming_badge: "Próximamente",
-    coming_title_1: "2026 —",
-    coming_title_2: " El Año de la Expansión",
-    coming_text: "Nuevos sueños, nuevas promesas, nuevos horizontes. Un nuevo proyecto está siendo preparado — nacido del cruce entre continentes, culturas y propósitos. Pronto, más.",
-    notify_placeholder: "Tu mejor correo",
-    notify_btn: "Avísame",
+    sidebar_title: "Empresario · CEO · Valencia",
+    label_contact: "Contacto",
+    location: "Valencia, España",
+    label_languages: "Idiomas",
+    lang_native: "Nativo",
+    lang_intermediate: "Intermedio",
+    lang_basic: "Básico",
+    lang_reading: "Nivel lectura",
+    label_skills: "Competencias clave",
+    skill_import: "Importación",
+    skill_foreign_trade: "Comercio exterior",
+    skill_team_mgmt: "Gestión de equipos",
+    skill_mkt: "Marketing digital",
+    skill_product_dev: "Desarrollo de producto",
+    skill_tenders: "Licitaciones",
+    label_citizenship: "Ciudadanía",
+    citizen_it: "Ciudadano italiano (UE)",
+    citizen_br: "Ciudadano brasileño",
+    section_profile: "Perfil Profesional",
+    profile_text: `Empresario con <span class="profile-highlight">25 años de trayectoria</span> construyendo y operando una de las referencias brasileñas en soluciones técnicas de protección industrial. Fundador y CEO de CIKALA — empresa con facturación de ~R$ 42 millones/año, 57 empleados, activa en e-commerce, B2B, fabricación a medida, importación y licitaciones públicas.<br><br>Con <span class="profile-highlight">ciudadanía italiana activa</span>, establezco presencia en la Comunitat Valenciana como base europea de operaciones. Mi diferencial no es solo el sector — es la combinación de competencias construida durante décadas: producto, tecnología, personas, mercados internacionales y visión estratégica.<br><br>Busco oportunidades de <strong>posición ejecutiva, consultoría estratégica o asociación de negocios</strong> en España y Europa.`,
+    section_numbers: "En Números",
+    kpi_years: "años de emprendimiento",
+    kpi_revenue: "facturación anual",
+    kpi_employees: "empleados",
+    kpi_clients: "clientes atendidos",
+    kpi_channels: "canales de venta activos",
+    section_experience: "Experiencia",
+    exp1_role: "Fundador & CEO",
+    exp1_period: "2000 — presente",
+    exp1_desc: "Fundé y opero empresa de soluciones técnicas en lonas, mallas y coberturas industriales. Estructuré la operación completa: fabricación a medida, importación regular de China (~1 contenedor/mes), e-commerce multicanal (Mercado Libre, Amazon, Shopee, Shopify), B2B para industria y gobierno, y equipo de 57 personas. Implementé proyectos de IA y automatización. Desarrollamos producto patentado (sistema de fijación por pines).",
+    exp2_role: "Director Comercial & Expansión Internacional",
+    exp2_period: "2020 — presente",
+    exp2_company: "CIKALA · Proyectos de Exportación y Expansión",
+    exp2_desc: "Lideré iniciativas de expansión hacia EE.UU. (EB-2 NIW), Paraguay y Europa. Estructuré plan de negocio para entrada al mercado español con base en Valencia. Negocio e importo directamente con proveedores chinos. Desarrollamos línea Amazon B2B para exportación.",
+    exp3_role: "Consultor y Mentor Empresarial",
+    exp3_period: "2015 — presente",
+    exp3_company: "Actividad paralela · Brasil",
+    exp3_desc: "Consultoría para pequeñas y medianas empresas en estructuración comercial, e-commerce y gestión de equipos. Mentoría en desarrollo de líderes y procesos de ventas.",
+    tag_strategy: "Gestión estratégica",
+    tag_china_import: "Importación China",
+    tag_industrial_mfg: "Fabricación industrial",
+    tag_foreign_trade: "Comercio exterior",
+    tag_mkt: "Marketing digital",
+    tag_intl: "Internacionalización",
+    tag_bizplan: "Plan de negocio",
+    tag_china_suppliers: "Proveedores China",
+    tag_consulting: "Consultoría",
+    tag_mentoring: "Mentoría",
+    tag_training: "Capacitación",
+    section_expertise: "Áreas de Expertise",
+    comp1_title: "🛒 E-commerce Multicanal",
+    comp1_desc: "Mercado Libre, Amazon, Shopee, Magalu, Shopify propio, call center y WhatsApp — operación simultánea en todos los canales.",
+    comp2_title: "🚢 Comercio Exterior",
+    comp2_desc: "Importación regular de China: sourcing, flete, despacho aduanero, control de calidad y distribución.",
+    comp3_title: "🏭 Operaciones Industriales",
+    comp3_desc: "Fabricación a medida en PVC, polímeros y tejidos técnicos. Gestión de producción, planificación y control de calidad.",
+    comp4_title: "🤝 Ventas B2B & Gov.",
+    comp4_desc: "Negociación con industria, grandes contratos y licitaciones públicas. Relación institucional y gestión de cuentas clave.",
+    comp5_title: "👥 Gestión de Personas",
+    comp5_desc: "57 empleados. Reclutamiento, formación de líderes, evaluación de desempeño y cultura organizacional.",
+    comp6_title: "🤖 IA & Tecnología",
+    comp6_desc: "Implementación activa de inteligencia artificial en la operación: marketing, análisis de datos, automatización de procesos.",
+    section_seeking: "Lo Que Busco en Valencia",
+    obj1: "Posición ejecutiva o directiva en empresa española o europea que valore un perfil internacional con visión operacional.",
+    obj2: "Consultoría estratégica para empresas que quieran expandirse a Brasil, importar de China o entrar al e-commerce.",
+    obj3: "Alianza comercial con distribuidores y fabricantes industriales en España y Europa.",
+    obj4: "Representación de marcas europeas en el mercado brasileño a través de la estructura ya establecida de CIKALA.",
+    footer_available: "Disponible para reuniones presenciales en Valencia y online."
   },
+
   en: {
-    hero_title: "Author · Entrepreneur · Valencia, Spain",
-    hero_tagline: "Those who see the invisible can lead the impossible.",
-    hero_bio: "25 years as an entrepreneur, founder of CIKALA, Italian citizen based in Valencia. I write about leadership, faith, and purpose because I lived every word I put on paper.",
-    cta_books: "📚 See my books",
-    cta_contact: "✉️ Get in touch",
-    stat_books: "books published",
-    stat_years: "years building",
-    stat_people: "people led",
-    stat_countries: "countries, 1 purpose",
-    books_label: "Works",
-    books_title: "My Books",
-    books_sub: "Leadership, faith, and purpose — written for those who don't just want to survive, but to build something that lasts.",
-    cat_business: "📘 Leadership & Business",
-    cat_faith: "🙏 Faith & Purpose",
-    book1_title: "The Strategy of the Invisible",
-    book1_genre: "Leadership · Purpose",
-    book2_title: "6 Sigma — Elite Mindset",
-    book2_genre: "Management · Excellence",
-    book3_title: "Winning in Practice",
-    book3_genre: "Business · E-commerce",
-    book4_title: "The Path of Hope",
-    book4_genre: "Spirituality · Renewal",
-    book5_title: "Positioning, Authority and Life with God",
-    book5_genre: "Faith · Prayer Guide",
-    book6_title: "Recipe for Prosperity",
-    book6_genre: "Faith · Discipline · Abundance",
-    coming_badge: "Coming Soon",
-    coming_title_1: "2026 —",
-    coming_title_2: " The Year of Expansion",
-    coming_text: "New dreams, new promises, new horizons. A new project is being prepared — born from the crossing of continents, cultures, and purposes. More soon.",
-    notify_placeholder: "Your best email",
-    notify_btn: "Notify me",
+    sidebar_title: "Entrepreneur · CEO · Valencia",
+    label_contact: "Contact",
+    location: "Valencia, Spain",
+    label_languages: "Languages",
+    lang_native: "Native",
+    lang_intermediate: "Intermediate",
+    lang_basic: "Basic",
+    lang_reading: "Reading level",
+    label_skills: "Key Skills",
+    skill_import: "Importing",
+    skill_foreign_trade: "Foreign trade",
+    skill_team_mgmt: "Team management",
+    skill_mkt: "Digital marketing",
+    skill_product_dev: "Product development",
+    skill_tenders: "Public tenders",
+    label_citizenship: "Citizenship",
+    citizen_it: "Italian citizen (EU)",
+    citizen_br: "Brazilian citizen",
+    section_profile: "Professional Profile",
+    profile_text: `Entrepreneur with <span class="profile-highlight">25 years of experience</span> building and operating one of Brazil's leading companies in technical industrial protection solutions. Founder and CEO of CIKALA — a company with ~BRL 42M/year in revenue, 57 employees, active in e-commerce, B2B, custom manufacturing, imports, and public tenders.<br><br>Holding <span class="profile-highlight">active Italian citizenship</span>, I have established a presence in the Comunitat Valenciana as a European base of operations. My edge goes beyond the industry — it is the combination of skills built over decades: product, technology, people, international markets, and strategic vision.<br><br>I am seeking opportunities for <strong>executive roles, strategic consulting, or business partnerships</strong> in Spain and Europe.`,
+    section_numbers: "By the Numbers",
+    kpi_years: "years of entrepreneurship",
+    kpi_revenue: "annual revenue",
+    kpi_employees: "employees",
+    kpi_clients: "clients served",
+    kpi_channels: "active sales channels",
+    section_experience: "Experience",
+    exp1_role: "Founder & CEO",
+    exp1_period: "2000 — present",
+    exp1_desc: "Founded and operate a technical solutions company specializing in tarps, meshes, and industrial covers. Built the full operation: custom manufacturing, regular imports from China (~1 container/month), multichannel e-commerce (Mercado Livre, Amazon, Shopee, Shopify), B2B for industry and government, and a 57-person team. Implemented AI and automation projects. Developed a patented product (pin-lock fastening system).",
+    exp2_role: "Commercial Director & International Expansion",
+    exp2_period: "2020 — present",
+    exp2_company: "CIKALA · Export & Expansion Projects",
+    exp2_desc: "Led expansion initiatives into the USA (EB-2 NIW), Paraguay, and Europe. Structured the business plan for entry into the Spanish market based in Valencia. Negotiate and manage direct imports from Chinese suppliers. Developed an Amazon B2B export line.",
+    exp3_role: "Business Consultant & Mentor",
+    exp3_period: "2015 — present",
+    exp3_company: "Independent activity · Brazil",
+    exp3_desc: "Consulting for small and mid-sized businesses in commercial structuring, e-commerce, and team management. Mentoring in leadership development and sales processes.",
+    tag_strategy: "Strategic management",
+    tag_china_import: "China imports",
+    tag_industrial_mfg: "Industrial manufacturing",
+    tag_foreign_trade: "Foreign trade",
+    tag_mkt: "Digital marketing",
+    tag_intl: "Internationalization",
+    tag_bizplan: "Business plan",
+    tag_china_suppliers: "China suppliers",
+    tag_consulting: "Consulting",
+    tag_mentoring: "Mentoring",
+    tag_training: "Training",
+    section_expertise: "Areas of Expertise",
+    comp1_title: "🛒 Multichannel E-commerce",
+    comp1_desc: "Mercado Livre, Amazon, Shopee, Magalu, own Shopify, call center and WhatsApp — simultaneous operation across all channels.",
+    comp2_title: "🚢 Foreign Trade",
+    comp2_desc: "Regular imports from China: sourcing, freight, customs clearance, quality control, and distribution.",
+    comp3_title: "🏭 Industrial Operations",
+    comp3_desc: "Custom manufacturing in PVC, polymers, and technical fabrics. Production management, planning, and quality control.",
+    comp4_title: "🤝 B2B & Gov. Sales",
+    comp4_desc: "Negotiation with industry, large contracts, and public tenders. Institutional relations and key account management.",
+    comp5_title: "👥 People Management",
+    comp5_desc: "57 employees. Recruiting, leadership development, performance evaluation, and organizational culture.",
+    comp6_title: "🤖 AI & Technology",
+    comp6_desc: "Active implementation of artificial intelligence in operations: marketing, data analysis, process automation.",
+    section_seeking: "What I'm Looking for in Valencia",
+    obj1: "Executive or director position at a Spanish or European company that values an international profile with operational expertise.",
+    obj2: "Strategic consulting for companies looking to expand into Brazil, import from China, or launch into e-commerce.",
+    obj3: "Commercial partnership with industrial distributors and manufacturers in Spain and Europe.",
+    obj4: "Representation of European brands in the Brazilian market through CIKALA's established infrastructure.",
+    footer_available: "Available for in-person meetings in Valencia and online."
   }
 };
 
@@ -822,21 +969,14 @@ function setLang(lang) {
     const k = el.getAttribute('data-i18n');
     if (t[k] !== undefined) el.textContent = t[k];
   });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const k = el.getAttribute('data-i18n-placeholder');
-    if (t[k] !== undefined) el.placeholder = t[k];
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.getAttribute('data-i18n-html');
+    if (t[k] !== undefined) el.innerHTML = t[k];
   });
-}
-
-function notifyMe() {
-  const email = document.getElementById('notify-email').value;
-  if (!email || !email.includes('@')) return;
-  const a = document.createElement('a');
-  a.href = `mailto:fbcicala@gmail.com?subject=Avise-me sobre o novo projeto 2026&body=Quero saber mais sobre o novo projeto. Meu e-mail: ${email}`;
-  a.click();
 }
 
 setLang('pt');
 </script>
+
 </body>
 </html>
