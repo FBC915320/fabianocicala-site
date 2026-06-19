@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR" id="html-root">
+<html lang="es" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabiano Cicala — Empresário · Consultor Remoto · Autor · Valencia</title>
-  <meta name="description" content="Fabiano Cicala: empresário, consultor remoto em importação, e-commerce e operações comerciais internacionais, autor. Baseado em Valencia, Espanha.">
-  <meta name="keywords" content="Fabiano Cicala, consultor remoto importação, e-commerce internacional, sourcing China, operações comerciais B2B, CIKALA, Valencia Espanha">
+  <title>Fabiano Cicala — Empresário · Consultor Remoto · Autor</title>
+  <meta name="description" content="Fabiano Cicala: empresário, fundador da CIKALA, consultor remoto em importação, e-commerce e operações comerciais internacionais. Autor.">
+  <meta name="keywords" content="Fabiano Cicala, consultor remoto importação, e-commerce internacional, sourcing China, operações comerciais B2B, CIKALA, desenvolvimento de produtos industriais, soluções industriais">
   <meta property="og:title" content="Fabiano Cicala — Empresário · Consultor Remoto · Autor">
-  <meta property="og:description" content="Consultor remoto em importação, e-commerce e operações comerciais internacionais. 25 anos de experiência. Baseado em Valencia, Espanha.">
+  <meta property="og:description" content="Empresário e consultor remoto em importação, e-commerce e operações comerciais internacionais. Fundador da CIKALA. 25 anos de experiência.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://fabianocicala.com">
   <meta property="og:image" content="https://fabianocicala.com/fabiano-foto.jpg">
@@ -18,9 +18,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Fabiano Cicala",
-    "jobTitle": "Fundador e CEO",
-    "worksFor": { "@type": "Organization", "name": "CIKALA Comércio e Serviços Ltda", "url": "https://www.cikala.com.br" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Valencia", "addressCountry": "ES" },
+    "jobTitle": "Fundador e CEO · Consultor Remoto",
+    "worksFor": { "@type": "Organization", "name": "CIKALA Indústria e Comércio", "url": "https://www.cikala.com.br" },
     "nationality": "BR",
     "url": "https://fabianocicala.com",
     "email": "fbcicala@gmail.com",
@@ -419,6 +418,23 @@
 
     .consulting-box p:last-child { margin-bottom: 0; }
 
+    /* COMPETÊNCIAS */
+    .competencias-box {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+
+    .competencias-box p {
+      font-size: 0.92rem;
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .competencias-box p:last-child { margin-bottom: 0; }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -518,8 +534,8 @@
 
 <!-- ── LANGUAGE SWITCHER ── -->
 <div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('pt')" id="btn-pt">PT</button>
-  <button class="lang-btn" onclick="setLang('es')" id="btn-es">ES</button>
+  <button class="lang-btn active" onclick="setLang('es')" id="btn-es">ES</button>
+  <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
   <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
 </div>
 
@@ -537,18 +553,17 @@
         </div>
         <div style="height:16px;"></div>
         <div class="sidebar-name">Fabiano Cicala</div>
-        <div class="sidebar-title" data-i18n="sidebar_title">Empresário · Consultor Remoto · Autor</div>
-        <div class="flags">🇧🇷 🇮🇹 🇪🇸</div>
+        <div class="sidebar-title" data-i18n="sidebar_title">Empresario · Consultor Remoto · Autor</div>
+        <div class="flags">🇧🇷 🇪🇸</div>
       </div>
 
       <div class="sb-section">
-        <div class="sb-label" data-i18n="label_contact">Contato</div>
+        <div class="sb-label" data-i18n="label_contact">Contacto</div>
         <ul class="contact-list">
           <li><a href="https://wa.me/5511987781343" target="_blank"><span class="ico">💬</span>+55 11 98778-1343</a></li>
           <li><a href="mailto:fbcicala@gmail.com"><span class="ico">✉️</span>fbcicala@gmail.com</a></li>
           <li><a href="https://www.linkedin.com/in/fabiano-cicala-71ba82364" target="_blank"><span class="ico">💼</span>LinkedIn</a></li>
           <li><a href="https://www.cikala.com.br" target="_blank"><span class="ico">🌐</span>cikala.com.br</a></li>
-          <li><span><span class="ico">📍</span><span data-i18n="location">Valencia, Espanha</span></span></li>
         </ul>
       </div>
 
@@ -575,30 +590,22 @@
       </div>
 
       <div class="sb-section">
-        <div class="sb-label" data-i18n="label_skills">Competências-chave</div>
+        <div class="sb-label" data-i18n="label_skills">Competencias clave</div>
         <div class="skill-tags">
           <span class="skill-tag">E-commerce</span>
-          <span class="skill-tag" data-i18n="skill_import">Importação</span>
-          <span class="skill-tag" data-i18n="skill_foreign_trade">Comércio exterior</span>
+          <span class="skill-tag" data-i18n="skill_import">Importación</span>
+          <span class="skill-tag" data-i18n="skill_foreign_trade">Comercio exterior</span>
           <span class="skill-tag">B2B industrial</span>
-          <span class="skill-tag" data-i18n="skill_team_mgmt">Gestão de equipes</span>
+          <span class="skill-tag" data-i18n="skill_team_mgmt">Gestión de equipos</span>
           <span class="skill-tag" data-i18n="skill_mkt">Marketing digital</span>
           <span class="skill-tag">IA & Automation</span>
-          <span class="skill-tag" data-i18n="skill_product_dev">Desenvolvimento de produto</span>
-          <span class="skill-tag" data-i18n="skill_tenders">Licitações</span>
+          <span class="skill-tag" data-i18n="skill_product_dev">Desarrollo de producto</span>
+          <span class="skill-tag" data-i18n="skill_tenders">Licitaciones</span>
           <span class="skill-tag">Supply chain</span>
-          <span class="skill-tag" data-i18n="skill_design3d">Design 3D</span>
-          <span class="skill-tag" data-i18n="skill_industrial_design">Desenho industrial</span>
-          <span class="skill-tag" data-i18n="skill_robotics">Proteção robótica</span>
+          <span class="skill-tag" data-i18n="skill_design3d">Diseño 3D</span>
+          <span class="skill-tag" data-i18n="skill_industrial_design">Diseño industrial</span>
+          <span class="skill-tag" data-i18n="skill_robotics">Protección robótica</span>
         </div>
-      </div>
-
-      <div class="sb-section">
-        <div class="sb-label" data-i18n="label_location">Localização</div>
-        <ul class="contact-list">
-          <li><span><span class="ico">📍</span><span data-i18n="location_detail">Valencia, Espanha · Europa</span></span></li>
-          <li><span><span class="ico">🇧🇷</span><span data-i18n="origin_br">Origem: Brasil</span></span></li>
-        </ul>
       </div>
 
     </aside>
@@ -609,60 +616,83 @@
       <!-- PERFIL -->
       <section>
         <div class="section-header">
-          <h2 data-i18n="section_profile">Perfil Profissional</h2>
+          <h2 data-i18n="section_profile">Perfil Profesional</h2>
           <div class="section-line"></div>
         </div>
         <p class="profile-text" data-i18n-html="profile_text"></p>
       </section>
 
-      <!-- CONSULTORIA REMOTA -->
+      <!-- CONSULTORIA REMOTA E OPERAÇÕES INTERNACIONAIS -->
       <section>
         <div class="section-header">
-          <h2 data-i18n="section_consulting">Consultoria Remota em Desenvolvimento de Produtos, Importação, E-commerce e Operações Comerciais Internacionais</h2>
+          <h2 data-i18n="section_consulting_ops">Consultoría Remota y Operaciones Internacionales</h2>
           <div class="section-line"></div>
         </div>
         <div class="consulting-box">
-          <p data-i18n="consulting_text1"></p>
-          <p data-i18n="consulting_text2"></p>
-          <p data-i18n="consulting_text3"></p>
+          <p data-i18n="cops_p1"></p>
+          <p data-i18n="cops_p2"></p>
+          <p data-i18n="cops_p3"></p>
+          <p data-i18n="cops_p4"></p>
+          <p data-i18n="cops_p5"></p>
+          <p data-i18n="cops_p6"></p>
+          <p data-i18n="cops_p7"></p>
         </div>
       </section>
 
-      <!-- SERVIÇOS -->
+      <!-- COMPETÊNCIAS PROFISSIONAIS -->
       <section>
         <div class="section-header">
-          <h2 data-i18n="section_services">Serviços</h2>
+          <h2 data-i18n="section_competencias">Competencias Profesionales</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="competencias-box">
+          <p data-i18n="comp_p1"></p>
+          <p data-i18n="comp_p2"></p>
+          <p data-i18n="comp_p3"></p>
+          <p data-i18n="comp_p4"></p>
+        </div>
+      </section>
+
+      <!-- SERVIÇOS DE CONSULTORIA REMOTA -->
+      <section>
+        <div class="section-header">
+          <h2 data-i18n="section_services">Servicios de Consultoría Remota</h2>
           <div class="section-line"></div>
         </div>
         <div class="services-grid">
-          <div class="service-item"><span class="service-ico">🔧</span><span data-i18n="svc1">Desenvolvimento de produtos e soluções comerciais</span></div>
-          <div class="service-item"><span class="service-ico">🚢</span><span data-i18n="svc2">Importação, sourcing e negociação com fornecedores internacionais</span></div>
-          <div class="service-item"><span class="service-ico">📄</span><span data-i18n="svc3">Análise de invoices, pedidos e viabilidade comercial</span></div>
-          <div class="service-item"><span class="service-ico">🛒</span><span data-i18n="svc4">E-commerce, marketplace e canais digitais</span></div>
-          <div class="service-item"><span class="service-ico">📊</span><span data-i18n="svc5">Precificação, margem e estratégia comercial</span></div>
-          <div class="service-item"><span class="service-ico">🌐</span><span data-i18n="svc6">Operações comerciais internacionais e B2B</span></div>
-          <div class="service-item"><span class="service-ico">⚙️</span><span data-i18n="svc7">Projetos técnicos especiais para empresas</span></div>
+          <div class="service-item"><span class="service-ico">🔧</span><span data-i18n="svc1">Desarrollo de productos técnicos y soluciones industriales</span></div>
+          <div class="service-item"><span class="service-ico">🚢</span><span data-i18n="svc2">Importación, sourcing y negociación con proveedores internacionales</span></div>
+          <div class="service-item"><span class="service-ico">📄</span><span data-i18n="svc3">Análisis de facturas, pedidos y viabilidad comercial</span></div>
+          <div class="service-item"><span class="service-ico">🛒</span><span data-i18n="svc4">E-commerce B2B, marketplace y canales digitales</span></div>
+          <div class="service-item"><span class="service-ico">📊</span><span data-i18n="svc5">Precios, margen, stock y estrategia comercial</span></div>
+          <div class="service-item"><span class="service-ico">🌐</span><span data-i18n="svc6">Operaciones comerciales internacionales</span></div>
+          <div class="service-item"><span class="service-ico">⚙️</span><span data-i18n="svc7">Proyectos técnicos especiales para empresas</span></div>
+          <div class="service-item"><span class="service-ico">🤖</span><span data-i18n="svc8">Uso estratégico de inteligencia artificial en procesos comerciales y operacionales</span></div>
         </div>
       </section>
 
       <!-- KPIs -->
       <section>
         <div class="section-header">
-          <h2 data-i18n="section_numbers">Em Números</h2>
+          <h2 data-i18n="section_numbers">En Números</h2>
           <div class="section-line"></div>
         </div>
         <div class="kpi-grid">
           <div class="kpi-card">
-            <div class="kpi-value">25</div>
-            <div class="kpi-label" data-i18n="kpi_years">anos de empreendedorismo</div>
+            <div class="kpi-value">25+</div>
+            <div class="kpi-label" data-i18n="kpi_years">años de emprendimiento</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-value">+10k</div>
             <div class="kpi-label" data-i18n="kpi_clients">clientes atendidos</div>
           </div>
           <div class="kpi-card">
+            <div class="kpi-value">B2B</div>
+            <div class="kpi-label" data-i18n="kpi_b2b">operaciones B2B</div>
+          </div>
+          <div class="kpi-card">
             <div class="kpi-value">7</div>
-            <div class="kpi-label" data-i18n="kpi_channels">canais de venda ativos</div>
+            <div class="kpi-label" data-i18n="kpi_channels">canales de venta activos</div>
           </div>
         </div>
       </section>
@@ -670,7 +700,7 @@
       <!-- EXPERIÊNCIA -->
       <section>
         <div class="section-header">
-          <h2 data-i18n="section_experience">Experiência</h2>
+          <h2 data-i18n="section_experience">Experiencia</h2>
           <div class="section-line"></div>
         </div>
         <div class="exp-list">
@@ -678,16 +708,16 @@
           <div class="exp-item">
             <div class="exp-header">
               <div class="exp-role" data-i18n="exp1_role">Fundador & CEO</div>
-              <div class="exp-period" data-i18n="exp1_period">2000 — atual</div>
+              <div class="exp-period" data-i18n="exp1_period">2000 — presente</div>
             </div>
-            <div class="exp-company">CIKALA Comércio e Serviços Ltda · São Paulo, Brasil</div>
+            <div class="exp-company">CIKALA Indústria e Comércio · São Paulo, Brasil</div>
             <p class="exp-desc" data-i18n="exp1_desc"></p>
             <div class="exp-tags">
-              <span class="exp-tag" data-i18n="tag_strategy">Gestão estratégica</span>
+              <span class="exp-tag" data-i18n="tag_strategy">Gestión estratégica</span>
               <span class="exp-tag">E-commerce</span>
-              <span class="exp-tag" data-i18n="tag_china_import">Importação China</span>
-              <span class="exp-tag" data-i18n="tag_industrial_mfg">Fabricação industrial</span>
-              <span class="exp-tag" data-i18n="tag_foreign_trade">Comércio exterior</span>
+              <span class="exp-tag" data-i18n="tag_china_import">Importación China</span>
+              <span class="exp-tag" data-i18n="tag_industrial_mfg">Fabricación industrial</span>
+              <span class="exp-tag" data-i18n="tag_foreign_trade">Comercio exterior</span>
               <span class="exp-tag" data-i18n="tag_mkt">Marketing digital</span>
               <span class="exp-tag">IA & Automation</span>
             </div>
@@ -695,37 +725,37 @@
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role" data-i18n="exp2_role">Diretor Comercial & Expansão Internacional</div>
-              <div class="exp-period" data-i18n="exp2_period">2020 — atual</div>
+              <div class="exp-role" data-i18n="exp2_role">Director Comercial & Expansión Internacional</div>
+              <div class="exp-period" data-i18n="exp2_period">2020 — presente</div>
             </div>
-            <div class="exp-company" data-i18n="exp2_company">CIKALA · Projetos de Exportação e Expansão</div>
+            <div class="exp-company" data-i18n="exp2_company">CIKALA · Proyectos de Exportación y Expansión</div>
             <p class="exp-desc" data-i18n="exp2_desc"></p>
             <div class="exp-tags">
-              <span class="exp-tag" data-i18n="tag_intl">Internacionalização</span>
-              <span class="exp-tag" data-i18n="tag_bizplan">Plano de negócios</span>
+              <span class="exp-tag" data-i18n="tag_intl">Internacionalización</span>
+              <span class="exp-tag" data-i18n="tag_bizplan">Plan de negocio</span>
               <span class="exp-tag">Amazon B2B</span>
-              <span class="exp-tag" data-i18n="tag_china_suppliers">Fornecedores China</span>
+              <span class="exp-tag" data-i18n="tag_china_suppliers">Proveedores China</span>
             </div>
           </div>
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role" data-i18n="exp3_role">Consultor e Mentor Empresarial</div>
-              <div class="exp-period" data-i18n="exp3_period">2015 — atual</div>
+              <div class="exp-role" data-i18n="exp3_role">Consultor y Mentor Empresarial</div>
+              <div class="exp-period" data-i18n="exp3_period">2015 — presente</div>
             </div>
-            <div class="exp-company" data-i18n="exp3_company">Atividade paralela · Brasil</div>
+            <div class="exp-company" data-i18n="exp3_company">Actividad paralela · Brasil</div>
             <p class="exp-desc" data-i18n="exp3_desc"></p>
             <div class="exp-tags">
-              <span class="exp-tag" data-i18n="tag_consulting">Consultoria</span>
-              <span class="exp-tag" data-i18n="tag_mentoring">Mentoria</span>
-              <span class="exp-tag" data-i18n="tag_training">Treinamento</span>
+              <span class="exp-tag" data-i18n="tag_consulting">Consultoría</span>
+              <span class="exp-tag" data-i18n="tag_mentoring">Mentoría</span>
+              <span class="exp-tag" data-i18n="tag_training">Capacitación</span>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- COMPETÊNCIAS -->
+      <!-- ÁREAS DE EXPERTISE -->
       <section>
         <div class="section-header">
           <h2 data-i18n="section_expertise">Áreas de Expertise</h2>
@@ -737,23 +767,23 @@
             <p data-i18n="comp1_desc"></p>
           </div>
           <div class="comp-card">
-            <h3 data-i18n="comp2_title">🚢 Comércio Exterior</h3>
+            <h3 data-i18n="comp2_title">🚢 Comercio Exterior</h3>
             <p data-i18n="comp2_desc"></p>
           </div>
           <div class="comp-card">
-            <h3 data-i18n="comp3_title">🏭 Operações Industriais</h3>
+            <h3 data-i18n="comp3_title">🏭 Operaciones Industriales</h3>
             <p data-i18n="comp3_desc"></p>
           </div>
           <div class="comp-card">
-            <h3 data-i18n="comp4_title">🤝 Vendas B2B & Gov.</h3>
+            <h3 data-i18n="comp4_title">🤝 Ventas B2B & Gov.</h3>
             <p data-i18n="comp4_desc"></p>
           </div>
           <div class="comp-card">
-            <h3 data-i18n="comp5_title">👥 Gestão de Pessoas</h3>
+            <h3 data-i18n="comp5_title">🔧 Desarrollo de Producto</h3>
             <p data-i18n="comp5_desc"></p>
           </div>
           <div class="comp-card">
-            <h3 data-i18n="comp6_title">🤖 IA & Tecnologia</h3>
+            <h3 data-i18n="comp6_title">🤖 IA & Tecnología</h3>
             <p data-i18n="comp6_desc"></p>
           </div>
         </div>
@@ -762,7 +792,7 @@
       <!-- CERTIFICAÇÕES -->
       <section>
         <div class="section-header">
-          <h2 data-i18n="section_certs">Certificações</h2>
+          <h2 data-i18n="section_certs">Certificaciones</h2>
           <div class="section-line"></div>
         </div>
         <div class="exp-list">
@@ -772,15 +802,15 @@
               <div class="exp-period">set. 2025</div>
             </div>
             <div class="exp-company">StartSe University</div>
-            <p class="exp-desc" data-i18n="cert1_desc">Formação em inteligência artificial aplicada a negócios: análise de mercado, desenvolvimento de produtos, criação de materiais técnicos, automação de processos e apoio à tomada de decisão empresarial.</p>
+            <p class="exp-desc" data-i18n="cert1_desc"></p>
           </div>
         </div>
       </section>
 
-      <!-- O QUE BUSCO -->
+      <!-- OBJETIVOS PROFISSIONAIS -->
       <section>
         <div class="section-header">
-          <h2 data-i18n="section_seeking">O Que Busco em Valencia</h2>
+          <h2 data-i18n="section_seeking">Objetivos Profesionales</h2>
           <div class="section-line"></div>
         </div>
         <div class="objetivo-grid">
@@ -838,98 +868,13 @@
 
 <script>
 const i18n = {
-  pt: {
-    sidebar_title: "Empresário · Consultor Remoto · Autor",
-    label_contact: "Contato",
-    location: "Valencia, Espanha",
-    label_languages: "Idiomas",
-    lang_native: "Nativo",
-    lang_intermediate: "Intermediário",
-    lang_basic: "Básico",
-    lang_reading: "Nível leitura",
-    label_skills: "Competências-chave",
-    skill_import: "Importação",
-    skill_foreign_trade: "Comércio exterior",
-    skill_team_mgmt: "Gestão de equipes",
-    skill_mkt: "Marketing digital",
-    skill_product_dev: "Desenvolvimento de produto",
-    skill_tenders: "Licitações",
-    skill_design3d: "Design 3D",
-    skill_industrial_design: "Desenho industrial",
-    skill_robotics: "Proteção robótica",
-    label_location: "Localização",
-    location_detail: "Valencia, Espanha · Europa",
-    origin_br: "Origem: Brasil",
-    section_profile: "Perfil Profissional",
-    profile_text: `Empresário com <span class="profile-highlight">25 anos de trajetória</span> construindo e operando uma das referências brasileiras em soluções técnicas de proteção industrial. Fundador e CEO da CIKALA — empresa atuante em e-commerce, B2B, fabricação sob medida, importação e licitações públicas.<br><br>Estabeleço presença na Comunitat Valenciana como base europeia de operações, conectando Brasil, Espanha, Europa e China. Meu diferencial não é apenas o setor de atuação — é a combinação de competências construída ao longo de décadas: produto, tecnologia, pessoas, mercados internacionais e visão estratégica.<br><br>Busco oportunidades de <strong>posição executiva, consultoria estratégica ou parceria de negócios</strong> na Espanha e Europa.`,
-    section_numbers: "Em Números",
-    kpi_years: "anos de empreendedorismo",
-    kpi_revenue: "volume de operações",
-    kpi_employees: "anos no setor",
-    kpi_clients: "clientes atendidos",
-    kpi_channels: "canais de venda ativos",
-    section_experience: "Experiência",
-    exp1_role: "Fundador & CEO",
-    exp1_period: "2000 — atual",
-    exp1_desc: "Fundei e opero empresa brasileira com atuação no setor industrial de soluções técnicas em lonas, telas, tecidos técnicos, capas industriais e proteções flexíveis para ambientes severos. Atendemos aplicações em automação industrial, proteção robótica, células robotizadas, pintura industrial, solda, poeira abrasiva e projetos especiais. Operação completa: fabricação sob medida, importação da China (~1 contêiner/mês), e-commerce multicanal (Mercado Livre, Amazon, Shopee, Shopify), B2B e licitações. Histórico em projetos técnicos e comerciais. IA aplicada a análise de mercado, materiais técnicos e automação de processos.",
-    exp2_role: "Diretor Comercial & Expansão Internacional",
-    exp2_period: "2020 — atual",
-    exp2_company: "CIKALA · Projetos de Exportação e Expansão",
-    exp2_desc: "Liderei iniciativas de expansão para EUA (EB-2 NIW), Paraguai e Europa. Estruturei plano de negócios para entrada no mercado espanhol com base em Valencia. Negociei e opero importação direta com fornecedores chineses. Desenvolvemos linha Amazon B2B para exportação.",
-    exp3_role: "Consultor e Mentor Empresarial",
-    exp3_period: "2015 — atual",
-    exp3_company: "Atividade paralela · Brasil",
-    exp3_desc: "Consultoria para pequenas e médias empresas em estruturação comercial, e-commerce e gestão de equipes. Mentoria em desenvolvimento de líderes e processos de vendas.",
-    tag_strategy: "Gestão estratégica",
-    tag_china_import: "Importação China",
-    tag_industrial_mfg: "Fabricação industrial",
-    tag_foreign_trade: "Comércio exterior",
-    tag_mkt: "Marketing digital",
-    tag_intl: "Internacionalização",
-    tag_bizplan: "Plano de negócios",
-    tag_china_suppliers: "Fornecedores China",
-    tag_consulting: "Consultoria",
-    tag_mentoring: "Mentoria",
-    tag_training: "Treinamento",
-    section_expertise: "Áreas de Expertise",
-    comp1_title: "🛒 E-commerce Multicanal",
-    comp1_desc: "Mercado Livre, Amazon, Shopee, Magalu, Shopify próprio, call center e WhatsApp — operação simultânea em todos os canais.",
-    comp2_title: "🚢 Comércio Exterior",
-    comp2_desc: "Importação regular da China: sourcing, frete, desembaraço aduaneiro, controle de qualidade e distribuição.",
-    comp3_title: "🏭 Operações Industriais",
-    comp3_desc: "Fabricação sob medida em PVC, polímeros e tecidos técnicos. Gestão de produção, PCP e controle de qualidade.",
-    comp4_title: "🤝 Vendas B2B & Gov.",
-    comp4_desc: "Negociação com indústria, grandes contratos e licitações públicas. Relacionamento institucional e gestão de key accounts.",
-    comp5_title: "👥 Gestão de Pessoas",
-    comp5_desc: "Recrutamento, formação de líderes, avaliação de desempenho e cultura organizacional.",
-    comp6_title: "🤖 IA & Tecnologia",
-    comp6_desc: "IA aplicada estrategicamente: análise de mercado, desenvolvimento de produtos, materiais técnicos, automação de processos e suporte à decisão. Certificado em AI Skills — StartSe University (2025).",
-    section_seeking: "O Que Busco em Valencia",
-    obj1: "Posição executiva ou de diretoria em empresa espanhola ou europeia que valorize perfil internacional com visão operacional.",
-    obj2: "Consultoria estratégica para empresas que queiram expandir para o Brasil, importar da China ou entrar no e-commerce.",
-    obj3: "Parceria comercial com distribuidores e fabricantes industriais na Espanha e Europa.",
-    obj4: "Representação de marcas europeias no mercado brasileiro via estrutura CIKALA já estabelecida.",
-    section_certs: "Certificações",
-    cert1_desc: "Formação em inteligência artificial aplicada a negócios: análise de mercado, desenvolvimento de produtos, criação de materiais técnicos, automação de processos e apoio à tomada de decisão empresarial.",
-    section_consulting: "Consultoria Remota em Desenvolvimento de Produtos, Importação, E-commerce e Operações Comerciais Internacionais",
-    consulting_text1: "Atuo como consultor remoto para empresas que precisam desenvolver produtos, estruturar operações comerciais, negociar com fornecedores internacionais, organizar processos de importação, analisar invoices, apoiar decisões de compra, precificação, marketplace, e-commerce e expansão comercial.",
-    consulting_text2: "Minha experiência combina indústria, comércio exterior, sourcing internacional, importação da China, gestão empresarial, desenvolvimento de produtos técnicos, canais digitais e operação comercial B2B.",
-    consulting_text3: "Os serviços são prestados de forma online, por meios digitais, com acompanhamento estratégico, análise documental, reuniões remotas, orientação operacional e suporte à tomada de decisão.",
-    section_services: "Serviços",
-    svc1: "Desenvolvimento de produtos e soluções comerciais",
-    svc2: "Importação, sourcing e negociação com fornecedores internacionais",
-    svc3: "Análise de invoices, pedidos e viabilidade comercial",
-    svc4: "E-commerce, marketplace e canais digitais",
-    svc5: "Precificação, margem e estratégia comercial",
-    svc6: "Operações comerciais internacionais e B2B",
-    svc7: "Projetos técnicos especiais para empresas",
-    footer_available: "Disponível para reuniões presenciais em Valencia e online."
-  },
 
+  /* ════════════════════════════════════════
+     ESPAÑOL — idioma padrão
+  ════════════════════════════════════════ */
   es: {
-    sidebar_title: "Empresario · Consultor Remoto · Autor",
+    sidebar_title: "Empresario · Consultor Remoto en Importación, E-commerce y Operaciones Comerciales Internacionales · Autor",
     label_contact: "Contacto",
-    location: "Valencia, España",
     label_languages: "Idiomas",
     lang_native: "Nativo",
     lang_intermediate: "Intermedio",
@@ -945,29 +890,54 @@ const i18n = {
     skill_design3d: "Diseño 3D",
     skill_industrial_design: "Diseño industrial",
     skill_robotics: "Protección robótica",
-    label_location: "Ubicación",
-    location_detail: "Valencia, España · Europa",
-    origin_br: "Origen: Brasil",
+
     section_profile: "Perfil Profesional",
-    profile_text: `Empresario con <span class="profile-highlight">25 años de trayectoria</span> construyendo y operando una de las referencias brasileñas en soluciones técnicas de protección industrial. Fundador y CEO de CIKALA — empresa activa en e-commerce, B2B, fabricación a medida, importación y licitaciones públicas.<br><br>Establezco presencia en la Comunitat Valenciana como base europea de operaciones, conectando Brasil, España, Europa y China. Mi diferencial no es solo el sector — es la combinación de competencias construida durante décadas: producto, tecnología, personas, mercados internacionales y visión estratégica.<br><br>Busco oportunidades de <strong>posición ejecutiva, consultoría estratégica o asociación de negocios</strong> en España y Europa.`,
+    profile_text: `Empresario con <span class="profile-highlight">más de 25 años de experiencia</span> y fundador de CIKALA Industria y Comercio, actúo en el desarrollo de soluciones industriales, productos técnicos, operaciones comerciales, importación, e-commerce B2B y proyectos a medida para empresas.<br><br>También presto consultoría remota en desarrollo de productos, importación, e-commerce y operaciones comerciales internacionales, conectando empresas con proveedores, canales digitales y mercados internacionales.`,
+
+    section_consulting_ops: "Consultoría Remota y Operaciones Internacionales",
+    cops_p1: "Soy fundador de CIKALA Industria y Comercio, empresa brasileña especializada en el desarrollo de soluciones industriales en lonas, mallas, tejidos técnicos, coberturas industriales, protecciones flexibles y proyectos a medida para entornos severos.",
+    cops_p2: "También actúo como consultor remoto en desarrollo de productos, importación, e-commerce y operaciones comerciales internacionales, apoyando a empresas en la estructuración de proyectos con proveedores internacionales, análisis de viabilidad, negociación, formación de pedidos, facturas, precios, canales digitales y expansión comercial.",
+    cops_p3: "Mi actuación combina industria, venta técnica, e-commerce B2B, marketplaces, importación, desarrollo de productos, proveedores internacionales, precios, gestión de stock, atención empresarial y ejecución operacional.",
+    cops_p4: "Tengo experiencia en el desarrollo de soluciones para automatización industrial, protección robótica, células robotizadas, pintura industrial, soldadura, polvo abrasivo, cobertura técnica, protección de equipos y aplicaciones industriales especiales.",
+    cops_p5: "En CIKALA, el enfoque es transformar problemas industriales reales en soluciones prácticas, personalizadas y comercialmente viables, uniendo producto físico, conocimiento técnico, operación digital y capacidad de ejecución.",
+    cops_p6: "También utilizo inteligencia artificial de forma estratégica para análisis de mercado, desarrollo de productos, creación de materiales técnicos, automatización de procesos y apoyo a la toma de decisiones empresariales.",
+    cops_p7: "Mi enfoque actual es fortalecer CIKALA en Brasil y desarrollar nuevas oportunidades comerciales entre Brasil, España, Europa y China, conectando productos técnicos, proveedores, distribuidores y empresas que necesitan soluciones industriales reales.",
+
+    section_competencias: "Competencias Profesionales",
+    comp_p1: "Mi actuación combina visión empresarial, experiencia industrial y ejecución práctica. Tengo capacidad de identificar problemas reales de operación, transformar demandas técnicas en soluciones comerciales, desarrollar productos a medida, negociar con proveedores nacionales e internacionales, estructurar pedidos, analizar costos, formar precios y apoyar decisiones estratégicas.",
+    comp_p2: "Actúo con foco en desarrollo de productos técnicos, importación, sourcing internacional, e-commerce B2B, marketplace, venta técnica, atención empresarial, precios, margen, stock, canales digitales y operaciones comerciales.",
+    comp_p3: "También utilizo inteligencia artificial de forma aplicada para análisis de mercado, organización de información, desarrollo de materiales técnicos, automatización de procesos, creación de contenido comercial y apoyo a la toma de decisiones.",
+    comp_p4: "Mi diferencial está en la combinación entre experiencia de planta de producción, visión comercial, operación digital y capacidad de ejecución.",
+
+    section_services: "Servicios de Consultoría Remota",
+    svc1: "Desarrollo de productos técnicos y soluciones industriales",
+    svc2: "Importación, sourcing y negociación con proveedores internacionales",
+    svc3: "Análisis de facturas, pedidos y viabilidad comercial",
+    svc4: "E-commerce B2B, marketplace y canales digitales",
+    svc5: "Precios, margen, stock y estrategia comercial",
+    svc6: "Operaciones comerciales internacionales",
+    svc7: "Proyectos técnicos especiales para empresas",
+    svc8: "Uso estratégico de inteligencia artificial en procesos comerciales y operacionales",
+
     section_numbers: "En Números",
     kpi_years: "años de emprendimiento",
-    kpi_revenue: "volumen de operaciones",
-    kpi_employees: "años en el sector",
     kpi_clients: "clientes atendidos",
+    kpi_b2b: "operaciones B2B",
     kpi_channels: "canales de venta activos",
+
     section_experience: "Experiencia",
     exp1_role: "Fundador & CEO",
     exp1_period: "2000 — presente",
-    exp1_desc: "Fundé y opero empresa brasileña con actuación en el sector industrial de soluciones técnicas en lonas, mallas y coberturas industriales. Estructuré la operación completa: fabricación a medida, importación regular de China (~1 contenedor/mes), e-commerce multicanal (Mercado Libre, Amazon, Shopee, Shopify), B2B para industria y gobierno. Historial en proyectos técnicos y comerciales. Implementé proyectos de IA y automatización.",
+    exp1_desc: "Fundé y opero empresa brasileña con actuación en el sector industrial de soluciones técnicas en lonas, mallas y coberturas industriales. Estructuré la operación completa: fabricación a medida, importación regular de China (~1 contenedor/mes), e-commerce multicanal (Mercado Libre, Amazon, Shopee, Shopify), B2B para industria y gobierno. Historial sólido en proyectos técnicos y comerciales. Implementé proyectos de IA y automatización.",
     exp2_role: "Director Comercial & Expansión Internacional",
     exp2_period: "2020 — presente",
     exp2_company: "CIKALA · Proyectos de Exportación y Expansión",
-    exp2_desc: "Lideré iniciativas de expansión hacia EE.UU. (EB-2 NIW), Paraguay y Europa. Estructuré plan de negocio para entrada al mercado español con base en Valencia. Negocio e importo directamente con proveedores chinos. Desarrollamos línea Amazon B2B para exportación.",
+    exp2_desc: "Lideré iniciativas de expansión hacia EE.UU., Paraguay y Europa. Estructuré plan de negocio para entrada en nuevos mercados internacionales. Negocio e importo directamente con proveedores chinos. Desarrollé línea Amazon B2B para exportación.",
     exp3_role: "Consultor y Mentor Empresarial",
     exp3_period: "2015 — presente",
     exp3_company: "Actividad paralela · Brasil",
     exp3_desc: "Consultoría para pequeñas y medianas empresas en estructuración comercial, e-commerce y gestión de equipos. Mentoría en desarrollo de líderes y procesos de ventas.",
+
     tag_strategy: "Gestión estratégica",
     tag_china_import: "Importación China",
     tag_industrial_mfg: "Fabricación industrial",
@@ -979,6 +949,7 @@ const i18n = {
     tag_consulting: "Consultoría",
     tag_mentoring: "Mentoría",
     tag_training: "Capacitación",
+
     section_expertise: "Áreas de Expertise",
     comp1_title: "🛒 E-commerce Multicanal",
     comp1_desc: "Mercado Libre, Amazon, Shopee, Magalu, Shopify propio, call center y WhatsApp — operación simultánea en todos los canales.",
@@ -988,36 +959,136 @@ const i18n = {
     comp3_desc: "Fabricación a medida en PVC, polímeros y tejidos técnicos. Gestión de producción, planificación y control de calidad.",
     comp4_title: "🤝 Ventas B2B & Gov.",
     comp4_desc: "Negociación con industria, grandes contratos y licitaciones públicas. Relación institucional y gestión de cuentas clave.",
-    comp5_title: "👥 Gestión de Personas",
-    comp5_desc: "Reclutamiento, formación de líderes, evaluación de desempeño y cultura organizacional.",
+    comp5_title: "🔧 Desarrollo de Producto",
+    comp5_desc: "Desarrollo de soluciones industriales a medida, ingeniería de aplicación y proyectos técnicos especiales.",
     comp6_title: "🤖 IA & Tecnología",
-    comp6_desc: "Implementación activa de inteligencia artificial en la operación: marketing, análisis de datos, automatización de procesos.",
-    section_seeking: "Lo Que Busco en Valencia",
-    obj1: "Posición ejecutiva o directiva en empresa española o europea que valore un perfil internacional con visión operacional.",
-    obj2: "Consultoría estratégica para empresas que quieran expandirse a Brasil, importar de China o entrar al e-commerce.",
-    obj3: "Alianza comercial con distribuidores y fabricantes industriales en España y Europa.",
-    obj4: "Representación de marcas europeas en el mercado brasileño a través de la estructura ya establecida de CIKALA.",
+    comp6_desc: "Implementación estratégica de inteligencia artificial: análisis de mercado, automatización, materiales técnicos y apoyo a decisiones.",
+
     section_certs: "Certificaciones",
-    cert1_desc: "Formación en inteligencia artificial aplicada a negocios: análisis de mercado, desarrollo de productos, creación de materiales técnicos, automatización de procesos y apoyo a la toma de decisiones empresariales.",
-    section_consulting: "Consultoría Remota en Desarrollo de Productos, Importación, E-commerce y Operaciones Comerciales Internacionales",
-    consulting_text1: "Actúo como consultor remoto para empresas que necesitan desarrollar productos, estructurar operaciones comerciales, negociar con proveedores internacionales, organizar procesos de importación, analizar facturas, apoyar decisiones de compra, precios, marketplace, e-commerce y expansión comercial.",
-    consulting_text2: "Mi experiencia combina industria, comercio exterior, sourcing internacional, importación desde China, gestión empresarial, desarrollo de productos técnicos, canales digitales y operación comercial B2B.",
-    consulting_text3: "Los servicios se prestan de forma online, por medios digitales, con acompañamiento estratégico, análisis documental, reuniones remotas, orientación operativa y soporte a la toma de decisiones.",
-    section_services: "Servicios",
-    svc1: "Desarrollo de productos y soluciones comerciales",
-    svc2: "Importación, sourcing y negociación con proveedores internacionales",
-    svc3: "Análisis de facturas, pedidos y viabilidad comercial",
-    svc4: "E-commerce, marketplace y canales digitales",
-    svc5: "Precios, margen y estrategia comercial",
-    svc6: "Operaciones comerciales internacionales y B2B",
-    svc7: "Proyectos técnicos especiales para empresas",
-    footer_available: "Disponible para reuniones presenciales en Valencia y online."
+    cert1_desc: "Formación en inteligencia artificial aplicada a negocios: análisis de mercado, desarrollo de productos, creación de materiales técnicos, automatización de procesos y apoyo a la toma de decisiones empresariales. AI Skills — StartSe University (2025).",
+
+    section_seeking: "Objetivos Profesionales",
+    obj1: "Consultoría estratégica para empresas que quieran desarrollar productos, importar de China o estructurar canales de e-commerce.",
+    obj2: "Alianza comercial con distribuidores y fabricantes industriales en España y Europa.",
+    obj3: "Representación de marcas europeas en el mercado brasileño a través de la estructura ya establecida de CIKALA.",
+    obj4: "Nuevas oportunidades entre Brasil, España, Europa y China en productos técnicos e industriales.",
+
+    footer_available: "Disponible para reuniones online y presenciales."
   },
 
+  /* ════════════════════════════════════════
+     PORTUGUÊS
+  ════════════════════════════════════════ */
+  pt: {
+    sidebar_title: "Empresário · Consultor Remoto em Importação, E-commerce e Operações Comerciais Internacionais · Autor",
+    label_contact: "Contato",
+    label_languages: "Idiomas",
+    lang_native: "Nativo",
+    lang_intermediate: "Intermediário",
+    lang_basic: "Básico",
+    lang_reading: "Nível leitura",
+    label_skills: "Competências-chave",
+    skill_import: "Importação",
+    skill_foreign_trade: "Comércio exterior",
+    skill_team_mgmt: "Gestão de equipes",
+    skill_mkt: "Marketing digital",
+    skill_product_dev: "Desenvolvimento de produto",
+    skill_tenders: "Licitações",
+    skill_design3d: "Design 3D",
+    skill_industrial_design: "Desenho industrial",
+    skill_robotics: "Proteção robótica",
+
+    section_profile: "Perfil Profissional",
+    profile_text: `Empresário há <span class="profile-highlight">mais de 25 anos</span> e fundador da CIKALA Indústria e Comércio, atuo no desenvolvimento de soluções industriais, produtos técnicos, operações comerciais, importação, e-commerce B2B e projetos sob medida para empresas.<br><br>Também presto consultoria remota em desenvolvimento de produtos, importação, e-commerce e operações comerciais internacionais, apoiando empresas na estruturação de projetos com fornecedores internacionais, canais digitais e expansão comercial.`,
+
+    section_consulting_ops: "Consultoria Remota e Operações Internacionais",
+    cops_p1: "Sou fundador da CIKALA Indústria e Comércio, empresa brasileira especializada no desenvolvimento de soluções industriais em lonas, telas, tecidos técnicos, capas industriais, proteções flexíveis e projetos sob medida para ambientes severos.",
+    cops_p2: "Atuo também como consultor remoto em desenvolvimento de produtos, importação, e-commerce e operações comerciais internacionais, apoiando empresas brasileiras na estruturação de projetos com fornecedores internacionais, análise de viabilidade, negociação, formação de pedidos, invoices, precificação, canais digitais e expansão comercial.",
+    cops_p3: "Minha atuação combina indústria, venda técnica, e-commerce B2B, marketplaces, importação, desenvolvimento de produtos, fornecedores internacionais, precificação, estoque, atendimento empresarial e execução operacional.",
+    cops_p4: "Tenho experiência no desenvolvimento de soluções para automação industrial, proteção robótica, células robotizadas, pintura industrial, solda, poeira abrasiva, cobertura técnica, proteção de equipamentos e aplicações industriais especiais.",
+    cops_p5: "Na CIKALA, o foco é transformar problemas industriais reais em soluções práticas, personalizadas e comercialmente viáveis, unindo produto físico, conhecimento técnico, operação digital e capacidade de execução.",
+    cops_p6: "Também utilizo inteligência artificial de forma estratégica para análise de mercado, desenvolvimento de produtos, criação de materiais técnicos, automação de processos e apoio à tomada de decisão empresarial.",
+    cops_p7: "Meu foco atual é fortalecer a CIKALA no Brasil e desenvolver novas oportunidades comerciais entre Brasil, Espanha, Europa e China, conectando produtos técnicos, fornecedores, distribuidores e empresas que precisam de soluções industriais reais.",
+
+    section_competencias: "Competências Profissionais",
+    comp_p1: "Minha atuação combina visão empresarial, experiência industrial e execução prática. Tenho capacidade de identificar problemas reais de operação, transformar demandas técnicas em soluções comerciais, desenvolver produtos sob medida, negociar com fornecedores nacionais e internacionais, estruturar pedidos, analisar custos, formar preços e apoiar decisões estratégicas.",
+    comp_p2: "Atuo com foco em desenvolvimento de produtos técnicos, importação, sourcing internacional, e-commerce B2B, marketplace, venda técnica, atendimento empresarial, precificação, margem, estoque, canais digitais e operações comerciais.",
+    comp_p3: "Também utilizo inteligência artificial de forma aplicada para análise de mercado, organização de informações, desenvolvimento de materiais técnicos, automação de processos, criação de conteúdo comercial e apoio à tomada de decisão.",
+    comp_p4: "Meu diferencial está na combinação entre experiência de chão de fábrica, visão comercial, operação digital e capacidade de execução.",
+
+    section_services: "Serviços de Consultoria Remota",
+    svc1: "Desenvolvimento de produtos técnicos e soluções industriais",
+    svc2: "Importação, sourcing e negociação com fornecedores internacionais",
+    svc3: "Análise de invoices, pedidos e viabilidade comercial",
+    svc4: "E-commerce B2B, marketplace e canais digitais",
+    svc5: "Precificação, margem, estoque e estratégia comercial",
+    svc6: "Operações comerciais internacionais",
+    svc7: "Projetos técnicos especiais para empresas",
+    svc8: "Uso estratégico de inteligência artificial em processos comerciais e operacionais",
+
+    section_numbers: "Em Números",
+    kpi_years: "anos de empreendedorismo",
+    kpi_clients: "clientes atendidos",
+    kpi_b2b: "operações B2B",
+    kpi_channels: "canais de venda ativos",
+
+    section_experience: "Experiência",
+    exp1_role: "Fundador & CEO",
+    exp1_period: "2000 — atual",
+    exp1_desc: "Fundei e opero empresa brasileira com atuação no setor industrial de soluções técnicas em lonas, telas, tecidos técnicos, capas industriais e proteções flexíveis para ambientes severos. Operação completa: fabricação sob medida, importação da China (~1 contêiner/mês), e-commerce multicanal (Mercado Livre, Amazon, Shopee, Shopify), B2B e licitações. Histórico sólido em projetos técnicos e comerciais. IA aplicada a análise de mercado, materiais técnicos e automação de processos.",
+    exp2_role: "Diretor Comercial & Expansão Internacional",
+    exp2_period: "2020 — atual",
+    exp2_company: "CIKALA · Projetos de Exportação e Expansão",
+    exp2_desc: "Liderei iniciativas de expansão para EUA, Paraguai e Europa. Estruturei plano de negócios para entrada em novos mercados internacionais. Negociei e opero importação direta com fornecedores chineses. Desenvolvi linha Amazon B2B para exportação.",
+    exp3_role: "Consultor e Mentor Empresarial",
+    exp3_period: "2015 — atual",
+    exp3_company: "Atividade paralela · Brasil",
+    exp3_desc: "Consultoria para pequenas e médias empresas em estruturação comercial, e-commerce e gestão de equipes. Mentoria em desenvolvimento de líderes e processos de vendas.",
+
+    tag_strategy: "Gestão estratégica",
+    tag_china_import: "Importação China",
+    tag_industrial_mfg: "Fabricação industrial",
+    tag_foreign_trade: "Comércio exterior",
+    tag_mkt: "Marketing digital",
+    tag_intl: "Internacionalização",
+    tag_bizplan: "Plano de negócios",
+    tag_china_suppliers: "Fornecedores China",
+    tag_consulting: "Consultoria",
+    tag_mentoring: "Mentoria",
+    tag_training: "Treinamento",
+
+    section_expertise: "Áreas de Expertise",
+    comp1_title: "🛒 E-commerce Multicanal",
+    comp1_desc: "Mercado Livre, Amazon, Shopee, Magalu, Shopify próprio, call center e WhatsApp — operação simultânea em todos os canais.",
+    comp2_title: "🚢 Comércio Exterior",
+    comp2_desc: "Importação regular da China: sourcing, frete, desembaraço aduaneiro, controle de qualidade e distribuição.",
+    comp3_title: "🏭 Operações Industriais",
+    comp3_desc: "Fabricação sob medida em PVC, polímeros e tecidos técnicos. Gestão de produção, PCP e controle de qualidade.",
+    comp4_title: "🤝 Vendas B2B & Gov.",
+    comp4_desc: "Negociação com indústria, grandes contratos e licitações públicas. Relacionamento institucional e gestão de key accounts.",
+    comp5_title: "🔧 Desenvolvimento de Produto",
+    comp5_desc: "Desenvolvimento de soluções industriais sob medida, engenharia de aplicação e projetos técnicos especiais.",
+    comp6_title: "🤖 IA & Tecnologia",
+    comp6_desc: "IA aplicada estrategicamente: análise de mercado, automação, materiais técnicos e suporte à tomada de decisão.",
+
+    section_certs: "Certificações",
+    cert1_desc: "Formação em inteligência artificial aplicada a negócios: análise de mercado, desenvolvimento de produtos, criação de materiais técnicos, automação de processos e apoio à tomada de decisão empresarial. AI Skills — StartSe University (2025).",
+
+    section_seeking: "Objetivos Profissionais",
+    obj1: "Consultoria estratégica para empresas que queiram desenvolver produtos, importar da China ou estruturar canais de e-commerce.",
+    obj2: "Parceria comercial com distribuidores e fabricantes industriais na Espanha e Europa.",
+    obj3: "Representação de marcas europeias no mercado brasileiro via estrutura CIKALA já estabelecida.",
+    obj4: "Novas oportunidades entre Brasil, Espanha, Europa e China em produtos técnicos e industriais.",
+
+    footer_available: "Disponível para reuniões online e presenciais."
+  },
+
+  /* ════════════════════════════════════════
+     ENGLISH
+  ════════════════════════════════════════ */
   en: {
-    sidebar_title: "Entrepreneur · Remote Consultant · Author",
+    sidebar_title: "Entrepreneur · Remote Consultant in Importing, E-commerce & International Commercial Operations · Author",
     label_contact: "Contact",
-    location: "Valencia, Spain",
     label_languages: "Languages",
     lang_native: "Native",
     lang_intermediate: "Intermediate",
@@ -1033,29 +1104,54 @@ const i18n = {
     skill_design3d: "3D Design",
     skill_industrial_design: "Industrial design",
     skill_robotics: "Robotic protection",
-    label_location: "Location",
-    location_detail: "Valencia, Spain · Europe",
-    origin_br: "Origin: Brazil",
+
     section_profile: "Professional Profile",
-    profile_text: `Entrepreneur with <span class="profile-highlight">25 years of experience</span> building and operating one of Brazil's leading companies in technical industrial protection solutions. Founder and CEO of CIKALA — active in e-commerce, B2B, custom manufacturing, imports, and public tenders.<br><br>Based in the Comunitat Valenciana as a European hub, connecting Brazil, Spain, Europe and China. My edge goes beyond the industry — it is the combination of skills built over decades: product, technology, people, international markets, and strategic vision.<br><br>I am seeking opportunities for <strong>executive roles, strategic consulting, or business partnerships</strong> in Spain and Europe.`,
+    profile_text: `Entrepreneur with <span class="profile-highlight">over 25 years of experience</span> and founder of CIKALA Industry and Commerce, I work in the development of industrial solutions, technical products, commercial operations, importing, B2B e-commerce, and custom projects for companies.<br><br>I also provide remote consulting in product development, importing, e-commerce, and international commercial operations, connecting companies with international suppliers, digital channels, and new markets.`,
+
+    section_consulting_ops: "Remote Consulting and International Operations",
+    cops_p1: "I am the founder of CIKALA Industry and Commerce, a Brazilian company specialized in developing industrial solutions in tarps, meshes, technical fabrics, industrial covers, flexible protections, and custom projects for harsh environments.",
+    cops_p2: "I also work as a remote consultant in product development, importing, e-commerce, and international commercial operations, supporting companies in structuring projects with international suppliers, viability analysis, negotiation, order placement, invoices, pricing, digital channels, and commercial expansion.",
+    cops_p3: "My work combines industry, technical sales, B2B e-commerce, marketplaces, importing, product development, international suppliers, pricing, inventory management, business service, and operational execution.",
+    cops_p4: "I have experience developing solutions for industrial automation, robotic protection, robotized cells, industrial painting, welding, abrasive dust, technical covering, equipment protection, and special industrial applications.",
+    cops_p5: "At CIKALA, the focus is on transforming real industrial problems into practical, personalized, and commercially viable solutions, combining physical product, technical knowledge, digital operation, and execution capacity.",
+    cops_p6: "I also use artificial intelligence strategically for market analysis, product development, technical content creation, process automation, and business decision-making support.",
+    cops_p7: "My current focus is strengthening CIKALA in Brazil and developing new commercial opportunities between Brazil, Spain, Europe, and China, connecting technical products, suppliers, distributors, and companies that need real industrial solutions.",
+
+    section_competencias: "Professional Competencies",
+    comp_p1: "My work combines business vision, industrial experience, and practical execution. I can identify real operational problems, turn technical demands into commercial solutions, develop custom products, negotiate with national and international suppliers, structure orders, analyze costs, set prices, and support strategic decisions.",
+    comp_p2: "I focus on technical product development, importing, international sourcing, B2B e-commerce, marketplaces, technical sales, business service, pricing, margin, inventory, digital channels, and commercial operations.",
+    comp_p3: "I also apply artificial intelligence for market analysis, information organization, technical content development, process automation, commercial content creation, and decision-making support.",
+    comp_p4: "My edge lies in the combination of shop floor experience, commercial vision, digital operation, and execution capacity.",
+
+    section_services: "Remote Consulting Services",
+    svc1: "Technical product development and industrial solutions",
+    svc2: "Importing, sourcing and negotiation with international suppliers",
+    svc3: "Invoice, order and commercial viability analysis",
+    svc4: "B2B e-commerce, marketplace and digital channels",
+    svc5: "Pricing, margin, inventory and commercial strategy",
+    svc6: "International commercial operations",
+    svc7: "Special technical projects for companies",
+    svc8: "Strategic use of artificial intelligence in commercial and operational processes",
+
     section_numbers: "By the Numbers",
     kpi_years: "years of entrepreneurship",
-    kpi_revenue: "operations volume",
-    kpi_employees: "years in industry",
     kpi_clients: "clients served",
+    kpi_b2b: "B2B operations",
     kpi_channels: "active sales channels",
+
     section_experience: "Experience",
     exp1_role: "Founder & CEO",
     exp1_period: "2000 — present",
-    exp1_desc: "Founded and operate a Brazilian company active in the industrial sector of technical solutions in tarps, meshes, and industrial covers. Built the full operation: custom manufacturing, regular imports from China (~1 container/month), multichannel e-commerce (Mercado Livre, Amazon, Shopee, Shopify), B2B for industry and government. Track record in technical and commercial projects. Implemented AI and automation projects.",
+    exp1_desc: "Founded and operate a Brazilian company active in the industrial sector of technical solutions in tarps, meshes, and industrial covers. Built the full operation: custom manufacturing, regular imports from China (~1 container/month), multichannel e-commerce (Mercado Livre, Amazon, Shopee, Shopify), B2B for industry and government. Strong track record in technical and commercial projects. Implemented AI and automation projects.",
     exp2_role: "Commercial Director & International Expansion",
     exp2_period: "2020 — present",
     exp2_company: "CIKALA · Export & Expansion Projects",
-    exp2_desc: "Led expansion initiatives into the USA (EB-2 NIW), Paraguay, and Europe. Structured the business plan for entry into the Spanish market based in Valencia. Negotiate and manage direct imports from Chinese suppliers. Developed an Amazon B2B export line.",
+    exp2_desc: "Led expansion initiatives into the USA, Paraguay, and Europe. Structured business plans for entry into new international markets. Negotiate and manage direct imports from Chinese suppliers. Developed an Amazon B2B export line.",
     exp3_role: "Business Consultant & Mentor",
     exp3_period: "2015 — present",
     exp3_company: "Independent activity · Brazil",
     exp3_desc: "Consulting for small and mid-sized businesses in commercial structuring, e-commerce, and team management. Mentoring in leadership development and sales processes.",
+
     tag_strategy: "Strategic management",
     tag_china_import: "China imports",
     tag_industrial_mfg: "Industrial manufacturing",
@@ -1067,6 +1163,7 @@ const i18n = {
     tag_consulting: "Consulting",
     tag_mentoring: "Mentoring",
     tag_training: "Training",
+
     section_expertise: "Areas of Expertise",
     comp1_title: "🛒 Multichannel E-commerce",
     comp1_desc: "Mercado Livre, Amazon, Shopee, Magalu, own Shopify, call center and WhatsApp — simultaneous operation across all channels.",
@@ -1076,37 +1173,28 @@ const i18n = {
     comp3_desc: "Custom manufacturing in PVC, polymers, and technical fabrics. Production management, planning, and quality control.",
     comp4_title: "🤝 B2B & Gov. Sales",
     comp4_desc: "Negotiation with industry, large contracts, and public tenders. Institutional relations and key account management.",
-    comp5_title: "👥 People Management",
-    comp5_desc: "Recruiting, leadership development, performance evaluation, and organizational culture.",
+    comp5_title: "🔧 Product Development",
+    comp5_desc: "Development of custom industrial solutions, application engineering, and special technical projects.",
     comp6_title: "🤖 AI & Technology",
-    comp6_desc: "Active implementation of artificial intelligence in operations: marketing, data analysis, process automation.",
-    section_seeking: "What I'm Looking for in Valencia",
-    obj1: "Executive or director position at a Spanish or European company that values an international profile with operational expertise.",
-    obj2: "Strategic consulting for companies looking to expand into Brazil, import from China, or launch into e-commerce.",
-    obj3: "Commercial partnership with industrial distributors and manufacturers in Spain and Europe.",
-    obj4: "Representation of European brands in the Brazilian market through CIKALA's established infrastructure.",
+    comp6_desc: "Strategic AI implementation: market analysis, automation, technical content, and decision-making support.",
+
     section_certs: "Certifications",
     cert1_desc: "Training in AI applied to business: market analysis, product development, technical content creation, process automation, and decision-making support. AI Skills — StartSe University (2025).",
-    section_consulting: "Remote Consulting in Product Development, Importing, E-commerce and International Commercial Operations",
-    consulting_text1: "I work as a remote consultant for companies that need to develop products, structure commercial operations, negotiate with international suppliers, organize import processes, analyze invoices, support purchasing decisions, pricing, marketplace, e-commerce, and commercial expansion.",
-    consulting_text2: "My experience combines industry, foreign trade, international sourcing, China imports, business management, technical product development, digital channels, and B2B commercial operations.",
-    consulting_text3: "Services are delivered fully online through digital channels, including strategic guidance, document review, remote meetings, operational support, and decision-making assistance.",
-    section_services: "Services",
-    svc1: "Product development and commercial solutions",
-    svc2: "Importing, sourcing and negotiation with international suppliers",
-    svc3: "Invoice, order and commercial viability analysis",
-    svc4: "E-commerce, marketplace and digital channels",
-    svc5: "Pricing, margin and commercial strategy",
-    svc6: "International and B2B commercial operations",
-    svc7: "Special technical projects for companies",
-    footer_available: "Available for in-person meetings in Valencia and online."
+
+    section_seeking: "Professional Objectives",
+    obj1: "Strategic consulting for companies looking to develop products, import from China, or structure e-commerce channels.",
+    obj2: "Commercial partnership with industrial distributors and manufacturers in Spain and Europe.",
+    obj3: "Representation of European brands in the Brazilian market through CIKALA's established infrastructure.",
+    obj4: "New opportunities between Brazil, Spain, Europe and China in technical and industrial products.",
+
+    footer_available: "Available for online and in-person meetings."
   }
 };
 
 function setLang(lang) {
   const t = i18n[lang];
   document.getElementById('html-root').lang = lang === 'pt' ? 'pt-BR' : lang;
-  ['pt','es','en'].forEach(l => document.getElementById('btn-'+l).classList.toggle('active', l === lang));
+  ['es','pt','en'].forEach(l => document.getElementById('btn-'+l).classList.toggle('active', l === lang));
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.getAttribute('data-i18n');
     if (t[k] !== undefined) el.textContent = t[k];
@@ -1117,7 +1205,7 @@ function setLang(lang) {
   });
 }
 
-setLang('pt');
+setLang('es');
 </script>
 
 </body>
