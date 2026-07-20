@@ -40,9 +40,8 @@
     .area{border:1px solid #dbe3ee;background:#f8fafc;border-radius:12px;padding:16px}
     .area h3{font-size:1rem;color:#17233f;margin-bottom:7px}
     .area p{font-size:.93rem;color:#4b5568;margin:0;line-height:1.55}
-    .contact{background:#17233f;color:#fff;padding:26px 42px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
-    a{color:inherit}.btn{border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:9px 14px;text-decoration:none}
-    @media(max-width:700px){.page{margin:0;border-radius:0}header,.content,.contact{padding-left:24px;padding-right:24px}.hero{grid-template-columns:1fr;text-align:left;gap:20px}.photo{width:128px;height:128px}.areas{grid-template-columns:1fr}.contact{display:block}.btn{display:inline-block;margin-top:12px}}
+    .contact{background:#17233f;color:#fff;padding:30px 42px}.contact h2{color:#fff;border-color:rgba(255,255,255,.22);margin-bottom:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-field{display:flex;flex-direction:column;gap:5px}.form-field.full{grid-column:1/-1}.form-field label{font-size:.85rem;font-weight:700}.form-field input,.form-field select,.form-field textarea{width:100%;padding:10px;border:1px solid rgba(255,255,255,.35);border-radius:7px;background:#fff;color:#243047;font:inherit}.form-field textarea{min-height:110px;resize:vertical}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:3px solid rgba(213,183,95,.55);border-color:#d5b75f}.btn{cursor:pointer;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:10px 16px;font:inherit;font-weight:700;margin-top:16px}.btn:disabled{opacity:.65;cursor:wait}.form-status{min-height:1.3em;font-size:.88rem;margin-top:10px}.form-status.success{color:#b8f0c7}.form-status.error{color:#ffd0ca}.form-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    @media(max-width:700px){.page{margin:0;border-radius:0}header,.content,.contact{padding-left:24px;padding-right:24px}.hero{grid-template-columns:1fr;text-align:left;gap:20px}.photo{width:128px;height:128px}.areas,.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}}
   </style>
 </head>
 <body>
@@ -110,9 +109,42 @@
     </main>
 
     <footer class="contact">
-      <div><strong>Contato</strong><br>fabiano@cikala.com.br</div>
-      <a class="btn" href="mailto:fabiano@cikala.com.br?subject=Consultoria%20Remota%20Internacional">Enviar e-mail</a>
+      <form id="contact-form" method="POST" data-formspree-endpoint="FORMSPREE_FABIANO_CICALA" novalidate>
+        <h2>Vamos conversar</h2>
+        <input type="hidden" name="_subject" value="Novo contato pelo site Fabiano Cicala">
+        <input type="hidden" name="source" value="fabianocicala.com">
+        <input type="text" name="_gotcha" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-grid">
+          <div class="form-field"><label for="contact-name">Nome *</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="form-field"><label for="contact-company">Empresa</label><input id="contact-company" name="company" type="text" autocomplete="organization"></div>
+          <div class="form-field"><label for="contact-email">E-mail *</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="form-field"><label for="contact-interest">Interesse *</label><select id="contact-interest" name="interest" required><option value="" selected disabled>Selecione uma opção</option><option>Consultoria</option><option>Parcerias</option><option>Outro</option></select></div>
+          <div class="form-field full"><label for="contact-message">Mensagem *</label><textarea id="contact-message" name="message" required></textarea></div>
+        </div>
+        <button class="btn" type="submit">Enviar mensagem</button>
+        <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+      </form>
     </footer>
   </div>
+  <script>
+    (function() {
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('contact-form-status');
+      var endpoint = form.dataset.formspreeEndpoint;
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); status.className = 'form-status';
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (!endpoint || endpoint.indexOf('FORMSPREE_') === 0) { status.className = 'form-status error'; status.textContent = 'O formulário está sendo configurado. Tente novamente em breve.'; return; }
+        var interest = form.querySelector('[name="interest"]').value;
+        var button = form.querySelector('button[type="submit"]');
+        button.disabled = true; button.textContent = 'Enviando...';
+        fetch(endpoint, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
+          .then(function(response) { if (!response.ok) throw new Error('form_error'); return response.json(); })
+          .then(function() { status.className = 'form-status success'; status.textContent = 'Mensagem enviada. Obrigado pelo contato.'; form.reset(); if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contato_fabiano_cicala', site:'fabianocicala.com', interest:interest}); })
+          .catch(function() { status.className = 'form-status error'; status.textContent = 'Não foi possível enviar sua mensagem. Tente novamente.'; })
+          .finally(function() { button.disabled = false; button.textContent = 'Enviar mensagem'; });
+      });
+    })();
+  </script>
 </body>
 </html>
