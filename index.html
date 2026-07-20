@@ -109,10 +109,11 @@
     </main>
 
     <footer class="contact">
-      <form id="contact-form" method="POST" data-formspree-endpoint="FORMSPREE_FABIANO_CICALA" novalidate>
+      <form id="contact-form" method="POST" action="GOOGLE_APPS_SCRIPT_WEB_APP_URL" target="contact-form-frame" novalidate>
         <h2>Vamos conversar</h2>
         <input type="hidden" name="_subject" value="Novo contato pelo site Fabiano Cicala">
-        <input type="hidden" name="source" value="fabianocicala.com">
+        <input type="hidden" name="site" value="fabianocicala.com">
+        <input type="hidden" name="response" value="postmessage">
         <input type="text" name="_gotcha" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-grid">
           <div class="form-field"><label for="contact-name">Nome *</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div>
@@ -124,25 +125,39 @@
         <button class="btn" type="submit">Enviar mensagem</button>
         <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
       </form>
+      <iframe name="contact-form-frame" title="Status do envio do formulário" hidden></iframe>
     </footer>
   </div>
   <script>
     (function() {
       var form = document.getElementById('contact-form');
       var status = document.getElementById('contact-form-status');
-      var endpoint = form.dataset.formspreeEndpoint;
+      var endpoint = form.getAttribute('action');
+      var responseTimer;
       form.addEventListener('submit', function(event) {
         event.preventDefault(); status.className = 'form-status';
         if (!form.checkValidity()) { form.reportValidity(); return; }
-        if (!endpoint || endpoint.indexOf('FORMSPREE_') === 0) { status.className = 'form-status error'; status.textContent = 'O formulário está sendo configurado. Tente novamente em breve.'; return; }
+        if (!endpoint || endpoint === 'GOOGLE_APPS_SCRIPT_WEB_APP_URL') { status.className = 'form-status error'; status.textContent = 'O formulário está sendo configurado. Tente novamente em breve.'; return; }
         var interest = form.querySelector('[name="interest"]').value;
         var button = form.querySelector('button[type="submit"]');
         button.disabled = true; button.textContent = 'Enviando...';
-        fetch(endpoint, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
-          .then(function(response) { if (!response.ok) throw new Error('form_error'); return response.json(); })
-          .then(function() { status.className = 'form-status success'; status.textContent = 'Mensagem enviada. Obrigado pelo contato.'; form.reset(); if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contato_fabiano_cicala', site:'fabianocicala.com', interest:interest}); })
-          .catch(function() { status.className = 'form-status error'; status.textContent = 'Não foi possível enviar sua mensagem. Tente novamente.'; })
-          .finally(function() { button.disabled = false; button.textContent = 'Enviar mensagem'; });
+        form.dataset.submittedInterest = interest;
+        form.submit();
+        window.clearTimeout(responseTimer);
+        responseTimer = window.setTimeout(function() { button.disabled = false; button.textContent = 'Enviar mensagem'; status.className = 'form-status error'; status.textContent = 'Não foi possível confirmar o envio. Tente novamente.'; }, 15000);
+      });
+      window.addEventListener('message', function(event) {
+        var data = event.data;
+        if (!data || data.type !== 'cikala-contact-response') return;
+        window.clearTimeout(responseTimer);
+        var button = form.querySelector('button[type="submit"]');
+        button.disabled = false; button.textContent = 'Enviar mensagem';
+        if (data.ok) {
+          status.className = 'form-status success'; status.textContent = 'Mensagem enviada. Obrigado pelo contato.';
+          var interest = form.dataset.submittedInterest || '';
+          form.reset();
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contato_fabiano_cicala', site:'fabianocicala.com', interest:interest});
+        } else { status.className = 'form-status error'; status.textContent = data.message || 'Não foi possível enviar sua mensagem. Tente novamente.'; }
       });
     })();
   </script>
