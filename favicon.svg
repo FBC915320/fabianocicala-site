@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FC — Fabiano Cicala">
-  <rect width="64" height="64" rx="14" fill="#17233f"/>
-  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#d5b75f" stroke-width="2"/>
-  <path d="M15 17h20v7H23v8h10v7H23v12h-8V17z" fill="#ffffff"/>
-  <path d="M49 25c-2.1-1.9-4.7-2.9-7.6-2.9-6.2 0-10.7 4.5-10.7 10.9s4.5 10.9 10.7 10.9c2.9 0 5.5-1 7.6-2.9v8.2c-2.4 1.2-5.2 1.8-8.2 1.8-10.7 0-18.5-7.4-18.5-18s7.8-18 18.5-18c3 0 5.8.6 8.2 1.8V25z" fill="#d5b75f"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="FC — Fabiano Cicala">
+  <defs>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b3d"/>
+      <stop offset="1" stop-color="#0b315f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b88924"/>
+      <stop offset="0.45" stop-color="#f2d37a"/>
+      <stop offset="1" stop-color="#b67c16"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="492" height="492" rx="94" fill="url(#navy)" stroke="url(#gold)" stroke-width="10"/>
+  <text x="110" y="374" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="300" font-weight="400">F</text>
+  <text x="245" y="400" fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="265" font-weight="400">C</text>
 </svg>
