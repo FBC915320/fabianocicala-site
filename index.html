@@ -157,8 +157,7 @@
       var browserLanguage = (navigator.language || 'pt').slice(0, 2).toLowerCase();
       applyLanguage(browserLanguage === 'es' || browserLanguage === 'en' ? browserLanguage : 'pt');
       if (!window.fetch) return;
-      window.addEventListener('load', function() {
-        window.setTimeout(function() {
+      window.setTimeout(function() {
           fetch('https://ipapi.co/json/')
             .then(function(response) { return response.ok ? response.json() : null; })
             .then(function(location) {
@@ -169,8 +168,7 @@
               applyLanguage(portuguese.indexOf(country) !== -1 ? 'pt' : (spanish.indexOf(country) !== -1 ? 'es' : 'en'));
             })
             .catch(function() {});
-        }, 0);
-      });
+      }, 0);
     })();
 
     (function() {
