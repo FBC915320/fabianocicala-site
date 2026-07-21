@@ -188,6 +188,7 @@
         status.className = 'form-status success'; status.textContent = 'Mensagem enviada. Obrigado pelo contato.';
         var interest = form.dataset.submittedInterest || '';
         form.reset();
+        if (typeof window.fabianoAnalyticsTrack === 'function') window.fabianoAnalyticsTrack('form_submit', {form_name:'contato_fabiano_cicala', site:'fabianocicala.com', interest:interest});
         if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contato_fabiano_cicala', site:'fabianocicala.com', interest:interest});
       }
       if (responseFrame) responseFrame.addEventListener('load', function() { window.setTimeout(completeSubmission, 300); });
@@ -217,6 +218,49 @@
           status.className = 'form-status error'; status.textContent = data.message || 'Não foi possível enviar sua mensagem. Tente novamente.';
         }
       });
+    })();
+
+    (function() {
+      function track(eventName, parameters) {
+        if (typeof gtag === 'function') gtag('event', eventName, parameters || {});
+      }
+      window.fabianoAnalyticsTrack = track;
+      var site = 'fabianocicala.com';
+      var form = document.getElementById('contact-form');
+      var formViewed = false;
+      var formStarted = false;
+      var milestones = {};
+      function trackFormView() {
+        if (formViewed) return;
+        formViewed = true;
+        track('view_contact_form', {form_name:'contato_fabiano_cicala', site:site});
+      }
+      if (form && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function(entries, observer) {
+          if (entries[0] && entries[0].isIntersecting) { trackFormView(); observer.disconnect(); }
+        }, {threshold:0.35}).observe(form);
+        form.addEventListener('focusin', function() {
+          if (formStarted) return;
+          formStarted = true;
+          track('form_start', {form_name:'contato_fabiano_cicala', site:site});
+        });
+      }
+      document.addEventListener('click', function(event) {
+        var target = event.target.closest && event.target.closest('a[href^="http"]');
+        if (target && target.hostname !== window.location.hostname) track('outbound_link_click', {site:site, link_url:target.href});
+      });
+      function trackScrollDepth() {
+        var height = document.documentElement.scrollHeight - window.innerHeight;
+        if (height <= 0) return;
+        var depth = Math.round((window.scrollY / height) * 100);
+        [25,50,75,90].forEach(function(milestone) {
+          if (depth >= milestone && !milestones[milestone]) {
+            milestones[milestone] = true;
+            track('scroll_depth', {site:site, percent_scrolled:milestone});
+          }
+        });
+      }
+      window.addEventListener('scroll', trackScrollDepth, {passive:true});
     })();
   </script>
 </body>
