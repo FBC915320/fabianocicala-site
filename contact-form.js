@@ -77,15 +77,19 @@
     btn.disabled=true;
     btn.textContent=config.sending;
 
-    const data=new FormData(form);
+    const payload={};
+    new FormData(form).forEach((value,key)=>{payload[key]=String(value)});
     const controller=new AbortController();
     const timer=setTimeout(()=>controller.abort(),20000);
 
     try{
       const response=await fetch(endpoint,{
         method:'POST',
-        headers:{'Accept':'application/json'},
-        body:data,
+        headers:{
+          'Content-Type':'application/json',
+          'Accept':'application/json'
+        },
+        body:JSON.stringify(payload),
         signal:controller.signal
       });
       const result=await response.json().catch(()=>({}));
