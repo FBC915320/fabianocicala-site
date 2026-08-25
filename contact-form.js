@@ -2,10 +2,11 @@
   const original=document.getElementById('contact-form');
   if(!original)return;
 
-  // Replace any legacy form handlers from previous implementations.
+  // Replace legacy handlers so only this implementation controls submission.
   const form=original.cloneNode(true);
   original.replaceWith(form);
   form.removeAttribute('onsubmit');
+  form.removeAttribute('target');
 
   const lang=(document.documentElement.lang||'pt-BR').toLowerCase();
   const btn=form.querySelector('button[type="submit"]');
@@ -35,10 +36,8 @@
     autoresponse:'Olá,\n\nSua mensagem foi recebida com sucesso pelo FabianoCicala.com.\n\nObrigado pelo contato. Vou analisar sua mensagem e retornarei assim que possível.\n\nFabiano Cicala\nEmpresário · Fundador da CIKALA\nfabianocicala.com\nLinkedIn · Instagram'
   };
 
-  // Use the activated FormSubmit token instead of exposing the e-mail address.
-  form.method='POST';
-  form.action='https://formsubmit.co/b1683556bf571ec55cad89e14c6fbaab';
-  form.target='fabiano-form-target';
+  // Activated FormSubmit token. AJAX keeps the visitor on the same page.
+  const endpoint='https://formsubmit.co/ajax/b1683556bf571ec55cad89e14c6fbaab';
 
   const setHidden=(name,value)=>{
     let el=form.querySelector(`input[name="${name}"]`);
@@ -46,25 +45,12 @@
     el.value=value;
   };
 
+  form.querySelectorAll('input[name="_captcha"],input[name="response"],input[name="_next"]').forEach(el=>el.remove());
   setHidden('_subject',config.subject);
   setHidden('_template','box');
   setHidden('_autoresponse',config.autoresponse);
-  setHidden('_next','https://fabianocicala.com/form-sent.html');
-  setHidden('_url',location.href);
-  setHidden('site',location.href);
   setHidden('_honey','');
-
-  // Autoresponse requires a normal submission, so do not use AJAX or disable reCAPTCHA.
-  form.querySelectorAll('input[name="_captcha"],input[name="response"]').forEach(el=>el.remove());
-
-  let iframe=document.querySelector('iframe[name="fabiano-form-target"]');
-  if(!iframe){
-    iframe=document.createElement('iframe');
-    iframe.name='fabiano-form-target';
-    iframe.title='Envio do formulário';
-    iframe.style.display='none';
-    document.body.appendChild(iframe);
-  }
+  setHidden('site',location.href);
 
   let status=form.querySelector('.form-status-box');
   if(!status){
@@ -72,47 +58,47 @@
     status.className='form-status-box';
     status.setAttribute('role','status');
     status.setAttribute('aria-live','polite');
-    Object.assign(status.style,{
-      display:'none',marginTop:'14px',padding:'14px 16px',
-      border:'1px solid rgba(216,185,95,.7)',background:'rgba(255,255,255,.06)',
-      color:'#fff',fontWeight:'700',lineHeight:'1.45'
-    });
     btn.insertAdjacentElement('afterend',status);
   }
 
-  let pending=false;
-  let timer=null;
-  const originalLabel=btn.textContent;
-
-  const finish=(ok)=>{
-    if(!pending)return;
-    pending=false;
-    clearTimeout(timer);
-    btn.disabled=false;
-    btn.textContent=originalLabel;
+  const show=(type,text)=>{
+    status.className=`form-status-box ${type}`;
+    status.textContent=text;
     status.style.display='block';
-    status.textContent=ok?config.success:config.error;
-    if(ok){
-      form.reset();
-      if(typeof gtag==='function')gtag('event','generate_lead',{form_id:'contact-form',form_name:'Contato Fabiano Cicala',language:lang});
-    }else if(typeof gtag==='function'){
-      gtag('event','form_submit_error',{form_id:'contact-form',language:lang});
-    }
   };
 
-  form.addEventListener('submit',(e)=>{
-    if(!form.reportValidity()){e.preventDefault();return;}
-    pending=true;
-    btn.disabled=true;
-    btn.textContent=config.sending;
-    status.style.display='block';
-    status.textContent=config.sending;
-    clearTimeout(timer);
-    timer=setTimeout(()=>finish(false),30000);
-  });
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    if(!form.reportValidity())return;
 
-  window.addEventListener('message',(e)=>{
-    if(e.origin!==location.origin)return;
-    if(e.data&&e.data.type==='fabiano-form-success')finish(true);
-  });
+    btn.disabled=true;
+    show('sending',config.sending);
+
+    const data=new FormData(form);
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),20000);
+
+    try{
+      const response=await fetch(endpoint,{
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:data,
+        signal:controller.signal
+      });
+      const result=await response.json().catch(()=>({}));
+      const explicitFailure=result.success===false||result.success==='false';
+      if(!response.ok||explicitFailure)throw new Error(result.message||'submit_failed');
+
+      show('success',config.success);
+      form.reset();
+      if(typeof gtag==='function')gtag('event','generate_lead',{form_id:'contact-form',form_name:'Contato Fabiano Cicala',language:lang});
+    }catch(err){
+      show('error',config.error);
+      if(typeof gtag==='function')gtag('event','form_submit_error',{form_id:'contact-form',language:lang});
+    }finally{
+      clearTimeout(timer);
+      btn.disabled=false;
+    }
+  },true);
 })();
