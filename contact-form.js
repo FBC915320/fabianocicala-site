@@ -4,6 +4,7 @@
 
   const form=original.cloneNode(true);
   original.replaceWith(form);
+  form.removeAttribute('onsubmit');
 
   const lang=(document.documentElement.lang||'pt-BR').toLowerCase();
   const btn=form.querySelector('button[type="submit"]');
