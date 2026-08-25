@@ -105,5 +105,6 @@ const routes={pt:'/',es:'/es/',it:'/it/',en:'/en/'};
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>location.href=routes[b.dataset.lang]));
 document.querySelectorAll('[data-outbound="cikala"]').forEach(a=>a.addEventListener('click',()=>{if(typeof gtag==='function')gtag('event','cikala_outbound_click',{link_url:a.href,link_domain:'cikala.com.br',language:'pt-BR'})}));
 </script>
+<script src="/contact-form.js?v=20260825d"></script>
 </body>
 </html>
