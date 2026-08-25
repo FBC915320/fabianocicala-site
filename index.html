@@ -45,7 +45,7 @@
       <div class="head"><div class="kicker">Perfil</div><div><h2>Estratégia com execução.</h2><p>Sou empresário e fundador da CIKALA Indústria e Comércio. Minha trajetória foi construída dentro de operações reais: observando, aprendendo, testando, medindo e transformando oportunidades em produtos, processos, canais e negócios.</p></div></div>
       <p class="principle">Minha forma de trabalhar começa onde as coisas realmente acontecem: junto às pessoas, aos processos, às máquinas, ao produto e ao cliente.</p>
       <a class="cikala-proof" href="https://www.cikala.com.br/" target="_blank" rel="noopener" data-outbound="cikala">
-        <span class="cikala-brandblock"><span class="cikala-founded">Fundador da</span><img class="cikala-logo" src="/cikala-logo.svg" alt="CIKALA"><span class="cikala-domain">cikala.com.br ↗</span></span>
+        <span class="cikala-brandblock"><span class="cikala-founded">Fundador da</span><img class="cikala-logo" src="/cikala-logo.png?v=20260825" alt="CIKALA"><span class="cikala-domain">cikala.com.br ↗</span></span>
         <span class="cikala-copy">Indústria, comércio, e-commerce e soluções sob medida desde 2000.</span>
       </a>
     </section>
@@ -78,11 +78,10 @@
   <footer class="contact" id="contato">
     <h2>Vamos conversar.</h2>
     <p class="contactIntro">Se existe um negócio, produto ou operação com potencial para crescer, transformar-se ou alcançar novos mercados em qualquer parte do mundo, tenho interesse no desafio.</p>
-    <form id="contact-form" method="POST" action="https://formsubmit.co/fbcicala@gmail.com" onsubmit="const b=this.querySelector('button[type=submit]');b.disabled=true;b.textContent='Enviando…';">
+    <form id="contact-form" method="POST" action="https://formsubmit.co/fbcicala@gmail.com">
       <input type="hidden" name="_subject" value="Novo contato pelo site Fabiano Cicala">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://fabianocicala.com/obrigado.html">
+      <input type="hidden" name="_next" value="https://fabianocicala.com/form-sent.html">
       <input type="text" name="_honey" style="display:none">
       <input type="hidden" name="site" value="fabianocicala.com">
       <div class="form-grid">
@@ -96,7 +95,7 @@
       <p style="margin:10px 0 0;color:#aeb8c8;font-size:.82rem">Se preferir, escreva diretamente para <a href="mailto:fbcicala@gmail.com" style="color:#fff">fbcicala@gmail.com</a>.</p>
     </form>
     <div class="social"><a href="https://www.linkedin.com/in/fabiano-cicala-71ba82364/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/fabianocicala1/" target="_blank" rel="noopener">Instagram</a></div>
-    <a class="cikala-mini" href="https://www.cikala.com.br/" target="_blank" rel="noopener" data-outbound="cikala"><span>Fundador da</span><img class="cikala-logo-mini" src="/cikala-logo.svg" alt="CIKALA"><span>cikala.com.br</span></a>
+    <a class="cikala-mini" href="https://www.cikala.com.br/" target="_blank" rel="noopener" data-outbound="cikala"><span>Fundador da</span><img class="cikala-logo-mini" src="/cikala-logo.png?v=20260825" alt="CIKALA"><span>cikala.com.br</span></a>
   </footer>
   <div class="foot">© 2026 Fabiano Cicala · fabianocicala.com</div>
 </div>
@@ -105,6 +104,6 @@ const routes={pt:'/',es:'/es/',it:'/it/',en:'/en/'};
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>location.href=routes[b.dataset.lang]));
 document.querySelectorAll('[data-outbound="cikala"]').forEach(a=>a.addEventListener('click',()=>{if(typeof gtag==='function')gtag('event','cikala_outbound_click',{link_url:a.href,link_domain:'cikala.com.br',language:'pt-BR'})}));
 </script>
-<script src="/contact-form.js?v=20260825e"></script>
+<script src="/contact-form.js?v=20260825f"></script>
 </body>
 </html>
