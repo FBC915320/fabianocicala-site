@@ -15,25 +15,25 @@
     success:'Your message was sent successfully. Thank you — I will get back to you as soon as possible.',
     error:'Your message could not be sent. Please try again or email fbcicala@gmail.com.',
     subject:'New contact | Fabiano Cicala',
-    autoresponse:'Hello,\n\nYour message sent through FabianoCicala.com was received successfully.\n\nThank you for getting in touch. I will review it and reply as soon as possible.\n\nFabiano Cicala\nEntrepreneur · Founder of CIKALA\nhttps://fabianocicala.com'
+    autoresponse:'Hello,\n\nI received your message through fabianocicala.com.\n\nThank you for reaching out. I will read it carefully and get back to you as soon as possible.\n\nBest regards,\nFabiano Cicala\nfabianocicala.com'
   }:lang.startsWith('es')?{
     sending:'Enviando…',
     success:'Su mensaje fue enviado correctamente. Gracias por el contacto; responderé lo antes posible.',
     error:'No fue posible enviar el mensaje. Inténtelo nuevamente o escriba a fbcicala@gmail.com.',
     subject:'Nuevo contacto | Fabiano Cicala',
-    autoresponse:'Hola,\n\nSu mensaje enviado por FabianoCicala.com fue recibido correctamente.\n\nGracias por el contacto. Lo revisaré y responderé lo antes posible.\n\nFabiano Cicala\nEmpresario · Fundador de CIKALA\nhttps://fabianocicala.com'
+    autoresponse:'Hola,\n\nHe recibido su mensaje a través de fabianocicala.com.\n\nGracias por ponerse en contacto. Lo leeré con atención y responderé lo antes posible.\n\nSaludos,\nFabiano Cicala\nfabianocicala.com'
   }:lang.startsWith('it')?{
     sending:'Invio…',
     success:'Il messaggio è stato inviato con successo. Grazie; risponderò appena possibile.',
     error:'Non è stato possibile inviare il messaggio. Riprova o scrivi a fbcicala@gmail.com.',
     subject:'Nuovo contatto | Fabiano Cicala',
-    autoresponse:'Buongiorno,\n\nIl messaggio inviato tramite FabianoCicala.com è stato ricevuto correttamente.\n\nGrazie per il contatto. Lo leggerò e risponderò appena possibile.\n\nFabiano Cicala\nImprenditore · Fondatore di CIKALA\nhttps://fabianocicala.com'
+    autoresponse:'Buongiorno,\n\nHo ricevuto il suo messaggio tramite fabianocicala.com.\n\nGrazie per il contatto. Lo leggerò con attenzione e risponderò appena possibile.\n\nCordiali saluti,\nFabiano Cicala\nfabianocicala.com'
   }:{
     sending:'Enviando…',
     success:'Sua mensagem foi enviada com sucesso. Obrigado pelo contato; retornarei assim que possível.',
     error:'Não foi possível enviar sua mensagem. Tente novamente ou escreva para fbcicala@gmail.com.',
     subject:'Novo contato | Fabiano Cicala',
-    autoresponse:'Olá,\n\nSua mensagem enviada pelo FabianoCicala.com foi recebida com sucesso.\n\nObrigado pelo contato. Vou analisá-la e retornarei assim que possível.\n\nFabiano Cicala\nEmpresário · Fundador da CIKALA\nhttps://fabianocicala.com'
+    autoresponse:'Olá,\n\nRecebi sua mensagem pelo fabianocicala.com.\n\nObrigado pelo contato. Vou ler com atenção e retornarei assim que possível.\n\nUm abraço,\nFabiano Cicala\nfabianocicala.com'
   };
 
   const setHidden=(name,value)=>{
