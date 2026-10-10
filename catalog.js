@@ -1,12 +1,12 @@
 (function () {
   const styles = document.createElement('link');
   styles.rel = 'stylesheet';
-  styles.href = '/catalog.css?v=20261010compact';
+  styles.href = '/catalog.css?v=20261010final';
   document.head.append(styles);
 
   const productStyles = document.createElement('link');
   productStyles.rel = 'stylesheet';
-  productStyles.href = '/products.css?v=20261010c';
+  productStyles.href = '/products.css?v=20261010final';
   document.head.append(productStyles);
 
   const section = document.querySelector('#livros');
@@ -32,7 +32,7 @@
   };
 
   const navBooks = document.querySelector('.nav > a[href="#livros"]');
-  if (navBooks) navBooks.insertAdjacentHTML('beforebegin', `<a href="#apps">${appCopy.nav}</a>`);
+  if (navBooks) navBooks.insertAdjacentHTML('afterend', `<a href="#apps">${appCopy.nav}</a>`);
 
   const productSection = document.createElement('section');
   productSection.className = 'section products-section';
@@ -115,40 +115,47 @@
         : 'O trabalho terminou. Mas a cabeça continua. Uma obra de relaxamento, fé e autoconhecimento com práticas de atenção ao corpo, visualização, reflexão e oração, respeitando o ritmo de cada pessoa.'
     },
     {
-      id:'ia-01', title:'IA de Verdade — Comece do Zero',
+      id:'ia-01', title:'IA do Zero à Prática',
       subtitle:'Coleção Aprenda IA de Graça · Volume 1',
-      cover:'/img/capa-ia-de-verdade-01.svg', status:labels.upcoming,
+      cover:'/img/capa-ia-final-01.jpg', status:'E-book',
       description:'Primeiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
-      id:'ia-02', title:'IA de Verdade — Trabalho e Negócios',
+      id:'ia-02', title:'Use IA para Trabalhar e Faturar',
       subtitle:'Coleção Aprenda IA de Graça · Volume 2',
-      cover:'/img/capa-ia-de-verdade-02.svg', status:labels.upcoming,
+      cover:'/img/capa-ia-final-02.jpg', status:'E-book',
       description:'Segundo volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
-      id:'ia-03', title:'IA de Verdade — Formação e Carreira',
+      id:'ia-03', title:'IA Além do Básico',
       subtitle:'Coleção Aprenda IA de Graça · Volume 3',
-      status:labels.upcoming,
+      cover:'/img/capa-ia-final-03.jpg', status:'E-book',
       description:'Terceiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
-      id:'ia-04', title:'IA de Verdade — Guia Completo',
-      subtitle:'Coleção Aprenda IA de Graça · Volume 4',
-      status:labels.upcoming,
+      id:'ia-04', title:'O Mapa Completo da IA',
+      subtitle:'Coleção Aprenda IA de Graça · Edição integral',
+      cover:'/img/capa-ia-final-04.jpg', status:'E-book',
       description:'Quarto volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
       id:'eu-existo', title:'Eu Existo!',
       subtitle:'Nova obra de Fabiano Cicala',
-      status:isEnglish ? 'Coming soon' : 'Em breve',
+      upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
       description:'Obra em preparação editorial. Mais informações em breve.'
     },
     {
       id:'ultima-fonte', title:'A Última Fonte',
       subtitle:'Nova obra de Fabiano Cicala',
-      status:isEnglish ? 'Coming soon' : 'Em breve',
+      upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
       description:'Obra em preparação editorial. Mais informações em breve.'
+    },
+    {
+      id:'caminho-esperanca', title:'A Caminho da Esperança',
+      subtitle:isEnglish ? 'New book by Fabiano Cicala' : 'Nova obra de Fabiano Cicala',
+      cover:'/capa-caminho-esperanca.png', upcoming:true,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:labels.projectsIntro
     },
     {
       id: 'solar', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
@@ -162,30 +169,30 @@
   ];
 
   const card = (book) => `
-    <article class="book-card book-card--enhanced">
-      ${book.pageUrl ? `<a class="book-cover book-preview-cover" href="${book.pageUrl}" aria-label="${labels.details}: ${book.title}">` : `<button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">`}
-        ${book.cover ? `<span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy"></span>` : `<span class="book-3d" style="display:grid;place-items:center;background:#14253a;color:#e2bc7b;padding:16px;text-align:center;min-height:240px;font-family:Georgia,serif"><span>${book.title}<small style="display:block;font:12px system-ui;margin-top:14px">${book.status || labels.upcoming}</small></span></span>`}
-        <span class="book-cover-action">${book.pageUrl ? labels.details : labels.preview}</span>
+    <article id="livro-${book.id}" class="book-card book-card--enhanced${book.upcoming ? ' book-card--upcoming' : ''}">
+      ${book.upcoming ? `<span class="book-soon">${book.status}</span>` : ''}
+      ${book.pageUrl ? `<a class="book-cover book-preview-cover" href="${book.pageUrl}" aria-label="${labels.details}: ${book.title}">` : `<button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.details}: ${book.title}">`}
+        ${book.cover ? `<span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="Capa de ${book.title}, de Fabiano Cicala" loading="lazy"></span>` : `<span class="book-placeholder" aria-hidden="true"><span class="book-placeholder-lines"></span></span>`}
       ${book.pageUrl ? '</a>' : '</button>'}
       <div class="book-info">
-        <span class="book-status">${book.status || labels.available}</span>
-        <h3>${book.pageUrl ? `<a href="${book.pageUrl}" style="color:inherit;text-decoration:none">${book.title}</a>` : book.title}</h3><p class="book-subtitle">${book.subtitle}</p>
+        ${!book.upcoming ? `<span class="book-status">${book.status || labels.available}</span>` : ''}
+        <h3>${book.pageUrl ? `<a href="${book.pageUrl}">${book.title}</a>` : book.title}</h3>
+        <p class="book-subtitle">${book.subtitle}</p>
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
-        ${book.printNote ? `<p class="book-print-note">${book.printNote}</p>` : ''}
         <div class="book-actions">
-          ${book.pageUrl ? `<a class="book-preview-button" href="${book.pageUrl}">${labels.details}</a>` : `<button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>`}
-          ${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}
-          ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}<p class="book-channel-note">${book.amazonUrl ? labels.directSoon : labels.otherStores}</p>` : ''}
+          ${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : `<button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>`}
+          ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}
+          ${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}
         </div>
       </div>
     </article>`;
 
-  section.querySelector('.head').outerHTML = `<div class="books-heading"><div><div class="kicker">${labels.eyebrow}</div><h2>${labels.title}</h2><p>${labels.intro}</p></div><a class="store-link" href="${appleAuthorUrl}" target="_blank" rel="noopener">${labels.store}<span aria-hidden="true">↗</span></a></div>`;
-  const published = books.filter((book) => !book.id.startsWith('ia-') && !['eu-existo', 'ultima-fonte'].includes(book.id));
+  const legacyHeading = section.querySelector('.head');
+  if (legacyHeading) legacyHeading.outerHTML = `<div class="books-heading"><div><div class="kicker">${labels.eyebrow}</div><h2>${labels.title}</h2><p>${labels.intro}</p></div><a class="store-link" href="${appleAuthorUrl}" target="_blank" rel="noopener">${labels.store}<span aria-hidden="true">↗</span></a></div>`;
+  const published = books.filter((book) => !book.id.startsWith('ia-') && !book.upcoming);
   const collection = books.filter((book) => book.id.startsWith('ia-'));
-  const upcoming = books.filter((book) => ['eu-existo', 'ultima-fonte'].includes(book.id));
-  grid.innerHTML = `<h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3>${published.map(card).join('')}<h3 class="book-collection-title">Coleção Aprenda IA de Graça</h3>${collection.map(card).join('')}<h3 class="book-collection-title">${isEnglish ? 'Coming soon' : 'Em breve'}</h3>${upcoming.map(card).join('')}`;
-  grid.insertAdjacentHTML('afterend', `<aside class="upcoming-book" aria-label="${labels.projects}"><img src="/capa-caminho-esperanca.png" alt="A Caminho da Esperança" loading="lazy"><div><span class="book-status">${labels.upcoming}</span><h3>A Caminho da Esperança</h3><p>${labels.projectsIntro}</p></div></aside>`);
+  const upcoming = books.filter((book) => book.upcoming);
+  grid.innerHTML = `<div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3><div class="book-row">${published.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">Coleção Aprenda IA de Graça</h3><div class="book-row book-row--collection">${collection.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Next releases' : 'Próximos lançamentos'}</h3><div class="book-row">${upcoming.map(card).join('')}</div></div>`;
 
   const dialog = document.createElement('dialog');
   dialog.className = 'book-dialog';
@@ -195,7 +202,7 @@
   function openPreview(id) {
     const book = books.find((item) => item.id === id);
     if (!book) return;
-    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button>${book.cover ? `<img src="${book.cover}" alt="${book.title}">` : ''}<div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
+    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button>${book.cover ? `<img src="${book.cover}" alt="${book.title}">` : ''}<div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.printNote ? `<p class="book-print-note">${book.printNote}</p>` : ''}${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
     dialog.showModal();
     dialog.querySelector('.dialog-close').focus();
   }
@@ -205,13 +212,14 @@
 
   const schema = document.createElement('script');
   schema.type = 'application/ld+json';
+  schema.id = 'catalog-schema';
   schema.textContent = JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'Person', name: 'Fabiano Cicala', url: 'https://fabianocicala.com',
-    sameAs: ['https://www.instagram.com/fabianocicala1/', 'https://www.linkedin.com/in/fabiano-cicala-71ba82364/', appleAuthorUrl],
-    author: books.filter((book) => book.url).map((book) => ({
-      '@type': 'Book', name: book.title, url: book.url, image: `https://fabianocicala.com${book.cover}`,
-      offers: { '@type': 'Offer', priceCurrency: 'BRL', price: book.price.replace('R$ ', '').replace(',', '.') }
-    }))
+    '@context':'https://schema.org',
+    '@graph': [
+      {'@type':'Person','@id':'https://fabianocicala.com/#autor',name:'Fabiano Cicala',url:'https://fabianocicala.com/',sameAs:['https://www.instagram.com/fabianocicala1/','https://www.linkedin.com/in/fabiano-cicala-71ba82364/',appleAuthorUrl,'https://www.youtube.com/@FabianoCicala']},
+      {'@type':'ItemList',name:'Livros de Fabiano Cicala',itemListElement:books.map((book,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'Book',name:book.title,author:{'@id':'https://fabianocicala.com/#autor'},inLanguage:'pt-BR',url:book.pageUrl ? 'https://fabianocicala.com'+book.pageUrl : 'https://fabianocicala.com/#livro-'+book.id,...(book.cover ? {image:'https://fabianocicala.com'+book.cover} : {})}}))}
+    ]
   });
+  document.getElementById('catalog-schema')?.remove();
   document.head.append(schema);
 })();

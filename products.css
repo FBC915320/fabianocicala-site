@@ -6,3 +6,9 @@
 .app-art span:after{content:"";position:absolute;left:18%;right:18%;bottom:7px;height:7px;border-radius:999px;background:#438cff;box-shadow:0 0 7px #438cff99}
 .app-art span i,.app-art span b{font:inherit;font-style:normal}.app-art span b{font-size:1.32em;vertical-align:-.04em}
 @media(max-width:520px){.app-art span{font-size:2.35rem;padding-bottom:13px}.app-art span:after{height:5px;bottom:5px}}
+
+.products-heading h2{font-size:clamp(1.6rem,2.8vw,2.1rem)}
+.app-feature{gap:28px;padding:24px;box-shadow:none;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.app-workspace{height:210px}.app-feature-copy h3{font-size:clamp(1.4rem,2.1vw,1.85rem)}
+.app-feature-copy p{font-size:.92rem;line-height:1.55}.app-modes{margin:14px 0}
+@media(max-width:850px){.app-feature{grid-template-columns:1fr}.app-product-visual{max-width:460px}.app-feature-copy h3{font-size:1.5rem}}
