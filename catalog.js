@@ -110,25 +110,25 @@
       id:'ia-01', title:'IA do Zero à Prática',
       subtitle:'Coleção Aprenda IA · Volume 1',
       cover:'/img/optimized/capa-ia-final-01.webp', status:'E-book',
-      description:'Primeiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+      description:'Livro pago para começar a usar IA, com conceitos, projetos, exercícios e fichas comentadas de cursos e materiais. Cursos e certificados gratuitos citados são dos respectivos provedores; não tornam o livro gratuito. Links comerciais ainda não confirmados.'
     },
     {
       id:'ia-02', title:'Use IA para Trabalhar e Faturar',
       subtitle:'Coleção Aprenda IA · Volume 2',
       cover:'/img/optimized/capa-ia-final-02.webp', status:'E-book',
-      description:'Segundo volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+      description:'Livro pago sobre IA aplicada ao trabalho e aos negócios, com projetos, modelos e orientação prática. Cursos e certificados gratuitos citados são dos respectivos provedores; não tornam o livro gratuito. Links comerciais ainda não confirmados.'
     },
     {
       id:'ia-03', title:'IA Além do Básico',
       subtitle:'Coleção Aprenda IA · Volume 3',
       cover:'/img/optimized/capa-ia-final-03.webp', status:'E-book',
-      description:'Terceiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+      description:'Livro pago para aprofundar a formação em IA, organizar projetos e construir um portfólio. Cursos e certificados gratuitos citados são dos respectivos provedores; não tornam o livro gratuito. Links comerciais ainda não confirmados.'
     },
     {
       id:'ia-04', title:'O Mapa Completo da IA',
       subtitle:'Coleção Aprenda IA · Edição integral',
       cover:'/img/optimized/capa-ia-final-04.webp', status:'E-book',
-      description:'Quarto volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+      description:'Livro pago que integra fundamentos, aplicações no trabalho e formação técnica, com 58 fichas de cursos e materiais. Cursos e certificados gratuitos citados são dos respectivos provedores; não tornam o livro gratuito. Links comerciais ainda não confirmados.'
     },
     {
       id:'eu-existo', title:'Eu Existo!',
