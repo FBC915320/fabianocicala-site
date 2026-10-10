@@ -5,3 +5,25 @@
 .book-dialog .book-buy-button+.book-buy-button{margin-top:8px}
 @media(max-width:560px){.book-3d{height:145px;max-width:100%}}
 .book-print-note{margin:0;color:#536076;font-size:.72rem;line-height:1.42;font-weight:700}
+
+/* Compact catalog and balanced page layout */
+.books-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.book-card--enhanced{padding:10px;gap:10px}
+.book-card--enhanced .book-cover{height:190px}
+.book-3d{height:164px;max-width:86%}
+.book-card--enhanced .book-info h3{font-size:.9rem}
+.book-card--enhanced .book-subtitle{font-size:.72rem}
+.book-preview-button,.book-buy-button{padding:8px;font-size:.72rem}
+.book-collection-title{grid-column:1/-1;margin:22px 0 0;padding:12px 0 8px;border-bottom:1px solid #dce2ea;color:#101b33;font-size:1.1rem;line-height:1.3}
+.book-collection-title:first-child{margin-top:0}
+.hero{padding-top:44px;padding-bottom:46px;gap:40px}
+.hero h1{font-size:clamp(3rem,6vw,4.6rem);margin:14px 0 22px}
+.hero .hero-role{font-size:clamp(1.1rem,1.8vw,1.4rem);line-height:1.45}
+.photoWrap{max-width:260px}
+.hero-ctas .cta{margin-top:0}
+.section{padding-top:36px;padding-bottom:36px}
+section[id]{scroll-margin-top:90px}
+@media(max-width:1050px){.books-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:850px){.books-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:minmax(0,1fr) 180px;gap:26px}.photoWrap{max-width:180px}.top{flex-wrap:wrap;gap:10px}.brand span,.nav>a{display:inline}.nav{flex-wrap:wrap;gap:13px}.nav>a{font-size:.75rem}.hero-ctas{flex-direction:row}.hero-ctas .cta{width:auto}.section{padding-top:30px;padding-bottom:30px}}
+@media(max-width:600px){.books-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.book-card--enhanced{display:flex;padding:9px}.book-card--enhanced .book-cover{height:160px}.book-3d{height:138px;max-width:86%}.hero{grid-template-columns:1fr;gap:24px;padding-top:30px;padding-bottom:34px}.photoWrap{max-width:180px}.books-heading h2{font-size:1.6rem}.book-collection-title{font-size:1rem}.book-card--enhanced .book-info h3{font-size:.86rem}.book-card--enhanced .book-subtitle{font-size:.7rem}.book-actions{gap:6px}.nav{width:100%;justify-content:space-between}.nav>a{font-size:.7rem}.langs{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.book-3d,.book-card{transition:none}}
