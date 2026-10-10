@@ -103,6 +103,18 @@
         : 'Um relato pessoal e crítico sobre a experiência de comprar e usar um Corolla Cross Hybrid zero-quilômetro no Brasil. Em treze pontos, Fabiano Cicala apresenta problemas vividos no cotidiano, decisões de projeto que o decepcionaram e sua experiência com o atendimento pós-venda.'
     },
     {
+      id: 'quando-dia-termina',
+      title: isEnglish ? 'When the Day Ends' : 'Quando o Dia Termina',
+      subtitle: isEnglish ? 'Relaxation, faith and self-awareness practices' : 'Práticas de relaxamento, fé e autoconhecimento',
+      cover: '/livros/quando-o-dia-termina/assets/capa.jpg',
+      price: 'R$ 24,90',
+      status: isEnglish ? 'Book and e-book' : 'Livro e eBook',
+      pageUrl: '/livros/quando-o-dia-termina/',
+      description: isEnglish
+        ? 'When work ends but the mind keeps going, this book offers practices in body awareness, visualization, reflection and faith, respecting each person’s rhythm.'
+        : 'O trabalho terminou. Mas a cabeça continua. Uma obra de relaxamento, fé e autoconhecimento com práticas de atenção ao corpo, visualização, reflexão e oração, respeitando o ritmo de cada pessoa.'
+    },
+    {
       id: 'solar', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
       cover: '/capa-guia-controlador-solar.webp', status: labels.guide,
@@ -126,6 +138,7 @@
         ${book.printNote ? `<p class="book-print-note">${book.printNote}</p>` : ''}
         <div class="book-actions">
           <button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>
+          ${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}
           ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}<p class="book-channel-note">${book.amazonUrl ? labels.directSoon : labels.otherStores}</p>` : ''}
         </div>
       </div>
@@ -143,7 +156,7 @@
   function openPreview(id) {
     const book = books.find((item) => item.id === id);
     if (!book) return;
-    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button><img src="${book.cover}" alt="${book.title}"><div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
+    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button><img src="${book.cover}" alt="${book.title}"><div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
     dialog.showModal();
     dialog.querySelector('.dialog-close').focus();
   }
