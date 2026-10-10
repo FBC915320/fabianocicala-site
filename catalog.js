@@ -106,7 +106,7 @@
       id: 'quando-dia-termina',
       title: isEnglish ? 'When the Day Ends' : 'Quando o Dia Termina',
       subtitle: isEnglish ? 'Relaxation, faith and self-awareness practices' : 'Práticas de relaxamento, fé e autoconhecimento',
-      cover: '/capa-quando-o-dia-termina-v3.jpg', price: 'R$ 24,90',
+      cover: '/capa-quando-o-dia-termina-v3.svg', price: 'R$ 24,90',
       status: isEnglish ? 'Publication prepared' : 'Publicação preparada',
       printNote: isEnglish ? 'Purchase links pending verification' : 'Links de compra em confirmação',
       description: isEnglish
