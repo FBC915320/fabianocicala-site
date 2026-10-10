@@ -1,12 +1,12 @@
 (function () {
   const styles = document.createElement('link');
   styles.rel = 'stylesheet';
-  styles.href = '/catalog.css?v=20261010b';
+  styles.href = '/catalog.css?v=20261010c';
   document.head.append(styles);
 
   const productStyles = document.createElement('link');
   productStyles.rel = 'stylesheet';
-  productStyles.href = '/products.css?v=20261010b';
+  productStyles.href = '/products.css?v=20261010c';
   document.head.append(productStyles);
 
   const section = document.querySelector('#livros');
@@ -18,16 +18,16 @@
   const appCopy = isEnglish ? {
     nav: 'Apps', eyebrow: 'Software and apps', title: 'Tools built from real creative work.',
     intro: 'Projects in development for professionals who value quality, precision and a more integrated workflow.',
-    status: 'In development', name: 'Fotoref',
+    status: 'In development', name: 'PHOTO EFE',
     headline: 'Image creation, illustration and publishing in one environment.',
-    body: 'Created from the day-to-day experience of visual-production professionals, Fotoref brings image treatment, illustration and multi-page publishing into a direct, integrated workspace. Built for professionals who demand quality, control and productivity from the first idea to the final file.',
+    body: 'Created from the hands-on experience of image-treatment, illustration and publishing professionals, PHOTO EFE brings image creation and multi-page documents into a direct, integrated workspace. Built for professionals who demand quality, control and productivity from the first idea to the final file.',
     modes: ['Image', 'Illustration', 'Publishing'], cta: 'Follow the launch', note: 'Preview of a product currently in development.'
   } : {
     nav: 'Apps', eyebrow: 'Softwares e apps', title: 'Ferramentas criadas a partir do trabalho real.',
     intro: 'Projetos em desenvolvimento para profissionais que valorizam qualidade, precisão e um fluxo de criação mais integrado.',
-    status: 'Em desenvolvimento', name: 'Fotoref',
+    status: 'Em desenvolvimento', name: 'PHOTO EFE',
     headline: 'Criação de imagens, ilustração e editoração em um só ambiente.',
-    body: 'Criado a partir da experiência diária de profissionais da produção visual, o Fotoref reúne tratamento de imagens, ilustração e documentos com múltiplas páginas em um espaço direto e integrado. Feito para quem exige qualidade, controle e produtividade — da primeira ideia ao arquivo final.',
+    body: 'Criado com a experiência prática de profissionais de tratamento de imagem, ilustração e editoração, o PHOTO EFE reúne criação visual e documentos com múltiplas páginas em um espaço direto e integrado. Feito para quem exige qualidade, controle e produtividade — da primeira ideia ao arquivo final.',
     modes: ['Imagem', 'Ilustração', 'Editoração'], cta: 'Quero acompanhar o lançamento', note: 'Prévia de um produto atualmente em desenvolvimento.'
   };
 
@@ -40,7 +40,7 @@
   productSection.innerHTML = `
     <div class="products-heading"><div class="kicker">${appCopy.eyebrow}</div><h2>${appCopy.title}</h2><p>${appCopy.intro}</p></div>
     <article class="app-feature">
-      <div class="app-product-visual" aria-hidden="true"><div class="app-window"><div class="app-window-bar"><span></span><span></span><span></span><strong>FOTOREF</strong></div><div class="app-workspace"><div class="app-tools"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="app-canvas"><div class="app-art"><span>F</span></div></div><div class="app-panels"><b></b><b></b><b></b><b></b><b></b></div></div></div></div>
+      <div class="app-product-visual" aria-hidden="true"><div class="app-window"><div class="app-window-bar"><span></span><span></span><span></span><strong>PHOTO EFE</strong></div><div class="app-workspace"><div class="app-tools"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="app-canvas"><div class="app-art"><span><i>E</i><b>F</b><i>E</i></span></div></div><div class="app-panels"><b></b><b></b><b></b><b></b><b></b></div></div></div></div>
       <div class="app-feature-copy"><div class="app-meta"><span class="app-status">${appCopy.status}</span><span>${appCopy.name}</span></div><h3>${appCopy.headline}</h3><p>${appCopy.body}</p><div class="app-modes">${appCopy.modes.map((mode) => `<span>${mode}</span>`).join('')}</div><a class="app-cta" href="#contato">${appCopy.cta}</a><small>${appCopy.note}</small></div>
     </article>`;
   section.parentNode.insertBefore(productSection, section);
