@@ -1,8 +1,13 @@
 (function () {
   const styles = document.createElement('link');
   styles.rel = 'stylesheet';
-  styles.href = '/catalog.css?v=20261010a';
+  styles.href = '/catalog.css?v=20261010b';
   document.head.append(styles);
+
+  const productStyles = document.createElement('link');
+  productStyles.rel = 'stylesheet';
+  productStyles.href = '/products.css?v=20261010b';
+  document.head.append(productStyles);
 
   const section = document.querySelector('#livros');
   const grid = section?.querySelector('.books-grid');
@@ -10,19 +15,51 @@
   if (!section || !grid || !['pt-br', 'en'].includes(lang)) return;
 
   const isEnglish = lang === 'en';
+  const appCopy = isEnglish ? {
+    nav: 'Apps', eyebrow: 'Software and apps', title: 'Tools built from real creative work.',
+    intro: 'Projects in development for professionals who value quality, precision and a more integrated workflow.',
+    status: 'In development', name: 'Fotoref',
+    headline: 'Image creation, illustration and publishing in one environment.',
+    body: 'Created from the day-to-day experience of visual-production professionals, Fotoref brings image treatment, illustration and multi-page publishing into a direct, integrated workspace. Built for professionals who demand quality, control and productivity from the first idea to the final file.',
+    modes: ['Image', 'Illustration', 'Publishing'], cta: 'Follow the launch', note: 'Preview of a product currently in development.'
+  } : {
+    nav: 'Apps', eyebrow: 'Softwares e apps', title: 'Ferramentas criadas a partir do trabalho real.',
+    intro: 'Projetos em desenvolvimento para profissionais que valorizam qualidade, precisão e um fluxo de criação mais integrado.',
+    status: 'Em desenvolvimento', name: 'Fotoref',
+    headline: 'Criação de imagens, ilustração e editoração em um só ambiente.',
+    body: 'Criado a partir da experiência diária de profissionais da produção visual, o Fotoref reúne tratamento de imagens, ilustração e documentos com múltiplas páginas em um espaço direto e integrado. Feito para quem exige qualidade, controle e produtividade — da primeira ideia ao arquivo final.',
+    modes: ['Imagem', 'Ilustração', 'Editoração'], cta: 'Quero acompanhar o lançamento', note: 'Prévia de um produto atualmente em desenvolvimento.'
+  };
+
+  const navBooks = document.querySelector('.nav > a[href="#livros"]');
+  if (navBooks) navBooks.insertAdjacentHTML('beforebegin', `<a href="#apps">${appCopy.nav}</a>`);
+
+  const productSection = document.createElement('section');
+  productSection.className = 'section products-section';
+  productSection.id = 'apps';
+  productSection.innerHTML = `
+    <div class="products-heading"><div class="kicker">${appCopy.eyebrow}</div><h2>${appCopy.title}</h2><p>${appCopy.intro}</p></div>
+    <article class="app-feature">
+      <div class="app-product-visual" aria-hidden="true"><div class="app-window"><div class="app-window-bar"><span></span><span></span><span></span><strong>FOTOREF</strong></div><div class="app-workspace"><div class="app-tools"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="app-canvas"><div class="app-art"><span>F</span></div></div><div class="app-panels"><b></b><b></b><b></b><b></b><b></b></div></div></div></div>
+      <div class="app-feature-copy"><div class="app-meta"><span class="app-status">${appCopy.status}</span><span>${appCopy.name}</span></div><h3>${appCopy.headline}</h3><p>${appCopy.body}</p><div class="app-modes">${appCopy.modes.map((mode) => `<span>${mode}</span>`).join('')}</div><a class="app-cta" href="#contato">${appCopy.cta}</a><small>${appCopy.note}</small></div>
+    </article>`;
+  section.parentNode.insertBefore(productSection, section);
+
   const appleAuthorUrl = 'https://books.apple.com/br/artist/fabiano-cicala/6817624282';
   const labels = isEnglish ? {
     eyebrow: 'Official publications', title: 'Books born from real experience.',
     intro: 'Explore the available e-books, read a preview and buy securely from the official store.',
     available: 'Available', upcoming: 'In preparation', guide: 'Technical guide',
-    preview: 'Read preview', buy: 'Buy on Apple Books', details: 'Learn more', close: 'Close',
+    preview: 'Read preview', buy: 'Apple Books', details: 'Learn more', close: 'Close',
+    otherStores: 'Amazon Kindle and direct download coming soon',
     price: 'Price on Apple Books', store: 'View all books on Apple Books', projects: 'Next publication',
     projectsIntro: 'Work currently in editorial preparation. Purchase links will be added only after official release.'
   } : {
     eyebrow: 'Publicações oficiais', title: 'Livros que nasceram da experiência real.',
     intro: 'Conheça os e-books disponíveis, leia uma prévia e compre com segurança na loja oficial.',
     available: 'Disponível', upcoming: 'Em preparação', guide: 'Guia técnico',
-    preview: 'Ler prévia', buy: 'Comprar no Apple Books', details: 'Saiba mais', close: 'Fechar',
+    preview: 'Ler prévia', buy: 'Apple Books', details: 'Saiba mais', close: 'Fechar',
+    otherStores: 'Amazon Kindle e download direto em preparação',
     price: 'Preço no Apple Books', store: 'Ver todos os livros no Apple Books', projects: 'Próxima publicação',
     projectsIntro: 'Obra em preparação editorial. O link de compra será incluído somente após a publicação oficial.'
   };
@@ -68,8 +105,7 @@
   const card = (book) => `
     <article class="book-card book-card--enhanced">
       <button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">
-        ${book.backCover ? `<img class="book-back" src="${book.backCover}" alt="" loading="lazy">` : ''}
-        <img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy">
+        <span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy"></span>
         <span class="book-cover-action">${labels.preview}</span>
       </button>
       <div class="book-info">
@@ -78,7 +114,7 @@
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
         <div class="book-actions">
           <button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>
-          ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}
+          ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a><p class="book-channel-note">${labels.otherStores}</p>` : ''}
         </div>
       </div>
     </article>`;
