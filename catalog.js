@@ -48,18 +48,18 @@
   const appleAuthorUrl = 'https://books.apple.com/br/artist/fabiano-cicala/6817624282';
   const labels = isEnglish ? {
     eyebrow: 'Official publications', title: 'Books born from real experience.',
-    intro: 'Explore the available e-books, read a preview and buy securely from the official store.',
+    intro: 'Explore the available e-books, read a preview and choose your preferred official store.',
     available: 'Available', upcoming: 'In preparation', guide: 'Technical guide',
     preview: 'Read preview', buy: 'Apple Books', amazon: 'Amazon Kindle', details: 'Learn more', close: 'Close',
-    otherStores: 'Amazon Kindle and direct download coming soon', directSoon: 'Direct download coming soon',
+    otherStores: 'Purchase and automatic download through Hotmart pending release', directSoon: 'Purchase and automatic download through Hotmart pending release',
     price: 'Price on Apple Books', store: 'View all books on Apple Books', projects: 'Next publication',
     projectsIntro: 'Work currently in editorial preparation. Purchase links will be added only after official release.'
   } : {
     eyebrow: 'Publicações oficiais', title: 'Livros que nasceram da experiência real.',
-    intro: 'Conheça os e-books disponíveis, leia uma prévia e compre com segurança na loja oficial.',
+    intro: 'Conheça os e-books disponíveis, leia uma prévia e escolha sua loja oficial preferida.',
     available: 'Disponível', upcoming: 'Em preparação', guide: 'Guia técnico',
     preview: 'Ler prévia', buy: 'Apple Books', amazon: 'Amazon Kindle', details: 'Saiba mais', close: 'Fechar',
-    otherStores: 'Amazon Kindle e download direto em preparação', directSoon: 'Download direto em preparação',
+    otherStores: 'Compra e download automático pela Hotmart em liberação', directSoon: 'Compra e download automático pela Hotmart em liberação',
     price: 'Preço no Apple Books', store: 'Ver todos os livros no Apple Books', projects: 'Próxima publicação',
     projectsIntro: 'Obra em preparação editorial. O link de compra será incluído somente após a publicação oficial.'
   };
@@ -132,7 +132,7 @@
   function openPreview(id) {
     const book = books.find((item) => item.id === id);
     if (!book) return;
-    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button><img src="${book.cover}" alt="${book.title}"><div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}</div>`;
+    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button><img src="${book.cover}" alt="${book.title}"><div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
     dialog.showModal();
     dialog.querySelector('.dialog-close').focus();
   }
