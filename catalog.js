@@ -1,7 +1,7 @@
 (function () {
   const styles = document.createElement('link');
   styles.rel = 'stylesheet';
-  styles.href = '/catalog.css?v=20261010d';
+  styles.href = '/catalog.css?v=20261010compact';
   document.head.append(styles);
 
   const productStyles = document.createElement('link');
@@ -43,7 +43,7 @@
       <div class="app-product-visual" aria-hidden="true"><div class="app-window"><div class="app-window-bar"><span></span><span></span><span></span><strong>PHOTO EFE</strong></div><div class="app-workspace"><div class="app-tools"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="app-canvas"><div class="app-art"><span><i>E</i><b>F</b><i>E</i></span></div></div><div class="app-panels"><b></b><b></b><b></b><b></b><b></b></div></div></div></div>
       <div class="app-feature-copy"><div class="app-meta"><span class="app-status">${appCopy.status}</span><span>${appCopy.name}</span></div><h3>${appCopy.headline}</h3><p>${appCopy.body}</p><div class="app-modes">${appCopy.modes.map((mode) => `<span>${mode}</span>`).join('')}</div><a class="app-cta" href="#contato">${appCopy.cta}</a><small>${appCopy.note}</small></div>
     </article>`;
-  section.parentNode.insertBefore(productSection, section);
+  section.insertAdjacentElement('afterend', productSection);
 
   const appleAuthorUrl = 'https://books.apple.com/br/artist/fabiano-cicala/6817624282';
   const labels = isEnglish ? {
@@ -181,7 +181,10 @@
     </article>`;
 
   section.querySelector('.head').outerHTML = `<div class="books-heading"><div><div class="kicker">${labels.eyebrow}</div><h2>${labels.title}</h2><p>${labels.intro}</p></div><a class="store-link" href="${appleAuthorUrl}" target="_blank" rel="noopener">${labels.store}<span aria-hidden="true">↗</span></a></div>`;
-  grid.innerHTML = books.map(card).join('');
+  const published = books.filter((book) => !book.id.startsWith('ia-') && !['eu-existo', 'ultima-fonte'].includes(book.id));
+  const collection = books.filter((book) => book.id.startsWith('ia-'));
+  const upcoming = books.filter((book) => ['eu-existo', 'ultima-fonte'].includes(book.id));
+  grid.innerHTML = `<h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3>${published.map(card).join('')}<h3 class="book-collection-title">Coleção Aprenda IA de Graça</h3>${collection.map(card).join('')}<h3 class="book-collection-title">${isEnglish ? 'Coming soon' : 'Em breve'}</h3>${upcoming.map(card).join('')}`;
   grid.insertAdjacentHTML('afterend', `<aside class="upcoming-book" aria-label="${labels.projects}"><img src="/capa-caminho-esperanca.png" alt="A Caminho da Esperança" loading="lazy"><div><span class="book-status">${labels.upcoming}</span><h3>A Caminho da Esperança</h3><p>${labels.projectsIntro}</p></div></aside>`);
 
   const dialog = document.createElement('dialog');
