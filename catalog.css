@@ -2,4 +2,5 @@
 @media(max-width:900px){.books-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.books-heading{align-items:flex-start;flex-direction:column;gap:14px}.store-link{align-self:flex-start}}
 @media(max-width:560px){.books-grid{grid-template-columns:1fr}.book-card--enhanced{display:grid;grid-template-columns:112px 1fr}.book-card--enhanced .book-cover{height:168px;aspect-ratio:auto}.book-card--enhanced .book-info h3{font-size:.95rem}.book-card--enhanced .book-subtitle{min-height:0}.book-dialog-content{grid-template-columns:1fr;padding:24px}.book-dialog-content>img{height:190px}.upcoming-book{grid-template-columns:70px 1fr}.upcoming-book img{width:70px;height:98px}}
 .book-3d{height:244px;max-width:88%}
+.book-dialog .book-buy-button+.book-buy-button{margin-top:8px}
 @media(max-width:560px){.book-3d{height:145px;max-width:100%}}

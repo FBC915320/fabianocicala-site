@@ -50,16 +50,16 @@
     eyebrow: 'Official publications', title: 'Books born from real experience.',
     intro: 'Explore the available e-books, read a preview and buy securely from the official store.',
     available: 'Available', upcoming: 'In preparation', guide: 'Technical guide',
-    preview: 'Read preview', buy: 'Apple Books', details: 'Learn more', close: 'Close',
-    otherStores: 'Amazon Kindle and direct download coming soon',
+    preview: 'Read preview', buy: 'Apple Books', amazon: 'Amazon Kindle', details: 'Learn more', close: 'Close',
+    otherStores: 'Amazon Kindle and direct download coming soon', directSoon: 'Direct download coming soon',
     price: 'Price on Apple Books', store: 'View all books on Apple Books', projects: 'Next publication',
     projectsIntro: 'Work currently in editorial preparation. Purchase links will be added only after official release.'
   } : {
     eyebrow: 'Publicações oficiais', title: 'Livros que nasceram da experiência real.',
     intro: 'Conheça os e-books disponíveis, leia uma prévia e compre com segurança na loja oficial.',
     available: 'Disponível', upcoming: 'Em preparação', guide: 'Guia técnico',
-    preview: 'Ler prévia', buy: 'Apple Books', details: 'Saiba mais', close: 'Fechar',
-    otherStores: 'Amazon Kindle e download direto em preparação',
+    preview: 'Ler prévia', buy: 'Apple Books', amazon: 'Amazon Kindle', details: 'Saiba mais', close: 'Fechar',
+    otherStores: 'Amazon Kindle e download direto em preparação', directSoon: 'Download direto em preparação',
     price: 'Preço no Apple Books', store: 'Ver todos os livros no Apple Books', projects: 'Próxima publicação',
     projectsIntro: 'Obra em preparação editorial. O link de compra será incluído somente após a publicação oficial.'
   };
@@ -79,6 +79,7 @@
       subtitle: isEnglish ? 'Prayers and Biblical Principles for Spiritual Battles' : 'Orações e Princípios Bíblicos para Batalhas Espirituais',
       cover: '/capa-posicione-se-venca-pela-fe.webp', price: 'R$ 14,90',
       url: 'https://books.apple.com/br/book/posicione-se-e-ven%C3%A7a-pela-f%C3%A9/id6820549926',
+      amazonUrl: 'https://www.amazon.com.br/dp/B0GXYKCPZY',
       description: isEnglish
         ? 'A practical guide for readers who want to strengthen their faith, develop a life of prayer and learn how to take a spiritual stand in difficult moments. It brings prayers, biblical references and reflections on protection, family, wisdom, healing, purpose and perseverance.'
         : 'Um guia prático para quem deseja fortalecer a fé, desenvolver uma vida de oração e aprender a se posicionar espiritualmente diante das dificuldades. Reúne orações, referências bíblicas e ensinamentos sobre proteção, família, sabedoria, cura, libertação, propósito e perseverança. Mais do que repetir palavras, é um convite para transformar conhecimento em atitude.'
@@ -114,7 +115,7 @@
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
         <div class="book-actions">
           <button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>
-          ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a><p class="book-channel-note">${labels.otherStores}</p>` : ''}
+          ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}<p class="book-channel-note">${book.amazonUrl ? labels.directSoon : labels.otherStores}</p>` : ''}
         </div>
       </div>
     </article>`;
@@ -131,7 +132,7 @@
   function openPreview(id) {
     const book = books.find((item) => item.id === id);
     if (!book) return;
-    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button><img src="${book.cover}" alt="${book.title}"><div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}</div>`;
+    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button><img src="${book.cover}" alt="${book.title}"><div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}</div>`;
     dialog.showModal();
     dialog.querySelector('.dialog-close').focus();
   }
