@@ -127,17 +127,17 @@
 
   const card = (book) => `
     <article class="book-card book-card--enhanced">
-      <button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">
+      ${book.pageUrl ? `<a class="book-cover book-preview-cover" href="${book.pageUrl}" aria-label="${labels.details}: ${book.title}">` : `<button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">`}
         <span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy"></span>
-        <span class="book-cover-action">${labels.preview}</span>
-      </button>
+        <span class="book-cover-action">${book.pageUrl ? labels.details : labels.preview}</span>
+      ${book.pageUrl ? '</a>' : '</button>'}
       <div class="book-info">
         <span class="book-status">${book.status || labels.available}</span>
         <h3>${book.title}</h3><p class="book-subtitle">${book.subtitle}</p>
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
         ${book.printNote ? `<p class="book-print-note">${book.printNote}</p>` : ''}
         <div class="book-actions">
-          <button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>
+          ${book.pageUrl ? `<a class="book-preview-button" href="${book.pageUrl}">${labels.details}</a>` : `<button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>`}
           ${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}
           ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}<p class="book-channel-note">${book.amazonUrl ? labels.directSoon : labels.otherStores}</p>` : ''}
         </div>
