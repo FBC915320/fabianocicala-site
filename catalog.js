@@ -141,13 +141,13 @@
     {
       id:'eu-existo', title:'Eu Existo!',
       subtitle:'Nova obra de Fabiano Cicala',
-      status:labels.upcoming,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
       description:'Obra em preparação editorial. Mais informações em breve.'
     },
     {
       id:'ultima-fonte', title:'A Última Fonte',
       subtitle:'Nova obra de Fabiano Cicala',
-      status:labels.upcoming,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
       description:'Obra em preparação editorial. Mais informações em breve.'
     },
     {
@@ -164,12 +164,12 @@
   const card = (book) => `
     <article class="book-card book-card--enhanced">
       ${book.pageUrl ? `<a class="book-cover book-preview-cover" href="${book.pageUrl}" aria-label="${labels.details}: ${book.title}">` : `<button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">`}
-        ${book.cover ? `<span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy"></span>` : `<span class="book-3d" style="display:grid;place-items:center;background:#14253a;color:#e2bc7b;padding:16px;text-align:center;min-height:240px;font-family:Georgia,serif"><span>${book.title}<small style="display:block;font:12px system-ui;margin-top:14px">${labels.upcoming}</small></span></span>`}
+        ${book.cover ? `<span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy"></span>` : `<span class="book-3d" style="display:grid;place-items:center;background:#14253a;color:#e2bc7b;padding:16px;text-align:center;min-height:240px;font-family:Georgia,serif"><span>${book.title}<small style="display:block;font:12px system-ui;margin-top:14px">${book.status || labels.upcoming}</small></span></span>`}
         <span class="book-cover-action">${book.pageUrl ? labels.details : labels.preview}</span>
       ${book.pageUrl ? '</a>' : '</button>'}
       <div class="book-info">
         <span class="book-status">${book.status || labels.available}</span>
-        <h3>${book.title}</h3><p class="book-subtitle">${book.subtitle}</p>
+        <h3>${book.pageUrl ? `<a href="${book.pageUrl}" style="color:inherit;text-decoration:none">${book.title}</a>` : book.title}</h3><p class="book-subtitle">${book.subtitle}</p>
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
         ${book.printNote ? `<p class="book-print-note">${book.printNote}</p>` : ''}
         <div class="book-actions">
