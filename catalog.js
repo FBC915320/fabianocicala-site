@@ -1,13 +1,4 @@
 (function () {
-  const styles = document.createElement('link');
-  styles.rel = 'stylesheet';
-  styles.href = '/catalog.css?v=20261010final';
-  document.head.append(styles);
-
-  const productStyles = document.createElement('link');
-  productStyles.rel = 'stylesheet';
-  productStyles.href = '/products.css?v=20261010final';
-  document.head.append(productStyles);
 
   const section = document.querySelector('#livros');
   const grid = section?.querySelector('.books-grid');
@@ -74,7 +65,8 @@
     {
       id: 'estrategia', title: isEnglish ? 'The Invisible Strategy' : 'A Estratégia do Invisível',
       subtitle: isEnglish ? 'Leadership, Faith and Purpose in Silent Command' : 'Liderança, Fé e Propósito no Comando Silencioso',
-      cover: '/capa-estrategia-invisivel-frente.webp', backCover: '/capa-estrategia-invisivel-verso.webp', price: 'R$ 24,90',
+      pageUrl: '/livros/a-estrategia-do-invisivel/',
+      cover: '/img/optimized/capa-estrategia-invisivel-frente.webp', backCover: '/capa-estrategia-invisivel-verso.webp', price: 'R$ 24,90',
       printNote: labels.printReview,
       url: 'https://books.apple.com/br/book/a-estrat%C3%A9gia-do-invis%C3%ADvel/id6820215202',
       description: isEnglish
@@ -84,7 +76,7 @@
     {
       id: 'posicione', title: isEnglish ? 'Position Yourself and Win by Faith' : 'Posicione-se e Vença pela Fé',
       subtitle: isEnglish ? 'Prayers and Biblical Principles for Spiritual Battles' : 'Orações e Princípios Bíblicos para Batalhas Espirituais',
-      cover: '/capa-posicione-se-venca-pela-fe.webp', price: 'R$ 14,90',
+      cover: '/img/optimized/capa-posicione-se-venca-pela-fe.webp', price: 'R$ 14,90',
       url: 'https://books.apple.com/br/book/posicione-se-e-ven%C3%A7a-pela-f%C3%A9/id6820549926',
       amazonUrl: 'https://www.amazon.com.br/dp/B0GXYKCPZY',
       printNote: labels.printReview,
@@ -95,7 +87,7 @@
     {
       id: 'corolla', title: isEnglish ? 'Corolla Cross Hybrid + 13 Problems' : 'Corolla Cross Hybrid + 13 Problemas',
       subtitle: isEnglish ? 'A Brazilian owner’s real-world account' : 'Relato real de um proprietário no Brasil',
-      cover: '/capa-corolla-cross-13-problemas.jpg', price: 'R$ 9,90',
+      cover: '/img/optimized/capa-corolla-cross-13-problemas.webp', price: 'R$ 9,90',
       printNote: labels.digitalOnly,
       url: 'https://books.apple.com/br/book/corolla-cross-hybrid-13-problemas/id6817624270',
       description: isEnglish
@@ -106,7 +98,7 @@
       id: 'quando-dia-termina',
       title: isEnglish ? 'When the Day Ends' : 'Quando o Dia Termina',
       subtitle: isEnglish ? 'Relaxation, faith and self-awareness practices' : 'Práticas de relaxamento, fé e autoconhecimento',
-      cover: '/livros/quando-o-dia-termina/assets/capa.jpg',
+      cover: '/img/optimized/capa.webp',
       price: 'R$ 24,90',
       status: isEnglish ? 'Book and e-book' : 'Livro e eBook',
       pageUrl: '/livros/quando-o-dia-termina/',
@@ -117,25 +109,25 @@
     {
       id:'ia-01', title:'IA do Zero à Prática',
       subtitle:'Coleção Aprenda IA de Graça · Volume 1',
-      cover:'/img/capa-ia-final-01.jpg', status:'E-book',
+      cover:'/img/optimized/capa-ia-final-01.webp', status:'E-book',
       description:'Primeiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
       id:'ia-02', title:'Use IA para Trabalhar e Faturar',
       subtitle:'Coleção Aprenda IA de Graça · Volume 2',
-      cover:'/img/capa-ia-final-02.jpg', status:'E-book',
+      cover:'/img/optimized/capa-ia-final-02.webp', status:'E-book',
       description:'Segundo volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
       id:'ia-03', title:'IA Além do Básico',
       subtitle:'Coleção Aprenda IA de Graça · Volume 3',
-      cover:'/img/capa-ia-final-03.jpg', status:'E-book',
+      cover:'/img/optimized/capa-ia-final-03.webp', status:'E-book',
       description:'Terceiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
       id:'ia-04', title:'O Mapa Completo da IA',
       subtitle:'Coleção Aprenda IA de Graça · Edição integral',
-      cover:'/img/capa-ia-final-04.jpg', status:'E-book',
+      cover:'/img/optimized/capa-ia-final-04.webp', status:'E-book',
       description:'Quarto volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
@@ -153,14 +145,14 @@
     {
       id:'caminho-esperanca', title:'A Caminho da Esperança',
       subtitle:isEnglish ? 'New book by Fabiano Cicala' : 'Nova obra de Fabiano Cicala',
-      cover:'/capa-caminho-esperanca.png', upcoming:true,
+      cover:'/img/optimized/capa-caminho-esperanca.webp', upcoming:true,
       status:isEnglish ? 'Coming soon' : 'Em breve',
       description:labels.projectsIntro
     },
     {
       id: 'solar', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
-      cover: '/capa-guia-controlador-solar.webp', status: labels.guide,
+      cover: '/img/optimized/capa-guia-controlador-solar.webp', status: labels.guide,
       printNote: labels.printPlanned,
       description: isEnglish
         ? 'A practical reference for understanding and operating the BMP Advanced controller used in boiler and solar-heating systems.'
@@ -192,7 +184,7 @@
   const published = books.filter((book) => !book.id.startsWith('ia-') && !book.upcoming);
   const collection = books.filter((book) => book.id.startsWith('ia-'));
   const upcoming = books.filter((book) => book.upcoming);
-  grid.innerHTML = `<div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3><div class="book-row">${published.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">Coleção Aprenda IA de Graça</h3><div class="book-row book-row--collection">${collection.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Next releases' : 'Próximos lançamentos'}</h3><div class="book-row">${upcoming.map(card).join('')}</div></div>`;
+  if (!grid.querySelector('.book-row')) grid.innerHTML = `<div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3><div class="book-row">${published.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">Coleção Aprenda IA de Graça</h3><div class="book-row book-row--collection">${collection.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Next releases' : 'Próximos lançamentos'}</h3><div class="book-row">${upcoming.map(card).join('')}</div></div>`;
 
   const dialog = document.createElement('dialog');
   dialog.className = 'book-dialog';
