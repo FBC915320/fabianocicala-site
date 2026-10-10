@@ -103,17 +103,6 @@
         : 'Um relato pessoal e crítico sobre a experiência de comprar e usar um Corolla Cross Hybrid zero-quilômetro no Brasil. Em treze pontos, Fabiano Cicala apresenta problemas vividos no cotidiano, decisões de projeto que o decepcionaram e sua experiência com o atendimento pós-venda.'
     },
     {
-      id: 'quando-dia-termina',
-      title: isEnglish ? 'When the Day Ends' : 'Quando o Dia Termina',
-      subtitle: isEnglish ? 'Relaxation, faith and self-awareness practices' : 'Práticas de relaxamento, fé e autoconhecimento',
-      cover: '/capa-quando-o-dia-termina-v3.svg', price: 'R$ 24,90',
-      status: isEnglish ? 'Publication prepared' : 'Publicação preparada',
-      printNote: isEnglish ? 'Purchase links pending verification' : 'Links de compra em confirmação',
-      description: isEnglish
-        ? 'When work ends but the mind keeps going, this book offers a gentle pause through body awareness, visualization, reflection and prayer. A short book to return to at your own pace.'
-        : 'O trabalho terminou. Mas a cabeça continua. Práticas de relaxamento, fé e autoconhecimento para quando as responsabilidades e preocupações acompanham você até o fim do dia. A obra reúne atenção ao corpo, visualização da montanha, reflexão e oração, respeitando o seu ritmo.'
-    },
-    {
       id: 'solar', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
       cover: '/capa-guia-controlador-solar.webp', status: labels.guide,
