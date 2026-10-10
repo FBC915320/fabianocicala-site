@@ -108,25 +108,25 @@
     },
     {
       id:'ia-01', title:'IA do Zero à Prática',
-      subtitle:'Coleção Aprenda IA de Graça · Volume 1',
+      subtitle:'Coleção Aprenda IA · Volume 1',
       cover:'/img/optimized/capa-ia-final-01.webp', status:'E-book',
       description:'Primeiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
       id:'ia-02', title:'Use IA para Trabalhar e Faturar',
-      subtitle:'Coleção Aprenda IA de Graça · Volume 2',
+      subtitle:'Coleção Aprenda IA · Volume 2',
       cover:'/img/optimized/capa-ia-final-02.webp', status:'E-book',
       description:'Segundo volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
       id:'ia-03', title:'IA Além do Básico',
-      subtitle:'Coleção Aprenda IA de Graça · Volume 3',
+      subtitle:'Coleção Aprenda IA · Volume 3',
       cover:'/img/optimized/capa-ia-final-03.webp', status:'E-book',
       description:'Terceiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
     {
       id:'ia-04', title:'O Mapa Completo da IA',
-      subtitle:'Coleção Aprenda IA de Graça · Edição integral',
+      subtitle:'Coleção Aprenda IA · Edição integral',
       cover:'/img/optimized/capa-ia-final-04.webp', status:'E-book',
       description:'Quarto volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
     },
@@ -184,7 +184,7 @@
   const published = books.filter((book) => !book.id.startsWith('ia-') && !book.upcoming);
   const collection = books.filter((book) => book.id.startsWith('ia-'));
   const upcoming = books.filter((book) => book.upcoming);
-  if (!grid.querySelector('.book-row')) grid.innerHTML = `<div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3><div class="book-row">${published.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">Coleção Aprenda IA de Graça</h3><div class="book-row book-row--collection">${collection.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Next releases' : 'Próximos lançamentos'}</h3><div class="book-row">${upcoming.map(card).join('')}</div></div>`;
+  if (!grid.querySelector('.book-row')) grid.innerHTML = `<div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3><div class="book-row">${published.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">Coleção Aprenda IA</h3><div class="book-row book-row--collection">${collection.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Next releases' : 'Próximos lançamentos'}</h3><div class="book-row">${upcoming.map(card).join('')}</div></div>`;
 
   const dialog = document.createElement('dialog');
   dialog.className = 'book-dialog';
