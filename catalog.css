@@ -4,3 +4,4 @@
 .book-3d{height:244px;max-width:88%}
 .book-dialog .book-buy-button+.book-buy-button{margin-top:8px}
 @media(max-width:560px){.book-3d{height:145px;max-width:100%}}
+.book-print-note{margin:0;color:#536076;font-size:.72rem;line-height:1.42;font-weight:700}
