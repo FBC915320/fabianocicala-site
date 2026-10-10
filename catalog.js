@@ -115,6 +115,42 @@
         : 'O trabalho terminou. Mas a cabeça continua. Uma obra de relaxamento, fé e autoconhecimento com práticas de atenção ao corpo, visualização, reflexão e oração, respeitando o ritmo de cada pessoa.'
     },
     {
+      id:'ia-01', title:'IA de Verdade — Comece do Zero',
+      subtitle:'Coleção Aprenda IA de Graça · Volume 1',
+      cover:'/img/capa-ia-de-verdade-01.svg', status:labels.upcoming,
+      description:'Primeiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+    },
+    {
+      id:'ia-02', title:'IA de Verdade — Trabalho e Negócios',
+      subtitle:'Coleção Aprenda IA de Graça · Volume 2',
+      cover:'/img/capa-ia-de-verdade-02.svg', status:labels.upcoming,
+      description:'Segundo volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+    },
+    {
+      id:'ia-03', title:'IA de Verdade — Formação e Carreira',
+      subtitle:'Coleção Aprenda IA de Graça · Volume 3',
+      status:labels.upcoming,
+      description:'Terceiro volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+    },
+    {
+      id:'ia-04', title:'IA de Verdade — Guia Completo',
+      subtitle:'Coleção Aprenda IA de Graça · Volume 4',
+      status:labels.upcoming,
+      description:'Quarto volume da coleção de inteligência artificial. Edição digital preparada; links comerciais ainda não confirmados.'
+    },
+    {
+      id:'eu-existo', title:'Eu Existo!',
+      subtitle:'Nova obra de Fabiano Cicala',
+      status:labels.upcoming,
+      description:'Obra em preparação editorial. Mais informações em breve.'
+    },
+    {
+      id:'ultima-fonte', title:'A Última Fonte',
+      subtitle:'Nova obra de Fabiano Cicala',
+      status:labels.upcoming,
+      description:'Obra em preparação editorial. Mais informações em breve.'
+    },
+    {
       id: 'solar', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
       cover: '/capa-guia-controlador-solar.webp', status: labels.guide,
@@ -128,7 +164,7 @@
   const card = (book) => `
     <article class="book-card book-card--enhanced">
       ${book.pageUrl ? `<a class="book-cover book-preview-cover" href="${book.pageUrl}" aria-label="${labels.details}: ${book.title}">` : `<button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">`}
-        <span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy"></span>
+        ${book.cover ? `<span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="${book.title}" loading="lazy"></span>` : `<span class="book-3d" style="display:grid;place-items:center;background:#14253a;color:#e2bc7b;padding:16px;text-align:center;min-height:240px;font-family:Georgia,serif"><span>${book.title}<small style="display:block;font:12px system-ui;margin-top:14px">${labels.upcoming}</small></span></span>`}
         <span class="book-cover-action">${book.pageUrl ? labels.details : labels.preview}</span>
       ${book.pageUrl ? '</a>' : '</button>'}
       <div class="book-info">
@@ -156,7 +192,7 @@
   function openPreview(id) {
     const book = books.find((item) => item.id === id);
     if (!book) return;
-    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button><img src="${book.cover}" alt="${book.title}"><div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
+    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button>${book.cover ? `<img src="${book.cover}" alt="${book.title}">` : ''}<div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
     dialog.showModal();
     dialog.querySelector('.dialog-close').focus();
   }
