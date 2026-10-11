@@ -12,3 +12,11 @@
 .app-workspace{height:210px}.app-feature-copy h3{font-size:clamp(1.4rem,2.1vw,1.85rem)}
 .app-feature-copy p{font-size:.92rem;line-height:1.55}.app-modes{margin:14px 0}
 @media(max-width:850px){.app-feature{grid-template-columns:1fr}.app-product-visual{max-width:460px}.app-feature-copy h3{font-size:1.5rem}}
+
+/* Compact PHOTO EFE teaser */
+#photo-efe .photo-efe-teaser{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:center;max-width:680px;padding:20px;border:1px solid #ffffff24;border-radius:14px;background:#11192d}
+#photo-efe .photo-efe-video{display:block;width:200px;max-width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;border-radius:10px;background:#0d0c1d}
+#photo-efe h2{margin:8px 0 12px;font-size:1.7rem;color:#fff}
+#photo-efe p{margin:0 0 14px;color:#c6cfdd;line-height:1.55;font-size:.92rem}
+#photo-efe .app-status{display:inline-block;margin-bottom:12px}
+@media(max-width:520px){#photo-efe .photo-efe-teaser{grid-template-columns:1fr;padding:16px;gap:18px}#photo-efe .photo-efe-video{width:160px;margin-inline:auto}#photo-efe .photo-efe-copy{text-align:center}}
