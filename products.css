@@ -20,3 +20,5 @@
 #photo-efe p{margin:0 0 14px;color:#c6cfdd;line-height:1.55;font-size:.92rem}
 #photo-efe .app-status{display:inline-block;margin-bottom:12px}
 @media(max-width:520px){#photo-efe .photo-efe-teaser{grid-template-columns:1fr;padding:16px;gap:18px}#photo-efe .photo-efe-video{width:160px;margin-inline:auto}#photo-efe .photo-efe-copy{text-align:center}}
+
+#photo-efe #photo-efe-title{display:flex;align-items:center;gap:12px}#photo-efe .photo-efe-logo{display:block;width:64px;height:64px;flex:none;object-fit:contain}@media(max-width:520px){#photo-efe #photo-efe-title{justify-content:center}#photo-efe .photo-efe-logo{width:52px;height:52px}}
