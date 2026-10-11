@@ -23,8 +23,9 @@
   };
 
   const navBooks = document.querySelector('.nav > a[href="#livros"]');
-  if (navBooks) navBooks.insertAdjacentHTML('afterend', `<a href="#apps">${appCopy.nav}</a>`);
+  if (navBooks) navBooks.insertAdjacentHTML('afterend', `<a href="${document.getElementById('photo-efe') ? '#photo-efe' : '#apps'}">${appCopy.nav}</a>`);
 
+  if (!document.getElementById('photo-efe')) {
   const productSection = document.createElement('section');
   productSection.className = 'section products-section';
   productSection.id = 'apps';
@@ -35,6 +36,7 @@
       <div class="app-feature-copy"><div class="app-meta"><span class="app-status">${appCopy.status}</span><span>${appCopy.name}</span></div><h3>${appCopy.headline}</h3><p>${appCopy.body}</p><div class="app-modes">${appCopy.modes.map((mode) => `<span>${mode}</span>`).join('')}</div><a class="app-cta" href="#contato">${appCopy.cta}</a><small>${appCopy.note}</small></div>
     </article>`;
   section.insertAdjacentElement('afterend', productSection);
+  }
 
   const appleAuthorUrl = 'https://books.apple.com/br/artist/fabiano-cicala/6817624282';
   const labels = isEnglish ? {
