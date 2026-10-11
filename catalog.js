@@ -61,6 +61,8 @@
     projectsIntro: 'Obra em preparação editorial. O link de compra será incluído somente após a publicação oficial.'
   };
 
+  const fictionIntro = isEnglish ? "I wrote these two works of fiction to explore the future we can imagine — and the better world we would like to build. What if an energy source the size of a bean could power an entire country? How would it change our lives and our relationship with the planet? That possibility inspires these stories. Through fiction, I give space to dreams and ideas that still seem distant, inviting readers to consider what we could transform if they became reality." : "Escrevi estas duas ficções para explorar o futuro que podemos imaginar — e o mundo melhor que gostaríamos de construir. E se uma fonte de energia do tamanho de um grão de feijão pudesse abastecer um país inteiro? Como isso mudaria nossa vida e nossa relação com o planeta? Essa possibilidade inspira estas histórias. Pela ficção, dou espaço a sonhos e ideias que ainda parecem distantes, convidando o leitor a pensar no que poderíamos transformar se eles se tornassem realidade.";
+
   const books = [
     {
       id: 'estrategia', title: isEnglish ? 'The Invisible Strategy' : 'A Estratégia do Invisível',
@@ -132,15 +134,17 @@
     },
     {
       id:'eu-existo', title:'Eu Existo!',
-      subtitle:'Nova obra de Fabiano Cicala',
+      subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
+      fiction:true,
       upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
-      description:'Obra em preparação editorial. Mais informações em breve.'
+      description:fictionIntro + (isEnglish ? ' Editorial preparation is underway. Coming soon.' : ' Obra em preparação editorial. Em breve.')
     },
     {
       id:'ultima-fonte', title:'A Última Fonte',
-      subtitle:'Nova obra de Fabiano Cicala',
+      subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
+      fiction:true,
       upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
-      description:'Obra em preparação editorial. Mais informações em breve.'
+      description:fictionIntro + (isEnglish ? ' Editorial preparation is underway. Coming soon.' : ' Obra em preparação editorial. Em breve.')
     },
     {
       id:'caminho-esperanca', title:'A Caminho da Esperança',
@@ -183,8 +187,9 @@
   if (legacyHeading) legacyHeading.outerHTML = `<div class="books-heading"><div><div class="kicker">${labels.eyebrow}</div><h2>${labels.title}</h2><p>${labels.intro}</p></div><a class="store-link" href="${appleAuthorUrl}" target="_blank" rel="noopener">${labels.store}<span aria-hidden="true">↗</span></a></div>`;
   const published = books.filter((book) => !book.id.startsWith('ia-') && !book.upcoming);
   const collection = books.filter((book) => book.id.startsWith('ia-'));
-  const upcoming = books.filter((book) => book.upcoming);
-  if (!grid.querySelector('.book-row')) grid.innerHTML = `<div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3><div class="book-row">${published.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">Coleção Aprenda IA</h3><div class="book-row book-row--collection">${collection.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Next releases' : 'Próximos lançamentos'}</h3><div class="book-row">${upcoming.map(card).join('')}</div></div>`;
+  const fiction = books.filter((book) => book.fiction);
+  const upcoming = books.filter((book) => book.upcoming && !book.fiction);
+  if (!grid.querySelector('.book-row')) grid.innerHTML = `<div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Books and guides' : 'Livros e guias'}</h3><div class="book-row">${published.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">Coleção Aprenda IA</h3><div class="book-row book-row--collection">${collection.map(card).join('')}</div></div><div class="book-group book-group--fiction" id="ficcao"><h3 class="book-collection-title">${isEnglish ? 'Fiction:' : 'Ficção:'}</h3><p class="fiction-intro">${fictionIntro}</p><div class="book-row book-row--fiction">${fiction.map(card).join('')}</div></div><div class="book-group"><h3 class="book-collection-title">${isEnglish ? 'Next releases' : 'Próximos lançamentos'}</h3><div class="book-row">${upcoming.map(card).join('')}</div></div>`;
 
   const dialog = document.createElement('dialog');
   dialog.className = 'book-dialog';
@@ -209,7 +214,7 @@
     '@context':'https://schema.org',
     '@graph': [
       {'@type':'Person','@id':'https://fabianocicala.com/#autor',name:'Fabiano Cicala',url:'https://fabianocicala.com/',sameAs:['https://www.instagram.com/fabianocicala1/','https://www.linkedin.com/in/fabiano-cicala-71ba82364/',appleAuthorUrl,'https://www.youtube.com/@FabianoCicala']},
-      {'@type':'ItemList',name:'Livros de Fabiano Cicala',itemListElement:books.map((book,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'Book',name:book.title,author:{'@id':'https://fabianocicala.com/#autor'},inLanguage:'pt-BR',url:book.pageUrl ? 'https://fabianocicala.com'+book.pageUrl : 'https://fabianocicala.com/#livro-'+book.id,...(book.cover ? {image:'https://fabianocicala.com'+book.cover} : {})}}))}
+      {'@type':'ItemList',name:'Livros de Fabiano Cicala',itemListElement:books.map((book,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'Book',name:book.title,author:{'@id':'https://fabianocicala.com/#autor'},inLanguage:'pt-BR',url:book.pageUrl ? 'https://fabianocicala.com'+book.pageUrl : 'https://fabianocicala.com/#livro-'+book.id,...(book.fiction ? {genre:isEnglish ? 'Fiction' : 'Ficção'} : {}),...(book.cover ? {image:'https://fabianocicala.com'+book.cover} : {})}}))}
     ]
   });
   document.getElementById('catalog-schema')?.remove();
