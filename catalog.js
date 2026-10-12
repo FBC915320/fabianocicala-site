@@ -156,6 +156,15 @@
       description:labels.projectsIntro
     },
     {
+      id: 'github-zero', title: isEnglish ? 'GitHub — From Zero to Practice' : 'GitHub — Do Zero à Prática',
+      subtitle: isEnglish ? 'Expanded beginner guide · 80 pages (PDF edition)' : 'Edição ampliada · 80 páginas na edição PDF',
+      upcoming: true, status: isEnglish ? 'Publication in preparation' : 'Publicação em preparação',
+      price: 'R$ 19,90',
+      description: isEnglish
+        ? 'An accessible introduction to Git, GitHub, repositories, branches, commits, pull requests, merging, security and GitHub Actions, with practical exercises. Independent adaptation based on GitHub Skills content licensed under MIT. Apple Books purchase link will be added only after the listing is confirmed.'
+        : 'Um guia prático para começar no GitHub: repositórios, branches, commits, pull requests, merge, automações com GitHub Actions, segurança e exercícios passo a passo. Edição independente adaptada de material GitHub Skills sob licença MIT, sem vínculo oficial. Preço previsto de lançamento no Apple Books: R$ 19,90. O link de compra será incluído após a publicação ser confirmada.'
+    },
+    {
       id: 'solar', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
       cover: '/img/optimized/capa-guia-controlador-solar.webp', status: labels.guide,
