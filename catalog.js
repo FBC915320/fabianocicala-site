@@ -43,7 +43,7 @@
     eyebrow: 'Official publications', title: 'Books born from real experience.',
     intro: 'Explore the available e-books, read a preview and choose your preferred official store.',
     available: 'Available', upcoming: 'In preparation', guide: 'Technical guide',
-    preview: 'Read preview', buy: 'Apple Books', amazon: 'Amazon Kindle', details: 'Learn more', close: 'Close',
+    preview: 'Read preview', buy: 'Apple Books', amazon: 'Amazon Kindle', paperback: 'Brochura Amazon', hardcover: 'Capa dura Amazon', details: 'Learn more', close: 'Close',
     otherStores: 'Purchase and automatic download through Hotmart pending release', directSoon: 'Purchase and automatic download through Hotmart pending release',
     printReview: 'Print edition under Amazon review; UICLAP and Hotmart next',
     printPlanned: 'Print edition in preparation for UICLAP, Amazon and Hotmart',
@@ -54,7 +54,7 @@
     eyebrow: 'Publicações oficiais', title: 'Livros que nasceram da experiência real.',
     intro: 'Conheça os e-books disponíveis, leia uma prévia e escolha sua loja oficial preferida.',
     available: 'Disponível', upcoming: 'Em preparação', guide: 'Guia técnico',
-    preview: 'Ler prévia', buy: 'Apple Books', amazon: 'Amazon Kindle', details: 'Saiba mais', close: 'Fechar',
+    preview: 'Ler prévia', buy: 'Apple Books', amazon: 'Amazon Kindle', paperback: 'Brochura Amazon', hardcover: 'Capa dura Amazon', details: 'Saiba mais', close: 'Fechar',
     otherStores: 'Compra e download automático pela Hotmart em liberação', directSoon: 'Compra e download automático pela Hotmart em liberação',
     printReview: 'Impresso em revisão na Amazon; UICLAP e Hotmart na sequência',
     printPlanned: 'Impresso em preparação para UICLAP, Amazon e Hotmart',
@@ -73,6 +73,9 @@
       cover: '/img/optimized/capa-estrategia-invisivel-frente.webp', backCover: '/capa-estrategia-invisivel-verso.webp', price: 'R$ 24,90',
       printNote: labels.printReview,
       url: 'https://books.apple.com/br/book/a-estrat%C3%A9gia-do-invis%C3%ADvel/id6820215202',
+      amazonUrl: 'https://www.amazon.com.br/dp/B0HMPFLRWH',
+      paperbackUrl: 'https://www.amazon.com.br/dp/6502421334',
+      hardcoverUrl: 'https://www.amazon.com.br/dp/B0HMR7ZYG2',
       description: isEnglish
         ? 'Fabiano Cicala shares a journey shaped by work, new beginnings, faith and responsibility. Rather than offering easy formulas, the book explores what precedes every important decision: silence, character, service, discipline and the courage to act when no one is watching.'
         : 'Fabiano Cicala compartilha uma trajetória construída entre trabalho, recomeços, fé e responsabilidade. Mais do que relatar conquistas, convida o leitor a perceber aquilo que antecede toda decisão importante: o silêncio, o caráter, o serviço, a disciplina e a coragem de agir quando ninguém está olhando. Um chamado para liderar com responsabilidade, servir pessoas e construir algo que permaneça.'
@@ -84,6 +87,7 @@
       url: 'https://books.apple.com/br/book/posicione-se-e-ven%C3%A7a-pela-f%C3%A9/id6820549926',
       amazonUrl: 'https://www.amazon.com.br/dp/B0GXYKCPZY',
       printNote: labels.printReview,
+      paperbackUrl: 'https://www.amazon.com.br/dp/B0HMMFMFDC',
       description: isEnglish
         ? 'A practical guide for readers who want to strengthen their faith, develop a life of prayer and learn how to take a spiritual stand in difficult moments. It brings prayers, biblical references and reflections on protection, family, wisdom, healing, purpose and perseverance.'
         : 'Um guia prático para quem deseja fortalecer a fé, desenvolver uma vida de oração e aprender a se posicionar espiritualmente diante das dificuldades. Reúne orações, referências bíblicas e ensinamentos sobre proteção, família, sabedoria, cura, libertação, propósito e perseverança. Mais do que repetir palavras, é um convite para transformar conhecimento em atitude.'
@@ -94,6 +98,7 @@
       cover: '/img/optimized/capa-corolla-cross-13-problemas.webp', price: 'R$ 9,90',
       printNote: labels.digitalOnly,
       url: 'https://books.apple.com/br/book/corolla-cross-hybrid-13-problemas/id6817624270',
+      amazonUrl: 'https://www.amazon.com.br/dp/B0HMLSNS8P',
       description: isEnglish
         ? 'A personal and critical account of owning a brand-new Corolla Cross Hybrid in Brazil. Across thirteen points, Fabiano Cicala describes everyday issues, disappointing design decisions and his experience with after-sales service.'
         : 'Um relato pessoal e crítico sobre a experiência de comprar e usar um Corolla Cross Hybrid zero-quilômetro no Brasil. Em treze pontos, Fabiano Cicala apresenta problemas vividos no cotidiano, decisões de projeto que o decepcionaram e sua experiência com o atendimento pós-venda.'
@@ -106,6 +111,8 @@
       price: 'R$ 24,90',
       status: isEnglish ? 'Book and e-book' : 'Livro e eBook',
       pageUrl: '/livros/quando-o-dia-termina/',
+      amazonUrl: 'https://www.amazon.com.br/dp/B0HMQ2HZPY',
+      paperbackUrl: 'https://www.amazon.com.br/dp/B0HMQ2WNPG',
       description: isEnglish
         ? 'When work ends but the mind keeps going, this book offers practices in body awareness, visualization, reflection and faith, respecting each person’s rhythm.'
         : 'O trabalho terminou. Mas a cabeça continua. Uma obra de relaxamento, fé e autoconhecimento com práticas de atenção ao corpo, visualização, reflexão e oração, respeitando o ritmo de cada pessoa.'
@@ -168,6 +175,7 @@
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
       cover: '/img/optimized/capa-guia-controlador-solar.webp', status: labels.guide,
       printNote: labels.printPlanned,
+      amazonUrl: 'https://www.amazon.com.br/dp/B0HMP81PJB',
       description: isEnglish
         ? 'A practical reference for understanding and operating the BMP Advanced controller used in boiler and solar-heating systems.'
         : 'Referência prática para compreender e operar o controlador BMP Advanced utilizado em sistemas de boiler e aquecimento solar.'
@@ -188,7 +196,7 @@
         <div class="book-actions">
           ${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : `<button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>`}
           ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}
-          ${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}
+          ${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.paperbackUrl ? `<a class="book-buy-button" href="${book.paperbackUrl}" target="_blank" rel="noopener">${labels.paperback}<span aria-hidden="true">↗</span></a>` : ''}${book.hardcoverUrl ? `<a class="book-buy-button" href="${book.hardcoverUrl}" target="_blank" rel="noopener">${labels.hardcover}<span aria-hidden="true">↗</span></a>` : ''}
         </div>
       </div>
     </article>`;
