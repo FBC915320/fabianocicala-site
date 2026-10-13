@@ -81,7 +81,7 @@
         : 'Fabiano Cicala compartilha uma trajetória construída entre trabalho, recomeços, fé e responsabilidade. Mais do que relatar conquistas, convida o leitor a perceber aquilo que antecede toda decisão importante: o silêncio, o caráter, o serviço, a disciplina e a coragem de agir quando ninguém está olhando. Um chamado para liderar com responsabilidade, servir pessoas e construir algo que permaneça.'
     },
     {
-      id: 'posicione', title: isEnglish ? 'Position Yourself and Win by Faith' : 'Posicione-se e Vença pela Fé',
+      id: 'posicione', pageUrl: '/livros/posicione-se-e-venca-pela-fe/', title: isEnglish ? 'Position Yourself and Win by Faith' : 'Posicione-se e Vença pela Fé',
       subtitle: isEnglish ? 'Prayers and Biblical Principles for Spiritual Battles' : 'Orações e Princípios Bíblicos para Batalhas Espirituais',
       cover: '/img/optimized/capa-posicione-se-venca-pela-fe.webp', price: 'R$ 14,90',
       url: 'https://books.apple.com/br/book/posicione-se-e-ven%C3%A7a-pela-f%C3%A9/id6820549926',
@@ -93,7 +93,7 @@
         : 'Um guia prático para quem deseja fortalecer a fé, desenvolver uma vida de oração e aprender a se posicionar espiritualmente diante das dificuldades. Reúne orações, referências bíblicas e ensinamentos sobre proteção, família, sabedoria, cura, libertação, propósito e perseverança. Mais do que repetir palavras, é um convite para transformar conhecimento em atitude.'
     },
     {
-      id: 'corolla', title: isEnglish ? 'Corolla Cross Hybrid + 13 Problems' : 'Corolla Cross Hybrid + 13 Problemas',
+      id: 'corolla', pageUrl: '/livros/corolla-cross-hybrid-13-problemas/', title: isEnglish ? 'Corolla Cross Hybrid + 13 Problems' : 'Corolla Cross Hybrid + 13 Problemas',
       subtitle: isEnglish ? 'A Brazilian owner’s real-world account' : 'Relato real de um proprietário no Brasil',
       cover: '/img/optimized/capa-corolla-cross-13-problemas.webp', price: 'R$ 9,90',
       printNote: labels.digitalOnly,
@@ -118,25 +118,25 @@
         : 'O trabalho terminou. Mas a cabeça continua. Uma obra de relaxamento, fé e autoconhecimento com práticas de atenção ao corpo, visualização, reflexão e oração, respeitando o ritmo de cada pessoa.'
     },
     {
-      id:'ia-01', title:'IA do Zero à Prática',
+      id:'ia-01', pageUrl: '/livros/ia-do-zero-a-pratica/', title:'IA do Zero à Prática',
       subtitle:'Coleção Aprenda IA · Volume 1',
       cover:'/img/optimized/capa-ia-final-01.webp', status:'E-book',
       description:'Livro pago para começar a usar IA, com conceitos, projetos, exercícios e fichas comentadas de cursos e materiais. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
-      id:'ia-02', title:'Use IA para Trabalhar e Faturar',
+      id:'ia-02', pageUrl: '/livros/use-ia-para-trabalhar-e-faturar/', title:'Use IA para Trabalhar e Faturar',
       subtitle:'Coleção Aprenda IA · Volume 2',
       cover:'/img/optimized/capa-ia-final-02.webp', status:'E-book',
       description:'Livro pago sobre IA aplicada ao trabalho e aos negócios, com projetos, modelos e orientação prática. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
-      id:'ia-03', title:'IA Além do Básico',
+      id:'ia-03', pageUrl: '/livros/ia-alem-do-basico/', title:'IA Além do Básico',
       subtitle:'Coleção Aprenda IA · Volume 3',
       cover:'/img/optimized/capa-ia-final-03.webp', status:'E-book',
       description:'Livro pago para aprofundar a formação em IA, organizar projetos e construir um portfólio. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
-      id:'ia-04', title:'O Mapa Completo da IA',
+      id:'ia-04', pageUrl: '/livros/o-mapa-completo-da-ia/', title:'O Mapa Completo da IA',
       subtitle:'Coleção Aprenda IA · Edição integral',
       cover:'/img/optimized/capa-ia-final-04.webp', status:'E-book',
       description:'Livro pago que integra fundamentos, aplicações no trabalho e formação técnica, com 58 fichas de cursos e materiais. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
@@ -171,7 +171,7 @@
         : 'Um guia prático para começar no GitHub: repositórios, branches, commits, pull requests, merge, automações com GitHub Actions, segurança e exercícios passo a passo. Edição independente adaptada de material GitHub Skills sob licença MIT, sem vínculo oficial. O livro foi enviado ao Apple Books e está aguardando revisão; a venda ainda não está disponível.'
     },
     {
-      id: 'solar', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
+      id: 'solar', pageUrl: '/livros/guia-pratico-controlador-solar/', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
       cover: '/img/optimized/capa-guia-controlador-solar.webp', status: labels.guide,
       printNote: labels.printPlanned,
@@ -185,16 +185,16 @@
   const card = (book) => `
     <article id="livro-${book.id}" class="book-card book-card--enhanced${book.upcoming ? ' book-card--upcoming' : ''}">
       ${book.upcoming ? `<span class="book-soon">${book.status}</span>` : ''}
-      <button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">
+      ${book.pageUrl ? `<a class="book-cover book-preview-cover" href="${book.pageUrl}" aria-label="${labels.details}: ${book.title}">` : `<button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">`}
         ${book.cover ? `<span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="Capa de ${book.title}, de Fabiano Cicala" loading="lazy"></span>` : `<span class="book-placeholder" aria-hidden="true"><span class="book-placeholder-lines"></span></span>`}
-      </button>
+      ${book.pageUrl ? '</a>' : '</button>'}
       <div class="book-info">
         ${!book.upcoming ? `<span class="book-status">${book.status || labels.available}</span>` : ''}
         <h3>${book.title}</h3>
         <p class="book-subtitle">${book.subtitle}</p>
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
         <div class="book-actions">
-          <button class="book-preview-button" type="button" data-book="${book.id}">${labels.preview}</button>
+          ${book.pageUrl ? `<a class="book-preview-button" href="${book.pageUrl}">${labels.details}</a>` : `<button class="book-preview-button" type="button" data-book="${book.id}">${labels.preview}</button>`}
         </div>
       </div>
     </article>`;
