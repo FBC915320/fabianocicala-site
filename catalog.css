@@ -120,3 +120,19 @@
 .career-experience-body small{font-size:.76rem;font-weight:750;letter-spacing:.025em;color:#8b6a2b}
 .career-experience-body p{font-size:.91rem;line-height:1.6;color:#526077;margin:8px 0 0}
 @media(max-width:700px){.career-experiences-grid{grid-template-columns:minmax(0,1fr)}.career-experiences{margin-top:25px}.career-experience summary{min-height:55px;font-size:.94rem}}
+
+
+/* Rodape social com links discretos e agrupados, inclusive no iPhone. */
+.contact .social-block{margin-top:25px;padding-top:20px;border-top:1px solid #ffffff25}
+.contact .social-heading{font-size:.77rem;letter-spacing:.09em;text-transform:uppercase;color:#d8b95f;font-weight:750;margin:0 0 12px}
+.contact .social-block .social{display:flex;flex-wrap:wrap;gap:9px;margin:0;align-items:center}
+.contact .social-block .social a{display:inline-flex;flex:0 0 auto;min-height:44px;align-items:center;justify-content:center;gap:9px;padding:10px 14px;border:1px solid #ffffff34;border-radius:9px;background:#ffffff09;color:#fff;text-decoration:none;font-size:.84rem;font-weight:650;transition:background .2s,border-color .2s}
+.contact .social-block .social a:before{display:none}
+.contact .social-block .social svg{width:18px;height:18px;fill:currentColor;flex:0 0 18px}
+.contact .social-block .social a:hover{background:#ffffff18;border-color:#d8b95f}
+.contact .social-block .social a:focus-visible{outline:2px solid #d8b95f;outline-offset:3px}
+@media(max-width:700px){
+ .contact .social-block .social{display:flex;flex-wrap:wrap;gap:9px}
+ .contact .social-block .social a{width:auto;min-width:0;flex:0 0 auto;padding:10px 12px;font-size:.8rem;min-height:44px}
+}
+@media(max-width:355px){.contact .social-block .social a{font-size:.75rem;padding:9px 10px}}
