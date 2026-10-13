@@ -185,24 +185,21 @@
   const card = (book) => `
     <article id="livro-${book.id}" class="book-card book-card--enhanced${book.upcoming ? ' book-card--upcoming' : ''}">
       ${book.upcoming ? `<span class="book-soon">${book.status}</span>` : ''}
-      ${book.pageUrl ? `<a class="book-cover book-preview-cover" href="${book.pageUrl}" aria-label="${labels.details}: ${book.title}">` : `<button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.details}: ${book.title}">`}
+      <button class="book-cover book-preview-cover" type="button" data-book="${book.id}" aria-label="${labels.preview}: ${book.title}">
         ${book.cover ? `<span class="book-3d"><span class="book-spine" aria-hidden="true"></span><img class="book-front" src="${book.cover}" alt="Capa de ${book.title}, de Fabiano Cicala" loading="lazy"></span>` : `<span class="book-placeholder" aria-hidden="true"><span class="book-placeholder-lines"></span></span>`}
-      ${book.pageUrl ? '</a>' : '</button>'}
+      </button>
       <div class="book-info">
         ${!book.upcoming ? `<span class="book-status">${book.status || labels.available}</span>` : ''}
-        <h3>${book.pageUrl ? `<a href="${book.pageUrl}">${book.title}</a>` : book.title}</h3>
+        <h3>${book.title}</h3>
         <p class="book-subtitle">${book.subtitle}</p>
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
         <div class="book-actions">
-          ${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : `<button class="book-preview-button" type="button" data-book="${book.id}">${book.url ? labels.preview : labels.details}</button>`}
-          ${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}
-          ${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.paperbackUrl ? `<a class="book-buy-button" href="${book.paperbackUrl}" target="_blank" rel="noopener">${labels.paperback}<span aria-hidden="true">↗</span></a>` : ''}${book.hardcoverUrl ? `<a class="book-buy-button" href="${book.hardcoverUrl}" target="_blank" rel="noopener">${labels.hardcover}<span aria-hidden="true">↗</span></a>` : ''}
+          <button class="book-preview-button" type="button" data-book="${book.id}">${labels.preview}</button>
         </div>
       </div>
     </article>`;
-
   const legacyHeading = section.querySelector('.head');
-  if (legacyHeading) legacyHeading.outerHTML = `<div class="books-heading"><div><div class="kicker">${labels.eyebrow}</div><h2>${labels.title}</h2><p>${labels.intro}</p></div><a class="store-link" href="${appleAuthorUrl}" target="_blank" rel="noopener">${labels.store}<span aria-hidden="true">↗</span></a></div>`;
+  if (legacyHeading) legacyHeading.outerHTML = `<div class="books-heading"><div><div class="kicker">${labels.eyebrow}</div><h2>${labels.title}</h2><p>${labels.intro}</p></div></div>`;
   const published = books.filter((book) => !book.id.startsWith('ia-') && !book.upcoming);
   const collection = books.filter((book) => book.id.startsWith('ia-'));
   const fiction = books.filter((book) => book.fiction);
@@ -217,7 +214,7 @@
   function openPreview(id) {
     const book = books.find((item) => item.id === id);
     if (!book) return;
-    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button>${book.cover ? `<img src="${book.cover}" alt="${book.title}">` : ''}<div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.printNote ? `<p class="book-print-note">${book.printNote}</p>` : ''}${book.price ? `<p class="dialog-price"><strong>${labels.price}:</strong> ${book.price}</p>` : ''}${book.pageUrl ? `<a class="book-buy-button" href="${book.pageUrl}">${labels.details}<span aria-hidden="true">→</span></a>` : ''}${book.url ? `<a class="book-buy-button" href="${book.url}" target="_blank" rel="noopener">${labels.buy}<span aria-hidden="true">↗</span></a>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${labels.amazon}<span aria-hidden="true">↗</span></a>` : ''}${book.url ? `<p class="book-channel-note">${labels.directSoon}</p>` : ''}</div>`;
+    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button>${book.cover ? `<img src="${book.cover}" alt="${book.title}">` : ''}<div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price">${book.price}</p>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${isEnglish ? 'Buy on Amazon' : 'Comprar na Amazon'}<span aria-hidden="true">↗</span></a>` : ''}</div>`;
     dialog.showModal();
     dialog.querySelector('.dialog-close').focus();
   }
