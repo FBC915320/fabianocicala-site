@@ -101,3 +101,22 @@
   header.hero .photoWrap{width:100%;max-width:240px;justify-self:end;margin:0}
   header.hero .hero-ctas{display:flex;flex-wrap:wrap;gap:10px}
 }
+
+
+/* Mini-historias de empresas: clique para expandir, sem sair da pagina. */
+.career-experiences{margin:28px 0 34px;padding:25px 0 0;border-top:1px solid #dee4ed}
+.career-experiences h3{font-size:1.16rem;line-height:1.25;color:#101b33;margin:0 0 6px}
+.career-experiences .career-hint{font-size:.91rem;color:#647087;margin:0 0 18px}
+.career-experiences-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+.career-experience{min-width:0;border:1px solid #dbe1eb;border-radius:9px;background:#fff;overflow:hidden}
+.career-experience summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:12px 15px;color:#101b33;font-weight:750;font-size:.92rem;line-height:1.35}
+.career-experience summary::-webkit-details-marker{display:none}
+.career-experience summary:focus-visible{outline:2px solid #b68a35;outline-offset:-3px}
+.career-experience summary:hover{background:#f7f8fb}
+.career-experience .career-plus{color:#927132;font-size:1.4rem;font-weight:500;line-height:1;flex:0 0 auto}
+.career-experience[open] .career-plus{transform:rotate(45deg)}
+.career-experience[open] summary{border-bottom:1px solid #e2e7ef;background:#f9fafc}
+.career-experience-body{padding:13px 15px 17px}
+.career-experience-body small{font-size:.76rem;font-weight:750;letter-spacing:.025em;color:#8b6a2b}
+.career-experience-body p{font-size:.91rem;line-height:1.6;color:#526077;margin:8px 0 0}
+@media(max-width:700px){.career-experiences-grid{grid-template-columns:minmax(0,1fr)}.career-experiences{margin-top:25px}.career-experience summary{min-height:55px;font-size:.94rem}}
