@@ -136,8 +136,15 @@
       description:'Livro pago para aprofundar a formação em IA, organizar projetos e construir um portfólio. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
+      id:'ia-futuro', title:'Além da Inteligência Artificial',
+      subtitle:'Coleção Aprenda IA · Volume 4',
+      pageUrl:'/livros/alem-da-inteligencia-artificial/',
+      status:'Em preparação comercial',
+      description:'AGI, autoaperfeiçoamento recursivo, agentes, segurança e cenários futuros, com distinção entre pesquisas demonstradas e hipóteses. Link comercial ainda não confirmado.'
+    },
+    {
       id:'ia-04', pageUrl: '/livros/o-mapa-completo-da-ia/', title:'O Mapa Completo da IA',
-      subtitle:'Coleção Aprenda IA · Edição integral',
+      subtitle:'Coleção Aprenda IA · Volume 5 · Edição integral',
       cover:'/img/optimized/capa-ia-final-04.webp', status:'E-book',
       description:'Livro pago que integra fundamentos, aplicações no trabalho e formação técnica, com 58 fichas de cursos e materiais. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
