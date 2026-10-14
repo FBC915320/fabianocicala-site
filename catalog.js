@@ -149,14 +149,14 @@
       description:'Livro pago que integra fundamentos, aplicações no trabalho e formação técnica, com 58 fichas de cursos e materiais. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
-      id:'eu-existo', title:'Eu Existo!',
+      id:'eu-existo', title:'Eu Existo!', cover:'/capa-eu-existo.jpg',
       subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
       fiction:true,
       upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
       description:fictionIntro + (isEnglish ? ' Editorial preparation is underway. Coming soon.' : ' Obra em preparação editorial. Em breve.')
     },
     {
-      id:'ultima-fonte', title:'A Última Fonte',
+      id:'ultima-fonte', title:'A Última Fonte', cover:'/capa-a-ultima-fonte.png',
       subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
       fiction:true,
       upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
