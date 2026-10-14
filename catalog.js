@@ -120,23 +120,23 @@
     {
       id:'ia-01', pageUrl: '/livros/ia-do-zero-a-pratica/', title:'IA do Zero à Prática',
       subtitle:'Coleção Aprenda IA · Volume 1',
-      cover:'/img/optimized/capa-ia-final-01.webp', status:'E-book',
+      cover:'/img/optimized/capa-ia-atual-01.jpg', status:'E-book',
       description:'Livro pago para começar a usar IA, com conceitos, projetos, exercícios e fichas comentadas de cursos e materiais. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
       id:'ia-02', pageUrl: '/livros/use-ia-para-trabalhar-e-faturar/', title:'Use IA para Trabalhar e Faturar',
       subtitle:'Coleção Aprenda IA · Volume 2',
-      cover:'/img/optimized/capa-ia-final-02.webp', status:'E-book',
+      cover:'/img/optimized/capa-ia-atual-02.jpg', status:'E-book',
       description:'Livro pago sobre IA aplicada ao trabalho e aos negócios, com projetos, modelos e orientação prática. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
       id:'ia-03', pageUrl: '/livros/ia-alem-do-basico/', title:'IA Além do Básico',
       subtitle:'Coleção Aprenda IA · Volume 3',
-      cover:'/img/optimized/capa-ia-final-03.webp', status:'E-book',
+      cover:'/img/optimized/capa-ia-atual-03.jpg', status:'E-book',
       description:'Livro pago para aprofundar a formação em IA, organizar projetos e construir um portfólio. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
-      id:'ia-futuro', title:'Além da Inteligência Artificial',
+      id:'ia-futuro', cover:'/img/optimized/capa-ia-atual-04.jpg', title:'Além da Inteligência Artificial',
       subtitle:'Coleção Aprenda IA · Volume 4',
       pageUrl:'/livros/alem-da-inteligencia-artificial/',
       status:'Em preparação comercial',
@@ -145,18 +145,18 @@
     {
       id:'ia-04', pageUrl: '/livros/o-mapa-completo-da-ia/', title:'O Mapa Completo da IA',
       subtitle:'Coleção Aprenda IA · Volume 5 · Edição integral',
-      cover:'/img/optimized/capa-ia-final-04.webp', status:'E-book',
+      cover:'/img/optimized/capa-ia-atual-05.jpg', status:'E-book',
       description:'Livro pago que integra fundamentos, aplicações no trabalho e formação técnica, com 58 fichas de cursos e materiais. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
-      id:'eu-existo', title:'Eu Existo!', cover:'/capa-eu-existo.jpg',
+      id:'eu-existo', cover:'/img/optimized/capa-eu-existo-original.jpg', title:'Eu Existo!', cover:'/capa-eu-existo.jpg',
       subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
       fiction:true,
       upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
       description:fictionIntro + (isEnglish ? ' Editorial preparation is underway. Coming soon.' : ' Obra em preparação editorial. Em breve.')
     },
     {
-      id:'ultima-fonte', title:'A Última Fonte', cover:'/capa-a-ultima-fonte.png',
+      id:'ultima-fonte', cover:'/img/optimized/capa-a-ultima-fonte-original.png', title:'A Última Fonte', cover:'/capa-a-ultima-fonte.png',
       subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
       fiction:true,
       upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
@@ -170,7 +170,7 @@
       description:labels.projectsIntro
     },
     {
-      id: 'github-zero', title: isEnglish ? 'GitHub — From Zero to Practice' : 'GitHub — Do Zero à Prática',
+      id: 'github-zero', cover:'/img/optimized/capa-github-zero-original.jpg', title: isEnglish ? 'GitHub — From Zero to Practice' : 'GitHub — Do Zero à Prática',
       subtitle: isEnglish ? 'Expanded beginner guide · 80 pages in the PDF edition' : 'Edição ampliada · guia de Git e GitHub para iniciantes',
       upcoming: true, status: isEnglish ? 'Under Apple Books review' : 'Em revisão no Apple Books',
       description: isEnglish
