@@ -136,3 +136,8 @@
  .contact .social-block .social a{width:auto;min-width:0;flex:0 0 auto;padding:10px 12px;font-size:.8rem;min-height:44px}
 }
 @media(max-width:355px){.contact .social-block .social a{font-size:.75rem;padding:9px 10px}}
+
+/* Preservar proporções originais das capas, inclusive na prévia em modal. */
+.book-card--enhanced .book-front,.book-dialog-content>img{width:auto;max-width:100%;height:auto;object-fit:contain;aspect-ratio:auto}
+.book-card--enhanced .book-front{height:100%;width:auto}
+@media(max-width:600px){.book-dialog-content>img{height:auto;max-height:min(55vh,360px)}}
