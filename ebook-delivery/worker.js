@@ -11,7 +11,7 @@ const sha=async s=>Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256
 const hex=arr=>Array.from(new Uint8Array(arr)).map(b=>b.toString(16).padStart(2,"0")).join("");
 const err=(message,status=400)=>json({error:message},status);
 const valid=(s,lim=200)=>typeof s==="string"&&s.length>0&&s.length<=lim;
-function configured(env){return !!(env.ORDERS&&env.PRIVATE_EBOOKS&&env.MP_ACCESS_TOKEN&&env.MP_WEBHOOK_SECRET&&env.PUBLIC_SITE&&env.PUBLIC_API);}
+function configured(env){return !!(env.ORDERS&&env.PRIVATE_EBOOKS&&env.MP_ACCESS_TOKEN&&env.MP_WEBHOOK_SECRET&&env.MP_COLLECTOR_ID&&env.PUBLIC_SITE&&env.PUBLIC_API);}
 function secureOrigin(request,env){return request.headers.get("origin")===env.PUBLIC_SITE;}
 function cors(response,env){const h=new Headers(response.headers);h.set("Access-Control-Allow-Origin",env.PUBLIC_SITE);h.set("Vary","Origin");return new Response(response.body,{status:response.status,headers:h});}
 function getPath(req){return new URL(req.url).pathname;}
@@ -61,7 +61,10 @@ async function webhook(req,env){
  const orderId=payment.external_reference; if(!valid(orderId,64))return err("Referência inválida");
  const order=await env.ORDERS.prepare("SELECT * FROM orders WHERE id=?").bind(orderId).first();
  if(!order)return err("Pedido não encontrado",404);
- if(payment.currency_id!=="BRL"||Math.round(Number(payment.transaction_amount)*100)!==order.amount_cents)return err("Divergência de valor",409);
+ if(payment.currency_id!=="BRL"||!Number.isFinite(Number(payment.transaction_amount))||Math.round(Number(payment.transaction_amount)*100)!==order.amount_cents)return err("Divergência de valor",409);
+ if(String(payment.collector_id||"")!==String(env.MP_COLLECTOR_ID))return err("Recebedor não autorizado",403);
+ if(String(payment.id)!==String(id))return err("Identificador do pagamento divergente",409);
+ if(order.payment_id&&String(order.payment_id)!==String(payment.id))return err("Pedido vinculado a outro pagamento",409);
  const state=payment.status==="approved"?"approved":payment.status==="refunded"||payment.status==="charged_back"?"revoked":payment.status==="cancelled"||payment.status==="rejected"?"rejected":"pending";
  if(order.status==="revoked"&&state!=="revoked")return err("Pedido revogado",409);
  if(order.status==="approved"&&state==="pending")return json({received:true});
