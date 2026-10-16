@@ -1,0 +1,23 @@
+name = "fabiano-ebook-delivery"
+main = "worker.js"
+compatibility_date = "2026-10-16"
+workers_dev = true
+
+# Preencher os IDs reais somente após criar os recursos na conta pessoal.
+[[d1_databases]]
+binding = "ORDERS"
+database_name = "fabiano-ebook-orders"
+database_id = "REPLACE_WITH_REAL_D1_ID"
+
+[[r2_buckets]]
+binding = "PRIVATE_EBOOKS"
+bucket_name = "fabiano-ebooks-private"
+
+[vars]
+PUBLIC_SITE = "https://fabianocicala.com"
+# Substituir pela URL HTTPS real, emitida pelo Cloudflare.
+PUBLIC_API = "https://REPLACE_WITH_WORKER_URL"
+# CSV de chaves que já possuem EPUB final conferido no R2.
+ENABLED_BOOKS = ""
+# Salvar via wrangler secret put, NUNCA neste arquivo:
+# MP_ACCESS_TOKEN, MP_WEBHOOK_SECRET
