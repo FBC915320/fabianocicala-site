@@ -25,7 +25,7 @@ async function verifyWebhook(req,env,id){
  const raw=req.headers.get("x-signature")||"";const requestId=req.headers.get("x-request-id")||"";
  const parts=Object.fromEntries(raw.split(",").map(p=>p.trim().split("=")));
  if(!valid(parts.ts,32)||!valid(parts.v1,128)||!valid(requestId,128))return false;
- if(Math.abs(Date.now()/1000-Number(parts.ts))>600)return false;
+ const timestamp=Number(parts.ts);if(!Number.isFinite(timestamp))return false;const issuedAt=timestamp>1e12?timestamp/1000:timestamp;if(Math.abs(Date.now()/1000-issuedAt)>600)return false;
  const manifest="id:"+id.toLowerCase()+";request-id:"+requestId+";ts:"+parts.ts+";";
  const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(env.MP_WEBHOOK_SECRET),{name:"HMAC",hash:"SHA-256"},false,["sign"]);
  const actual=hex(await crypto.subtle.sign("HMAC",key,new TextEncoder().encode(manifest)));
@@ -63,6 +63,8 @@ async function webhook(req,env){
  if(!order)return err("Pedido não encontrado",404);
  if(payment.currency_id!=="BRL"||Math.round(Number(payment.transaction_amount)*100)!==order.amount_cents)return err("Divergência de valor",409);
  const state=payment.status==="approved"?"approved":payment.status==="refunded"||payment.status==="charged_back"?"revoked":payment.status==="cancelled"||payment.status==="rejected"?"rejected":"pending";
+ if(order.status==="revoked"&&state!=="revoked")return err("Pedido revogado",409);
+ if(order.status==="approved"&&state==="pending")return json({received:true});
  await env.ORDERS.prepare("UPDATE orders SET status=?,payment_id=?,updated_at=? WHERE id=?").bind(state,String(payment.id),Date.now(),orderId).run();
  return json({received:true});
 }
