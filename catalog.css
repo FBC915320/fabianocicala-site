@@ -27,7 +27,6 @@
 .book-preview-button{border:1px solid #cbd2dc;background:#fff;color:#101b33}
 .book-buy-button{border:1px solid #101b33;background:#101b33;color:#fff}
 .book-preview-button:hover{border-color:#8d7130}.book-buy-button:hover{background:#22345c}
-.book-buy-button.is-disabled{opacity:.58;cursor:not-allowed;background:#647086;border-color:#647086;pointer-events:none}
 .book-soon{position:absolute;right:3px;top:0;z-index:4;background:#b92e38;color:#fff;font-size:.62rem;font-weight:750;line-height:1;padding:5px 8px;border-radius:4px}
 .book-placeholder{position:relative;display:block;width:100px;height:150px;background:#f3eee5;border-left:5px solid #d8cbb4;border-radius:2px;color:#9b8b70;box-shadow:4px 6px 8px #101b3312}
 .book-placeholder:before{content:"";position:absolute;top:32px;left:20px;right:20px;height:2px;background:#b4a58a}
