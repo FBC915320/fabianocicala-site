@@ -124,3 +124,6 @@ header.hero.hero-quantum{position:relative;isolation:isolate;display:grid;grid-t
 .contact .footer-identity-row .social a svg{display:block!important;width:23px!important;height:23px!important;flex:none;fill:none}
 .contact .footer-identity-row .social a:hover svg{transform:translateY(-1px)}
 .hero-quantum .quantum-visual{background-color:#142332}
+
+.hero-quantum .hero-photo-credit{position:absolute;bottom:7px;right:10px;z-index:3;font-size:.57rem;color:#d7e0e9;opacity:.84;text-shadow:0 1px 5px #000}
+.hero-quantum .hero-photo-credit a{color:inherit;text-decoration:underline}
