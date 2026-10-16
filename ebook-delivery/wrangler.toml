@@ -20,4 +20,4 @@ PUBLIC_API = "https://REPLACE_WITH_WORKER_URL"
 # CSV de chaves que já possuem EPUB final conferido no R2.
 ENABLED_BOOKS = ""
 # Salvar via wrangler secret put, NUNCA neste arquivo:
-# MP_ACCESS_TOKEN, MP_WEBHOOK_SECRET
+# MP_ACCESS_TOKEN, MP_WEBHOOK_SECRET, MP_COLLECTOR_ID
