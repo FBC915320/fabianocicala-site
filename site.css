@@ -48,3 +48,74 @@
 .contact .footer-identity-row .social{margin:0;display:flex;gap:8px}
 .contact .footer-identity-row .social a{padding:7px 10px}
 @media(max-width:640px){.contact .footer-identity-row{gap:12px}.contact .footer-identity-divider{height:28px}.contact .footer-identity-row .social-block{flex:1 1 180px}}
+
+/* Layout compacto aprovado — outubro de 2026 */
+:root{--fc-navy:#04111d;--fc-navy2:#081c30;--fc-gold:#dbaf5b}
+body{background:#061521}
+.shell{box-shadow:0 0 80px #0002}
+.top{background:#061421;color:#fff;border-bottom:1px solid #ffffff1c;position:relative;z-index:2}
+.top .brand-name{color:#f5ebd9}
+.top .nav a{color:#eaf0f7}
+.top .nav a:hover{color:#e6b85f}
+header.hero.hero-quantum{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.95fr);min-height:390px;padding:48px clamp(22px,5vw,75px);gap:20px;background:linear-gradient(95deg,#03111e 0%,#061929 52%,#071723 100%);overflow:hidden;color:#fff}
+.hero-quantum .hero-copy{position:relative;z-index:2;align-self:center}
+.hero-quantum .eyebrow{color:#e8bb67;letter-spacing:.2em}
+.hero-quantum h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(3.25rem,6.3vw,6.5rem);line-height:.91;margin:22px 0 22px;letter-spacing:-.05em;color:#fff}
+.hero-quantum h1 em{font-style:normal;color:#e1b35c}
+.hero-quantum .hero-role{max-width:520px;font-size:clamp(1rem,1.6vw,1.35rem);font-weight:400;line-height:1.55;color:#ccd8e4;margin:0}
+.hero-quantum .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-quantum .cta{background:#e2b663;color:#091524;border:1px solid #e2b663;border-radius:999px;padding:13px 25px}
+.hero-quantum .cta-ghost{background:transparent;color:#fff;border:1px solid #b4bfc9}
+.hero-quantum .quantum-visual{position:relative;z-index:1;min-height:300px;background:linear-gradient(90deg,#051623 0%,#06162319 28%,#06162300 65%),url('https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/IBM_Quantum_System_One.jpg/960px-IBM_Quantum_System_One.jpg') center 47% / cover no-repeat;border-radius:0;box-shadow:inset 55px 0 70px #061522,inset -25px 0 60px #071723}
+.hero-quantum .quantum-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#07172399,transparent 32%),linear-gradient(90deg,#06152170,transparent 35%)}
+.quantum-caption{position:absolute;right:12px;top:14px;font-size:.7rem;letter-spacing:.19em;line-height:1.9;text-transform:uppercase;color:#e8f0f8;text-shadow:0 2px 8px #000;z-index:2}
+.home-quicklinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#061724;color:#fff;border-top:1px solid #ffffff25;border-bottom:1px solid #ffffff28;padding:0 35px}
+.home-quicklinks a{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:19px 28px;color:inherit;text-decoration:none;border-right:1px solid #ffffff24;min-height:82px}
+.home-quicklinks a:last-child{border-right:0}
+.home-quicklinks strong{font-size:1rem;font-weight:700}
+.home-quicklinks span{font-size:.83rem;color:#b6c4d1;line-height:1.4}
+#livros{padding-top:30px;padding-bottom:32px}
+#livros .books-heading{margin-bottom:14px}
+#livros .books-heading h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(1.7rem,3vw,2.45rem);line-height:1.14}
+#livros .books-heading p{font-size:.88rem}
+.home-about{background:#081b2b;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:36px;padding-top:28px;padding-bottom:28px}
+.home-about h2{font-family:Georgia,serif;font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:400;margin:8px 0}
+.home-about p{max-width:580px;color:#bfccd9;line-height:1.5;font-size:.95rem;margin:0 0 14px}
+.about-more{display:inline-block;border:1px solid #dcb464;background:#dcb464;color:#081726;border-radius:999px;padding:10px 20px;font-weight:700;cursor:pointer}
+.home-about-topics{display:flex;gap:12px;flex-wrap:wrap;max-width:475px;justify-content:flex-end}
+.home-about-topics span{border-left:2px solid #e0b460;padding:10px 12px;color:#e4eaf2;font-size:.88rem}
+.trajectory-dialog{color:#132039;background:#f8fafc;width:min(1100px,94vw);max-height:88vh;border:1px solid #d1d9e4;border-radius:14px;padding:0;box-shadow:0 20px 80px #0008}
+.trajectory-dialog::backdrop{background:#06111de0;backdrop-filter:blur(6px)}
+.trajectory-dialog-head{position:sticky;top:0;z-index:3;background:#081c30;color:white;display:flex;justify-content:space-between;align-items:center;padding:13px 22px}
+.trajectory-dialog-head h2{font:500 clamp(1.2rem,3vw,1.7rem) Georgia,serif;margin:0}
+.dialog-close{background:transparent;color:#fff;border:1px solid #ffffff60;border-radius:50%;font-size:1.6rem;line-height:1;width:39px;height:39px;cursor:pointer}
+.trajectory-dialog-body{padding:0 12px 20px}
+.trajectory-dialog-body .section{padding:24px}
+.trajectory-dialog-body .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}
+.trajectory-dialog-body .milestone{padding:10px}
+.contact{padding-top:38px;padding-bottom:35px}
+.contact .footer-identity-row{justify-content:flex-start;gap:16px}
+.contact .personal-footer-brand img{width:69px;height:69px}
+.contact .footer-identity-row .social a{border:0;background:transparent;padding:7px}
+.contact .footer-identity-row .social a img{width:22px;height:22px}
+@media(max-width:800px){
+ header.hero.hero-quantum{grid-template-columns:1fr;gap:0;padding:35px 22px}
+ .hero-quantum .hero-copy{align-self:start}
+ .hero-quantum .quantum-visual{min-height:205px;margin-top:15px}
+ .home-quicklinks{padding:0 12px}
+ .home-quicklinks a{padding:15px 12px}
+ .home-about{display:block}
+ .home-about-topics{justify-content:flex-start;margin-top:16px}
+ .trajectory-dialog-body .timeline{grid-template-columns:1fr}
+}
+@media(max-width:530px){
+ .hero-quantum h1{font-size:clamp(3.0rem,13vw,4.6rem)}
+ .hero-quantum .hero-ctas{flex-direction:row}
+ .hero-quantum .cta{width:auto;padding:10px 16px;font-size:.8rem}
+ .home-quicklinks{grid-template-columns:1fr 1fr 1fr}
+ .home-quicklinks a{min-height:75px}
+ .home-quicklinks span{font-size:.7rem}
+ .home-about{padding:25px 18px}
+ .home-about-topics span{font-size:.78rem;padding:6px}
+ .trajectory-dialog-body .section{padding:12px}
+}
