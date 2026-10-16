@@ -38,3 +38,13 @@
 .contact .social-block .social a svg{display:none!important}
 .contact .social-block .social a::before{display:none!important}
 .territory .image-credit{font-size:.7rem;opacity:.76;margin-top:8px}
+
+/* Rodape: assinatura FC, separador e redes na mesma linha */
+.contact .footer-identity-row{display:flex;align-items:center;justify-content:flex-start;gap:20px;flex-wrap:wrap;margin-top:24px}
+.contact .footer-identity-row .personal-footer-brand{margin:0;flex-shrink:0}
+.contact .footer-identity-divider{height:38px;width:1px;background:#cfd5e060;flex-shrink:0}
+.contact .footer-identity-row .social-block{margin:0;text-align:left}
+.contact .footer-identity-row .social-heading{margin:0 0 7px;font-size:.82rem;color:#cfd5e0;font-weight:600;letter-spacing:.02em}
+.contact .footer-identity-row .social{margin:0;display:flex;gap:8px}
+.contact .footer-identity-row .social a{padding:7px 10px}
+@media(max-width:640px){.contact .footer-identity-row{gap:12px}.contact .footer-identity-divider{height:28px}.contact .footer-identity-row .social-block{flex:1 1 180px}}
