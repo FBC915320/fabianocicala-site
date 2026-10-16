@@ -22,3 +22,12 @@
 /* Assinatura pessoal no rodape */
 .personal-footer-brand{margin-top:18px;display:inline-flex;align-items:center;gap:12px;color:#cfd5e0;font-size:.95rem;letter-spacing:.03em}
 .personal-footer-brand img{width:60px;height:60px;object-fit:contain;display:block}
+
+/* Marcas oficiais das redes sociais no rodape, apos a identidade FC */
+.contact .social-block{margin-top:14px}
+.contact .social-block .social{margin-top:12px}
+.contact .social-block .social a::before{display:none!important}
+.contact .social-block .social a svg{display:block!important;width:23px!important;height:23px!important;flex:none;fill:currentColor}
+.contact .social-block .social a[href*="linkedin"] svg{color:#0A66C2}
+.contact .social-block .social a[href*="instagram"] svg{color:#E4405F}
+.contact .social-block .social a[href*="youtube"] svg{color:#FF0033}
