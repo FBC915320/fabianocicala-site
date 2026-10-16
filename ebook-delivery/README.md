@@ -41,13 +41,16 @@ Status: IMPLEMENTAÇÃO DE BASE SALVA; **NÃO ESTÁ PUBLICADA COMO CHECKOUT FUNC
 
 ## Auditoria editorial e operacional — 16/10/2026
 
-| Obra | Fonte encontrada no Drive | Estado para venda própria |
+**Escopo:** estes estados se referem exclusivamente à habilitação da venda direta no site, não à aprovação literária, à integridade do manuscrito-mestre ou à distribuição já existente dos livros. Os títulos abaixo são os títulos oficiais em português; caso sejam exibidos com palavras diferentes, verifique se a tradução automática do navegador está ativada.
+
+
+| Livro | Arquivos identificados no Google Drive | Pendência para habilitar a venda direta |
 | --- | --- | --- |
-| A Estratégia do Invisível | Múltiplos EPUBs diferentes nos diretórios de finalização, com tamanhos distintos; identificar o canônico após comparação com manuscrito-mestre | BLOQUEADO: edição e integridade não confirmadas |
-| Posicione-se e Vença pela Fé | EPUB e capa em pasta FINAL e exportação Apple Books datada de 08/10/2026 | BLOQUEADO: comparar as duas exportações, validar edição e contrato de distribuição |
-| Corolla Cross Hybrid — 13 Problemas | Manuscrito DOCX final e PDF de prévia; nenhum EPUB canônico localizado nesta checagem | BLOQUEADO: preparar/validar EPUB sem inventar conteúdo |
-| Quando o Dia Termina | EPUBs em três pastas de plataformas e EPUB anterior na pasta FINAL; verificar equivalência, capa aprovada e a remoção da seção 09 de referências solicitada pelo autor | BLOQUEADO: conferência editorial pendente |
-| Guia Prático BMP Advanced | Arquivos editáveis e PDF presentes na pasta do projeto; EPUB final comercial ainda não localizado nesta checagem | BLOQUEADO: concluir equivalência e validação do EPUB |
+| A Estratégia do Invisível | Múltiplos EPUBs diferentes nos diretórios de finalização, com tamanhos distintos; identificar o canônico após comparação com manuscrito-mestre | Pendente: identificar e validar o EPUB definitivo |
+| Posicione-se e Vença pela Fé | EPUB e capa em pasta FINAL e exportação Apple Books datada de 08/10/2026 | Pendente: comparar exportações e conferir condições de distribuição |
+| Corolla Cross Hybrid — 13 Problemas | Manuscrito DOCX final e PDF de prévia; nenhum EPUB canônico localizado nesta checagem | Pendente: localizar ou preparar o EPUB definitivo a partir do material aprovado |
+| Quando o Dia Termina | EPUBs em três pastas de plataformas e EPUB anterior na pasta FINAL; verificar equivalência, capa aprovada e a remoção da seção 09 de referências solicitada pelo autor | Pendente: conferir o EPUB e as revisões aprovadas pelo autor |
+| Guia Prático BMP Advanced | Arquivos editáveis e PDF presentes na pasta do projeto; EPUB final comercial ainda não localizado nesta checagem | Pendente: localizar e validar a edição EPUB definitiva |
 
 O site GitHub já contém capas para os títulos listados. Preservar capas originais, sem gerar capas substitutas para obras aprovadas.
 
