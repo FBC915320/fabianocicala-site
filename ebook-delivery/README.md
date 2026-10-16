@@ -38,3 +38,21 @@ Status: IMPLEMENTAÇÃO DE BASE SALVA; **NÃO ESTÁ PUBLICADA COMO CHECKOUT FUNC
 - Conferir os EPUBs finais, preços e títulos válidos para venda direta.
 - Validar hospedagem do site (implantação GitHub/Cloudflare), CORS e domínio HTTPS.
 - Verificar que os valores configurados no Worker correspondem às ofertas públicas.
+
+## Auditoria editorial e operacional — 16/10/2026
+
+| Obra | Fonte encontrada no Drive | Estado para venda própria |
+| --- | --- | --- |
+| A Estratégia do Invisível | Múltiplos EPUBs diferentes nos diretórios de finalização, com tamanhos distintos; identificar o canônico após comparação com manuscrito-mestre | BLOQUEADO: edição e integridade não confirmadas |
+| Posicione-se e Vença pela Fé | EPUB e capa em pasta FINAL e exportação Apple Books datada de 08/10/2026 | BLOQUEADO: comparar as duas exportações, validar edição e contrato de distribuição |
+| Corolla Cross Hybrid — 13 Problemas | Manuscrito DOCX final e PDF de prévia; nenhum EPUB canônico localizado nesta checagem | BLOQUEADO: preparar/validar EPUB sem inventar conteúdo |
+| Quando o Dia Termina | EPUBs em três pastas de plataformas e EPUB anterior na pasta FINAL; verificar equivalência, capa aprovada e a remoção da seção 09 de referências solicitada pelo autor | BLOQUEADO: conferência editorial pendente |
+| Guia Prático BMP Advanced | Arquivos editáveis e PDF presentes na pasta do projeto; EPUB final comercial ainda não localizado nesta checagem | BLOQUEADO: concluir equivalência e validação do EPUB |
+
+O site GitHub já contém capas para os títulos listados. Preservar capas originais, sem gerar capas substitutas para obras aprovadas.
+
+**Atenção de segurança (teste obrigatório):** correção aplicada para assinatura Mercado Pago com timestamp em milissegundos/segundos, conforme documentação do provedor. Além disso, pedidos aprovados não podem ser rebaixados por notificações de estado pendente recebidas fora de ordem. Falta verificar o **collector_id**, o armazenamento privado, a idempotência, o ambiente de homologação, o comportamento em disputa/estorno e o serviço de recuperação do link de download.
+
+**Estado de serviço:** nenhum bucket R2, D1 ou Worker em produção foi criado por esta sessão; não há credenciais Mercado Pago disponíveis. O repositório contém componentes e modelo de configuração apenas, não confirmações de implantação.
+
+**Estado dos links:** referências estáticas de pagamento foram desativadas no `purchase-links.js` como medida de proteção. Após deploy efetivo e validação de uma venda com entrega de EPUB, o Codex poderá ligar os botões ao checkout seguro. Evitar links de pagamento sem fulfillment.
