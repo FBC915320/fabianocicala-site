@@ -20,7 +20,7 @@ Status: IMPLEMENTAÇÃO DE BASE SALVA; **NÃO ESTÁ PUBLICADA COMO CHECKOUT FUNC
 ## Requisitos para Codex completar e implantar
 - Na **conta pessoal** Cloudflare adequada: criar bucket R2 privado `fabiano-ebooks-private`, banco D1 `fabiano-ebook-orders` e Worker `fabiano-ebook-delivery`. Não habilitar domínio público do bucket e não publicar EPUBs no GitHub.
 - Ajustar `wrangler.toml` com ID D1 e URL HTTPS real do Worker. Executar o schema SQL no D1 remoto.
-- Definir segredos `MP_ACCESS_TOKEN` e `MP_WEBHOOK_SECRET` no Worker via `wrangler secret put`, nunca no repositório.
+- Definir segredos `MP_ACCESS_TOKEN`, `MP_WEBHOOK_SECRET` e `MP_COLLECTOR_ID` no Worker via `wrangler secret put`, nunca no repositório.
 - Conferir contratos e exclusividade dos títulos; comparar títulos, formatos e preços aprovados pelo autor com o catálogo definido no Worker.
 - Adicionar os EPUBs **oficiais finais** no R2 como objetos nomeados conforme `CATALOG`. Conferir integridade (hash/EPUBCheck) e remover capítulos de referências conforme revisão editorial aprovada antes de publicar.
 - Preencher `ENABLED_BOOKS` apenas para os títulos cujo EPUB final e venda direta estejam liberados.
@@ -59,3 +59,7 @@ O site GitHub já contém capas para os títulos listados. Preservar capas origi
 **Estado de serviço:** nenhum bucket R2, D1 ou Worker em produção foi criado por esta sessão; não há credenciais Mercado Pago disponíveis. O repositório contém componentes e modelo de configuração apenas, não confirmações de implantação.
 
 **Estado dos links:** referências estáticas de pagamento foram desativadas no `purchase-links.js` como medida de proteção. Após deploy efetivo e validação de uma venda com entrega de EPUB, o Codex poderá ligar os botões ao checkout seguro. Evitar links de pagamento sem fulfillment.
+
+## Reforço de segurança
+
+A verificação de webhooks deve rejeitar pagamentos atribuídos a outra conta, outro ID de pagamento ou a um pedido vinculado a outro pagamento. O segredo `MP_COLLECTOR_ID` é obrigatório para impedir liberação por comprovantes de recebedores não autorizados. Confirmar seu valor no painel Mercado Pago antes de implantar, sem registrá-lo no GitHub.
