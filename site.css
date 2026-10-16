@@ -31,3 +31,10 @@
 .contact .social-block .social a[href*="linkedin"] svg{color:#0A66C2}
 .contact .social-block .social a[href*="instagram"] svg{color:#E4405F}
 .contact .social-block .social a[href*="youtube"] svg{color:#FF0033}
+
+/* Rodape: logos oficiais em tamanho discreto */
+.contact .social-block .social a{padding:7px 10px;font-size:.82rem;gap:7px}
+.contact .social-block .social a img{display:block;width:20px;height:20px;object-fit:contain;flex:none}
+.contact .social-block .social a svg{display:none!important}
+.contact .social-block .social a::before{display:none!important}
+.territory .image-credit{font-size:.7rem;opacity:.76;margin-top:8px}
