@@ -10,7 +10,11 @@
  async function checkout(bookId,email,button){
   button.disabled=true;const before=button.textContent;button.textContent=labels.busy;
   try{
-   const res=await fetch(api+"/api/checkout",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({bookId,email})});
+   const attemptStorageKey="fabiano-ebook-attempt:"+bookId+":"+email.trim().toLowerCase();
+   let attempt;try{attempt=JSON.parse(sessionStorage.getItem(attemptStorageKey)||"null")}catch(e){}
+   if(!attempt||Date.now()-attempt.createdAt>15*60*1000){attempt={key:crypto.randomUUID()+":"+Date.now(),createdAt:Date.now()};sessionStorage.setItem(attemptStorageKey,JSON.stringify(attempt));}
+   const idempotencyKey=attempt.key;
+   const res=await fetch(api+"/api/checkout",{method:"POST",headers:{"Content-Type":"application/json","Idempotency-Key":idempotencyKey},body:JSON.stringify({bookId,email})});
    const data=await res.json();if(!res.ok||!data.checkoutUrl||!data.orderId||!data.claim)throw Error(data.error||"Não foi possível iniciar o pagamento");
    sessionStorage.setItem(storagePrefix+data.orderId,JSON.stringify({claim:data.claim,email,bookId,createdAt:Date.now()}));
    window.location.assign(data.checkoutUrl);
@@ -24,10 +28,12 @@
   const lab=el("label",{for:"ebook-buyer-email"},labels.email);lab.style.cssText="display:block;font-size:.9rem;margin-bottom:6px";
   const email=el("input",{id:"ebook-buyer-email",type:"email",autocomplete:"email",placeholder:"voce@exemplo.com",required:"required",maxlength:"254"});email.style.cssText="width:100%;padding:12px;border:1px solid #8793a8;border-radius:8px;font:inherit";
   const note=el("p",{},"O pagamento é feito no Mercado Pago. Seu download será liberado somente após a aprovação.");note.style.cssText="font-size:.85rem;line-height:1.5;color:#5b6678";
+  const consentWrap=el("label");consentWrap.style.cssText="display:flex;gap:9px;align-items:flex-start;font-size:.82rem;line-height:1.4;color:#5b6678";
+  const consent=el("input",{type:"checkbox",required:"required"});consentWrap.append(consent,document.createTextNode(" Autorizo o uso do meu e-mail para processar o pedido, entregar o e-book e prestar suporte à compra."));
   const action=el("div");action.style.cssText="display:flex;gap:10px;flex-wrap:wrap;margin-top:17px";
   const cancel=el("button",{type:"button"},labels.close);cancel.style.cssText="padding:11px 18px;border:1px solid #a1aabb;background:#fff;border-radius:8px;cursor:pointer";cancel.onclick=()=>d.close();
   const submit=el("button",{type:"submit"},labels.submit);submit.style.cssText="padding:11px 18px;border:0;background:#143059;color:#fff;border-radius:8px;cursor:pointer";
-  action.append(cancel,submit);form.append(lab,email,note,action);d.append(h,form);document.body.append(d);d.showModal();email.focus();
+  action.append(cancel,submit);form.append(lab,email,note,consentWrap,action);d.append(h,form);document.body.append(d);d.showModal();email.focus();
  }
  document.addEventListener("click",function(e){const btn=e.target.closest("[data-ebook-buy]");if(!btn)return;e.preventDefault();const bookId=btn.getAttribute("data-ebook-buy");if(!bookId)return;makeDialog(bookId);});
  window.FABIANO_EBOOK_CHECKOUT_READY=true;

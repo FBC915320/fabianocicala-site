@@ -1,14 +1,105 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seu pedido | Fabiano Cicala</title><meta name="robots" content="noindex,nofollow"><style>body{margin:0;font:16px/1.6 system-ui,sans-serif;background:#071626;color:#eaf0f8}main{max-width:650px;margin:8vh auto;padding:30px 25px;border:1px solid #ffffff25;border-radius:16px;background:#10243c}h1{font:400 2.5rem Georgia,serif}p{color:#c6d3e2}.btn{display:inline-block;padding:12px 18px;border:0;border-radius:9px;background:#dcb45f;color:#071626;text-decoration:none;font-weight:700;cursor:pointer}.small{font-size:.9rem}.notice{min-height:60px}button:disabled{opacity:.5}a{color:#e8bf76}</style></head><body><main><p class="small"><a href="/">Fabiano Cicala</a> · Livraria digital</p><h1>Seu pedido</h1><p id="status" class="notice" role="status" aria-live="polite">Aguardando a confirmação segura do pagamento.</p><button type="button" id="refresh" class="btn">Verificar pagamento</button> <button type="button" id="download" class="btn" hidden>Baixar meu EPUB</button><p class="small">O Mercado Pago confirma o pagamento diretamente ao nosso servidor. A volta para esta página, sozinha, não libera o livro.</p><p class="small">Se você fechou a guia durante a compra, entre em contato com o suporte do autor informando seu e-mail e os dados do pagamento.</p></main><script>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seu pedido | Fabiano Cicala</title>
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    body{margin:0;font:16px/1.6 system-ui,sans-serif;background:#071626;color:#eaf0f8}
+    main{max-width:650px;margin:8vh auto;padding:30px 25px;border:1px solid #ffffff25;border-radius:16px;background:#10243c}
+    h1{font:400 2.5rem Georgia,serif}h2{font:400 1.5rem Georgia,serif}
+    p{color:#c6d3e2}.btn{display:inline-block;padding:12px 18px;border:0;border-radius:9px;background:#dcb45f;color:#071626;text-decoration:none;font-weight:700;cursor:pointer}
+    .small{font-size:.9rem}.notice{min-height:60px}button:disabled{opacity:.5}a{color:#e8bf76}[hidden]{display:none!important}
+    details{margin-top:28px;padding-top:20px;border-top:1px solid #ffffff25}
+    summary{cursor:pointer;font-weight:700}
+    label{display:block;margin:12px 0 5px;color:#c6d3e2}
+    input{box-sizing:border-box;width:100%;padding:11px;border:1px solid #ffffff40;border-radius:8px;background:#071626;color:#fff;font:inherit}
+  </style>
+</head>
+<body>
+<main>
+  <p class="small"><a href="/">Fabiano Cicala</a> · Livraria digital</p>
+  <h1>Seu pedido</h1>
+  <p id="status" class="notice" role="status" aria-live="polite">Aguardando a confirmação segura do pagamento.</p>
+  <button type="button" id="refresh" class="btn">Verificar pagamento</button>
+  <button type="button" id="download" class="btn" hidden>Baixar meu EPUB</button>
+  <p class="small">O Mercado Pago confirma o pagamento diretamente ao nosso servidor. A volta para esta página, sozinha, não libera o livro.</p>
+  <details id="recovery">
+    <summary>Fechei a guia ou troquei de aparelho</summary>
+    <p class="small">Informe o mesmo e-mail da compra e o número do pagamento que aparece no comprovante do Mercado Pago. Esses dados são usados somente para validar e recuperar o pedido.</p>
+    <form id="recovery-form">
+      <label for="recovery-email">E-mail da compra</label>
+      <input id="recovery-email" name="email" type="email" maxlength="254" autocomplete="email" required>
+      <label for="payment-id">Número do pagamento Mercado Pago</label>
+      <input id="payment-id" name="paymentId" inputmode="numeric" pattern="[0-9]{4,40}" maxlength="40" required>
+      <p><button type="submit" class="btn">Recuperar pedido</button></p>
+    </form>
+  </details>
+</main>
+<script>
 (function(){
-"use strict";
-const api=window.EBOOK_DELIVERY_API||"",order=new URLSearchParams(location.search).get("pedido"),saved=order&&sessionStorage.getItem("fabiano-ebook-order:"+order);
-const notice=document.getElementById("status"),refresh=document.getElementById("refresh"),download=document.getElementById("download");
-if(!api||!saved){notice.textContent="O sistema de entrega ainda não está disponível ou o pedido não foi encontrado nesta sessão. Não efetue um segundo pagamento.";refresh.disabled=true;return;}
-let claim;try{claim=JSON.parse(saved).claim}catch(e){}
-if(!claim){notice.textContent="Não foi possível recuperar seu pedido. Entre em contato com o suporte.";refresh.disabled=true;return;}
-const call=async(path)=>{const r=await fetch(api+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({orderId:order,claim})});if(!r.ok){let m;try{m=(await r.json()).error}catch(e){}throw Error(m||"Falha de comunicação");}return r};
-refresh.onclick=async()=>{refresh.disabled=true;try{const r=await call("/api/order-status"),data=await r.json();if(data.status==="approved"){notice.textContent="Pagamento confirmado! Seu EPUB está pronto para download.";download.hidden=false;}else if(data.status==="revoked"||data.status==="rejected"){notice.textContent="Pagamento não aprovado ou estornado. O download permanece bloqueado.";download.hidden=true;}else{notice.textContent="Pagamento ainda pendente. Aguarde e clique em Verificar pagamento.";download.hidden=true;}}catch(e){notice.textContent=e.message;}finally{refresh.disabled=false;}};
-download.onclick=async()=>{download.disabled=true;try{const r=await call("/api/download"),blob=await r.blob();const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="fabiano-cicala-livro.epub";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);}catch(e){notice.textContent=e.message;}finally{download.disabled=false;}};
-refresh.click();
+  "use strict";
+  const api=window.EBOOK_DELIVERY_API||"";
+  let order=new URLSearchParams(location.search).get("pedido");
+  let saved=order&&sessionStorage.getItem("fabiano-ebook-order:"+order);
+  let claim;
+  const notice=document.getElementById("status");
+  const refresh=document.getElementById("refresh");
+  const download=document.getElementById("download");
+  const recovery=document.getElementById("recovery");
+  const recoveryForm=document.getElementById("recovery-form");
+
+  function loadClaim(){
+    claim=undefined;
+    try{claim=saved&&JSON.parse(saved).claim}catch(e){}
+    const ready=Boolean(api&&order&&claim);
+    refresh.disabled=!ready;
+    if(!ready) notice.textContent="O pedido não foi encontrado nesta sessão. Não efetue um segundo pagamento; use a recuperação abaixo.";
+    return ready;
+  }
+  const call=async(path,body={orderId:order,claim})=>{
+    const response=await fetch(api+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    if(!response.ok){let message;try{message=(await response.json()).error}catch(e){}throw Error(message||"Falha de comunicação");}
+    return response;
+  };
+  refresh.onclick=async()=>{
+    if(!loadClaim())return;
+    refresh.disabled=true;
+    try{
+      const response=await call("/api/order-status"),data=await response.json();
+      if(data.status==="approved"){notice.textContent="Pagamento confirmado! Seu EPUB está pronto para download.";download.hidden=false;}
+      else if(data.status==="revoked"||data.status==="rejected"){notice.textContent="Pagamento não aprovado ou estornado. O download permanece bloqueado.";download.hidden=true;}
+      else{notice.textContent="Pagamento ainda pendente. Aguarde e clique em Verificar pagamento.";download.hidden=true;}
+    }catch(error){notice.textContent=error.message;}
+    finally{refresh.disabled=false;}
+  };
+  download.onclick=async()=>{
+    download.disabled=true;
+    try{
+      const response=await call("/api/download"),blob=await response.blob();
+      const url=URL.createObjectURL(blob),link=document.createElement("a");
+      link.href=url;link.download="fabiano-cicala-livro.epub";document.body.append(link);link.click();link.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),10000);
+    }catch(error){notice.textContent=error.message;}
+    finally{download.disabled=false;}
+  };
+  recoveryForm.onsubmit=async(event)=>{
+    event.preventDefault();
+    if(!api){notice.textContent="A recuperação ainda não está disponível.";return;}
+    const button=recoveryForm.querySelector("button");button.disabled=true;
+    try{
+      const response=await call("/api/recover",{email:recoveryForm.email.value,paymentId:recoveryForm.paymentId.value});
+      const data=await response.json();
+      order=data.orderId;claim=data.claim;saved=JSON.stringify({claim,email:recoveryForm.email.value,bookId:data.bookId,createdAt:Date.now()});
+      sessionStorage.setItem("fabiano-ebook-order:"+order,saved);
+      history.replaceState(null,"","?pedido="+encodeURIComponent(order));
+      recovery.open=false;notice.textContent="Pedido recuperado. Verificando o pagamento…";refresh.disabled=false;refresh.click();
+    }catch(error){notice.textContent=error.message;}
+    finally{button.disabled=false;}
+  };
+  if(loadClaim())refresh.click();else recovery.open=true;
 })();
-</script></body></html>
+</script>
+</body>
+</html>

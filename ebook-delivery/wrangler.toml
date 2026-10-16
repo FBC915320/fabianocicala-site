@@ -3,6 +3,9 @@ main = "worker.js"
 compatibility_date = "2026-10-16"
 workers_dev = true
 
+[triggers]
+crons = ["17 3 * * *"]
+
 # Preencher os IDs reais somente após criar os recursos na conta pessoal.
 [[d1_databases]]
 binding = "ORDERS"
@@ -19,5 +22,7 @@ PUBLIC_SITE = "https://fabianocicala.com"
 PUBLIC_API = "https://REPLACE_WITH_WORKER_URL"
 # CSV de chaves que já possuem EPUB final conferido no R2.
 ENABLED_BOOKS = ""
+MP_LIVE_MODE = "false"
+ORDER_RETENTION_DAYS = "120"
 # Salvar via wrangler secret put, NUNCA neste arquivo:
-# MP_ACCESS_TOKEN, MP_WEBHOOK_SECRET, MP_COLLECTOR_ID
+# MP_ACCESS_TOKEN, MP_WEBHOOK_SECRET, MP_COLLECTOR_ID, RATE_LIMIT_SALT, CLAIM_SECRET
