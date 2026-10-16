@@ -18,3 +18,7 @@
  .top .brand .brand-name{font-size:.78rem}
  .top .brand .brand-flag{font-size:.72rem}
 }
+
+/* Assinatura pessoal no rodape */
+.personal-footer-brand{margin-top:18px;display:inline-flex;align-items:center;gap:12px;color:#cfd5e0;font-size:.95rem;letter-spacing:.03em}
+.personal-footer-brand img{width:60px;height:60px;object-fit:contain;display:block}
