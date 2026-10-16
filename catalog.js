@@ -38,28 +38,27 @@
   section.insertAdjacentElement('afterend', productSection);
   }
 
-  const appleAuthorUrl = 'https://books.apple.com/br/artist/fabiano-cicala/6817624282';
   const labels = isEnglish ? {
     eyebrow: 'Official publications', title: 'Books born from real experience.',
-    intro: 'Explore the available e-books, read a preview and choose your preferred official store.',
+    intro: 'Explore the available e-books, read a preview and purchase directly from the author.',
     available: 'Available', upcoming: 'In preparation', guide: 'Technical guide',
-    preview: 'Read preview', buy: 'Apple Books', amazon: 'Amazon Kindle', paperback: 'Brochura Amazon', hardcover: 'Capa dura Amazon', details: 'Learn more', close: 'Close',
-    otherStores: 'Purchase and automatic download through Hotmart pending release', directSoon: 'Purchase and automatic download through Hotmart pending release',
-    printReview: 'Print edition under Amazon review; UICLAP and Hotmart next',
-    printPlanned: 'Print edition in preparation for UICLAP, Amazon and Hotmart',
+    preview: 'Read preview', buy: 'Buy e-book', details: 'Learn more', close: 'Close',
+    directSoon: 'Direct purchase coming soon',
+    printReview: 'Print edition in preparation',
+    printPlanned: 'Print edition in preparation',
     digitalOnly: 'Digital edition only',
-    price: 'Price on Apple Books', store: 'View all books on Apple Books', projects: 'Next publication',
+    price: 'Launch price', projects: 'Next publication',
     projectsIntro: 'Work currently in editorial preparation. Purchase links will be added only after official release.'
   } : {
     eyebrow: 'Publicações oficiais', title: 'Livros que nasceram da experiência real.',
-    intro: 'Conheça os e-books disponíveis, leia uma prévia e escolha sua loja oficial preferida.',
+    intro: 'Conheça os e-books disponíveis, leia uma prévia e compre diretamente do autor.',
     available: 'Disponível', upcoming: 'Em preparação', guide: 'Guia técnico',
-    preview: 'Ler prévia', buy: 'Apple Books', amazon: 'Amazon Kindle', paperback: 'Brochura Amazon', hardcover: 'Capa dura Amazon', details: 'Saiba mais', close: 'Fechar',
-    otherStores: 'Compra e download automático pela Hotmart em liberação', directSoon: 'Compra e download automático pela Hotmart em liberação',
-    printReview: 'Impresso em revisão na Amazon; UICLAP e Hotmart na sequência',
-    printPlanned: 'Impresso em preparação para UICLAP, Amazon e Hotmart',
+    preview: 'Ler prévia', buy: 'Comprar e-book', details: 'Saiba mais', close: 'Fechar',
+    directSoon: 'Compra direta em breve',
+    printReview: 'Edição impressa em preparação',
+    printPlanned: 'Edição impressa em preparação',
     digitalOnly: 'Somente edição digital',
-    price: 'Preço no Apple Books', store: 'Ver todos os livros no Apple Books', projects: 'Próxima publicação',
+    price: 'Preço de lançamento', projects: 'Próxima publicação',
     projectsIntro: 'Obra em preparação editorial. O link de compra será incluído somente após a publicação oficial.'
   };
 
@@ -71,11 +70,8 @@
       subtitle: isEnglish ? 'Leadership, Faith and Purpose in Silent Command' : 'Liderança, Fé e Propósito no Comando Silencioso',
       pageUrl: '/livros/a-estrategia-do-invisivel/',
       cover: '/img/optimized/capa-estrategia-invisivel-frente.webp', backCover: '/capa-estrategia-invisivel-verso.webp', price: 'R$ 24,90',
+      buyKey: 'a-estrategia-do-invisivel',
       printNote: labels.printReview,
-      url: 'https://books.apple.com/br/book/a-estrat%C3%A9gia-do-invis%C3%ADvel/id6820215202',
-      amazonUrl: 'https://www.amazon.com.br/dp/B0HMPFLRWH',
-      paperbackUrl: 'https://www.amazon.com.br/dp/6502421334',
-      hardcoverUrl: 'https://www.amazon.com.br/dp/B0HMR7ZYG2',
       description: isEnglish
         ? 'Fabiano Cicala shares a journey shaped by work, new beginnings, faith and responsibility. Rather than offering easy formulas, the book explores what precedes every important decision: silence, character, service, discipline and the courage to act when no one is watching.'
         : 'Fabiano Cicala compartilha uma trajetória construída entre trabalho, recomeços, fé e responsabilidade. Mais do que relatar conquistas, convida o leitor a perceber aquilo que antecede toda decisão importante: o silêncio, o caráter, o serviço, a disciplina e a coragem de agir quando ninguém está olhando. Um chamado para liderar com responsabilidade, servir pessoas e construir algo que permaneça.'
@@ -84,10 +80,8 @@
       id: 'posicione', pageUrl: '/livros/posicione-se-e-venca-pela-fe/', title: isEnglish ? 'Position Yourself and Win by Faith' : 'Posicione-se e Vença pela Fé',
       subtitle: isEnglish ? 'Prayers and Biblical Principles for Spiritual Battles' : 'Orações e Princípios Bíblicos para Batalhas Espirituais',
       cover: '/img/optimized/capa-posicione-se-venca-pela-fe.webp', price: 'R$ 14,90',
-      url: 'https://books.apple.com/br/book/posicione-se-e-ven%C3%A7a-pela-f%C3%A9/id6820549926',
-      amazonUrl: 'https://www.amazon.com.br/dp/B0GXYKCPZY',
+      buyKey: 'posicione-se-e-venca-pela-fe',
       printNote: labels.printReview,
-      paperbackUrl: 'https://www.amazon.com.br/dp/B0HMMFMFDC',
       description: isEnglish
         ? 'A practical guide for readers who want to strengthen their faith, develop a life of prayer and learn how to take a spiritual stand in difficult moments. It brings prayers, biblical references and reflections on protection, family, wisdom, healing, purpose and perseverance.'
         : 'Um guia prático para quem deseja fortalecer a fé, desenvolver uma vida de oração e aprender a se posicionar espiritualmente diante das dificuldades. Reúne orações, referências bíblicas e ensinamentos sobre proteção, família, sabedoria, cura, libertação, propósito e perseverança. Mais do que repetir palavras, é um convite para transformar conhecimento em atitude.'
@@ -96,9 +90,8 @@
       id: 'corolla', pageUrl: '/livros/corolla-cross-hybrid-13-problemas/', title: isEnglish ? 'Corolla Cross Hybrid + 13 Problems' : 'Corolla Cross Hybrid + 13 Problemas',
       subtitle: isEnglish ? 'A Brazilian owner’s real-world account' : 'Relato real de um proprietário no Brasil',
       cover: '/img/optimized/capa-corolla-cross-13-problemas.webp', price: 'R$ 9,90',
+      buyKey: 'corolla-cross-hybrid-13-problemas',
       printNote: labels.digitalOnly,
-      url: 'https://books.apple.com/br/book/corolla-cross-hybrid-13-problemas/id6817624270',
-      amazonUrl: 'https://www.amazon.com.br/dp/B0HMLSNS8P',
       description: isEnglish
         ? 'A personal and critical account of owning a brand-new Corolla Cross Hybrid in Brazil. Across thirteen points, Fabiano Cicala describes everyday issues, disappointing design decisions and his experience with after-sales service.'
         : 'Um relato pessoal e crítico sobre a experiência de comprar e usar um Corolla Cross Hybrid zero-quilômetro no Brasil. Em treze pontos, Fabiano Cicala apresenta problemas vividos no cotidiano, decisões de projeto que o decepcionaram e sua experiência com o atendimento pós-venda.'
@@ -109,10 +102,9 @@
       subtitle: isEnglish ? 'Relaxation, faith and self-awareness practices' : 'Práticas de relaxamento, fé e autoconhecimento',
       cover: '/img/optimized/capa.webp',
       price: 'R$ 24,90',
+      buyKey: 'quando-o-dia-termina',
       status: isEnglish ? 'Book and e-book' : 'Livro e eBook',
       pageUrl: '/livros/quando-o-dia-termina/',
-      amazonUrl: 'https://www.amazon.com.br/dp/B0HMQ2HZPY',
-      paperbackUrl: 'https://www.amazon.com.br/dp/B0HMQ2WNPG',
       description: isEnglish
         ? 'When work ends but the mind keeps going, this book offers practices in body awareness, visualization, reflection and faith, respecting each person’s rhythm.'
         : 'O trabalho terminou. Mas a cabeça continua. Uma obra de relaxamento, fé e autoconhecimento com práticas de atenção ao corpo, visualização, reflexão e oração, respeitando o ritmo de cada pessoa.'
@@ -172,17 +164,17 @@
     {
       id: 'github-zero', cover:'/img/optimized/capa-github-zero-original.jpg', title: isEnglish ? 'GitHub — From Zero to Practice' : 'GitHub — Do Zero à Prática',
       subtitle: isEnglish ? 'Expanded beginner guide · 80 pages in the PDF edition' : 'Edição ampliada · guia de Git e GitHub para iniciantes',
-      upcoming: true, status: isEnglish ? 'Under Apple Books review' : 'Em revisão no Apple Books',
+      upcoming: true, status: isEnglish ? 'Under editorial review' : 'Em revisão editorial',
       description: isEnglish
-        ? 'A practical introduction to Git and GitHub: repositories, branches, commits, pull requests, merges, automation with GitHub Actions and security. Includes exercises. Independently adapted from GitHub Skills material under the MIT license, not an official GitHub publication. Submission is under Apple Books review; purchasing is not yet available.'
-        : 'Um guia prático para começar no GitHub: repositórios, branches, commits, pull requests, merge, automações com GitHub Actions, segurança e exercícios passo a passo. Edição independente adaptada de material GitHub Skills sob licença MIT, sem vínculo oficial. O livro foi enviado ao Apple Books e está aguardando revisão; a venda ainda não está disponível.'
+        ? 'A practical introduction to Git and GitHub: repositories, branches, commits, pull requests, merges, automation with GitHub Actions and security. Includes exercises. Independently adapted from GitHub Skills material under the MIT license, not an official GitHub publication. Purchasing is not yet available.'
+        : 'Um guia prático para começar no GitHub: repositórios, branches, commits, pull requests, merge, automações com GitHub Actions, segurança e exercícios passo a passo. Edição independente adaptada de material GitHub Skills sob licença MIT, sem vínculo oficial. A venda ainda não está disponível.'
     },
     {
       id: 'solar', pageUrl: '/livros/guia-pratico-controlador-solar/', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
       subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
       cover: '/img/optimized/capa-guia-controlador-solar.webp', status: labels.guide,
+      buyKey: 'guia-pratico-controlador-solar',
       printNote: labels.printPlanned,
-      amazonUrl: 'https://www.amazon.com.br/dp/B0HMP81PJB',
       description: isEnglish
         ? 'A practical reference for understanding and operating the BMP Advanced controller used in boiler and solar-heating systems.'
         : 'Referência prática para compreender e operar o controlador BMP Advanced utilizado em sistemas de boiler e aquecimento solar.'
@@ -202,6 +194,7 @@
         ${book.price ? `<p class="book-price">${book.price}</p>` : ''}
         <div class="book-actions">
           ${book.pageUrl ? `<a class="book-preview-button" href="${book.pageUrl}">${labels.details}</a>` : `<button class="book-preview-button" type="button" data-book="${book.id}">${labels.preview}</button>`}
+          ${book.buyKey ? `<a class="book-buy-button is-disabled" data-ebook-buy="${book.buyKey}" aria-disabled="true">${labels.directSoon}</a>` : ''}
         </div>
       </div>
     </article>`;
@@ -221,7 +214,8 @@
   function openPreview(id) {
     const book = books.find((item) => item.id === id);
     if (!book) return;
-    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button>${book.cover ? `<img src="${book.cover}" alt="${book.title}">` : ''}<div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price">${book.price}</p>` : ''}${book.amazonUrl ? `<a class="book-buy-button" href="${book.amazonUrl}" target="_blank" rel="noopener">${isEnglish ? 'Buy on Amazon' : 'Comprar na Amazon'}<span aria-hidden="true">↗</span></a>` : ''}</div>`;
+    dialog.querySelector('.book-dialog-content').innerHTML = `<button class="dialog-close" type="button" aria-label="${labels.close}">×</button>${book.cover ? `<img src="${book.cover}" alt="${book.title}">` : ''}<div><span class="book-status">${book.status || labels.available}</span><h2>${book.title}</h2><p class="dialog-subtitle">${book.subtitle}</p><p>${book.description}</p>${book.price ? `<p class="dialog-price">${book.price}</p>` : ''}${book.buyKey ? `<a class="book-buy-button is-disabled" data-ebook-buy="${book.buyKey}" aria-disabled="true">${labels.directSoon}</a>` : ''}</div>`;
+    window.applyEbookPurchaseLinks?.(dialog);
     dialog.showModal();
     dialog.querySelector('.dialog-close').focus();
   }
@@ -235,7 +229,7 @@
   schema.textContent = JSON.stringify({
     '@context':'https://schema.org',
     '@graph': [
-      {'@type':'Person','@id':'https://fabianocicala.com/#autor',name:'Fabiano Cicala',url:'https://fabianocicala.com/',sameAs:['https://www.instagram.com/fabianocicala1/','https://www.linkedin.com/in/fabiano-cicala-71ba82364/',appleAuthorUrl,'https://www.youtube.com/@FabianoCicala']},
+      {'@type':'Person','@id':'https://fabianocicala.com/#autor',name:'Fabiano Cicala',url:'https://fabianocicala.com/',sameAs:['https://www.instagram.com/fabianocicala1/','https://www.linkedin.com/in/fabiano-cicala-71ba82364/','https://www.youtube.com/@FabianoCicala']},
       {'@type':'ItemList',name:'Livros de Fabiano Cicala',itemListElement:books.map((book,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'Book',name:book.title,author:{'@id':'https://fabianocicala.com/#autor'},inLanguage:'pt-BR',url:book.pageUrl ? 'https://fabianocicala.com'+book.pageUrl : 'https://fabianocicala.com/#livro-'+book.id,...(book.fiction ? {genre:isEnglish ? 'Fiction' : 'Ficção'} : {}),...(book.cover ? {image:'https://fabianocicala.com'+book.cover} : {})}}))}
     ]
   });
