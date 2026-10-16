@@ -119,3 +119,8 @@ header.hero.hero-quantum{position:relative;isolation:isolate;display:grid;grid-t
  .home-about-topics span{font-size:.78rem;padding:6px}
  .trajectory-dialog-body .section{padding:12px}
 }
+
+/* Vetores de marcas no proprio HTML: independentes de CDN */
+.contact .footer-identity-row .social a svg{display:block!important;width:23px!important;height:23px!important;flex:none;fill:none}
+.contact .footer-identity-row .social a:hover svg{transform:translateY(-1px)}
+.hero-quantum .quantum-visual{background-color:#142332}
