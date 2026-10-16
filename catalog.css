@@ -173,3 +173,48 @@
  #livros .book-card--enhanced .book-actions{margin-top:0;padding-top:4px}
  #livros .book-group{margin-top:22px}
 }
+
+/* Corrige ficcao e lancamentos: a grade global de cinco colunas estava comprimindo os dois livros. */
+@media(min-width:769px){
+ #livros .book-group--fiction .book-row--fiction{
+   display:grid;
+   grid-template-columns:repeat(2,minmax(190px,1fr));
+   width:min(100%,520px);
+   max-width:520px;
+   gap:16px;
+ }
+ #livros .book-group--fiction .book-card--enhanced{
+   min-width:0;
+   padding:13px;
+ }
+ #livros .book-group--fiction .book-card--enhanced .book-info h3{
+   font-size:.98rem;
+   line-height:1.3;
+ }
+ #livros .book-group--fiction .book-preview-button{
+   white-space:normal;
+   overflow-wrap:normal;
+ }
+ #livros .book-group:last-child:not(.book-group--fiction) .book-row{
+   grid-template-columns:repeat(2,minmax(190px,1fr));
+   width:min(100%,520px);
+   max-width:520px;
+ }
+}
+@media(max-width:768px){
+ #livros .book-row--fiction{
+   display:grid;
+   grid-template-columns:minmax(0,1fr);
+   max-width:100%;
+   width:100%;
+ }
+ #livros .book-row--fiction .book-card--enhanced{
+   display:grid;
+   grid-template-columns:88px minmax(0,1fr);
+   min-width:0;
+   padding:14px 0;
+ }
+ #livros .book-group:last-child .book-row{
+   grid-template-columns:minmax(0,1fr);
+ }
+}
