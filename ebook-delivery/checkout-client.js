@@ -7,16 +7,17 @@
  const labels={title:"Comprar e-book",email:"Seu e-mail para receber o e-book",submit:"Continuar para pagamento",busy:"Preparando pagamento…",close:"Cancelar"};
  const storagePrefix="fabiano-ebook-order:";
  function el(tag,attrs={},text=""){const n=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));n.textContent=text;return n;}
+ async function emailDigest(value){const bytes=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value.trim().toLowerCase()));return Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,"0")).join("");}
  async function checkout(bookId,email,button){
   button.disabled=true;const before=button.textContent;button.textContent=labels.busy;
   try{
-   const attemptStorageKey="fabiano-ebook-attempt:"+bookId+":"+email.trim().toLowerCase();
+   const attemptStorageKey="fabiano-ebook-attempt:"+bookId+":"+await emailDigest(email);
    let attempt;try{attempt=JSON.parse(sessionStorage.getItem(attemptStorageKey)||"null")}catch(e){}
    if(!attempt||Date.now()-attempt.createdAt>15*60*1000){attempt={key:crypto.randomUUID()+":"+Date.now(),createdAt:Date.now()};sessionStorage.setItem(attemptStorageKey,JSON.stringify(attempt));}
    const idempotencyKey=attempt.key;
    const res=await fetch(api+"/api/checkout",{method:"POST",headers:{"Content-Type":"application/json","Idempotency-Key":idempotencyKey},body:JSON.stringify({bookId,email})});
    const data=await res.json();if(!res.ok||!data.checkoutUrl||!data.orderId||!data.claim)throw Error(data.error||"Não foi possível iniciar o pagamento");
-   sessionStorage.setItem(storagePrefix+data.orderId,JSON.stringify({claim:data.claim,email,bookId,createdAt:Date.now()}));
+   sessionStorage.setItem(storagePrefix+data.orderId,JSON.stringify({claim:data.claim,bookId,createdAt:Date.now()}));
    window.location.assign(data.checkoutUrl);
   }catch(error){alert(error.message);button.disabled=false;button.textContent=before;}
  }

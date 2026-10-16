@@ -80,6 +80,7 @@ async function hmacHex(secret, value) {
 }
 
 const claimForOrder = (env, orderId, clientKey) => hmacHex(env.CLAIM_SECRET, `${orderId}|${clientKey}`);
+const emailHash = (env, email) => hmacHex(env.CLAIM_SECRET, `email|${email}`);
 
 async function rateLimit(request, env, bucket, limit, windowMs) {
   const ip = request.headers.get("cf-connecting-ip") || "unknown";
@@ -155,8 +156,8 @@ async function checkout(request, env) {
   const orderId = crypto.randomUUID();
   const claim = await claimForOrder(env, orderId, idempotencyKey);
   const now = Date.now();
-  await env.ORDERS.prepare("INSERT INTO orders(id,book_id,email,amount_cents,currency,claim_hash,client_key,status,created_at,updated_at,download_count) VALUES(?,?,?,?,?,?,?,'pending',?,?,0)")
-    .bind(orderId, id, email, book.cents, "BRL", await sha(claim), idempotencyKey, now, now).run();
+  await env.ORDERS.prepare("INSERT INTO orders(id,book_id,email_hash,amount_cents,currency,claim_hash,client_key,status,created_at,updated_at,access_expires_at,download_count) VALUES(?,?,?,?,?,?,?,'pending',?,?,?,0)")
+    .bind(orderId, id, await emailHash(env, email), book.cents, "BRL", await sha(claim), idempotencyKey, now, now, now + 30 * DAY).run();
 
   try {
     const preference = await mpRequest("https://api.mercadopago.com/checkout/preferences", env, {
@@ -188,7 +189,7 @@ async function checkout(request, env) {
 async function webhook(request, env) {
   const url = new URL(request.url);
   const id = url.searchParams.get("data.id") || url.searchParams.get("data_id");
-  if (!valid(id, 40) || !/^[0-9]+$/.test(id)) throw new HttpError("Notificação inválida");
+  if (url.searchParams.get("type") !== "payment" || !valid(id, 40) || !/^[0-9]+$/.test(id)) throw new HttpError("Notificação inválida");
   if (!await verifyWebhook(request, env, id)) throw new HttpError("Assinatura inválida", 401);
   const payment = await mpRequest(`https://api.mercadopago.com/v1/payments/${id}`, env);
   const orderId = String(payment.external_reference || "");
@@ -217,7 +218,7 @@ async function download(request, env) {
   const body = await parseBody(request);
   const order = await readOrder(env, body.orderId, body.claim);
   if (!order || order.status !== "approved") throw new HttpError("Pagamento ainda não confirmado", 403);
-  if (Date.now() - Number(order.created_at) > 30 * DAY) throw new HttpError("O prazo de download expirou; solicite recuperação", 410);
+  if (Number(order.access_expires_at || 0) < Date.now()) throw new HttpError("O prazo de download expirou; solicite recuperação", 410);
   const book = CATALOG[order.book_id];
   if (!book) throw new HttpError("Livro indisponível", 404);
   const object = await env.PRIVATE_EBOOKS.get(book.key);
@@ -247,12 +248,13 @@ async function recover(request, env) {
   const payment = await mpRequest(`https://api.mercadopago.com/v1/payments/${paymentId}`, env);
   const orderId = String(payment.external_reference || "");
   const order = valid(orderId, 64) ? await env.ORDERS.prepare("SELECT * FROM orders WHERE id=?").bind(orderId).first() : null;
-  if (!order || String(order.email).toLowerCase() !== email) throw new HttpError("Pagamento não localizado", 404);
+  if (!order || String(order.email_hash) !== await emailHash(env, email)) throw new HttpError("Pagamento não localizado", 404);
   validatePayment(payment, order, env, paymentId);
   if (paymentState(payment) !== "approved") throw new HttpError("Pagamento não aprovado", 403);
   const claim = crypto.randomUUID() + crypto.randomUUID();
-  await env.ORDERS.prepare("UPDATE orders SET claim_hash=?,status='approved',payment_id=?,updated_at=? WHERE id=?")
-    .bind(await sha(claim), paymentId, Date.now(), orderId).run();
+  const now = Date.now();
+  await env.ORDERS.prepare("UPDATE orders SET claim_hash=?,status='approved',payment_id=?,updated_at=?,access_expires_at=? WHERE id=?")
+    .bind(await sha(claim), paymentId, now, now + 30 * DAY, orderId).run();
   return json({ orderId, claim, bookId: order.book_id, bookTitle: CATALOG[order.book_id]?.title || "E-book" });
 }
 

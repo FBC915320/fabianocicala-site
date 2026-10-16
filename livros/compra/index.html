@@ -91,7 +91,7 @@
     try{
       const response=await call("/api/recover",{email:recoveryForm.email.value,paymentId:recoveryForm.paymentId.value});
       const data=await response.json();
-      order=data.orderId;claim=data.claim;saved=JSON.stringify({claim,email:recoveryForm.email.value,bookId:data.bookId,createdAt:Date.now()});
+      order=data.orderId;claim=data.claim;saved=JSON.stringify({claim,bookId:data.bookId,createdAt:Date.now()});
       sessionStorage.setItem("fabiano-ebook-order:"+order,saved);
       history.replaceState(null,"","?pedido="+encodeURIComponent(order));
       recovery.open=false;notice.textContent="Pedido recuperado. Verificando o pagamento…";refresh.disabled=false;refresh.click();

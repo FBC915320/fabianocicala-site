@@ -24,8 +24,8 @@ class FakeDB {
         if (sql.startsWith("INSERT INTO rate_limits")) { db.limits.set(a[0], { count: 1, reset_at: a[1] }); return { meta: { changes: 1 } }; }
         if (sql.startsWith("UPDATE rate_limits SET count")) { const r = db.limits.get(a[0]); if (r && r.reset_at > a[1]) r.count++; return { meta: { changes: r ? 1 : 0 } }; }
         if (sql.startsWith("INSERT INTO orders")) {
-          const [id, book_id, email, amount_cents, currency, claim_hash, client_key, created_at, updated_at] = a;
-          db.orders.set(id, { id, book_id, email, amount_cents, currency, claim_hash, client_key, status: "pending", preference_id: null, checkout_url: null, payment_id: null, created_at, updated_at, download_count: 0 });
+          const [id, book_id, email_hash, amount_cents, currency, claim_hash, client_key, created_at, updated_at, access_expires_at] = a;
+          db.orders.set(id, { id, book_id, email_hash, amount_cents, currency, claim_hash, client_key, status: "pending", preference_id: null, checkout_url: null, payment_id: null, created_at, updated_at, access_expires_at, download_count: 0 });
           return { meta: { changes: 1 } };
         }
         if (sql.startsWith("UPDATE orders SET preference_id")) {
@@ -43,7 +43,7 @@ class FakeDB {
           return { meta: { changes: ok ? 1 : 0 } };
         }
         if (sql.startsWith("UPDATE orders SET claim_hash")) {
-          const o = db.orders.get(a[3]); Object.assign(o, { claim_hash: a[0], status: "approved", payment_id: a[1], updated_at: a[2] }); return { meta: { changes: 1 } };
+          const o = db.orders.get(a[4]); Object.assign(o, { claim_hash: a[0], status: "approved", payment_id: a[1], updated_at: a[2], access_expires_at: a[3] }); return { meta: { changes: 1 } };
         }
         if (sql.startsWith("DELETE FROM")) return { meta: { changes: 0 } };
         throw new Error("run SQL not mocked: " + sql);
@@ -118,7 +118,7 @@ async function webhook(env, order, overrides = {}, signatureOverride) {
   const requestId = "request-abc";
   globalThis.fetch = async () => Response.json(payment(order, overrides));
   const sig = signatureOverride || await signature(env.MP_WEBHOOK_SECRET, id, requestId);
-  return worker.fetch(request(`/api/mp-webhook?data.id=${id}`, {
+  return worker.fetch(request(`/api/mp-webhook?data.id=${id}&type=payment`, {
     origin: null,
     headers: { "x-request-id": requestId, "x-signature": sig }
   }), env);
@@ -156,6 +156,8 @@ test("checkout de homologação usa URL sandbox e preço do catálogo", async ()
   assert.equal(data.checkoutUrl, "https://mp.example/sandbox");
   assert.ok(data.orderId && data.claim);
   assert.equal([...env.ORDERS.orders.values()][0].amount_cents, 990);
+  assert.equal("email" in [...env.ORDERS.orders.values()][0], false);
+  assert.match([...env.ORDERS.orders.values()][0].email_hash, /^[a-f0-9]{64}$/);
 });
 
 test("idempotência reutiliza o mesmo checkout sem criar segunda cobrança", async () => {
@@ -174,6 +176,18 @@ test("webhook com assinatura adulterada é rejeitado", async () => {
   const response = await webhook(env, order, {}, "ts=1,v1=" + "0".repeat(64));
   assert.equal(response.status, 401);
   assert.equal(order.status, "pending");
+});
+
+test("webhook de outro tipo é rejeitado antes de consultar pagamento", async () => {
+  const env = makeEnv(); await checkout(env); const order = [...env.ORDERS.orders.values()][0];
+  const id = "90001", requestId = "request-abc";
+  const sig = await signature(env.MP_WEBHOOK_SECRET, id, requestId);
+  let consulted = false; globalThis.fetch = async () => { consulted = true; return Response.json(payment(order)); };
+  const response = await worker.fetch(request(`/api/mp-webhook?data.id=${id}&type=merchant_order`, {
+    origin: null, headers: { "x-request-id": requestId, "x-signature": sig }
+  }), env);
+  assert.equal(response.status, 400);
+  assert.equal(consulted, false);
 });
 
 test("webhook com preço divergente é rejeitado", async () => {
@@ -217,6 +231,14 @@ test("Pix pendente só libera depois da aprovação", async () => {
 test("cartão recusado mantém download bloqueado", async () => {
   const env = makeEnv(); const checked = await checkout(env); const order = [...env.ORDERS.orders.values()][0];
   await webhook(env, order, { status: "rejected" });
+  const response = await worker.fetch(request("/api/download", { body: { orderId: order.id, claim: checked.data.claim } }), env);
+  assert.equal(order.status, "rejected");
+  assert.equal(response.status, 403);
+});
+
+test("pagamento cancelado mantém download bloqueado", async () => {
+  const env = makeEnv(); const checked = await checkout(env); const order = [...env.ORDERS.orders.values()][0];
+  await webhook(env, order, { status: "cancelled" });
   const response = await worker.fetch(request("/api/download", { body: { orderId: order.id, claim: checked.data.claim } }), env);
   assert.equal(order.status, "rejected");
   assert.equal(response.status, 403);
@@ -271,8 +293,17 @@ test("arquivo ausente não consome download", async () => {
   assert.equal(order.download_count, 0);
 });
 
+test("prazo expirado bloqueia o download", async () => {
+  const env = makeEnv(); const checked = await checkout(env); const order = [...env.ORDERS.orders.values()][0];
+  order.status = "approved"; order.access_expires_at = Date.now() - 1;
+  const response = await worker.fetch(request("/api/download", { body: { orderId: order.id, claim: checked.data.claim } }), env);
+  assert.equal(response.status, 410);
+  assert.equal(order.download_count, 0);
+});
+
 test("recuperação valida pagamento e gira o token", async () => {
   const env = makeEnv(); const checked = await checkout(env); const order = [...env.ORDERS.orders.values()][0]; const oldHash = order.claim_hash;
+  order.access_expires_at = Date.now() - 1;
   globalThis.fetch = async () => Response.json(payment(order));
   const response = await worker.fetch(request("/api/recover", { body: { email: "leitor@example.com", paymentId: "90001" } }), env);
   const data = await response.json();
@@ -280,6 +311,27 @@ test("recuperação valida pagamento e gira o token", async () => {
   assert.equal(data.orderId, order.id);
   assert.notEqual(order.claim_hash, oldHash);
   assert.equal(order.status, "approved");
+  assert.ok(order.access_expires_at > Date.now() + 29 * 86400000);
+});
+
+test("recuperação rejeita e-mail diferente sem girar o token", async () => {
+  const env = makeEnv(); await checkout(env); const order = [...env.ORDERS.orders.values()][0]; const oldHash = order.claim_hash;
+  globalThis.fetch = async () => Response.json(payment(order));
+  const response = await worker.fetch(request("/api/recover", { body: { email: "outra@example.com", paymentId: "90001" } }), env);
+  assert.equal(response.status, 404);
+  assert.equal(order.claim_hash, oldHash);
+});
+
+test("compras simultâneas independentes preservam pedidos separados", async () => {
+  const env = makeEnv();
+  const [first, second] = await Promise.all([
+    checkout(env, "parallel-key-00000001"),
+    checkout(env, "parallel-key-00000002")
+  ]);
+  assert.equal(first.response.status, 200);
+  assert.equal(second.response.status, 200);
+  assert.notEqual(first.data.orderId, second.data.orderId);
+  assert.equal(env.ORDERS.orders.size, 2);
 });
 
 test("preflight CORS permite somente cabeçalhos necessários", async () => {
