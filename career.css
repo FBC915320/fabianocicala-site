@@ -5,6 +5,7 @@
 .career-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.1rem,5.8vw,5.4rem);letter-spacing:-.04em;line-height:1.04;margin:14px 0 18px;font-weight:500;color:#fff}
 .career-hero h2{font-size:clamp(1.12rem,1.8vw,1.48rem);font-weight:650;line-height:1.42;margin:0 0 15px;max-width:720px;color:#fff}
 .career-hero .career-summary{color:#cbd8e6;font-size:1.04rem;line-height:1.7;max-width:690px;margin:0}
+.career-hero .career-promise{color:#dfbb72;font-weight:800;font-size:.87rem;letter-spacing:.11em;text-transform:uppercase;line-height:1.5;margin:18px 0 0}
 .career-hero .career-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .career-hero .career-button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #e1bd73;border-radius:3px;padding:11px 18px;font-weight:780;text-decoration:none;color:#0b2234;background:#e1bd73;font-size:.88rem}
 .career-hero .career-button.secondary{background:transparent;color:#fff;border-color:#92aabe}

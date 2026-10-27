@@ -4,6 +4,8 @@
 .solutions-kicker{display:block;color:#9c742f;font-size:.73rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;margin-bottom:9px}
 .solutions-showcase h2{margin:0 0 12px;font:500 clamp(1.95rem,3.2vw,2.8rem)/1.15 Georgia,"Times New Roman",serif;color:#10283d}
 .solutions-showcase-head p{color:#526477;line-height:1.65;margin:0}
+.solutions-outcome{background:#e9f0f4;border-left:4px solid #bd9452;color:#214057;line-height:1.63;font-size:.99rem;padding:17px 21px;margin:0 0 24px}
+.solutions-outcome strong{color:#102b40}
 .solutions-showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .solutions-showcase-card{background:#fff;border:1px solid #dce4e9;border-left:3px solid #bd9452;padding:19px 20px 18px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:13px;align-items:start;min-width:0}
 .solutions-showcase-card .solutions-index{color:#9b773d;font:500 1.5rem/1 Georgia,"Times New Roman",serif}
