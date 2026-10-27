@@ -63,7 +63,7 @@
     projectsIntro: 'Obra em preparação editorial. O link de compra será incluído somente após a publicação oficial.'
   };
 
-  const fictionIntro = isEnglish ? "I wrote these two works of fiction to explore the future we can imagine — and the better world we would like to build. What if an energy source the size of a bean could power an entire country? How would it change our lives and our relationship with the planet? That possibility inspires these stories. Through fiction, I give space to dreams and ideas that still seem distant, inviting readers to consider what we could transform if they became reality." : "Escrevi estas duas ficções para explorar o futuro que podemos imaginar — e o mundo melhor que gostaríamos de construir. E se uma fonte de energia do tamanho de um grão de feijão pudesse abastecer um país inteiro? Como isso mudaria nossa vida e nossa relação com o planeta? Essa possibilidade inspira estas histórias. Pela ficção, dou espaço a sonhos e ideias que ainda parecem distantes, convidando o leitor a pensar no que poderíamos transformar se eles se tornassem realidade.";
+  const fictionIntro = isEnglish ? "Two science fiction novels about identity, scientific discovery and human responsibility." : "Dois romances de ficção científica sobre descobertas que transformam vidas. Em EU EXISTO!, a identidade de um homem desaparece dos registros. Em A Última Fonte, uma descoberta energética coloca ciência, poder e responsabilidade em conflito.";
 
   const books = [
     {
@@ -149,18 +149,16 @@
       description:'Livro pago que integra fundamentos, aplicações no trabalho e formação técnica, com 58 fichas de cursos e materiais. Cursos e certificados citados são oferecidos pelos respectivos provedores e têm condições próprias. Os provedores podem alterar condições e certificações, inclusive sem aviso prévio; confira os links oficiais antes da inscrição. Links comerciais ainda não confirmados.'
     },
     {
-      id:'eu-existo', cover:'/img/optimized/capa-eu-existo-original.jpg', title:'Eu Existo!', cover:'/capa-eu-existo.jpg',
-      subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
-      fiction:true,
-      upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
-      description:fictionIntro + (isEnglish ? ' Editorial preparation is underway. Coming soon.' : ' Obra em preparação editorial. Em breve.')
+      id:'eu-existo', pageUrl:'/livros/eu-existo/', title:"EU EXISTO!", cover:'/capa-eu-existo.jpg',
+      subtitle:isEnglish ? 'Science fiction · Fabiano Cicala' : 'Ficção científica · Fabiano Cicala',
+      fiction:true, upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish ? "In Barcelona in 2089, Gabriel Vidal discovers that the system has declared him dead. A novel about identity, empathy and the human cost of automated decisions." : "Barcelona, 2089. Gabriel Vidal confia nos registros, nos protocolos e nas respostas da assistência artificial. Até encontrar Eva Laurent presa numa cabine que o sistema insiste em considerar vazia."
     },
     {
-      id:'ultima-fonte', cover:'/img/optimized/capa-a-ultima-fonte-original.png', title:'A Última Fonte', cover:'/capa-a-ultima-fonte.png',
-      subtitle:isEnglish ? 'Fiction · Fabiano Cicala' : 'Ficção · Fabiano Cicala',
-      fiction:true,
-      upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
-      description:fictionIntro + (isEnglish ? ' Editorial preparation is underway. Coming soon.' : ' Obra em preparação editorial. Em breve.')
+      id:'ultima-fonte', pageUrl:'/livros/a-ultima-fonte/', title:"A Última Fonte", cover:'/capa-a-ultima-fonte.png',
+      subtitle:isEnglish ? 'Science fiction · Fabiano Cicala' : 'Ficção científica · Fabiano Cicala',
+      fiction:true, upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish ? "A radio keeps playing after Nora Salvatierra unplugs it. A scientific discovery brings energy, power and responsibility into conflict." : "O rádio continua tocando depois que Nora Salvatierra tira o cabo da tomada. Na bancada, uma peça do tamanho de um feijão acaba de transformar uma falha experimental numa descoberta capaz de mudar o mundo."
     },
     {
       id:'caminho-esperanca', title:'A Caminho da Esperança',
