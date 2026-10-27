@@ -1,0 +1,47 @@
+/* Apresentação profissional internacional — 27/10/2026.
+   A arte editorial aprovada e o catálogo original permanecem intactos. */
+.career-hero{background:radial-gradient(circle at 72% 24%,#194766 0%,transparent 38%),linear-gradient(135deg,#061724 0%,#10283c 100%);color:#fff;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,.62fr);gap:48px;align-items:center;padding:60px 62px 54px}
+.career-hero .career-eyebrow{margin:0;color:#dfbb72;font-size:.73rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+.career-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.1rem,5.8vw,5.4rem);letter-spacing:-.04em;line-height:1.04;margin:14px 0 18px;font-weight:500;color:#fff}
+.career-hero h2{font-size:clamp(1.12rem,1.8vw,1.48rem);font-weight:650;line-height:1.42;margin:0 0 15px;max-width:720px;color:#fff}
+.career-hero .career-summary{color:#cbd8e6;font-size:1.04rem;line-height:1.7;max-width:690px;margin:0}
+.career-hero .career-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.career-hero .career-button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #e1bd73;border-radius:3px;padding:11px 18px;font-weight:780;text-decoration:none;color:#0b2234;background:#e1bd73;font-size:.88rem}
+.career-hero .career-button.secondary{background:transparent;color:#fff;border-color:#92aabe}
+.career-hero .career-photo-wrap{position:relative;margin:auto;width:100%;max-width:294px}
+.career-hero .career-photo-wrap::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid #dfbb72;pointer-events:none}
+.career-hero .career-photo{display:block;position:relative;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 17%;border:1px solid #ffffff35;box-shadow:0 25px 55px #010d1aaa}
+.career-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#0a2032;color:#e6ecf2;padding:0 44px}
+.career-proof span{padding:17px 20px;border-right:1px solid #ffffff22;font-size:.88rem;line-height:1.5;text-align:center}
+.career-proof span:last-child{border-right:0}
+.career-expertise{background:#f4f6f9;padding:50px 58px 54px;scroll-margin-top:82px}
+.career-expertise .career-kicker,.career-europe .career-kicker{color:#ad7e31;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;font-weight:800;margin:0 0 8px}
+.career-expertise h2,.career-europe h2{color:#0b2234;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,3.4vw,3rem);font-weight:500;line-height:1.17;margin:0 0 12px}
+.career-expertise .career-lead{max-width:875px;font-size:1.04rem;color:#4f5d6b;line-height:1.66;margin:0 0 26px}
+.career-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.career-card{background:#fff;border:1px solid #dce3e8;border-top:3px solid #d7ad60;padding:23px 23px 25px;min-height:187px}
+.career-card h3{font-size:1.02rem;margin:0 0 9px;color:#11293d}
+.career-card p{font-size:.92rem;line-height:1.58;margin:0;color:#516071}
+.career-europe{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.5fr);gap:30px;align-items:center;padding:40px 58px 44px;background:#e5ebf1;scroll-margin-top:82px}
+.career-europe h2{font-size:clamp(1.8rem,3vw,2.6rem)}
+.career-europe p{margin:0;color:#46596b;line-height:1.66;max-width:770px}
+.career-europe .career-contact-actions{display:flex;flex-direction:column;gap:10px}
+.career-europe .career-contact-actions a{display:block;text-align:center;padding:13px 16px;border:1px solid #0d2b40;background:#0d2b40;color:#fff;text-decoration:none;font-size:.9rem;font-weight:750}
+.career-europe .career-contact-actions a.secondary{background:transparent;color:#0d2b40}
+.career-editorial-label{background:#061724;color:#d7b36a;text-transform:uppercase;letter-spacing:.18em;font-size:.69rem;font-weight:800;text-align:center;padding:14px 15px}
+.hero.hero-artwork{max-width:870px!important;width:calc(100% - 64px)!important;margin:28px auto 0!important;background:#071d30!important;border:1px solid #c7d0d9!important}
+.hero.hero-artwork picture{max-width:870px;margin:auto}
+.career-editorial-note{margin:0 0 30px;padding:17px 22px;border-left:3px solid #d8b95f;background:#f8f6ef;color:#435065;font-size:1rem;line-height:1.7;max-width:1000px}
+.career-solutions-label{background:#eef2f6;padding:30px 54px 0}
+.career-solutions-label h2{font-family:Georgia,"Times New Roman",serif;color:#11293d;font-weight:500;font-size:clamp(1.7rem,3vw,2.6rem);margin:0 0 5px}
+.career-solutions-label p{color:#586477;max-width:800px;margin:0}
+.career-case{background:#eef2f6;padding:0 54px 38px}
+.career-case-inner{border:1px solid #d4dce5;background:#fff;padding:24px 30px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(210px,.5fr);align-items:center;gap:32px}
+.career-case .career-kicker{color:#9e762d;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;font-weight:800}
+.career-case h3{font-size:1.35rem;color:#152b3e;margin:4px 0 8px}
+.career-case p{margin:0;color:#526071;line-height:1.6}
+.career-case .career-case-link{display:block;text-align:center;background:#132e42;color:#fff;padding:13px 17px;text-decoration:none;font-weight:750;font-size:.85rem}
+.career-social-callout{margin:22px 0 0;background:#f7f9fc;border:1px solid #e3e8ef;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:24px;color:#3e4c60}
+.career-social-callout a{color:#143a56;font-weight:750;text-underline-offset:3px;white-space:nowrap}
+@media(max-width:900px){.career-hero{padding:38px 30px;gap:24px;grid-template-columns:minmax(0,1.4fr) minmax(185px,.6fr)}.career-expertise,.career-europe{padding:34px 30px}.career-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.career-proof{padding:0 12px}.career-proof span{padding:13px 10px}}
+@media(max-width:650px){.career-hero{grid-template-columns:1fr;padding:32px 22px 37px;gap:22px}.career-hero h1{font-size:clamp(2.7rem,12vw,4rem)}.career-hero .career-summary{font-size:.96rem}.career-hero .career-photo-wrap{max-width:215px;margin:10px auto 0}.career-proof{grid-template-columns:1fr;padding:8px 22px}.career-proof span{border-right:0;border-bottom:1px solid #ffffff20;text-align:left;padding:9px 0}.career-proof span:last-child{border-bottom:0}.career-expertise,.career-europe{padding:33px 22px}.career-grid{grid-template-columns:1fr}.career-card{min-height:0;padding:19px}.career-europe{grid-template-columns:1fr}.career-hero .career-actions{flex-direction:column}.career-hero .career-button{width:100%}.hero.hero-artwork{width:calc(100% - 28px)!important;margin:12px auto 0!important}.career-editorial-note{padding:14px 16px}.career-solutions-label,.career-case{padding-left:20px;padding-right:20px}.career-case-inner{grid-template-columns:1fr;padding:20px}.career-social-callout{flex-direction:column;align-items:flex-start;gap:8px}}
