@@ -22,10 +22,10 @@
     modes: ['Imagem', 'Ilustração', 'Editoração'], cta: 'Quero acompanhar o lançamento', note: 'Prévia de um produto atualmente em desenvolvimento.'
   };
 
-  const navBooks = document.querySelector('.nav > a[href="#livros"]');
+  const navBooks = document.body.classList.contains('books-only') ? null : document.querySelector('.nav > a[href="#livros"]');
   if (navBooks) navBooks.insertAdjacentHTML('afterend', `<a href="${document.getElementById('photo-efe') ? '#photo-efe' : '#apps'}">${appCopy.nav}</a>`);
 
-  if (!document.getElementById('photo-efe')) {
+  if (!document.getElementById('photo-efe') && !document.body.classList.contains('books-only')) {
   const productSection = document.createElement('section');
   productSection.className = 'section products-section';
   productSection.id = 'apps';
@@ -237,7 +237,7 @@
     '@context':'https://schema.org',
     '@graph': [
       {'@type':'Person','@id':'https://fabianocicala.com/#autor',name:'Fabiano Cicala',url:'https://fabianocicala.com/',sameAs:['https://www.instagram.com/fabianocicala1/','https://www.linkedin.com/in/fabiano-cicala-71ba82364/',appleAuthorUrl,'https://www.youtube.com/@FabianoCicala']},
-      {'@type':'ItemList',name:'Livros de Fabiano Cicala',itemListElement:books.map((book,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'Book',name:book.title,author:{'@id':'https://fabianocicala.com/#autor'},inLanguage:'pt-BR',url:book.pageUrl ? 'https://fabianocicala.com'+book.pageUrl : 'https://fabianocicala.com/#livro-'+book.id,...(book.fiction ? {genre:isEnglish ? 'Fiction' : 'Ficção'} : {}),...(book.cover ? {image:'https://fabianocicala.com'+book.cover} : {})}}))}
+      {'@type':'ItemList',name:'Livros de Fabiano Cicala',itemListElement:books.map((book,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'Book',name:book.title,author:{'@id':'https://fabianocicala.com/#autor'},inLanguage:'pt-BR',url:book.pageUrl ? 'https://fabianocicala.com'+book.pageUrl : 'https://fabianocicala.com/livros/#livro-'+book.id,...(book.fiction ? {genre:isEnglish ? 'Fiction' : 'Ficção'} : {}),...(book.cover ? {image:'https://fabianocicala.com'+book.cover} : {})}}))}
     ]
   });
   document.getElementById('catalog-schema')?.remove();

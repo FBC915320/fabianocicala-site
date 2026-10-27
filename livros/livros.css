@@ -1,0 +1,11 @@
+/* Página dedicada ao catálogo editorial. */
+.books-category-intro{padding:38px 54px 31px;background:#f1f5f8}
+.books-category-intro .kicker{margin:0 0 8px;color:#aa813e}
+.books-category-intro h1{font:500 clamp(2.4rem,4.5vw,4rem)/1.1 Georgia,"Times New Roman",serif;color:#101e32;margin:0 0 15px}
+.books-category-intro p{max-width:830px;margin:0;color:#506076;line-height:1.68;font-size:1rem}
+.books-category-main{background:#fff}
+.books-category-main #livros{padding-top:44px}
+.books-category-main .career-editorial-note{max-width:none}
+.books-category-footer{background:#0b1427;color:#bac4d3;text-align:center;padding:26px 20px;font-size:.85rem}
+.books-category-footer a{color:#fff}
+@media(max-width:650px){.books-category-intro{padding:32px 22px 25px}.books-category-main #livros{padding-top:30px}}
