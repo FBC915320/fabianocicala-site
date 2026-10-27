@@ -25,6 +25,7 @@
 .career-europe{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.5fr);gap:30px;align-items:center;padding:40px 58px 44px;background:#e5ebf1;scroll-margin-top:82px}
 .career-europe h2{font-size:clamp(1.8rem,3vw,2.6rem)}
 .career-europe p{margin:0;color:#46596b;line-height:1.66;max-width:770px}
+.career-europe p+p{margin-top:14px}
 .career-europe .career-contact-actions{display:flex;flex-direction:column;gap:10px}
 .career-europe .career-contact-actions a{display:block;text-align:center;padding:13px 16px;border:1px solid #0d2b40;background:#0d2b40;color:#fff;text-decoration:none;font-size:.9rem;font-weight:750}
 .career-europe .career-contact-actions a.secondary{background:transparent;color:#0d2b40}
