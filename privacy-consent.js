@@ -60,6 +60,8 @@
     actions.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap';
     actions.appendChild(makeButton(strings.reject, function () {
       saveConsent('rejected'); banner.hidden = true;
+      // Recarregar interrompe imediatamente qualquer Analytics iniciado anteriormente.
+      if (analyticsStarted) window.location.reload();
     }, false));
     actions.appendChild(makeButton(strings.accept, function () {
       saveConsent('accepted'); banner.hidden = true; startAnalytics();
