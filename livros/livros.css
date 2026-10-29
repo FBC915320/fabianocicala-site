@@ -78,3 +78,17 @@ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;width:100%;m
 #livros .book-group .book-row,#livros .book-group:last-child .book-row{grid-template-columns:minmax(0,1fr);width:100%;max-width:none}
 #livros .book-card--enhanced{display:grid;grid-template-columns:102px minmax(0,1fr);gap:16px;padding:16px 0}
 }
+
+/* Retrato do autor na abertura do catálogo. */
+.books-category-intro--portrait{display:grid;grid-template-columns:minmax(0,1fr) 220px;align-items:center;gap:clamp(24px,4vw,60px)}
+.books-category-intro-copy{min-width:0}
+.books-author-portrait{width:220px;height:270px;justify-self:end;margin:0;overflow:hidden;border:1px solid #b8924f;border-radius:5px;background:#e1e8eb;box-shadow:0 10px 24px #10223515}
+.books-author-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+@media(max-width:800px){
+.books-category-intro--portrait{grid-template-columns:minmax(0,1fr) 170px;gap:24px}
+.books-author-portrait{width:170px;height:225px}
+}
+@media(max-width:600px){
+.books-category-intro--portrait{grid-template-columns:minmax(0,1fr);gap:24px}
+.books-author-portrait{justify-self:center;width:190px;height:235px}
+}
