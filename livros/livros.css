@@ -62,3 +62,19 @@ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;width:100%;m
 }
 #livros .book-group .book-card--enhanced{min-width:0}
 }
+
+/* Catálogo reorganizado: cartões uniformes e uma única ação de compra. */
+#livros .book-card--enhanced .book-info{display:flex;flex-direction:column;flex:1;min-height:0}
+#livros .book-card--enhanced .book-actions{margin-top:auto;padding-top:12px}
+#livros .book-card--enhanced .book-actions a{width:100%;white-space:normal}
+#livros .book-card--enhanced .book-summary{margin:8px 0 0}
+@media(min-width:1001px){
+#livros .book-group:last-child:not(.book-group--fiction) .book-row{grid-template-columns:repeat(5,minmax(0,1fr));width:100%;max-width:none}
+}
+@media(min-width:769px) and (max-width:1000px){
+#livros .book-group .book-row,#livros .book-group:last-child:not(.book-group--fiction) .book-row{grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:none}
+}
+@media(max-width:768px){
+#livros .book-group .book-row,#livros .book-group:last-child .book-row{grid-template-columns:minmax(0,1fr);width:100%;max-width:none}
+#livros .book-card--enhanced{display:grid;grid-template-columns:102px minmax(0,1fr);gap:16px;padding:16px 0}
+}
