@@ -9,3 +9,20 @@
 .books-category-footer{background:#0b1427;color:#bac4d3;text-align:center;padding:26px 20px;font-size:.85rem}
 .books-category-footer a{color:#fff}
 @media(max-width:650px){.books-category-intro{padding:32px 22px 25px}.books-category-main #livros{padding-top:30px}}
+
+/* Banner editorial responsivo com capas originais — 29/10/2026. */
+.editorial-banner{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:30px;width:100%;max-width:none;margin:0;padding:clamp(30px,4vw,58px) clamp(24px,4.1vw,58px);min-height:310px;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 85% 35%,#1b4a65 0%,transparent 52%),linear-gradient(115deg,#061522,#0b2238 65%,#102d43);border-top:1px solid #dbb46b55;border-bottom:1px solid #dbb46b55}
+.editorial-banner::before{content:"";position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(125deg,transparent 0 95px,#d4b47708 96px 97px,transparent 98px 190px)}
+.editorial-banner-copy{min-width:0}
+.editorial-banner-kicker{display:block;color:#dfbd7d;text-transform:uppercase;font-size:.69rem;font-weight:750;letter-spacing:.19em;margin-bottom:17px}
+.editorial-banner h2{font:400 clamp(2rem,3.6vw,3.6rem)/1.08 Georgia,serif;letter-spacing:-.025em;margin:0 0 18px;color:#fff}
+.editorial-banner h2 em{font-weight:400;font-style:normal;color:#e3c281}
+.editorial-banner-copy p{font-size:clamp(.92rem,1.15vw,1.08rem);line-height:1.6;max-width:410px;color:#ccd8e5;margin:0 0 21px}
+.editorial-banner-topics{display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#e3cc9f;line-height:1.8}
+.editorial-banner-books{display:flex;justify-content:center;align-items:center;gap:clamp(8px,1.2vw,18px);min-width:0;padding:12px 0 18px;perspective:1000px}
+.editorial-banner-books img{display:block;flex:0 1 auto;min-width:0;width:21%;height:clamp(150px,17vw,235px);object-fit:contain;filter:drop-shadow(7px 13px 8px #0007);transform:rotateY(-9deg);border-radius:1px}
+.editorial-banner-books img:nth-child(1){transform:translateY(15px) rotate(-6deg) rotateY(-9deg)}
+.editorial-banner-books img:nth-child(2){transform:translateY(-7px) rotate(-2deg) rotateY(-9deg)}
+.editorial-banner-books img:nth-child(3){transform:translateY(5px) rotate(2deg) rotateY(-9deg)}
+.editorial-banner-books img:nth-child(4){transform:translateY(-10px) rotate(6deg) rotateY(-9deg)}
+@media(max-width:650px){.editorial-banner{grid-template-columns:1fr;gap:20px;padding:30px 22px 26px;min-height:0}.editorial-banner h2{font-size:clamp(2rem,8.3vw,3rem)}.editorial-banner-kicker{margin-bottom:12px}.editorial-banner-copy p{margin-bottom:13px}.editorial-banner-books{width:100%;max-width:440px;margin:0 auto;padding:10px 0 15px;gap:12px}.editorial-banner-books img{height:clamp(115px,30vw,175px);width:21%}.editorial-banner-topics{font-size:.59rem}}
