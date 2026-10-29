@@ -70,7 +70,7 @@
       id: 'estrategia', title: isEnglish ? 'The Invisible Strategy' : 'A Estratégia do Invisível',
       subtitle: isEnglish ? 'Leadership, Faith and Purpose in Silent Command' : 'Liderança, Fé e Propósito no Comando Silencioso',
       pageUrl: '/livros/a-estrategia-do-invisivel/',
-      cover: '/img/optimized/capa-estrategia-invisivel-frente.webp', backCover: '/capa-estrategia-invisivel-verso.webp', price: 'R$ 24,90',
+      cover: '/img/optimized/capa-estrategia-invisivel-frente.webp', backCover: '/capa-estrategia-invisivel-verso.webp', price: 'R$ 34,50',
       printNote: labels.printReview,
       url: 'https://books.apple.com/br/book/a-estrat%C3%A9gia-do-invis%C3%ADvel/id6820215202',
       amazonUrl: 'https://www.amazon.com.br/dp/B0HMPFLRWH',
@@ -108,7 +108,7 @@
       title: isEnglish ? 'When the Day Ends' : 'Quando o Dia Termina',
       subtitle: isEnglish ? 'Relaxation, faith and self-awareness practices' : 'Práticas de relaxamento, fé e autoconhecimento',
       cover: '/img/optimized/capa.webp',
-      price: 'R$ 24,90',
+      price: 'R$ 24,88',
       status: isEnglish ? 'Book and e-book' : 'Livro e eBook',
       pageUrl: '/livros/quando-o-dia-termina/',
       amazonUrl: 'https://www.amazon.com.br/dp/B0HMQ2HZPY',
@@ -171,7 +171,7 @@
       id: 'github-zero', cover:'/img/optimized/capa-github-zero-original.jpg', title: isEnglish ? 'GitHub — From Zero to Practice' : 'GitHub — Do Zero à Prática',
       subtitle: isEnglish ? 'Expanded beginner guide · 80 pages in the PDF edition' : 'Edição ampliada · guia de Git e GitHub para iniciantes',
       upcoming: false, status: isEnglish ? 'Available on Kindle' : 'À venda no Kindle',
-      price: 'R$ 2,99', amazonUrl: 'https://www.amazon.com.br/dp/B0HNY8TW3R',
+      price: 'R$ 20,00', amazonUrl: 'https://www.amazon.com.br/dp/B0HNY8TW3R',
       description: isEnglish
         ? 'A practical introduction to Git and GitHub: repositories, branches, commits, pull requests, merges, automation with GitHub Actions and security. Includes exercises. Independently adapted from GitHub Skills material under the MIT license, not an official GitHub publication. The Kindle e-book is available on Amazon. The paperback remains a draft.'
         : 'Um guia prático para começar no GitHub: repositórios, branches, commits, pull requests, merge, automações com GitHub Actions, segurança e exercícios passo a passo. Edição independente adaptada de material GitHub Skills sob licença MIT, sem vínculo oficial. O eBook Kindle já está à venda na Amazon. A edição em capa comum permanece em rascunho.'
