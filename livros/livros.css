@@ -92,3 +92,30 @@ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;width:100%;m
 .books-category-intro--portrait{grid-template-columns:minmax(0,1fr);gap:24px}
 .books-author-portrait{justify-self:center;width:190px;height:235px}
 }
+
+/* Uma obra em destaque abre cada categoria, ocupando duas colunas. */
+#livros .book-card--featured{background:#faf7ef;border:1px solid #b38a44;border-top:3px solid #b38a44}
+#livros .book-card--featured .book-featured-label{display:block;color:#8e672b;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.4;margin:0 0 8px}
+#livros .book-card--featured .book-info h3{font-size:1.375rem!important;line-height:1.2!important}
+#livros .book-card--featured .book-info .book-subtitle{-webkit-line-clamp:unset;display:block;overflow:visible}
+#livros .book-card--featured .book-actions a{background:#17384b;color:#fff;border-color:#17384b}
+#livros .book-card--featured .book-actions a:hover{background:#224b61}
+@media(min-width:769px){
+#livros .book-group .book-card--featured{grid-column:span 2;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:20px;padding:22px}
+#livros .book-group .book-card--featured .book-cover{height:260px;min-height:0;padding:0}
+#livros .book-group .book-card--featured .book-3d{height:250px;max-width:100%}
+#livros .book-group .book-card--featured .book-front{max-width:100%;object-fit:contain}
+#livros .book-group .book-card--featured .book-info{align-self:stretch;justify-content:center;gap:9px}
+#livros .book-group .book-card--featured .book-actions{margin-top:10px;padding-top:4px}
+}
+@media(max-width:768px){
+#livros .book-group .book-card--featured{grid-column:auto;grid-template-columns:128px minmax(0,1fr);gap:18px;padding:18px 14px}
+#livros .book-group .book-card--featured .book-cover{width:128px;height:205px;min-height:0}
+#livros .book-group .book-card--featured .book-3d{height:195px}
+#livros .book-card--featured .book-info h3{font-size:1.1875rem!important}
+}
+@media(max-width:390px){
+#livros .book-group .book-card--featured{grid-template-columns:104px minmax(0,1fr);gap:12px;padding:16px 10px}
+#livros .book-group .book-card--featured .book-cover{width:104px;height:174px}
+#livros .book-group .book-card--featured .book-3d{height:166px}
+}
