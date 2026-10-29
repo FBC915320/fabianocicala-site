@@ -38,9 +38,9 @@
   function setup() {
     if (initialized) return;
     initialized = true;
-    var reopen = makeButton(strings.settings, showBanner, false);
+    var reopen = makeButton('Cookies', showBanner, false);
     reopen.setAttribute('aria-label', strings.settings);
-    reopen.style.cssText += ';position:fixed;bottom:12px;left:12px;z-index:10000;box-shadow:0 2px 12px #0002';
+    reopen.style.cssText += ';position:fixed;bottom:10px;left:10px;z-index:10000;box-shadow:0 2px 12px #0002;font-size:12px;padding:6px 9px;min-height:38px;min-width:78px';
     document.body.appendChild(reopen);
     var banner = document.createElement('section');
     banner.setAttribute('role', 'dialog');
