@@ -1,0 +1,61 @@
+/* Composição da home — 29/10/2026 */
+body .shell{max-width:1320px;margin-inline:auto}
+body .career-hero{padding:56px 54px 42px;gap:64px;grid-template-columns:minmax(0,1.6fr) minmax(230px,.65fr)}
+body .career-hero .career-photo-wrap{max-width:285px}
+body .career-hero .career-summary{max-width:650px}
+body .career-proof{background:#10283c;padding:0 54px 24px;gap:24px;border:0}
+body .career-proof span{padding:16px 0 0;text-align:left;border:0;border-top:1px solid #c9af763d;font-size:.875rem!important;color:#c9d5df}
+body .home-books{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.85fr);gap:28px 40px;padding:52px 54px 36px;background:#f7f8fa}
+body .home-books-heading{grid-column:1/-1;margin:0 0 2px;align-items:center}
+body .home-books-heading h2{margin-top:8px}
+body .home-books-heading .career-kicker{color:#977439;text-transform:uppercase}
+body .home-books-heading>a{font-size:.875rem}
+body .home-book-feature{background:transparent;color:#163047;border:0;padding:22px 0;gap:30px;grid-template-columns:minmax(130px,180px) minmax(0,1fr);align-items:center}
+body .home-feature-cover{max-width:180px}
+body .home-feature-cover img{max-height:280px;filter:drop-shadow(7px 12px 10px #10263824)}
+body .home-book-feature h3{color:#142b40;font-size:clamp(1.65rem,2.6vw,2.2rem)!important;margin:12px 0}
+body .home-book-label{color:#8d692b}
+body .home-book-feature p{color:#536175}
+body .home-book-feature .home-book-subtitle{color:#8d692b;font-size:.9375rem!important}
+body .home-book-actions{gap:9px;margin-top:20px}
+body .home-book-actions a{color:#18364b;border-color:#ac8d51}
+body .home-book-actions a:first-child{background:#15384f;color:#fff;border-color:#15384f}
+body .home-more-books{display:flex;flex-direction:column;gap:0;margin:18px 0;align-self:center;border-left:1px solid #dce2e7;padding-left:30px}
+body .home-more-books a{background:transparent;border:0;border-bottom:1px solid #dce2e7;border-radius:0;padding:16px 0;gap:20px;flex-direction:row;text-align:left}
+body .home-more-books a:last-child{border-bottom:0}
+body .home-more-books img{width:59px;height:88px;object-fit:contain;filter:drop-shadow(3px 5px 4px #10263815)}
+body .home-more-books span{font-size:.9375rem!important;font-weight:700}
+body .home-philosophy{background:#f7f8fa;color:#263f52;border:0;border-top:1px solid #d5bd8d;padding:22px 0 32px;margin:0 54px;gap:24px}
+body .home-philosophy strong{color:#916f35}
+body .home-philosophy a{color:#526175;font-size:.8125rem}
+body main{background:#f7f8fa}
+body .career-solutions-label{background:#0d2234;padding:42px 54px 10px}
+body .career-solutions-label h2{color:#fff;margin-bottom:12px}
+body .career-solutions-label p{color:#b9c9d7;max-width:850px}
+body #photo-efe{background:#0d2234;padding:20px 54px 42px}
+body #photo-efe .photo-projects-row{gap:42px;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+body #photo-efe .photo-efe-teaser{background:#ffffff05;border:1px solid #ffffff1c;box-shadow:none;border-radius:8px;padding:20px;gap:22px;grid-template-columns:130px minmax(0,1fr)}
+body #photo-efe .photo-efe-video{width:130px}
+body #photo-efe .photo-efe-copy h2{margin-top:14px}
+body #photo-efe .photo-efe-copy p{font-size:.9375rem!important}
+body #photo-efe .project-fan{height:220px}
+body #photo-efe .project-fan-showcase h3{font-size:1.25rem!important}
+body #photo-efe .project-fan-showcase p{font-size:.9375rem!important}
+body #conteudos{padding:46px 54px 50px;background:#f7f8fa}
+body #conteudos>.head{display:block;margin-bottom:20px}
+body #conteudos>.head .kicker{margin-bottom:10px;color:#977439}
+body #conteudos>.head h2{margin:0}
+body #conteudos .career-social-callout{border:0;border-bottom:1px solid #dce2e7;background:transparent;padding:0 0 20px;margin:0;align-items:center}
+body #conteudos .career-social-callout span{font-size:.9375rem!important;max-width:730px}
+body #conteudos .content-grid{max-width:none;display:block;margin:26px 0 0}
+body #conteudos .content-item{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:34px;align-items:center}
+body #conteudos .videoFrame{grid-column:auto;grid-row:auto;margin:0;border-radius:7px;overflow:hidden}
+body #conteudos .content-copy h3{font-size:1.4rem!important;margin-bottom:12px}
+body #conteudos .content-copy p{margin:0 0 18px;max-width:420px}
+body #conteudos .content-copy>a{display:inline-block;color:#15384f;font-weight:700;text-underline-offset:5px}
+body .contact{padding:36px 54px 26px}
+body .contact .contact-grid{box-shadow:none;border:1px solid #ffffff29;border-left:3px solid #c9a35d;padding:30px;gap:40px}
+body .contact .footer-identity-row{margin-top:28px}
+@media(max-width:980px){body .career-hero{gap:30px;padding:42px 30px}body .career-proof{padding:0 30px 24px}body .home-books{padding:38px 30px 26px;grid-template-columns:1fr;gap:16px}body .home-more-books{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:20px 0 0;margin:0;border-left:0;border-top:1px solid #dce2e7;gap:20px}body .home-more-books a{border:0;padding:0;gap:12px}body .home-philosophy{margin-inline:30px}body .career-solutions-label{padding:34px 30px 10px}body #photo-efe{padding:18px 30px 34px}body #photo-efe .photo-projects-row{grid-template-columns:1fr}body #photo-efe .photo-efe-teaser{max-width:680px;width:100%}body #conteudos{padding:36px 30px}body .contact{padding:30px}}
+@media(max-width:650px){body .career-hero{grid-template-columns:1fr;padding:32px 22px;gap:24px}body .career-hero .career-photo-wrap{max-width:215px}body .career-proof{padding:0 22px 22px;gap:10px}body .career-proof span{padding:10px 0 0}body .home-books{padding:32px 22px 24px}body .home-books-heading{align-items:start;gap:15px}body .home-book-feature{grid-template-columns:1fr;padding:14px 0;gap:20px}body .home-feature-cover{max-width:155px}body .home-book-feature h3{font-size:1.875rem!important}body .home-more-books{grid-template-columns:1fr;gap:0}body .home-more-books a{padding:14px 0;border-bottom:1px solid #dce2e7}body .home-philosophy{margin-inline:22px;flex-direction:column;align-items:start;padding:22px 0;gap:10px}body .career-solutions-label{padding:30px 22px 10px}body #photo-efe{padding:15px 22px 30px}body #photo-efe .photo-efe-teaser{grid-template-columns:110px minmax(0,1fr);padding:16px;gap:15px}body #photo-efe .photo-efe-video{width:110px}body #photo-efe-title{font-size:1.35rem!important}body #photo-efe .photo-efe-logo{width:38px;height:38px}body #conteudos{padding:30px 22px}body #conteudos .content-item{grid-template-columns:1fr;gap:20px}body #conteudos .career-social-callout{align-items:start}body .contact{padding:24px 22px}body .contact .contact-grid{padding:22px 18px;gap:24px}}
+@media(max-width:390px){body #photo-efe .photo-efe-teaser{grid-template-columns:1fr}body #photo-efe .photo-efe-video{width:145px;margin:auto}}
