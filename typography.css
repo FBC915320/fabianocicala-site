@@ -1,0 +1,27 @@
+/* Sistema tipográfico compartilhado — 29/10/2026.
+   Identidade editorial preservada; sem fontes externas. */
+:root{--fc-body:Arial,Helvetica,sans-serif;--fc-heading:Georgia,"Times New Roman",serif;--fc-text:1.0625rem;--fc-small:.875rem;--fc-label:.75rem;--fc-h1:clamp(2.5rem,4.8vw,4.5rem);--fc-h2:clamp(1.75rem,2.8vw,2.5rem);--fc-h3:1.25rem}
+html{font-size:16px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:var(--fc-body)!important;font-size:var(--fc-text)!important;line-height:1.65!important}
+body p,body li,body dd,body dt{font-family:var(--fc-body)!important;font-size:var(--fc-text)!important;line-height:1.65!important;letter-spacing:normal}
+body h1{font-family:var(--fc-heading)!important;font-size:var(--fc-h1)!important;font-weight:400!important;line-height:1.1!important;letter-spacing:-.025em!important;text-wrap:balance}
+body h2{font-family:var(--fc-heading)!important;font-size:var(--fc-h2)!important;font-weight:400!important;line-height:1.2!important;letter-spacing:-.02em!important;text-wrap:balance}
+body h3,body h4{font-family:var(--fc-body)!important;font-size:var(--fc-h3)!important;font-weight:700!important;line-height:1.35!important;letter-spacing:normal!important}
+body button,body input,body textarea,body select{font-family:var(--fc-body)!important;font-size:1rem!important;line-height:1.45!important}
+body .nav>a,body nav.head-links>a{font-family:var(--fc-body)!important;font-size:.9375rem!important;line-height:1.4!important}
+body .btn,body .career-button,body .app-cta,body .book-preview-button,body .home-book-actions a,body .career-contact-actions a{font-family:var(--fc-body)!important;font-size:.9375rem!important;line-height:1.4!important;font-weight:700!important;min-height:44px}
+body .kicker,body .eyebrow,body .career-kicker,body .career-eyebrow,body .solutions-kicker,body .home-book-label,body .editorial-banner-kicker,body .project-fan-eyebrow{font-family:var(--fc-body)!important;font-size:var(--fc-label)!important;font-weight:700!important;line-height:1.5!important;letter-spacing:.12em!important}
+body .note,body .book-price,body .book-status,body .book-soon,body .foot,body .books-category-footer,body .solutions-showcase-note,body .career-hint,body small{font-family:var(--fc-body)!important;font-size:var(--fc-small)!important;line-height:1.55!important}
+body .career-hero h2{font-family:var(--fc-body)!important;font-size:1.5rem!important;line-height:1.4!important;font-weight:700!important;letter-spacing:normal!important}
+body .career-hero .career-promise{font-size:.875rem!important;line-height:1.5!important;font-weight:700!important;letter-spacing:.08em!important}
+body .career-proof span,body .career-social-callout span,body .home-more-books span{font-family:var(--fc-body)!important;font-size:1rem!important;line-height:1.5!important}
+body .home-book-feature h3{font-family:var(--fc-heading)!important;font-size:var(--fc-h2)!important;font-weight:400!important;line-height:1.2!important;letter-spacing:-.02em!important}
+body #sobre .about-page-intro h2{font-family:var(--fc-body)!important;font-size:1.5rem!important;font-weight:700!important;line-height:1.4!important;letter-spacing:normal!important}
+body #photo-efe-title{font-family:var(--fc-body)!important;font-size:1.75rem!important;font-weight:700!important;letter-spacing:normal!important}
+body .contact .contact-message{font-family:var(--fc-body)!important;font-size:clamp(1.5rem,2.2vw,2rem)!important;font-weight:700!important;line-height:1.3!important;letter-spacing:-.02em!important}
+body .contact .contact-invitation{font-size:1.125rem!important;font-weight:700!important;line-height:1.5!important}
+body .social-heading{font-size:var(--fc-label)!important;letter-spacing:.1em!important}
+body .contact-talks span,body .social a,body .social a span{font-family:var(--fc-body)!important;font-size:var(--fc-small)!important;line-height:1.4!important}
+body .home-philosophy p{font-family:var(--fc-heading)!important;font-size:clamp(1.25rem,2vw,1.75rem)!important;line-height:1.4!important}
+body .editorial-banner-title{font-family:var(--fc-heading)!important;font-size:var(--fc-h2)!important;line-height:1.2!important}
+@media(max-width:650px){:root{--fc-text:1rem;--fc-h1:clamp(2.25rem,9vw,3rem);--fc-h2:1.875rem;--fc-h3:1.1875rem}body .career-hero h2,body #sobre .about-page-intro h2{font-size:1.25rem!important}body .contact .contact-message{font-size:1.5rem!important}}
