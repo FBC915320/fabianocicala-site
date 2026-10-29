@@ -26,3 +26,23 @@
 .editorial-banner-books img:nth-child(3){transform:translateY(5px) rotate(2deg) rotateY(-9deg)}
 .editorial-banner-books img:nth-child(4){transform:translateY(-10px) rotate(6deg) rotateY(-9deg)}
 @media(max-width:650px){.editorial-banner{grid-template-columns:1fr;gap:20px;padding:30px 22px 26px;min-height:0}.editorial-banner h2{font-size:clamp(2rem,8.3vw,3rem)}.editorial-banner-kicker{margin-bottom:12px}.editorial-banner-copy p{margin-bottom:13px}.editorial-banner-books{width:100%;max-width:440px;margin:0 auto;padding:10px 0 15px;gap:12px}.editorial-banner-books img{height:clamp(115px,30vw,175px);width:21%}.editorial-banner-topics{font-size:.59rem}}
+
+/* Ajuste de proporção entre capas e texto do catálogo */
+#livros .book-card--enhanced .book-cover{height:174px;min-height:174px;padding:6px 0 10px}
+#livros .book-card--enhanced .book-3d{height:158px;max-width:96%}
+#livros .book-card--enhanced .book-front{height:100%;width:auto;object-fit:contain}
+#livros .book-card--enhanced .book-info h3{font-size:1.0625rem!important;line-height:1.3!important;min-height:0;margin:0 0 4px}
+#livros .book-card--enhanced .book-info p{font-size:.875rem!important;line-height:1.5!important}
+#livros .book-card--enhanced .book-info .book-subtitle{font-size:.8125rem!important;line-height:1.45!important;min-height:0}
+#livros .book-card--enhanced .book-info .book-status{font-size:.6875rem!important;line-height:1.4!important;letter-spacing:.025em;padding:4px 6px}
+#livros .book-card--enhanced .book-price{font-size:.9375rem!important;line-height:1.4!important}
+#livros .book-card--enhanced .book-preview-button,#livros .book-card--enhanced .book-buy-button{font-size:.8125rem!important;line-height:1.35!important;padding:9px 10px;min-height:44px}
+#livros .book-card--enhanced .book-soon{font-size:.6875rem!important;line-height:1.35!important;padding:5px 7px}
+#livros .book-card--enhanced .book-info{gap:7px}
+@media(max-width:700px){
+#livros .book-card--enhanced,#livros .book-row--fiction .book-card--enhanced{grid-template-columns:102px minmax(0,1fr);gap:16px}
+#livros .book-card--enhanced .book-cover{width:102px;height:156px;min-height:0;padding:3px 0}
+#livros .book-card--enhanced .book-3d{height:150px}
+#livros .book-card--enhanced .book-info h3{font-size:1rem!important}
+#livros .book-card--enhanced .book-info p{font-size:.875rem!important}
+}
