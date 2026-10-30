@@ -326,3 +326,11 @@ header.hero.hero-artwork img{display:block;width:100%;max-width:100%;height:auto
 @media(max-width:1100px){.shell .top .brand .brand-country .brand-flag{font-size:1.76rem}.shell .top .brand .brand-country .brand-motto{font-size:.53rem}}
 @media(max-width:700px){.shell .top .brand .brand-country .brand-flag{font-size:1.50rem}.shell .top .brand .brand-country .brand-motto{font-size:.49rem}}
 @media(max-width:360px){.shell .top .brand{position:relative}.shell .top .brand .brand-country{position:absolute;left:45px;top:25px;flex-direction:row;gap:4px;margin:0}.shell .top .brand .brand-country .brand-flag{font-size:1.02rem}.shell .top .brand .brand-country .brand-motto{font-size:.49rem}}
+
+/* Bandeira nacional apos os idiomas, lado direito do cabecalho — 30/10/2026 */
+.shell .top .nav .header-country{display:inline-flex;flex:0 0 auto;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:52px;padding:0 0 0 12px;margin-left:0;border-left:1px solid #ffffff30;text-decoration:none;line-height:1;white-space:nowrap;opacity:1;color:#e8c477}
+.shell .top .nav .header-country .brand-flag{display:block;font-size:1.65rem;line-height:1}
+.shell .top .nav .header-country .brand-motto{display:block;color:#e8c477;font-size:.55rem;font-weight:800;letter-spacing:.015em;text-transform:uppercase;line-height:1.15}
+.shell .top .nav .header-country:hover,.shell .top .nav .header-country:focus-visible{color:#f9dc94;opacity:1}
+@media(min-width:701px) and (max-width:1120px){.shell .top .nav{gap:14px}.shell .top .nav .header-country{padding-left:8px}.shell .top .nav .header-country .brand-flag{font-size:1.38rem}.shell .top .nav .header-country .brand-motto{font-size:.47rem}}
+@media(max-width:700px){.shell .top .nav .header-country{grid-column:1/-1;justify-self:end;flex-direction:row;gap:8px;min-height:44px;padding:6px 0;margin:0;border:0;background:transparent}.shell .top .nav .header-country .brand-flag{font-size:1.35rem}.shell .top .nav .header-country .brand-motto{font-size:.62rem}}
