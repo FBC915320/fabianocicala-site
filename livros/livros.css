@@ -119,3 +119,17 @@ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;width:100%;m
 #livros .book-group .book-card--featured .book-cover{width:104px;height:174px}
 #livros .book-group .book-card--featured .book-3d{height:166px}
 }
+
+/* Livro físico: lombada e sombra com as dimensões atuais das capas. */
+.books-only #livros .book-card--enhanced .book-3d{filter:drop-shadow(10px 13px 10px rgba(16,27,51,.30));transform:perspective(960px) rotateY(-10deg) rotateZ(-.5deg);transform-origin:center;transition:transform .25s ease,filter .25s ease}
+.books-only #livros .book-card--enhanced .book-preview-cover:hover .book-3d{transform:perspective(960px) rotateY(-4deg) translateY(-2px);filter:drop-shadow(12px 16px 12px rgba(16,27,51,.32))}
+.books-only #livros .book-card--enhanced .book-spine{left:-5px;width:6px;top:1%;height:98%;background:linear-gradient(90deg,#162038af 0%,#718092 45%,#e2dfd4 100%);box-shadow:-2px 0 2px #101b3340}
+.books-only #livros .book-group .book-card--featured .book-3d{filter:drop-shadow(14px 18px 12px rgba(16,27,51,.32));transform:perspective(1100px) rotateY(-12deg) rotateZ(-.5deg)}
+.books-only #livros .book-group .book-card--featured .book-preview-cover:hover .book-3d{transform:perspective(1100px) rotateY(-5deg) translateY(-2px)}
+/* Marca oficial Kindle no último espaço da segunda linha da coleção. */
+#livros .book-row--collection .kindle-collection-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-width:0;min-height:340px;padding:22px 15px;background:linear-gradient(160deg,#fcfbf8,#f6f1e7);border:1px solid #dfcfac;border-radius:13px;text-align:center}
+#livros .kindle-collection-tile .kindle-collection-kicker{font-size:.68rem;line-height:1.45;letter-spacing:.11em;text-transform:uppercase;font-weight:750;color:#8a6e3a}
+#livros .kindle-collection-tile img{display:block;width:min(100%,220px);height:auto;max-height:160px;object-fit:contain}
+#livros .kindle-collection-tile .kindle-collection-label{color:#16263d;font-size:1.15rem;line-height:1.3;font-weight:800}
+@media(max-width:1000px){#livros .book-row--collection .kindle-collection-tile{display:none}}
+@media(max-width:768px){.books-only #livros .book-card--enhanced .book-3d{transform:perspective(900px) rotateY(-5deg);filter:drop-shadow(6px 8px 6px rgba(16,27,51,.25))}.books-only #livros .book-group .book-card--featured .book-3d{transform:perspective(900px) rotateY(-5deg);filter:drop-shadow(8px 10px 7px rgba(16,27,51,.27))}}

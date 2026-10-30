@@ -37,4 +37,5 @@ var cp=el('button','subtle','Copiar link');cp.type='button';cp.className='subtle
 if(navigator.share){var ns=el('button',0,'Compartilhar');ns.type='button';ns.onclick=function(){navigator.share({title:L.titulo,text:L.subtitulo,url:L.url}).catch(function(){})};sh.insertBefore(ns,sh.firstChild)}
 var rs=document.querySelectorAll('.reveal');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});rs.forEach(function(r){io.observe(r)})}else rs.forEach(function(r){r.classList.add('in')});
 })();
-</script></body></html>
+</script><script src="/brand-footer.js?v=20261030" defer></script>
+</body></html>

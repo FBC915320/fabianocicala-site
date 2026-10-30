@@ -1,0 +1,32 @@
+/* Rodapé de identidade compartilhado entre páginas pessoais e livros. */
+.fc-legacy-footer[hidden]{display:none!important}
+.fc-shared-footer{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:clamp(28px,3.7vw,52px) clamp(18px,4.1vw,54px) 22px!important;box-sizing:border-box;background:#101b33!important;color:#f3f5f8!important;text-align:left!important;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:1.35}
+.fc-shared-footer .fc-footer-panel{max-width:1370px;margin:auto}
+.fc-shared-footer .footer-identity-row{display:grid;grid-template-columns:minmax(235px,1fr) minmax(305px,1.16fr) minmax(350px,1.23fr);align-items:center;gap:clamp(22px,2.7vw,42px);min-height:208px;margin:0;padding:clamp(28px,3.3vw,44px);background:linear-gradient(112deg,#101d35 0%,#14243e 54%,#172a43 100%);border:1px solid rgba(221,182,104,.29);border-top:2px solid rgba(221,182,104,.76);border-radius:16px;box-shadow:0 16px 40px rgba(3,11,24,.19)}
+.fc-shared-footer .footer-identity-divider{display:none}
+.fc-shared-footer .personal-footer-brand{display:flex;min-width:0;align-items:center;gap:15px}
+.fc-shared-footer .personal-footer-brand img{display:block;flex:0 0 90px;width:90px;height:90px;object-fit:contain}
+.fc-shared-footer .personal-footer-copy{display:flex;flex-direction:column;gap:8px;min-width:0}
+.fc-shared-footer .personal-footer-copy strong{font-size:clamp(1.23rem,1.65vw,1.55rem);line-height:1.08;letter-spacing:-.012em;color:#fff}
+.fc-shared-footer .personal-footer-copy small{font-size:clamp(.76rem,.94vw,.9rem);line-height:1.4;font-weight:500;color:#e0c28b}
+.fc-shared-footer .institute-footer-brand{display:flex;min-width:0;gap:16px;align-items:center}
+.fc-shared-footer .institute-footer-symbol{display:block;flex:0 0 92px;width:92px;height:98px;background:url('/img/logos/instituto-cicala-rossetti-final.png') no-repeat 21.6% 44.2%/880% auto;border-radius:4px}
+.fc-shared-footer .institute-footer-type{display:flex;flex-direction:column;min-width:0;line-height:1.1}
+.fc-shared-footer .institute-footer-kicker{font-family:Georgia,serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#d5bc89;margin-bottom:6px}
+.fc-shared-footer .institute-footer-type strong{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.26rem,1.72vw,1.65rem);line-height:1.11;color:#f3efe6}
+.fc-shared-footer .institute-footer-tagline{font-size:clamp(.76rem,.92vw,.87rem);line-height:1.45;color:#cbd0d9;margin-top:9px}
+.fc-shared-footer .social-block{min-width:0}
+.fc-shared-footer .social-heading{margin:0 0 13px;font-size:.87rem!important;letter-spacing:.1em;text-transform:uppercase;font-weight:750;color:#e4e9f3}
+.fc-shared-footer .social{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fc-shared-footer .social a{display:inline-flex;align-items:center;gap:10px;min-width:0;min-height:52px;padding:11px 13px;border:1px solid rgba(224,231,244,.28);border-radius:10px;background:rgba(255,255,255,.055);color:#fff;text-decoration:none;font-size:.93rem;font-weight:700;transition:background .2s,border-color .2s,transform .2s}
+.fc-shared-footer .social a:hover,.fc-shared-footer .social a:focus-visible{background:rgba(255,255,255,.12);border-color:#ddb65d;transform:translateY(-2px)}
+.fc-shared-footer .social a svg{display:block;flex:none;width:28px;height:28px}
+.fc-shared-footer .fc-footer-copyright{max-width:1370px;margin:20px auto 0;padding:0 2px;color:#bac4d3;font-size:.78rem}
+.fc-shared-footer .fc-footer-copyright a{color:#e5e9f3;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1200px){.fc-shared-footer .footer-identity-row{grid-template-columns:minmax(210px,1fr) minmax(280px,1fr);gap:25px}.fc-shared-footer .social-block{grid-column:1/-1}.fc-shared-footer .social{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){.fc-shared-footer .footer-identity-row{grid-template-columns:1fr;gap:24px;min-height:0;padding:26px 20px;text-align:center}.fc-shared-footer .personal-footer-brand,.fc-shared-footer .institute-footer-brand{justify-content:center}.fc-shared-footer .social-block{grid-column:auto}.fc-shared-footer .social{grid-template-columns:repeat(2,minmax(0,1fr))}.fc-shared-footer .personal-footer-brand img{width:78px;height:78px;flex-basis:78px}.fc-shared-footer .institute-footer-symbol{flex-basis:78px;width:78px;height:83px}}
+@media(max-width:380px){.fc-shared-footer .footer-identity-row{padding:22px 13px}.fc-shared-footer .personal-footer-copy strong{font-size:1.15rem}.fc-shared-footer .social a{font-size:.78rem;padding:9px}}
+/* Visual de capa física em páginas de apresentação de livros: sem redimensionar. */
+.fc-book-detail figure.cover img{transform:perspective(1100px) rotateY(-8deg) rotateZ(-.45deg);transform-origin:50% 50%;filter:drop-shadow(14px 20px 14px rgba(16,27,51,.38));transition:transform .25s ease,filter .25s ease}
+.fc-book-detail figure.cover img:hover{transform:perspective(1100px) rotateY(-4deg) rotateZ(0deg) translateY(-2px);filter:drop-shadow(17px 24px 17px rgba(16,27,51,.4))}
+@media(max-width:600px){.fc-book-detail figure.cover img{transform:perspective(1100px) rotateY(-5deg);filter:drop-shadow(9px 14px 10px rgba(16,27,51,.35))}}
