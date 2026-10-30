@@ -319,3 +319,10 @@ header.hero.hero-artwork img{display:block;width:100%;max-width:100%;height:auto
 @media(max-width:1100px){.shell .top .brand .brand-country .brand-flag{font-size:1.58rem}.shell .top .brand .brand-country .brand-motto{font-size:.46rem}}
 @media(max-width:700px){.shell .top .brand .brand-country{gap:2px;margin-left:0}.shell .top .brand .brand-country .brand-flag{font-size:1.37rem}.shell .top .brand .brand-country .brand-motto{font-size:.43rem}}
 @media(max-width:390px){.shell .top .brand .brand-country .brand-flag{font-size:1.22rem}.shell .top .brand .brand-country .brand-motto{font-size:.39rem;letter-spacing:0}}
+
+/* Refinamento de legibilidade do lema e encaixe em telas pequenas — 30/10/2026 */
+.shell .top .brand .brand-country .brand-flag{font-size:2.08rem}
+.shell .top .brand .brand-country .brand-motto{font-size:.57rem}
+@media(max-width:1100px){.shell .top .brand .brand-country .brand-flag{font-size:1.76rem}.shell .top .brand .brand-country .brand-motto{font-size:.53rem}}
+@media(max-width:700px){.shell .top .brand .brand-country .brand-flag{font-size:1.50rem}.shell .top .brand .brand-country .brand-motto{font-size:.49rem}}
+@media(max-width:360px){.shell .top .brand{position:relative}.shell .top .brand .brand-country{position:absolute;left:45px;top:25px;flex-direction:row;gap:4px;margin:0}.shell .top .brand .brand-country .brand-flag{font-size:1.02rem}.shell .top .brand .brand-country .brand-motto{font-size:.49rem}}
