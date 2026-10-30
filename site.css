@@ -311,3 +311,11 @@ header.hero.hero-artwork img{display:block;width:100%;max-width:100%;height:auto
 .contact .footer-identity-row .social a{background:transparent;border:0;border-radius:0;box-shadow:none;padding:7px 2px;min-height:53px;gap:12px;font-size:1rem}
 .contact .footer-identity-row .social a:hover,.contact .footer-identity-row .social a:focus-visible{background:transparent;border:0;color:#e8c477;transform:translateY(-1px)}
 .contact .social-block .social a svg{width:35px!important;height:35px!important}
+
+/* Bandeira e lema nacional junto a marca FC — 30/10/2026 */
+.shell .top .brand .brand-country{display:inline-flex;flex:0 0 auto;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1;margin-left:6px}
+.shell .top .brand .brand-country .brand-flag{display:inline-flex;align-items:center;justify-content:center;font-size:1.82rem;line-height:1;margin:0;transform:none}
+.shell .top .brand .brand-country .brand-motto{font-size:.49rem;line-height:1.12;font-weight:750;letter-spacing:.025em;white-space:nowrap;text-transform:uppercase;color:#e8c477}
+@media(max-width:1100px){.shell .top .brand .brand-country .brand-flag{font-size:1.58rem}.shell .top .brand .brand-country .brand-motto{font-size:.46rem}}
+@media(max-width:700px){.shell .top .brand .brand-country{gap:2px;margin-left:0}.shell .top .brand .brand-country .brand-flag{font-size:1.37rem}.shell .top .brand .brand-country .brand-motto{font-size:.43rem}}
+@media(max-width:390px){.shell .top .brand .brand-country .brand-flag{font-size:1.22rem}.shell .top .brand .brand-country .brand-motto{font-size:.39rem;letter-spacing:0}}
