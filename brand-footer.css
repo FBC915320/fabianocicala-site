@@ -30,3 +30,13 @@
 .fc-book-detail figure.cover img{transform:perspective(1100px) rotateY(-8deg) rotateZ(-.45deg);transform-origin:50% 50%;filter:drop-shadow(14px 20px 14px rgba(16,27,51,.38));transition:transform .25s ease,filter .25s ease}
 .fc-book-detail figure.cover img:hover{transform:perspective(1100px) rotateY(-4deg) rotateZ(0deg) translateY(-2px);filter:drop-shadow(17px 24px 17px rgba(16,27,51,.4))}
 @media(max-width:600px){.fc-book-detail figure.cover img{transform:perspective(1100px) rotateY(-5deg);filter:drop-shadow(9px 14px 10px rgba(16,27,51,.35))}}
+
+/* Ajuste após conferência visual: elimina ícones duplicados herdados do catálogo. */
+.fc-shared-footer .social a::before{display:none!important;content:none!important}
+/* Adapta a disposição à largura real do rodapé, não apenas à tela inteira. */
+.fc-shared-footer .fc-footer-panel{container-type:inline-size}
+@container (min-width:760px) and (max-width:1150px){
+  .fc-shared-footer .footer-identity-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  .fc-shared-footer .social-block{grid-column:1/-1}
+  .fc-shared-footer .social{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
