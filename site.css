@@ -334,3 +334,12 @@ header.hero.hero-artwork img{display:block;width:100%;max-width:100%;height:auto
 .shell .top .nav .header-country:hover,.shell .top .nav .header-country:focus-visible{color:#f9dc94;opacity:1}
 @media(min-width:701px) and (max-width:1120px){.shell .top .nav{gap:14px}.shell .top .nav .header-country{padding-left:8px}.shell .top .nav .header-country .brand-flag{font-size:1.38rem}.shell .top .nav .header-country .brand-motto{font-size:.47rem}}
 @media(max-width:700px){.shell .top .nav .header-country{grid-column:1/-1;justify-self:end;flex-direction:row;gap:8px;min-height:44px;padding:6px 0;margin:0;border:0;background:transparent}.shell .top .nav .header-country .brand-flag{font-size:1.35rem}.shell .top .nav .header-country .brand-motto{font-size:.62rem}}
+
+/* Distinct practical-AI project area beneath the existing personal and CIKALA showcases. */
+#photo-efe .project-ai-spotlight{position:relative;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(220px,.7fr);gap:22px;align-items:center;margin-top:26px;padding:23px 27px;border:1px solid #d5ad566b;border-radius:14px;background:linear-gradient(110deg,#1a3045,#11243c)}
+#photo-efe .project-ai-eyebrow{display:block;color:#e4c779;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+#photo-efe .project-ai-spotlight h3{font:500 clamp(1.3rem,2vw,1.65rem)/1.2 Georgia,"Times New Roman",serif;color:#fff;margin:6px 0 9px}
+#photo-efe .project-ai-spotlight p{margin:0;color:#cbd6e4;max-width:750px;font-size:.9rem;line-height:1.65}
+#photo-efe .project-ai-themes{list-style:none;display:flex;flex-wrap:wrap;gap:9px;margin:0;padding:0}
+#photo-efe .project-ai-themes li{color:#eff4fc;background:#ffffff12;border:1px solid #ffffff38;border-radius:7px;padding:8px 10px;font-size:.81rem;line-height:1.25}
+@media(max-width:800px){#photo-efe .project-ai-spotlight{grid-template-columns:1fr;padding:21px;gap:15px}}
