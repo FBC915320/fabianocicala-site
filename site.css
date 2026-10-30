@@ -305,3 +305,9 @@ header.hero.hero-artwork img{display:block;width:100%;max-width:100%;height:auto
 @media(max-width:1100px){.shell .top .brand .brand-flag{font-size:1.3rem}}
 @media(max-width:700px){.shell .top .brand .brand-flag{font-size:1.08rem}}
 @media(max-width:390px){.shell .top .brand .brand-flag{font-size:.96rem}}
+
+/* Rodape sem caixa: marcas e redes diretamente no fundo azul — 30/10/2026 */
+.contact .footer-identity-row{background:transparent;border:0;border-radius:0;box-shadow:none;min-height:0;padding:28px 0 18px}
+.contact .footer-identity-row .social a{background:transparent;border:0;border-radius:0;box-shadow:none;padding:7px 2px;min-height:53px;gap:12px;font-size:1rem}
+.contact .footer-identity-row .social a:hover,.contact .footer-identity-row .social a:focus-visible{background:transparent;border:0;color:#e8c477;transform:translateY(-1px)}
+.contact .social-block .social a svg{width:35px!important;height:35px!important}

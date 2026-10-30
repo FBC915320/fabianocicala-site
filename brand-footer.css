@@ -40,3 +40,9 @@
   .fc-shared-footer .social-block{grid-column:1/-1}
   .fc-shared-footer .social{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
+
+/* Rodape editorial integrado ao fundo azul, sem moldura ou botoes contornados. */
+.fc-shared-footer .footer-identity-row{background:transparent;border:0;border-radius:0;box-shadow:none;min-height:0;padding:28px 0 18px}
+.fc-shared-footer .social a{background:transparent;border:0;border-radius:0;box-shadow:none;padding:7px 2px;min-height:53px;gap:12px;font-size:1rem}
+.fc-shared-footer .social a:hover,.fc-shared-footer .social a:focus-visible{background:transparent;border:0;color:#e8c477;transform:translateY(-1px)}
+.fc-shared-footer .social a svg{width:35px;height:35px}
