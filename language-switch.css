@@ -1,1 +1,11 @@
 .langs{display:flex;align-items:center;gap:4px}.langs a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:44px;padding:6px;color:#c4ced8;font-family:Arial,Helvetica,sans-serif;font-size:.8125rem;font-weight:700;line-height:1;text-decoration:none;border-radius:4px}.langs a[aria-current=page]{color:#e2bd70;background:#ffffff09}.langs a:hover{color:#fff;background:#ffffff16}.langs a:focus-visible{outline:2px solid #e2bd70;outline-offset:2px}@media(max-width:700px){.nav .langs{justify-content:flex-end}.langs a{min-width:44px;min-height:44px}}
+/* Idiomas sempre acessíveis no celular, mesmo com o menu fechado. */
+@media(max-width:700px){
+ .top:has(.nav .langs){flex-wrap:wrap;align-content:center}
+ .mobile-nav-ready .nav:not(.is-open){display:flex;flex:0 0 100%;width:100%;margin:0;padding:0;justify-content:center;background:transparent}
+ .mobile-nav-ready .nav:not(.is-open)>a{display:none}
+ .mobile-nav-ready .nav:not(.is-open) .langs{display:flex;justify-content:center;gap:10px;margin:0}
+ .mobile-nav-ready .nav:not(.is-open) .langs a{display:inline-flex;min-width:52px;min-height:36px;padding:7px 12px;border:1px solid #ffffff38;border-radius:7px;color:#eef3f8;background:#ffffff0b}
+ .mobile-nav-ready .nav:not(.is-open) .langs a[aria-current="page"]{color:#f0c878;border-color:#e2bd70;background:#e2bd701d}
+ .mobile-nav-ready .nav.is-open{display:grid}
+}
