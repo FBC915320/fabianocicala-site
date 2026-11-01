@@ -11,7 +11,7 @@ window.LIVRO = {
   videoYoutubeId: "", // ex.: "dQw4w9WgXcQ" — vazio mostra "Vídeo em breve"
   autorBio: "Fabiano Cicala viveu um período de crescimento acompanhado de pressão, responsabilidades e dificuldade de deixar o trabalho ao fim do dia. Por aproximadamente três anos, áudios de relaxamento fizeram parte de suas noites. Em Quando o dia termina, essa experiência pessoal orienta uma obra de práticas de bem-estar, reflexão e fé.",
   formatos: [
-    { nome: "E-book", preco: "R$ 24,90", nota: "Consulte o preço e a disponibilidade na Amazon.", link: "https://www.amazon.com.br/dp/B0HMQ2HZPY", status: "Ver na Amazon" },
+    { nome: "E-book", preco: "R$ 24,88", nota: "Referência do eBook Kindle registrada no catálogo em 29/10/2026. Confira o valor atual na Amazon.", link: "https://www.amazon.com.br/dp/B0HMQ2HZPY", status: "Ver na Amazon" },
     { nome: "Livro impresso", preco: "Consulte na Amazon", nota: "", link: "https://www.amazon.com.br/dp/B0HMQ2WNPG", status: "Ver na Amazon" },
     { nome: "Audiolivro", preco: "", nota: "", link: "", status: "Em produção" }
   ],
