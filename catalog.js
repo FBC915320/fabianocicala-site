@@ -151,7 +151,8 @@
     {
       id:'eu-existo', pageUrl:'/livros/eu-existo/', title:"EU EXISTO!", cover:'/capa-eu-existo.jpg',
       subtitle:isEnglish ? 'Science fiction · Fabiano Cicala' : 'Ficção científica · Fabiano Cicala',
-      fiction:true, upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
+      fiction:true, upcoming:false, status:isEnglish ? 'Kindle eBook on Amazon' : 'eBook Kindle na Amazon',
+      amazonUrl:'https://www.amazon.com.br/dp/B0HQ4G32MV',
       description:isEnglish ? "In Barcelona in 2089, Gabriel Vidal discovers that the system has declared him dead. A novel about identity, empathy and the human cost of automated decisions." : "Barcelona, 2089. Gabriel Vidal confia nos registros, nos protocolos e nas respostas da assistência artificial. Até encontrar Eva Laurent presa numa cabine que o sistema insiste em considerar vazia."
     },
     {
