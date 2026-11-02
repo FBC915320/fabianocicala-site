@@ -3,10 +3,15 @@
   'use strict';
   var KEY = 'fc_analytics_consent_v1';
   var GA_ID = 'G-ENQR4X8ZZZ';
-  var language = (document.documentElement.lang || 'pt').toLowerCase().startsWith('es') ? 'es' : 'pt';
-  var strings = language === 'es'
-    ? {title:'Privacidad y cookies',description:'Usamos Google Analytics para comprender las visitas solo si lo autorizas. Puedes cambiar tu decisión cuando quieras.',accept:'Aceptar estadísticas',reject:'Rechazar',settings:'Preferencias de cookies',policy:'Política de privacidad'}
-    : {title:'Privacidade e cookies',description:'Usamos Google Analytics para entender as visitas somente com sua autorização. Você pode mudar sua escolha quando quiser.',accept:'Aceitar estatísticas',reject:'Recusar',settings:'Preferências de cookies',policy:'Política de Privacidade'};
+  var rawLang = (document.documentElement.lang || 'pt').toLowerCase().slice(0,2);
+  var language = ['pt','it','en','es'].includes(rawLang) ? rawLang : 'pt';
+  var translations = {
+    pt: {title:'Privacidade e cookies',description:'Usamos Google Analytics para entender as visitas somente com sua autorização. Você pode mudar sua escolha quando quiser.',accept:'Aceitar estatísticas',reject:'Recusar',settings:'Preferências de cookies',policy:'Política de Privacidade'},
+    it: {title:'Privacy e cookie',description:'Utilizziamo Google Analytics per comprendere le visite solo con il tuo consenso. Puoi modificare la tua scelta in qualsiasi momento.',accept:'Accetta statistiche',reject:'Rifiuta',settings:'Preferenze cookie',policy:'Informativa sulla privacy (in portoghese)'},
+    en: {title:'Privacy and cookies',description:'We use Google Analytics to understand visits only with your consent. You can change your choice at any time.',accept:'Accept analytics',reject:'Decline',settings:'Cookie preferences',policy:'Privacy Policy (Portuguese)'},
+    es: {title:'Privacidad y cookies',description:'Usamos Google Analytics para comprender las visitas solo si lo autorizas. Puedes cambiar tu decisión cuando quieras.',accept:'Aceptar estadísticas',reject:'Rechazar',settings:'Preferencias de cookies',policy:'Política de privacidad'}
+  };
+  var strings = translations[language];
   var initialized = false;
   var analyticsStarted = false;
   function getConsent() {
