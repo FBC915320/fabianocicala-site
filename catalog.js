@@ -158,7 +158,10 @@
     {
       id:'ultima-fonte', pageUrl:'/livros/a-ultima-fonte/', title:"A Última Fonte", cover:'/capa-a-ultima-fonte.png',
       subtitle:isEnglish ? 'Science fiction · Fabiano Cicala' : 'Ficção científica · Fabiano Cicala',
-      fiction:true, upcoming:true, status:isEnglish ? 'Coming soon' : 'Em breve',
+      fiction:true, upcoming:false, status:isEnglish ? 'Available on Kindle and paperback' : 'À venda no Kindle e em capa comum',
+      price:'R$ 29,90',
+      amazonUrl:'https://www.amazon.com.br/dp/B0HQ4FTYWR',
+      paperbackUrl:'https://www.amazon.com/dp/B0HQ4MTMJ4',
       description:isEnglish ? "A radio keeps playing after Nora Salvatierra unplugs it. A scientific discovery brings energy, power and responsibility into conflict." : "O rádio continua tocando depois que Nora Salvatierra tira o cabo da tomada. Na bancada, uma peça do tamanho de um feijão acaba de transformar uma falha experimental numa descoberta capaz de mudar o mundo."
     },
     {
