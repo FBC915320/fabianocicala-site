@@ -30,6 +30,7 @@
 /* Ajuste de proporção entre capas e texto do catálogo */
 #livros .book-card--enhanced .book-cover{height:174px;min-height:174px;padding:6px 0 10px}
 #livros .book-card--enhanced .book-3d{height:158px;max-width:96%}
+#livros .book-card--enhanced:not(.book-card--featured) .book-3d{width:99px;flex:0 0 99px}
 #livros .book-card--enhanced .book-front{height:100%;width:auto;object-fit:contain}
 #livros .book-card--enhanced .book-info h3{font-size:1.0625rem!important;line-height:1.3!important;min-height:0;margin:0 0 4px}
 #livros .book-card--enhanced .book-info p{font-size:.875rem!important;line-height:1.5!important}
@@ -43,6 +44,7 @@
 #livros .book-card--enhanced,#livros .book-row--fiction .book-card--enhanced{grid-template-columns:102px minmax(0,1fr);gap:16px}
 #livros .book-card--enhanced .book-cover{width:102px;height:156px;min-height:0;padding:3px 0}
 #livros .book-card--enhanced .book-3d{height:150px}
+#livros .book-card--enhanced:not(.book-card--featured) .book-3d{width:94px;flex-basis:94px}
 #livros .book-card--enhanced .book-info h3{font-size:1rem!important}
 #livros .book-card--enhanced .book-info p{font-size:.875rem!important}
 }
