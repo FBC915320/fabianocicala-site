@@ -133,3 +133,29 @@ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;width:100%;m
 #livros .kindle-collection-tile .kindle-collection-label{color:#16263d;font-size:1.15rem;line-height:1.3;font-weight:800}
 @media(max-width:1000px){#livros .book-row--collection .kindle-collection-tile{display:none}}
 @media(max-width:768px){.books-only #livros .book-card--enhanced .book-3d{transform:perspective(900px) rotateY(-5deg);filter:drop-shadow(6px 8px 6px rgba(16,27,51,.25))}.books-only #livros .book-group .book-card--featured .book-3d{transform:perspective(900px) rotateY(-5deg);filter:drop-shadow(8px 10px 7px rgba(16,27,51,.27))}}
+
+/* Próximos lançamentos: somente as seis capas e o selo, em grade equilibrada. */
+.books-only #proximos-lancamentos .book-row{max-width:930px;margin-inline:auto}
+.books-only #proximos-lancamentos .book-card--upcoming{min-height:0;padding:14px;border:1px solid #dce3eb;border-radius:10px;background:#fff}
+.books-only #proximos-lancamentos .book-card--upcoming .book-cover{min-height:0;height:340px;padding:8px}
+.books-only #proximos-lancamentos .book-card--upcoming .book-3d{height:320px;max-width:100%}
+@media(min-width:1001px){
+.books-only #proximos-lancamentos .book-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+}
+@media(min-width:769px) and (max-width:1000px){
+.books-only #proximos-lancamentos .book-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.books-only #proximos-lancamentos .book-card--upcoming .book-cover{height:300px}
+.books-only #proximos-lancamentos .book-card--upcoming .book-3d{height:282px}
+}
+@media(max-width:768px){
+.books-only #proximos-lancamentos .book-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.books-only #proximos-lancamentos .book-card--upcoming{display:block;padding:10px}
+.books-only #proximos-lancamentos .book-card--upcoming .book-cover{width:100%;height:230px;padding:4px}
+.books-only #proximos-lancamentos .book-card--upcoming .book-3d{height:220px}
+}
+@media(max-width:420px){
+.books-only #proximos-lancamentos .book-row{gap:10px}
+.books-only #proximos-lancamentos .book-card--upcoming{padding:8px}
+.books-only #proximos-lancamentos .book-card--upcoming .book-cover{height:205px}
+.books-only #proximos-lancamentos .book-card--upcoming .book-3d{height:195px}
+}
