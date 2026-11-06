@@ -172,6 +172,60 @@
       description:labels.projectsIntro
     },
     {
+      id:'receita-da-prosperidade', title:'Receita da Prosperidade',
+      subtitle:isEnglish ? '10 biblical principles for finances and life' : '10 princípios bíblicos para pôr a casa em ordem, dominar o dinheiro e construir uma vida que dura',
+      cover:'/img/optimized/capa-receita-da-prosperidade.jpg', upcoming:true,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish
+        ? 'A guide to financial education and life principles inspired by the biblical tradition. Ten practical principles to organise the household, handle money with wisdom and build a life that lasts.'
+        : 'Um guia de educação financeira e princípios de vida inspirado na tradição bíblica. Dez princípios práticos para pôr a casa em ordem, lidar com o dinheiro com sabedoria e construir uma vida que dura.'
+    },
+    {
+      id:'mais-forte-do-que-parece', title:'Mais Forte do que Parece',
+      subtitle:isEnglish ? 'Ten practical steps through difficult seasons' : 'Dez passos práticos para atravessar fases difíceis e recomeçar',
+      cover:'/img/optimized/capa-mais-forte-do-que-parece.jpg', upcoming:true,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish
+        ? 'A practical guide to resilience and overcoming adversity. Ten steps to get through difficult seasons, regain strength and begin again.'
+        : 'Um guia prático sobre resiliência e superação de adversidades. Dez passos para atravessar fases difíceis, recompor forças e recomeçar.'
+    },
+    {
+      id:'orquestra-desafinada', title:'Orquestra Desafinada',
+      subtitle:isEnglish ? 'Why good professionals lose motivation' : 'Por que bons profissionais perdem a motivação e o que os líderes fazem de errado',
+      cover:'/img/optimized/capa-orquestra-desafinada.jpg', upcoming:true,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish
+        ? 'A practical guide to leadership and people management. It examines why good professionals lose motivation, which leadership habits cause the damage and how to change course.'
+        : 'Um guia prático de liderança e gestão de pessoas. Mostra por que bons profissionais perdem a motivação, quais atitudes dos líderes causam esse desgaste e como mudar de direção.'
+    },
+    {
+      id:'daqui-a-30-anos', title:'Daqui a 30 Anos',
+      subtitle:isEnglish ? 'A novel about letters, dreams and time' : 'Um romance sobre cartas, sonhos e o tempo',
+      cover:'/img/optimized/capa-daqui-a-30-anos.jpg', upcoming:true,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish
+        ? 'In 1996, a teacher asks her students to write letters to the adults they will become. Thirty years later, the reunion brings back dreams, fears and choices shaped by time.'
+        : 'Em 1996, uma professora pede aos alunos que escrevam cartas para os adultos que serão. Trinta anos depois, o reencontro devolve sonhos, medos e escolhas transformadas pelo tempo.'
+    },
+    {
+      id:'liderar-com-amor', title:'Liderar com Amor',
+      subtitle:isEnglish ? 'Ten virtues of 1 Corinthians 13 for leaders' : 'Dez virtudes de 1 Coríntios 13 para líderes que querem ser lembrados com gratidão',
+      cover:'/img/optimized/capa-liderar-com-amor.jpg', upcoming:true,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish
+        ? 'Ten virtues from 1 Corinthians 13 applied to leadership: patience, kindness, truth, perseverance and other practical ways to lead people with character.'
+        : 'Dez virtudes de 1 Coríntios 13 aplicadas à liderança: paciência, bondade, verdade, perseverança e outras práticas para liderar pessoas com caráter.'
+    },
+    {
+      id:'o-decimo-terceiro', title:'O Décimo Terceiro',
+      subtitle:isEnglish ? 'A sober guide to the Gospel of Judas and Judas Iscariot' : 'Um guia sóbrio sobre o Evangelho de Judas e a figura de Judas Iscariotes',
+      cover:'/img/optimized/capa-o-decimo-terceiro.jpg', upcoming:true,
+      status:isEnglish ? 'Coming soon' : 'Em breve',
+      description:isEnglish
+        ? 'A sober guide to the Gospel of Judas and the figure of Judas Iscariot, distinguishing ancient texts, historical facts, translations and interpretations without imposing spiritual conclusions.'
+        : 'Um guia sóbrio sobre o Evangelho de Judas e a figura de Judas Iscariotes, distinguindo textos antigos, fatos históricos, traduções e interpretações sem impor conclusões espirituais.'
+    },
+    {
       id: 'github-zero', cover:'/img/optimized/capa-github-zero-original.jpg', title: isEnglish ? 'GitHub — From Zero to Practice' : 'GitHub — Do Zero à Prática',
       subtitle: isEnglish ? 'Expanded beginner guide · 80 pages in the PDF edition' : 'Edição ampliada · guia de Git e GitHub para iniciantes',
       upcoming: false, status: isEnglish ? 'Available on Kindle' : 'À venda no Kindle',
