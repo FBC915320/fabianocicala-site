@@ -38,6 +38,12 @@ for page in (
     text = file.read_text(encoding="utf-8")
     file.write_text(text.replace("https://www.youtube.com/@FabianoCicala", "https://www.youtube.com/@fabianocicala1"), encoding="utf-8")
 
+replace_once(
+    "it/profilo.html",
+    '<link rel="canonical" href="https://fabianocicala.com/it/profilo.html">',
+    '<meta name="robots" content="noindex,follow">\n  <link rel="canonical" href="https://fabianocicala.com/it/sobre/">',
+)
+
 for page in (
     "livros/corolla-cross-hybrid-13-problemas/index.html",
     "livros/guia-pratico-controlador-solar/index.html",

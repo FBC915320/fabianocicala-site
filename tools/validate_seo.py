@@ -21,6 +21,8 @@ class PageParser(HTMLParser):
         self.description = 0
         self.h1 = 0
         self.canonical = []
+        self.refresh = False
+        self.viewport = 0
         self.links = []
         self.jsonld = []
         self._json = False
@@ -30,8 +32,14 @@ class PageParser(HTMLParser):
         values = dict(attrs)
         if tag == "title":
             self.title += 1
-        elif tag == "meta" and values.get("name", "").lower() == "description":
-            self.description += 1
+        elif tag == "meta":
+            name = values.get("name", "").lower()
+            if name == "description":
+                self.description += 1
+            elif name == "viewport":
+                self.viewport += 1
+            if values.get("http-equiv", "").lower() == "refresh":
+                self.refresh = True
         elif tag == "h1":
             self.h1 += 1
         elif tag == "link" and "canonical" in values.get("rel", "").lower():
@@ -84,6 +92,8 @@ for page in html_files:
         errors.append(f"{rel}: quantidade de description = {parser.description}")
     if parser.h1 != 1 and rel not in EXCLUDED:
         errors.append(f"{rel}: quantidade de h1 = {parser.h1}")
+    if parser.viewport != 1:
+        errors.append(f"{rel}: quantidade de meta viewport = {parser.viewport}")
     for block in parser.jsonld:
         try:
             json.loads(block)
@@ -118,6 +128,8 @@ try:
         parser = page_results.get(local)
         if parser and parser.canonical != [url]:
             errors.append(f"{local.relative_to(ROOT)}: canonical esperado {url}, encontrado {parser.canonical}")
+        if parser and parser.refresh:
+            errors.append(f"sitemap.xml: página de redirecionamento incluída: {url}")
 except ElementTree.ParseError as exc:
     errors.append(f"sitemap.xml inválido: {exc}")
 

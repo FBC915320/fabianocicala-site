@@ -104,3 +104,5 @@
   header.hero .hero-ctas{grid-template-columns:1fr}
   .top .brand .brand-name{font-size:.74rem}
 }
+/* Impede que players incorporados ultrapassem telas móveis estreitas. */
+.portal-wrap iframe{display:block;width:100%;max-width:100%;border:0}
