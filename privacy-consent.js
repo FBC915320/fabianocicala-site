@@ -32,6 +32,49 @@
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
     document.head.appendChild(script);
   }
+  function trackEvent(name, parameters) {
+    if (getConsent() !== 'accepted') return;
+    startAnalytics();
+    window.gtag('event', name, parameters || {});
+  }
+  function cleanText(value) {
+    return String(value || '').replace(/\s+/g, ' ').trim().slice(0, 100);
+  }
+  function classifyLink(anchor) {
+    var url;
+    try { url = new URL(anchor.href, window.location.href); } catch (e) { return null; }
+    var host = url.hostname.replace(/^www\./, '').toLowerCase();
+    var platform = '';
+    if (host.includes('hotmart')) platform = 'hotmart';
+    else if (host.includes('amazon.')) platform = 'amazon';
+    else if (host.includes('kiwify')) platform = 'kiwify';
+    else if (host.includes('apple.com')) platform = 'apple_books';
+    if (platform) return {name:'purchase_link_click', platform:platform, url:url.href};
+    if (host.includes('youtube.com') || host.includes('youtu.be')) return {name:'video_link_click', platform:'youtube', url:url.href};
+    return null;
+  }
+  function setupMeasurement() {
+    document.addEventListener('click', function (event) {
+      var anchor = event.target.closest && event.target.closest('a[href]');
+      if (!anchor) return;
+      var classified = classifyLink(anchor);
+      if (!classified) return;
+      trackEvent(classified.name, {
+        platform: classified.platform,
+        link_url: classified.url,
+        link_text: cleanText(anchor.textContent),
+        page_path: window.location.pathname
+      });
+    }, true);
+    document.addEventListener('submit', function (event) {
+      var form = event.target;
+      if (!form || form.tagName !== 'FORM') return;
+      trackEvent('generate_lead', {
+        form_id: form.id || 'formulario',
+        page_path: window.location.pathname
+      });
+    }, true);
+  }
   function makeButton(text, onClick, primary) {
     var button = document.createElement('button');
     button.type = 'button';
@@ -79,6 +122,7 @@
     function showBanner() { banner.hidden = false; }
     banner.hidden = getConsent() !== null;
     if (getConsent() === 'accepted') startAnalytics();
+    setupMeasurement();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup);
   else setup();

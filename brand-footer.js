@@ -1,7 +1,16 @@
 /* Rodapé único do site pessoal Fabiano Cicala — 30/10/2026 */
 (function () {
   "use strict";
+  function ensureScript(src, marker) {
+    if (document.querySelector(marker)) return;
+    const script = document.createElement("script");
+    script.defer = true;
+    script.src = src;
+    document.head.appendChild(script);
+  }
   function initializeBrandFooter() {
+    ensureScript("/privacy-consent.js?v=20261106seo1", 'script[src*="privacy-consent.js"]');
+    ensureScript("/seo-structured-data.js?v=20261106seo1", 'script[src*="seo-structured-data.js"]');
     const lang = (document.documentElement.lang || "pt").slice(0,2).toLowerCase();
     const dict = {
       pt: {tagline:"O invisível já está acontecendo.",follow:"Acompanhe nas redes",privacy:"Política de Privacidade",contact:"Contato"},
