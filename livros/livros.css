@@ -161,3 +161,29 @@ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;width:100%;m
 .books-only #proximos-lancamentos .book-card--upcoming .book-cover{height:205px}
 .books-only #proximos-lancamentos .book-card--upcoming .book-3d{height:195px}
 }
+
+
+/* Programa público de afiliados dos livros — 08/11/2026. */
+.affiliate-program{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(46px,6vw,82px) clamp(24px,6vw,76px);overflow:hidden;background:linear-gradient(120deg,#071725 0%,#0c2638 62%,#123b4b 100%);color:#fff;border-top:1px solid #c99b4f55}
+.affiliate-program::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 85% 12%,#e2b45b22,transparent 32%),repeating-linear-gradient(135deg,transparent 0 110px,#ffffff05 111px 112px,transparent 113px 220px)}
+.affiliate-program-copy{min-width:0}
+.affiliate-program-kicker{display:block;margin:0 0 16px;color:#e6bd72;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.affiliate-program h2{max-width:720px;margin:0 0 20px;color:#fff;font:400 clamp(2rem,4vw,3.7rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.03em}
+.affiliate-program-copy p{max-width:760px;margin:0 0 16px;color:#cbd8e3;font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.75}
+.affiliate-program-copy .affiliate-program-lead{color:#fff;font-size:clamp(1rem,1.25vw,1.12rem)}
+.affiliate-program-topics{margin-top:26px;color:#e4c995;font-size:.69rem;font-weight:700;line-height:1.7;letter-spacing:.1em;text-transform:uppercase}
+.affiliate-program-card{padding:clamp(25px,3vw,38px);background:#fff;color:#172f43;border:1px solid #e7cf9e;border-radius:14px;box-shadow:0 24px 60px #0004}
+.affiliate-program-card h3{margin:0 0 20px;color:#172f43;font:600 clamp(1.35rem,2vw,1.8rem)/1.25 Georgia,"Times New Roman",serif}
+.affiliate-program-card ol{margin:0 0 25px;padding:0;list-style:none;counter-reset:affiliate-step}
+.affiliate-program-card li{position:relative;margin:0;padding:12px 0 12px 42px;color:#435469;font-size:.92rem;line-height:1.55;border-bottom:1px solid #e5e9ed;counter-increment:affiliate-step}
+.affiliate-program-card li::before{content:counter(affiliate-step);position:absolute;left:0;top:10px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#b88434;color:#fff;font-size:.75rem;font-weight:800}
+.affiliate-program-actions{display:grid;gap:10px}
+.affiliate-program-actions a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px 16px;border-radius:7px;text-align:center;text-decoration:none;font-size:.86rem;font-weight:800;line-height:1.35;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.affiliate-program-primary{background:#f05b2a;color:#fff;border:1px solid #f05b2a}
+.affiliate-program-primary:hover{background:#d84b1d;transform:translateY(-1px)}
+.affiliate-program-secondary{background:#fff;color:#17384b;border:1px solid #9eb0bd}
+.affiliate-program-secondary:hover{background:#f3f6f8;border-color:#17384b}
+.affiliate-program-actions a:focus-visible{outline:3px solid #e6bd72;outline-offset:3px}
+.affiliate-program-note{margin:18px 0 0;color:#68788a;font-size:.72rem;line-height:1.55}
+@media(max-width:900px){.affiliate-program{grid-template-columns:1fr;gap:30px}.affiliate-program-card{max-width:680px}}
+@media(max-width:560px){.affiliate-program{padding:40px 20px}.affiliate-program h2{font-size:clamp(2rem,9vw,2.8rem)}.affiliate-program-card{padding:23px 19px}.affiliate-program-card li{padding-left:39px}}
