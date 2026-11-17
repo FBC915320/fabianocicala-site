@@ -1,12 +1,14 @@
 /* Navegação unificada nas páginas legadas do site pessoal. */
 (()=>{"use strict";
 const body=document.body;
-if(!body||!body.classList.contains("fc-modern-page")||document.querySelector(".top,.fc-unified-top"))return;
+if(!body||!body.classList.contains("fc-modern-page")||document.querySelector(".fc-unified-top"))return;
 const path=location.pathname;
-const lang=path.startsWith("/it/")?"it":path.startsWith("/en/")?"en":"pt";
-const labels={pt:["Início","Sobre","Livros","Conexões","Conteúdos"],en:["Home","About","Books","Connections","Articles"],it:["Inizio","Chi sono","Libri","Connessioni","Articoli"]}[lang];
+const lang=path.startsWith("/it/")?"it":path.startsWith("/en/")?"en":path.startsWith("/es/")?"es":"pt";
+const labels={pt:["Início","Sobre","Livros","Conexões","Conteúdos"],en:["Home","About","Books","Connections","Articles"],it:["Inizio","Chi sono","Libri","Connessioni","Articoli"],es:["Inicio","Sobre mí","Libros","Conexiones","Artículos"]}[lang];
 const home=lang==="pt"?"/":"/"+lang+"/";
 const about=lang==="en"?"/en/about/":lang==="it"?"/it/sobre/":"/sobre/";
+const existing=document.querySelector(".top .nav");
+if(existing){existing.innerHTML=[[home,labels[0]],[about,labels[1]],["/livros/",labels[2]],["/conexoes/",labels[3]],["/conteudos/",labels[4]]].map(([url,label])=>'<a href="'+url+'">'+label+"</a>").join("")+'<div class="langs" role="navigation" aria-label="Idioma"><a href="/">PT</a><a href="/it/">IT</a><a href="/en/">EN</a></div>';return;}
 const nav=document.createElement("div");nav.className="fc-unified-top";
 const links=[[home,labels[0]],[about,labels[1]],["/livros/",labels[2]],["/conexoes/",labels[3]],["/conteudos/",labels[4]]];
 const current=path.replace(/index\.html$/,"");
