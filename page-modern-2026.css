@@ -98,3 +98,5 @@ body.fc-modern-page:has(.fc-unified-top)>main .synopsis h2,body.fc-modern-page:h
 body.fc-modern-page:has(.fc-unified-top)>main .topics{margin-top:55px!important}
 body.fc-modern-page:has(.fc-unified-top)>main .topics li{background:#f4f7ff!important;border-color:#e4eafb!important}
 @media(max-width:700px){body.fc-modern-page.books-only .books-category-intro{padding:38px 22px!important}body.fc-modern-page.books-only .editorial-banner{margin:12px 15px 30px!important;border-radius:18px!important}body.fc-modern-page:has(.fc-unified-top)>main>.hero{padding:25px 20px!important;gap:30px!important}}
+
+body.fc-modern-page .top .nav .langs{display:flex!important;align-items:center!important;gap:12px!important}body.fc-modern-page .top .nav .langs a{display:inline-block!important;padding:4px 0!important}
