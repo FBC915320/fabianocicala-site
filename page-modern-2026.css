@@ -69,3 +69,32 @@ body.fc-modern-page .book-card:hover,body.fc-modern-page .article-card:hover,bod
  body.fc-modern-page .fc-unified-links>a{padding:12px 4px;border-bottom:1px solid #f0f2f6}
  body.fc-modern-page .fc-unified-languages{border:0;padding:12px 4px;gap:20px}
 }
+
+/* Redesenho editorial: mesma linguagem clara e contemporânea da home */
+body.fc-modern-page.books-only .books-category-intro{background:#f4f7ff!important;border-radius:0 0 30px 30px!important;padding:clamp(44px,6vw,92px) clamp(24px,5vw,72px)!important;min-height:unset!important}
+body.fc-modern-page.books-only .books-category-intro-copy{max-width:850px}
+body.fc-modern-page.books-only .books-category-intro h1{font-size:clamp(3rem,6vw,5.5rem)!important;line-height:1.02!important;letter-spacing:-.065em!important}
+body.fc-modern-page.books-only .books-author-portrait{border-radius:22px!important;box-shadow:0 18px 38px #1c31531c!important}
+body.fc-modern-page.books-only .career-editorial-label{background:#fff!important;color:#2445ed!important;border:0!important;padding:17px 5vw!important;letter-spacing:.13em}
+body.fc-modern-page.books-only .editorial-banner{background:linear-gradient(130deg,#eef3ff 0%,#fff 60%,#edf3ff 100%)!important;color:#172137!important;border:1px solid #e7edf8!important;border-radius:24px!important;margin:22px auto 44px!important;max-width:1280px!important;min-height:unset!important}
+body.fc-modern-page.books-only .editorial-banner h2,body.fc-modern-page.books-only .editorial-banner p,body.fc-modern-page.books-only .editorial-banner-kicker{color:#172137!important;text-shadow:none!important}
+body.fc-modern-page.books-only .editorial-banner h2{font-size:clamp(2rem,3.2vw,3.3rem)!important;line-height:1.08!important}
+body.fc-modern-page.books-only .editorial-banner-kicker,body.fc-modern-page.books-only .editorial-banner-topics{color:#2445ed!important}
+body.fc-modern-page.books-only .books-category-main{background:#fff!important}
+body.fc-modern-page.books-only .books-heading{padding-top:clamp(24px,4vw,55px)}
+body.fc-modern-page.books-only .book-group{margin-top:30px}
+body.fc-modern-page.books-only .book-collection-title{color:#172137!important;border-color:#e5eaf3!important}
+body.fc-modern-page.books-only .book-card{background:#fff!important;border:1px solid #e5eaf3!important;border-radius:18px!important;overflow:hidden}
+body.fc-modern-page.books-only .book-card .book-info{background:#fff!important;color:#172137!important}
+body.fc-modern-page.books-only .book-card h3{color:#152137!important;font-family:Inter,system-ui,sans-serif!important}
+body.fc-modern-page.books-only .book-preview-button,body.fc-modern-page.books-only .book-actions a{border-radius:999px!important}
+body.fc-modern-page:has(.fc-unified-top)>main>.hero{border:1px solid #e9eef7!important;border-radius:26px!important;background:linear-gradient(125deg,#f7f9ff,#fff)!important;padding:clamp(24px,4.4vw,58px)!important;box-shadow:0 20px 70px rgba(31,47,84,.045)}
+body.fc-modern-page:has(.fc-unified-top)>main>.hero .cover{box-shadow:0 25px 55px #1a2a4929!important;border-radius:10px!important}
+body.fc-modern-page:has(.fc-unified-top)>main>.hero .eyebrow{font-size:.8rem!important;letter-spacing:.12em!important}
+body.fc-modern-page:has(.fc-unified-top)>main>.hero h1{margin:12px 0 18px!important;letter-spacing:-.06em!important}
+body.fc-modern-page:has(.fc-unified-top)>main>.hero .lead{font-size:clamp(1.1rem,2vw,1.4rem)!important;line-height:1.5!important}
+body.fc-modern-page:has(.fc-unified-top)>main .synopsis{max-width:800px;margin:70px auto 0!important}
+body.fc-modern-page:has(.fc-unified-top)>main .synopsis h2,body.fc-modern-page:has(.fc-unified-top)>main .topics h2{font-size:clamp(1.65rem,2.5vw,2.3rem)!important}
+body.fc-modern-page:has(.fc-unified-top)>main .topics{margin-top:55px!important}
+body.fc-modern-page:has(.fc-unified-top)>main .topics li{background:#f4f7ff!important;border-color:#e4eafb!important}
+@media(max-width:700px){body.fc-modern-page.books-only .books-category-intro{padding:38px 22px!important}body.fc-modern-page.books-only .editorial-banner{margin:12px 15px 30px!important;border-radius:18px!important}body.fc-modern-page:has(.fc-unified-top)>main>.hero{padding:25px 20px!important;gap:30px!important}}
