@@ -33,3 +33,39 @@ body.fc-modern-page .contact h2{color:#fff}
 body.fc-modern-page .contact .btn{background:var(--fc-blue)!important;color:#fff!important}
 body.fc-modern-page .top + main{min-height:55vh}
 @media(max-width:700px){body.fc-modern-page .top .nav{background:#fff!important}body.fc-modern-page .portal-intro,body.fc-modern-page .about-page-intro,body.fc-modern-page .books-category-intro{border-radius:0 0 18px 18px}body.fc-modern-page .hero:not(.hero-artwork){border-radius:15px}}
+
+/* Coerência visual transversal — 17/11/2026 */
+body.fc-modern-page{font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.fc-modern-page .shell{background:#fff!important}
+body.fc-modern-page .top{min-height:78px;display:flex;align-items:center;padding:14px clamp(18px,3.5vw,56px)!important}
+body.fc-modern-page .top .brand-name{font-weight:800!important;letter-spacing:-.035em!important}
+body.fc-modern-page .top .nav a{font-weight:650!important}
+body.fc-modern-page .top .langs{border-left:1px solid #e5eaf3;padding-left:12px}
+body.fc-modern-page .fc-unified-top{position:relative;z-index:20;background:#fff;border-bottom:1px solid #e5eaf3;min-height:78px;padding:14px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1480px;margin:auto}
+body.fc-modern-page .fc-unified-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#172137;font-weight:800;font-size:1.13rem;letter-spacing:-.035em;white-space:nowrap}
+body.fc-modern-page .fc-unified-brand img{width:36px;height:36px}
+body.fc-modern-page .fc-unified-links{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.7vw,28px)}
+body.fc-modern-page .fc-unified-links a{font-size:.87rem;font-weight:650;text-decoration:none;color:#263244;white-space:nowrap}
+body.fc-modern-page .fc-unified-links a:hover,body.fc-modern-page .fc-unified-links a[aria-current=page]{color:#2445ed}
+body.fc-modern-page .fc-unified-languages{display:flex;gap:8px;border-left:1px solid #e5eaf3;padding-left:14px}
+body.fc-modern-page .fc-unified-toggle{display:none;background:#fff;border:1px solid #dce3ee;color:#152137;border-radius:8px;padding:8px 13px;font:600 .9rem inherit;cursor:pointer}
+body.fc-modern-page:has(.fc-unified-top)>header{max-width:1200px;margin:auto;padding:20px clamp(20px,5vw,54px);border-bottom:1px solid #e5eaf3;background:#fff;color:#596579;font-size:.86rem}
+body.fc-modern-page:has(.fc-unified-top)>header a{text-decoration:none;color:#2445ed;font-weight:650}
+body.fc-modern-page:has(.fc-unified-top)>main{max-width:1200px;margin:0 auto;padding:clamp(30px,5vw,70px) clamp(20px,5vw,54px) 80px;min-height:55vh}
+body.fc-modern-page:has(.fc-unified-top)>main .hero{background:#fff!important;border-radius:0!important;gap:clamp(30px,5vw,70px)}
+body.fc-modern-page:has(.fc-unified-top)>main h1{font-size:clamp(2.4rem,5vw,4.3rem)!important}
+body.fc-modern-page:has(.fc-unified-top)>main .lead{color:#566278!important}
+body.fc-modern-page:has(.fc-unified-top)>footer{max-width:1200px;margin:auto;border-top:1px solid #e5eaf3;padding:30px clamp(20px,5vw,54px);color:#667085;font-size:.83rem;line-height:1.9}
+body.fc-modern-page:has(.fc-unified-top)>footer a{color:#3150be}
+body.fc-modern-page .button,body.fc-modern-page .btn,body.fc-modern-page .cta{box-shadow:none;transition:background .2s ease,transform .2s ease}
+body.fc-modern-page .button:hover,body.fc-modern-page .btn:hover,body.fc-modern-page .cta:hover{background:#1735bd!important;transform:translateY(-1px)}
+body.fc-modern-page .book-card,body.fc-modern-page .article-card,body.fc-modern-page .card{border:1px solid #e7eaf2!important;box-shadow:0 8px 26px rgba(24,40,72,.045)!important}
+body.fc-modern-page .book-card:hover,body.fc-modern-page .article-card:hover,body.fc-modern-page .card:hover{box-shadow:0 14px 32px rgba(24,40,72,.1)!important}
+@media(max-width:850px){
+ body.fc-modern-page .fc-unified-top{min-height:68px;padding:12px 20px;flex-wrap:wrap}
+ body.fc-modern-page .fc-unified-toggle{display:block;font-family:inherit}
+ body.fc-modern-page .fc-unified-links{display:none;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;gap:0;border-top:1px solid #e5eaf3;padding-top:8px}
+ body.fc-modern-page .fc-unified-top.is-open .fc-unified-links{display:flex}
+ body.fc-modern-page .fc-unified-links>a{padding:12px 4px;border-bottom:1px solid #f0f2f6}
+ body.fc-modern-page .fc-unified-languages{border:0;padding:12px 4px;gap:20px}
+}
