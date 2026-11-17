@@ -1,0 +1,55 @@
+/* Home contemporânea, fundo branco — 17/11/2026.
+   Escopo: páginas iniciais PT, EN e IT; conteúdo e navegação preservados. */
+:root{--modern-blue:#2445ed;--modern-ink:#111827;--modern-muted:#596273}
+html{scroll-behavior:smooth}
+body{background:#fff!important;color:var(--modern-ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body .shell{max-width:1480px!important;background:#fff}
+body .top{background:#fff!important;border-bottom:1px solid #e9ecf1;box-shadow:none!important;padding-top:14px;padding-bottom:14px}
+body .top .brand-name{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:850!important;letter-spacing:-.055em!important;color:#111827!important}
+body .nav a{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:650;text-decoration:none}
+body .career-hero{background:#fff!important;color:#101828!important;display:grid!important;grid-template-columns:minmax(0,1.38fr) minmax(280px,.82fr)!important;gap:clamp(26px,4.5vw,74px)!important;padding:clamp(48px,6.6vw,100px) clamp(24px,6vw,90px) 64px!important;align-items:center;min-height:590px}
+body .career-hero .career-hero-copy{min-width:0}
+body .career-hero .career-eyebrow{color:var(--modern-blue)!important;font-size:.85rem!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase;margin:0 0 26px!important}
+body .career-hero h1{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:clamp(3.4rem,6.7vw,7rem)!important;font-weight:900!important;letter-spacing:-.085em!important;line-height:.99!important;color:#111827!important;margin:0 0 24px!important;max-width:900px}
+body .career-hero h1 .blue-word{color:var(--modern-blue)}
+body .career-hero h2{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;color:#263244!important;font-size:clamp(1.08rem,1.65vw,1.4rem)!important;font-weight:650!important;letter-spacing:-.02em!important;margin:0 0 17px!important}
+body .career-hero .career-summary{color:#586272!important;max-width:660px!important;font-size:1.03rem!important;line-height:1.75!important}
+body .career-hero .career-promise{font-size:.78rem!important;letter-spacing:.1em!important;color:#526072!important;margin-top:24px!important}
+body .career-hero .career-actions{margin-top:31px!important;gap:12px!important}
+body .career-hero .career-button{background:var(--modern-blue)!important;color:#fff!important;border:1px solid var(--modern-blue)!important;border-radius:999px!important;padding:15px 25px!important;font-size:.9rem!important;font-weight:750!important;box-shadow:0 9px 20px #2445ed20;transition:transform .2s,box-shadow .2s}
+body .career-hero .career-button:hover{transform:translateY(-2px);box-shadow:0 13px 27px #2445ed2d}
+body .career-hero .career-button.secondary{background:#fff!important;color:#202936!important;border:1px solid #d9dee8!important;box-shadow:none}
+body .career-hero .career-photo-wrap{max-width:390px!important;width:100%!important;position:relative;isolation:isolate}
+body .career-hero .career-photo-wrap::before{inset:24px -22px -20px 22px!important;background:#e9edff!important;border:0!important;border-radius:26px!important;z-index:-1}
+body .career-hero .career-photo{width:100%!important;aspect-ratio:4/5!important;object-fit:cover!important;object-position:center 17%;border:0!important;border-radius:24px!important;box-shadow:0 22px 65px #27385022!important}
+body .career-proof{background:#f5f7ff!important;color:#19243c!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #e7ecff!important;border-bottom:1px solid #e7ecff!important;padding:16px clamp(24px,6vw,90px)!important;gap:0!important}
+body .career-proof span{color:#34425c!important;border:0!important;border-right:1px solid #d9e0f5!important;padding:13px 20px!important;text-align:center!important;font-size:.86rem!important;font-weight:650!important;line-height:1.45}
+body .career-proof span:last-child{border-right:0!important}
+body main{background:#fff!important}
+body .home-books{background:#fff!important;padding-top:76px!important;padding-bottom:68px!important}
+body .home-books-heading h2,body .career-expertise h2,body #conteudos h2,body .career-solutions-label h2{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:850!important;letter-spacing:-.055em!important;color:#121b2b!important}
+body .home-books-heading .career-kicker,body .career-kicker,body #conteudos .kicker{color:var(--modern-blue)!important}
+body .home-book-feature h3,body .home-more-books .home-book-copy h3{color:#121b2b!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;letter-spacing:-.035em}
+body .home-book-actions a:first-child{background:var(--modern-blue)!important;border-color:var(--modern-blue)!important;border-radius:999px!important}
+body .home-book-actions a{border-radius:999px!important}
+body .home-more-books{border-left-color:#e4e8ef!important}
+body .home-more-books a{border-bottom-color:#e4e8ef!important}
+body .home-philosophy{background:#fff!important;border-top:1px solid #e5e9f0!important}
+body .home-philosophy strong{color:var(--modern-blue)!important}
+body .career-solutions-label{background:#f4f7ff!important}
+body .career-solutions-label p{color:#586477!important}
+body #photo-efe{background:#f4f7ff!important}
+body #photo-efe .photo-efe-teaser{background:#fff!important;border-color:#e1e7f4!important}
+body #conteudos{background:#fff!important}
+body #conteudos .content-copy>a{color:var(--modern-blue)!important}
+body .career-expertise{background:#f7f9fd!important}
+body .career-card{border-radius:14px;border:1px solid #e1e7ef;border-top:3px solid var(--modern-blue)}
+body .career-europe{background:#edf2ff!important}
+body .career-europe h2{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:850!important;letter-spacing:-.04em!important}
+body .career-europe .career-contact-actions a{background:var(--modern-blue);border-color:var(--modern-blue);border-radius:999px}
+body .career-europe .career-contact-actions a.secondary{color:var(--modern-blue);background:transparent}
+body .career-editorial-label{background:#f0f4ff!important;color:var(--modern-blue)!important}
+body .career-solutions-label h2{color:#121b2b!important}
+@media(max-width:980px){body .career-hero{grid-template-columns:minmax(0,1.15fr) minmax(210px,.85fr)!important;gap:28px!important;padding:58px 32px!important;min-height:0}body .career-hero h1{font-size:clamp(3.15rem,7.7vw,5.6rem)!important}body .career-hero .career-photo-wrap{max-width:320px!important}}
+@media(max-width:650px){body .career-hero{grid-template-columns:1fr!important;gap:36px!important;padding:50px 22px 45px!important}body .career-hero h1{font-size:clamp(3.35rem,12vw,5rem)!important;letter-spacing:-.075em!important}body .career-hero .career-eyebrow{margin-bottom:20px!important}body .career-hero .career-photo-wrap{max-width:290px!important;margin:4px auto 12px!important}body .career-hero .career-actions{flex-direction:column}body .career-hero .career-button{width:100%}body .career-proof{grid-template-columns:1fr;padding:12px 22px!important}body .career-proof span{text-align:left!important;border-right:0!important;border-bottom:1px solid #dbe2f3!important;padding:12px 0!important}body .career-proof span:last-child{border-bottom:0!important}body .home-books{padding-top:46px!important;padding-bottom:42px!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body .career-hero .career-button{transition:none}}
