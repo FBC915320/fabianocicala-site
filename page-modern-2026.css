@@ -48,9 +48,9 @@ body.fc-modern-page .fc-unified-links{display:flex;align-items:center;justify-co
 body.fc-modern-page .fc-unified-links a{font-size:.87rem;font-weight:650;text-decoration:none;color:#263244;white-space:nowrap}
 body.fc-modern-page .fc-unified-links a:hover,body.fc-modern-page .fc-unified-links a[aria-current=page]{color:#2445ed}
 body.fc-modern-page .fc-unified-languages{display:flex;gap:8px;border-left:1px solid #e5eaf3;padding-left:14px}
-body.fc-modern-page .fc-unified-toggle{display:none;background:#fff;border:1px solid #dce3ee;color:#152137;border-radius:8px;padding:8px 13px;font:600 .9rem inherit;cursor:pointer}
-body.fc-modern-page:has(.fc-unified-top)>header{max-width:1200px;margin:auto;padding:20px clamp(20px,5vw,54px);border-bottom:1px solid #e5eaf3;background:#fff;color:#596579;font-size:.86rem}
-body.fc-modern-page:has(.fc-unified-top)>header a{text-decoration:none;color:#2445ed;font-weight:650}
+body.fc-modern-page .fc-unified-toggle{display:none;background:#fff;border:1px solid #dce3ee;color:#152137;border-radius:8px;padding:8px 13px;font:600 .9rem/1.2 Inter,system-ui,sans-serif;cursor:pointer}
+body.fc-modern-page:has(.fc-unified-top)>header:not(.hero):not(.career-hero){max-width:1200px;margin:auto;padding:20px clamp(20px,5vw,54px);border-bottom:1px solid #e5eaf3;background:#fff;color:#596579;font-size:.86rem}
+body.fc-modern-page:has(.fc-unified-top)>header:not(.hero):not(.career-hero) a{text-decoration:none;color:#2445ed;font-weight:650}
 body.fc-modern-page:has(.fc-unified-top)>main{max-width:1200px;margin:0 auto;padding:clamp(30px,5vw,70px) clamp(20px,5vw,54px) 80px;min-height:55vh}
 body.fc-modern-page:has(.fc-unified-top)>main .hero{background:#fff!important;border-radius:0!important;gap:clamp(30px,5vw,70px)}
 body.fc-modern-page:has(.fc-unified-top)>main h1{font-size:clamp(2.4rem,5vw,4.3rem)!important}
