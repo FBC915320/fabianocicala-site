@@ -44,15 +44,6 @@ replace_once(
     '<meta name="robots" content="noindex,follow">\n  <link rel="canonical" href="https://fabianocicala.com/it/sobre/">',
 )
 
-for page in (
-    "livros/corolla-cross-hybrid-13-problemas/index.html",
-    "livros/guia-pratico-controlador-solar/index.html",
-):
-    file = ROOT / page
-    text = file.read_text(encoding="utf-8")
-    text = re.sub(r'<meta name="robots" content="[^"]+">', '', text)
-    text = text.replace("</head>", '<meta name="robots" content="noindex,follow"></head>', 1)
-    file.write_text(text, encoding="utf-8")
 
 replace_once(
     "index.html",

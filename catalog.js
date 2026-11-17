@@ -92,17 +92,7 @@
         ? 'A practical guide for readers who want to strengthen their faith, develop a life of prayer and learn how to take a spiritual stand in difficult moments. It brings prayers, biblical references and reflections on protection, family, wisdom, healing, purpose and perseverance.'
         : 'Um guia prático para quem deseja fortalecer a fé, desenvolver uma vida de oração e aprender a se posicionar espiritualmente diante das dificuldades. Reúne orações, referências bíblicas e ensinamentos sobre proteção, família, sabedoria, cura, libertação, propósito e perseverança. Mais do que repetir palavras, é um convite para transformar conhecimento em atitude.'
     },
-    {
-      id: 'corolla', pageUrl: '/livros/corolla-cross-hybrid-13-problemas/', title: isEnglish ? 'Corolla Cross Hybrid + 13 Problems' : 'Corolla Cross Hybrid + 13 Problemas',
-      subtitle: isEnglish ? 'A Brazilian owner’s real-world account' : 'Relato real de um proprietário no Brasil',
-      cover: '/img/optimized/capa-corolla-cross-13-problemas.webp', price: 'R$ 9,90',
-      printNote: labels.digitalOnly,
-      url: 'https://books.apple.com/br/book/corolla-cross-hybrid-13-problemas/id6817624270',
-      amazonUrl: 'https://www.amazon.com.br/dp/B0HMLSNS8P',
-      description: isEnglish
-        ? 'A personal and critical account of owning a brand-new Corolla Cross Hybrid in Brazil. Across thirteen points, Fabiano Cicala describes everyday issues, disappointing design decisions and his experience with after-sales service.'
-        : 'Um relato pessoal e crítico sobre a experiência de comprar e usar um Corolla Cross Hybrid zero-quilômetro no Brasil. Em treze pontos, Fabiano Cicala apresenta problemas vividos no cotidiano, decisões de projeto que o decepcionaram e sua experiência com o atendimento pós-venda.'
-    },
+
     {
       id: 'quando-dia-termina',
       title: isEnglish ? 'When the Day Ends' : 'Quando o Dia Termina',
@@ -180,16 +170,7 @@
         ? 'A practical introduction to Git and GitHub: repositories, branches, commits, pull requests, merges, automation with GitHub Actions and security. Includes exercises. Independently adapted from GitHub Skills material under the MIT license, not an official GitHub publication. The Kindle e-book is available on Amazon. The paperback remains a draft.'
         : 'Um guia prático para começar no GitHub: repositórios, branches, commits, pull requests, merge, automações com GitHub Actions, segurança e exercícios passo a passo. Edição independente adaptada de material GitHub Skills sob licença MIT, sem vínculo oficial. O eBook Kindle já está à venda na Amazon. A edição em capa comum permanece em rascunho.'
     },
-    {
-      id: 'solar', pageUrl: '/livros/guia-pratico-controlador-solar/', title: isEnglish ? 'Practical Guide to the Solar Controller' : 'Guia Prático do Controlador Solar',
-      subtitle: isEnglish ? 'BMP Advanced for boilers and solar heaters' : 'BMP Advanced para boiler e aquecedor solar',
-      cover: '/img/optimized/capa-guia-controlador-solar.webp', status: labels.guide,
-      printNote: labels.printPlanned,
-      amazonUrl: 'https://www.amazon.com.br/dp/B0HMP81PJB',
-      description: isEnglish
-        ? 'A practical reference for understanding and operating the BMP Advanced controller used in boiler and solar-heating systems.'
-        : 'Referência prática para compreender e operar o controlador BMP Advanced utilizado em sistemas de boiler e aquecimento solar.'
-    }
+
   ];
 
   const card = (book) => `
