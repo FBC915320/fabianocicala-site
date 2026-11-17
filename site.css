@@ -343,3 +343,18 @@ header.hero.hero-artwork img{display:block;width:100%;max-width:100%;height:auto
 #photo-efe .project-ai-themes{list-style:none;display:flex;flex-wrap:wrap;gap:9px;margin:0;padding:0}
 #photo-efe .project-ai-themes li{color:#eff4fc;background:#ffffff12;border:1px solid #ffffff38;border-radius:7px;padding:8px 10px;font-size:.81rem;line-height:1.25}
 @media(max-width:800px){#photo-efe .project-ai-spotlight{grid-template-columns:1fr;padding:21px;gap:15px}}
+
+/* Identidade global 2026 — refinamento visual conservador, sem mudar conteúdo */
+body{background:#fff}
+body .shell{max-width:1480px;margin:0 auto;box-shadow:none;overflow:clip}
+body .shell .top{background:#fff!important;color:#172137!important;border-bottom:1px solid #e6ebf3!important;box-shadow:none!important}
+body .shell .top .brand,body .shell .top .brand span{color:#111827!important}
+body .shell .top .nav>a,body .shell .top .nav>a:visited,body .shell .top .langs a,body .shell .top .nav .header-country{color:#273449!important;opacity:1!important;text-shadow:none!important}
+body .shell .top .nav>a:hover,body .shell .top .nav>a:focus-visible{color:#2445ed!important}
+body .shell .top .nav .header-country .brand-motto{color:#52627b!important}
+body .shell .top .mobile-menu-toggle{color:#273449!important;border-color:#d7dfeb!important}
+body .card,body .career-card{border-radius:14px}
+body .section .head h2,body .career-expertise h2,body .career-europe h2{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.04em;font-weight:800}
+body .section .kicker,body .career-kicker{color:#2445ed}
+body .social a,body .btn,body .cta{border-radius:999px}
+@media(max-width:700px){body .shell .top .nav{background:#fff!important;border-color:#e7ebf2!important}}
