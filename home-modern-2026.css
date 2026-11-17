@@ -53,3 +53,8 @@ body .career-solutions-label h2{color:#121b2b!important}
 @media(max-width:980px){body .career-hero{grid-template-columns:minmax(0,1.15fr) minmax(210px,.85fr)!important;gap:28px!important;padding:58px 32px!important;min-height:0}body .career-hero h1{font-size:clamp(3.15rem,7.7vw,5.6rem)!important}body .career-hero .career-photo-wrap{max-width:320px!important}}
 @media(max-width:650px){body .career-hero{grid-template-columns:1fr!important;gap:36px!important;padding:50px 22px 45px!important}body .career-hero h1{font-size:clamp(3.35rem,12vw,5rem)!important;letter-spacing:-.075em!important}body .career-hero .career-eyebrow{margin-bottom:20px!important}body .career-hero .career-photo-wrap{max-width:290px!important;margin:4px auto 12px!important}body .career-hero .career-actions{flex-direction:column}body .career-hero .career-button{width:100%}body .career-proof{grid-template-columns:1fr;padding:12px 22px!important}body .career-proof span{text-align:left!important;border-right:0!important;border-bottom:1px solid #dbe2f3!important;padding:12px 0!important}body .career-proof span:last-child{border-bottom:0!important}body .home-books{padding-top:46px!important;padding-bottom:42px!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body .career-hero .career-button{transition:none}}
+
+/* Contraste da navegação sobre a nova faixa branca */
+body .top .nav a,body .top .nav a:visited,body .top .langs a{color:#263244!important}
+body .top .nav a:hover,body .top .nav a:focus-visible,body .top .langs a:hover{color:#2445ed!important}
+body .top .mobile-menu-toggle{color:#263244!important;border-color:#dce2ed!important}
