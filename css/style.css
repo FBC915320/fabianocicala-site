@@ -355,3 +355,10 @@ h3{font-size:22px}
 .bvid .play{position:absolute;inset:0;margin:auto;width:68px;height:68px;border-radius:50%;background:rgba(4,17,29,.78);border:2px solid var(--gold);transition:transform .2s}
 .bvid .play::after{content:"";position:absolute;left:27px;top:20px;border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent var(--gold)}
 .bvid .yt:hover .play{transform:scale(1.08)}
+
+/* livros: bloco de texto padronizado (3 linhas, preto) */
+.bi h3{color:#000}
+.bi p{color:#000;font-size:15px;line-height:1.55;min-height:calc(1.55em * 3);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.bi h3{min-height:calc(1.12em * 2)}
+@media(max-width:520px){.bi h3{font-size:18px;min-height:calc(1.12em * 3)}}
+@media(max-width:900px){.bi .tag{display:block;min-height:2.8em;line-height:1.4}.bi p{font-size:14px}}
