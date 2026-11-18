@@ -28,7 +28,7 @@
 })();
 
 /* vídeos do YouTube: só carrega o player ao clicar (modo de privacidade aprimorada) */
-document.querySelectorAll('.vid .yt').forEach(function(b){
+document.querySelectorAll('.vid .yt,.bvid .yt').forEach(function(b){
   b.addEventListener('click',function(){
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
