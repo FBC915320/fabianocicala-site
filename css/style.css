@@ -335,3 +335,12 @@ h3{font-size:22px}
 
 /* v24: fotos nas páginas de serviço */
 .svc-img img{aspect-ratio:16/10;object-fit:cover}
+
+/* v25: foto no topo dos cartões */
+.fpil{padding:0;display:flex;flex-direction:column}
+.fpil .ph{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border-radius:10px 10px 0 0}
+.fpil .ic{margin:-26px 0 0 24px;position:relative;z-index:2;background:#0e2036;width:52px;height:52px}
+.fpil .fn{top:14px;right:14px;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--gold);background:rgba(4,17,29,.78);padding:5px 11px;border-radius:999px;z-index:2}
+.fpil h3{margin:14px 24px 8px}
+.fpil p{margin:0 24px 26px}
+@media(max-width:480px){.fpil .fn{font-size:12px}.fpil .ic{margin-top:-23px;width:46px;height:46px}}
