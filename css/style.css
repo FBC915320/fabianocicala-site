@@ -323,3 +323,12 @@ h3{font-size:22px}
 .svc-steps span{font-size:16px;line-height:1.45}
 @media(max-width:900px){.svc-cols{grid-template-columns:1fr;gap:28px}.svc-steps{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.svc-steps{grid-template-columns:1fr}}
+
+/* v23: 8 cartões iguais, 4 por linha */
+.fgrid{grid-template-columns:repeat(4,1fr)}
+.fpil.wide{grid-column:auto}
+.fpil{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}
+.fpil h3{font-size:clamp(22px,2vw,28px)}
+@media(max-width:1100px){.fgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.fgrid{grid-template-columns:1fr}}
+.mkt{margin-top:32px;padding-top:28px}
