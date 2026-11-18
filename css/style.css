@@ -148,3 +148,4 @@ h3{font-size:22px}
 .tagrow{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:28px 0 0}
 .tagrow li{border:1.5px solid var(--line);background:#fff;padding:10px 20px;border-radius:999px;font-size:15px}
 .sec.alt .art{background:#fff;box-shadow:0 1px 0 var(--line)}
+.bi .tz{margin-left:16px}
