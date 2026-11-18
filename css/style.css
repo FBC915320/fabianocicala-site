@@ -8,7 +8,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(var(--w),92%);margin:0 auto}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:99}
@@ -69,7 +69,7 @@ h3{font-size:22px}
 .pil p{color:var(--muted);margin:0}
 .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:8px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.photo img{border-radius:var(--r);width:100%;max-width:420px}
+.photo img{border-radius:var(--r);width:100%;max-width:420px;height:auto;aspect-ratio:620/830;object-fit:cover}
 
 /* livros */
 .books{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;margin-top:40px}
@@ -141,3 +141,10 @@ h3{font-size:22px}
  .search input{min-width:0;width:100%}.search{width:100%}
 }
 @media (max-width:480px){.foot-grid{grid-template-columns:1fr}.cta .btn{width:100%;justify-content:center}}
+
+.intl{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:72px 0}
+.intl-in{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.intl h2{color:#fff}
+.tagrow{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:28px 0 0}
+.tagrow li{border:1.5px solid var(--line);background:#fff;padding:10px 20px;border-radius:999px;font-size:15px}
+.sec.alt .art{background:#fff;box-shadow:0 1px 0 var(--line)}
