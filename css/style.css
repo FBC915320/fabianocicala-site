@@ -296,3 +296,30 @@ h3{font-size:22px}
 .phead{padding:54px 0 44px}
 @media(max-width:900px){.hero-grid{padding-top:40px}.hero-t{padding-bottom:0}.sec{padding:48px 0}.phead{padding:40px 0 32px}}
 @media(max-width:480px){.focus{padding:48px 0}}
+
+/* v21: cartão do canal e espaços */
+.vgrid .art{flex-direction:row;min-height:0;align-self:start}
+.vgrid .art .more{white-space:nowrap}
+@media(max-width:700px){.vgrid .art{flex-direction:column;align-items:flex-start}}
+.sec{padding:56px 0}.focus{padding:60px 0}.phead{padding:48px 0 40px}.hero-t{padding-bottom:48px}.hero-grid{padding-top:48px}
+.sub{margin-bottom:28px}
+@media(max-width:900px){.sec{padding:44px 0}.phead{padding:36px 0 28px}.focus{padding:44px 0}}
+
+/* v22: páginas de serviço */
+.svc-split{align-items:center}
+.svc-img img{width:100%;height:auto;border-radius:20px;display:block;box-shadow:0 20px 50px -24px rgba(4,17,29,.5)}
+.svc-txt p{font-size:18px;color:var(--muted);margin:0 0 14px}
+.svc-txt h2{margin-top:6px}
+.mkt-dk{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:18px 0 0}
+.mkt-dk li{padding:9px 18px;border:1.5px solid var(--line);border-radius:999px;font-weight:600;font-size:15px;background:#fff}
+.svc-cols{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.svc-list{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:12px}
+.svc-list li{position:relative;padding-left:30px;font-size:18px}
+.svc-list li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:2px;background:var(--gold2)}
+.svc-for{font-size:20px;margin:14px 0 0;line-height:1.5}
+.svc-steps{list-style:none;padding:0;margin:20px 0 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc-steps li{background:var(--alt);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.svc-steps b{font-family:var(--serif);font-size:34px;font-weight:500;color:var(--gold2);line-height:1}
+.svc-steps span{font-size:16px;line-height:1.45}
+@media(max-width:900px){.svc-cols{grid-template-columns:1fr;gap:28px}.svc-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.svc-steps{grid-template-columns:1fr}}
