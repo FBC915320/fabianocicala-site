@@ -26,3 +26,16 @@
    f.classList.add('on');cat=f.dataset.c;run();});});
  }
 })();
+
+/* vídeos do YouTube: só carrega o player ao clicar (modo de privacidade aprimorada) */
+document.querySelectorAll('.vid .yt').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+    f.title=b.getAttribute('aria-label')||'Vídeo';
+    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.setAttribute('allowfullscreen','');
+    f.loading='lazy';
+    b.replaceWith(f);
+  });
+});

@@ -248,3 +248,37 @@ h3{font-size:22px}
 .fpil.wide .mkt-l{margin-top:22px}
 @media(prefers-reduced-motion:reduce){.fpil{transition:none}.fpil:hover{transform:none}}
 @media(max-width:480px){.fpil .fn{font-size:56px}.fpil .ic{width:46px;height:46px;margin-bottom:14px}}
+.foot .logos{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px}
+.foot .logos .cik{margin:0}
+.foot-grid .cik.inst{display:inline-flex;align-items:center;background:#fff;border-radius:12px;padding:8px 14px}
+.cik.inst img{height:43px;width:auto}
+
+/* vídeos */
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px;align-items:stretch}
+.vid{margin:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 0 var(--line),0 10px 30px rgba(4,17,29,.06);display:flex;flex-direction:column}
+.vid video,.vid .yt,.vid iframe{width:100%;aspect-ratio:16/9;display:block;background:#000;border:0}
+.vid .yt{position:relative;padding:0;cursor:pointer;overflow:hidden}
+.vid .yt img{width:100%;height:100%;object-fit:cover}
+.vid .play{position:absolute;inset:0;margin:auto;width:68px;height:68px;border-radius:50%;background:rgba(4,17,29,.78);border:2px solid var(--gold);transition:transform .2s}
+.vid .play::after{content:"";position:absolute;left:27px;top:20px;border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent var(--gold)}
+.vid .yt:hover .play{transform:scale(1.08)}
+.vid figcaption{padding:16px 20px 20px;display:flex;flex-direction:column;gap:4px}
+.vid figcaption b{font-family:var(--serif);font-size:20px;font-weight:500}
+.vid figcaption span{color:var(--muted);font-size:15px}
+@media(max-width:700px){.vgrid{grid-template-columns:1fr}}
+.vgrid .art{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;justify-content:space-between}
+.vgrid .art h3{margin:0}
+.vgrid .art p{margin:0;flex:1 1 280px}
+
+/* serviços */
+.fpil{position:relative}
+.fpil a.stretch{color:inherit}
+.fpil a.stretch::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.fpil a.stretch:focus-visible{outline:none}
+.fpil:has(a.stretch:focus-visible){outline:2px solid var(--gold);outline-offset:3px}
+.fpil li{position:relative;z-index:1}
+.svc-others{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.svc-others a{display:inline-block;padding:10px 18px;border:1.5px solid var(--line);border-radius:999px;font-weight:600;font-size:15px}
+.svc-others a:hover{border-color:var(--gold2);color:var(--gold2)}
+.prose .svc-others{padding-left:0;margin-left:0}
+.prose .svc-others a{text-decoration:none}
