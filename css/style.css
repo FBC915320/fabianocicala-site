@@ -282,3 +282,17 @@ h3{font-size:22px}
 .svc-others a:hover{border-color:var(--gold2);color:var(--gold2)}
 .prose .svc-others{padding-left:0;margin-left:0}
 .prose .svc-others a{text-decoration:none}
+
+/* marca maior no topo */
+.top .brand{font-size:27px;gap:14px}
+.top .brand .mark{width:56px;height:56px;border-radius:12px}
+@media(max-width:480px){.top .brand{font-size:22px;gap:10px}.top .brand .mark{width:44px;height:44px}}
+
+/* espaços verticais reduzidos */
+.hero-grid{padding-top:56px}
+.hero-t{padding-bottom:56px}
+.sec{padding:64px 0}
+.focus{padding:68px 0}
+.phead{padding:54px 0 44px}
+@media(max-width:900px){.hero-grid{padding-top:40px}.hero-t{padding-bottom:0}.sec{padding:48px 0}.phead{padding:40px 0 32px}}
+@media(max-width:480px){.focus{padding:48px 0}}
