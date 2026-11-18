@@ -362,3 +362,5 @@ h3{font-size:22px}
 .bi h3{min-height:calc(1.12em * 2)}
 @media(max-width:520px){.bi h3{font-size:18px;min-height:calc(1.12em * 3)}}
 @media(max-width:900px){.bi .tag{display:block;min-height:2.8em;line-height:1.4}.bi p{font-size:14px}}
+.form select{font:inherit;font-weight:400;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;width:100%}
+.form select:focus{border-color:var(--gold);outline:0}

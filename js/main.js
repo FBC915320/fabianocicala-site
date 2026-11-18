@@ -39,3 +39,11 @@ document.querySelectorAll('.vid .yt,.bvid .yt').forEach(function(b){
     b.replaceWith(f);
   });
 });
+
+/* contato: pré-seleciona o serviço vindo da página do serviço (?servico=slug) */
+(function(){
+  var s=document.getElementById('f-servico'),m=document.getElementById('f-motivo');
+  if(!s||!m||!window.URLSearchParams)return;
+  var v=new URLSearchParams(location.search).get('servico');
+  if(v){s.value=v;if(s.value===v){m.value='Contratar um serviço';}}
+})();
