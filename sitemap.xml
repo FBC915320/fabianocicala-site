@@ -2,11 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://fabianocicala.com/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://fabianocicala.com/servicos/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/importacao/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/b2b/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/b2c/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/criacao/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/marketing/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/vendas-online/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/marketplaces/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/servicos/implantacao-ia/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://fabianocicala.com/sobre/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://fabianocicala.com/conteudos/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://fabianocicala.com/conteudos/a-experiencia-vira-criterio/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://fabianocicala.com/conteudos/teste-antes-de-importar/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://fabianocicala.com/conteudos/ia-sem-abrir-mao-da-decisao/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://fabianocicala.com/livros/a-estrategia-do-invisivel/</loc></url>
   <url><loc>https://fabianocicala.com/livros/eu-existo/</loc></url>
   <url><loc>https://fabianocicala.com/livros/a-ultima-fonte/</loc></url>
@@ -24,5 +29,5 @@
   <url><loc>https://fabianocicala.com/livros/o-mapa-completo-da-ia/</loc></url>
   <url><loc>https://fabianocicala.com/livros/alem-da-inteligencia-artificial/</loc></url>
   <url><loc>https://fabianocicala.com/photo-efe/</loc></url>
-  <url><loc>https://fabianocicala.com/politica-de-privacidade.html</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://fabianocicala.com/politica-de-privacidade.html</loc><lastmod>2026-11-18</lastmod><lastmod>2026-11-18</lastmod></url>
 </urlset>
