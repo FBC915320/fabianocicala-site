@@ -210,3 +210,16 @@ h3{font-size:22px}
 .mkt-l li{border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:14px 28px;font-size:18px;font-weight:600;color:#fff;background:rgba(255,255,255,.06)}
 @media(max-width:900px){.fgrid{grid-template-columns:repeat(2,1fr)}.fpil.wide{grid-column:span 2}}
 @media(max-width:480px){.focus{padding:64px 0}.fgrid{grid-template-columns:1fr}.fpil.wide{grid-column:span 1}.mkt-l li{padding:12px 20px;font-size:16px}}
+
+/* home: imagens */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.strip img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:14px}
+.intl-row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:center}
+.intl-p img{width:100%;max-width:420px;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:18px}
+@media(max-width:900px){.strip{grid-template-columns:repeat(2,1fr)}.intl-row{grid-template-columns:1fr;gap:28px}}
+.mkt-t2{margin-top:28px}
+.mkt-l li.has-ico{display:inline-flex;align-items:center;gap:10px}
+.mkt-l li.has-ico img{width:22px;height:22px;filter:invert(1)}
+.menu a.navcta{background:var(--gold);color:#04111d;border-radius:999px;padding:8px 18px;font-weight:600}
+.menu a.navcta:hover{filter:brightness(1.08)}
+@media(max-width:900px){.menu a.navcta{display:inline-block;margin-top:8px;text-align:center}}
