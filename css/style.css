@@ -348,3 +348,38 @@ h3{font-size:22px}
 .form select{font:inherit;font-weight:400;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;width:100%}
 .form select:focus{border-color:var(--gold);outline:0}
 .focus-top{padding-top:36px}
+
+/* plataformas nas páginas de serviço (texto escuro sobre fundo claro) */
+.mkt-dk li{color:var(--ink);border-color:var(--line)}
+
+/* faixa de números na home */
+.facts{background:var(--navy2);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
+.facts-in{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:30px 0}
+.facts-in div{display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--gold);padding-left:16px}
+.facts-in b{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);font-weight:500;line-height:1.1}
+.facts-in span{color:#c9d1dc;font-size:14px}
+@media(max-width:700px){.facts-in{grid-template-columns:1fr 1fr;gap:20px 16px}}
+
+/* livros compactos */
+.books.sm{grid-template-columns:repeat(6,1fr);gap:20px}
+.books.sm .bi p,.books.sm .bi .more,.books.sm .bi .tz{display:none}
+.books.sm .bi{padding-top:12px}
+.books.sm .bi h3{font-size:17px;min-height:calc(1.12em * 2)}
+.books.sm .bi .tag{font-size:10px;min-height:0}
+@media(max-width:1100px){.books.sm{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.books.sm{grid-template-columns:repeat(2,1fr);gap:16px}.books.sm .bi h3{font-size:16px;min-height:calc(1.12em * 3)}}
+.books{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.books.sm .bi .tag{display:block}
+
+/* trajetória em datas */
+.tline{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0;border-left:2px solid var(--gold)}
+.tline li{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:0 0 26px 24px;position:relative}
+.tline li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.tline b{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--gold2)}
+.tline span{font-size:18px;color:#2b3443;max-width:640px}
+@media(max-width:520px){.tline li{grid-template-columns:1fr;gap:4px}}
+
+/* mini-bio nas páginas de serviço */
+.bio-mini .photo img{max-width:300px;aspect-ratio:4/5}
+.btn.line-dark{border-color:var(--navy);color:var(--navy)}.btn.line-dark:hover{border-color:var(--gold2);color:var(--gold2)}
+@media(max-width:900px){.bio-mini .photo img{max-width:220px}}
